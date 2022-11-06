@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+
+  <!--Builder Imports-->
+  <link rel="stylesheet" type="text/css" href="./output.css" />
+  <link rel="stylesheet" type="text/css" href="./custom-styles.css" />
+
+
+
+  <style type="text/css">
+    .js-droppable>.js-snippet {
+      width: 100%;
+      padding: 0;
+    }
+
+    .js-droppable>.js-snippet:hover>.js-delete-btn {
+      display: block;
+    }
+
+    .js-droppable>.js-snippet>img:hover {
+      transform: none;
+      border-color: #dae1e7;
+    }
+
+    /*.figure-label {
+      visibility:hidden;
+      padding:0px !important;
+      opacity:0;
+      max-height:0;
+      transition: max-height 0.5s ease-out;
+      transition: opacity 0.5s ease-out;
+    }*/
+
+    /*.js-snippet:hover>.figure-label {
+      visibility:visible;
+      opacity:1;
+      padding:15px !important;
+      max-height:800px;
+      transition: max-height 0.5s ease-in;
+      transition: opacity 0.5s ease-in;
+
+    }*/
+  </style>
+  <title>Luminous Themes Page Layout Builder</title>
+</head>
+
+<body class="overflow-hidden font-sans">
+
+
+  <!--MODALS-->
+  <!-- The Modal -->
+  <div id="warningModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span id="warningClose" class="close">&times;</span>
+        <h2 id="Warning-Header"></h2>
+      </div>
+      <div class="modal-body">
+        <p id="Warning-Text"></p>
+        <div id="Warning-HTML"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="publishModal" class="modal">
+    <!-- Publish Modal -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span id="Publish-Close" class="close">&times;</span>
+        <h2 id="Publish-Header"></h2>
+        <p>The code for your layout has been generated. The next step is to copy and paste this code into your Weebly
+          website. Please see the instructions below.</p>
+      </div>
+      <div class="modal-body">
+        <div class="code-table">
+          <div class="column-one">
+            <div class="code-block-header">
+              <pre class='code code-html'><label>HTML</label><code><p id="Publish-Text"></p></code></pre>
+            </div>
+          </div>
+          <div class="column-two">
+            <div class="instructions">
+              <h2><span class="steps">STEP 1: </span> Copy all the code on the left</h2>
+              <p>Double click inside the code on the left to select it all, and press <span
+                  class="command-shortcut">CTRL + C</span> (Or <span class="command-shortcut">Command + C</span> on Mac)
+                to copy the code to your clipboard. </p>
+            </div>
+            <div class="instructions">
+              <h2><span class="steps">STEP 2: </span> Go to the Weebly HTML/CSS Editor</h2>
+              <p>Open up your Weebly website builder. 
+                Click on <span class="command-shortcut">Theme.</span> 
+                Click on the <span class="command-shortcut">Edit HTML/CSS</span> button in the lower lefthand corner. 
+                You should be taken to the code editor. </p>
+            </div>
+            <div class="instructions">
+                <h2><span class="steps">STEP 3: </span> Create a new header type</h2>
+                <p>In the left hand column, you'll see a section called <span class="command-shortcut">Header Type</span>. 
+                  Click on the small <span class="command-shortcut">+</span> ("plus") sign next to it. 
+                  In the dropdown, click on <span class="command-shortcut">New Header Type</span>.  
+                  Name it whatever you want, this is what your layout will be called.</p>
+            </div>
+            <div class="instructions">
+                <h2><span class="steps">STEP 4: </span> Paste your code</h2>
+                <p>After you name your new header type, make sure its selected.
+                  In the code editor on the right, there will be a few lines of auto generated code. <span class="command-shortcut">Delete all of it. </span> 
+                  Then, once the code editor for your header type is empty, <span class="command-shortcut">Paste </span> the code you previously copied in there. 
+                  Press <span class="command-shortcut">CTRL + V</span> if you're on Windows, or <span class="command-shortcut">COMMAND + V</span> if you're on Mac to
+                  paste all the code. Finally, <span class="command-shortcut">SAVE</span> your changes by clicking on the blue save button in the upper right of the editor.
+                </p>
+            </div>
+
+          </div>
+          </tr>
+
+        </div>
+
+
+        <div id="Warning-HTML"></div>
+      </div>
+    </div>
+  </div>
+
+  <!--HTML Export Pop-Up Modal-->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span id="publishClose" class="close">&times;</span>
+      <p>Some text in the Modal..</p>
+    </div>
+
+  </div>
+
+  <!--PureSlider Prompt-->
+  <div id="puresliderModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="pureslider-prompt-container">
+        <h2>You added a PureSlider Header. How Many Slides Would You Like in the Slideshow?</h2>
+        <div class="box">
+          <select id="pureslider-slides">
+            <option value="2">2 Slides</option>
+            <option value="3">3 Slides</option>
+            <option value="4">4 Slides</option>
+            <option value="5">5 Slides</option>
+            <option value="6">6 Slides</option>
+            <option value="7">7 Slides</option>
+            <option value="8">8 Slides</option>
+          </select>
+        </div>
+        <div class="next-btn">
+          <div class="sub-main">
+            <button class="button-two" id="puresliderClose"><span>Continue</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="fixed left-0 top-0 bottom-0 overflow-y-auto bg-white p-8 w-2/3">
+    <h1 class="font-black ml-2 pb-2" style="font-size:36px; padding-bottom:10px;">Pristine Page Layout Builder</h1>
+    <p class="ml-2 pb-8">Drag 'n Drop your desired sections to build your custom page layout. Use the "Empty Padding Block" to add white space and padding between your sections (hint: Pristine is a theme that loves whitespace). After creating your layout, click publish to import it into Weebly where you can add content into each section.</p>
+    
+      <!--<a href="/" class="no-underline text-black no-underline text-black transition text-geen">
+        Pristine Theme Page Builder</a>-->
+        
+    </h1>
+    
+    <div class="border-l-2 mx-2 mb-3 js-filter pl-3 border-black mb-10">
+      <!-- General -->
+      <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal"
+        data-filter="js-snippet">
+        All Modules
+      </button>
+      <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal" data-filter="st-header">
+        Header Sections
+      </button>
+      <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal" data-filter="st-body">
+        Body Sections
+      </button>
+      <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal" data-filter="st-pureslider">
+        PureSlider Header
+      </button>
+      <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal" data-filter="st-features">
+        Features Sections
+      </button>
+      <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal" data-filter="st-parallax">
+        Parallax Sections
+      </button>
+      <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal" data-filter="st-blank">
+        Blank Content Sections
+      </button>
+      <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal" data-filter="st-default">
+        Default Weebly Sections
+      </button>
+      <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal" data-filter="st-fixed">
+        Fixed Content Sections
+      </button>
+      <!-- Marketing -->
+
+    </div>
+    
+    <div class="flex flex-wrap flex-col items-start justify-start js-snippets">
+      <!--Default Header-->
+      <figure class="js-snippet w-1/2 p-2 st-header st-default st-blank" id="default-header">
+        <img src="./images/default-header.png" alt=""
+          class=" cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Default Header</div>
+          <div class="label-text">
+            <span class="bold-text">Height: </span>Adjustable,
+            <span class="bold-text">Supported Backgrounds: </span> Background Image, Background Color, Background Video
+            <span class="bold-text">Limits: </span>1 Per Page,
+            <span class="bold-text">Content: </span>Drag 'n Drop Any Content
+          </div>
+        </div>
+      </figure>
+      <!--60/40 Header-->
+      <figure class="js-snippet w-1/2 p-2 st-header st-fixed" id="60-40-header">
+        <img src="./images/60-40-header.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">60/40 Header</div>
+          <div class="label-text">
+            <span class="bold-text">Height: </span>Fixed
+            <span class="bold-text">Content: </span>Editable Text, Editable Images
+            <span class="bold-text">Backgrounds: </span>Images
+          </div>
+        </div>
+      </figure>
+      <!--50/50 Header-->
+      <figure class="js-snippet w-1/2 p-2 st-header st-fixed" id="50-50-header">
+        <img src="./images/50-50-header.png" alt=""
+          class=" cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">50/50 Header</div>
+          <div class="label-text">
+            <span class="bold-text">Height: </span>Fixed
+            <span class="bold-text">Content: </span>Editable Text, Editable Images
+            <span class="bold-text">Backgrounds: </span>Images
+          </div>
+        </div>
+      </figure>
+      <!--PureSlider-->
+      <figure class="js-snippet w-1/2 p-2 st-header st-pureslider" id="pureslider">
+        <img src="./images/pureslider.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">PureSlider</div>
+          <div class="label-text">
+            <span class="bold-text">Height: </span>Fixed
+            <span class="bold-text">Content: </span>Drag 'n Drop Any Content
+            <span class="bold-text">Backgrounds: </span>Image
+          </div>
+        </div>
+      </figure>
+      <!--No Header-->
+      <figure class="js-snippet w-1/2 p-2 st-header st-default" id="no-header">
+        <img src="./images/no-header.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">No Header</div>
+          <div class="label-text">
+            <span class="bold-text">Height: </span>Fixed,
+            <span class="bold-text">Content: </span> Editable Text 
+          </div>
+        </div>
+      </figure>
+      <!--Title Header-->
+      <figure class="js-snippet w-1/2 p-2 st-header st-fixed" id="title-header">
+        <img src="./images/title-header.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Title Header</div>
+          <div class="label-text">
+            <span class="bold-text">Height: </span>Content-Based,
+            <span class="bold-text">Content: </span>Editable Text
+          </div>
+        </div>
+      </figure>
+      <!--Body Modules-->
+      <!--Weebly Sections Block-->
+      <figure class="js-snippet w-1/2 p-2 st-body st-blank st-default" id="sections">
+        <img src="./images/sections.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Weebly Sections Area</div>
+          <div class="label-text">
+            <span class="bold-text">Description: </span>This is a standard Weebly Sections Area block. Within this area, you can drag 'n drop an unlimited number of Weebly Section elements, each with their own background (image, video, color)
+          </div>
+        </div>
+      </figure>
+      <!--White Content Block-->
+      <figure class="js-snippet w-1/2 p-2 st-body st-blank st-default" id="white-content">
+        <img src="./images/white-content.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">White Content Block</div>
+          <div class="label-text">
+            <span class="bold-text">Height: </span>Content-Based,
+            <span class="bold-text">Content: </span>Drag 'n Drop Anything
+          </div>
+        </div>
+      </figure>
+      <!--Background Cards x3-->
+      <figure class="js-snippet w-1/2 p-2 st-body st-features st-fixed" id="bg-cards-3">
+        <img src="./images/bg-cards-3.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Background Cards (x3)</div>
+          <div class="label-text">
+            <span class="bold-text">Height: </span>Content-Based
+            <span class="bold-text">Backgrounds: </span> Images
+            <span class="bold-text">Content: </span> Editable Text, Editable Button
+          </div>
+        </div>
+      </figure>
+      <!--Background Cards x2-->
+      <figure class="js-snippet w-1/2 p-2 st-body st-features st-fixed" id="bg-cards-2">
+        <img src="./images/bg-cards-2.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Background Cards (x2)</div>
+          <div class="label-text">
+            <span class="bold-text">Height: </span>Content-Based
+            <span class="bold-text">Backgrounds: </span> Images
+            <span class="bold-text">Content: </span> Editable Text, Editable Button
+          </div>
+        </div>
+      </figure>
+      <!--Image Cards x3-->
+      <figure class="js-snippet w-1/2 p-2 st-body st-features st-fixed" id="img-cards-3">
+        <img src="./images/img-cards-3.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Image Cards (x3)</div>
+          <div class="label-text">
+            <span class="bold-text">Height: </span>Content-Based
+            <span class="bold-text">Backgrounds: </span> Editable Color
+            <span class="bold-text">Content: </span> Editable Text, Editable Button
+          </div>
+        </div>
+      </figure>
+      <!--Image Cards x2-->
+      <figure class="js-snippet w-1/2 p-2 st-body st-features st-fixed" id="img-cards-2">
+        <img src="./images/img-cards-2.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Image Cards (x2)</div>
+          <div class="label-text">
+            <span class="bold-text">Height: </span>Content-Based
+            <span class="bold-text">Backgrounds: </span> Editable Color
+            <span class="bold-text">Content: </span> Editable Text, Editable Button
+          </div>
+        </div>
+      </figure>
+      <!--Text Cards x3-->
+      <figure class="js-snippet w-1/2 p-2 st-body st-features st-fixed" id="text-cards-3">
+        <img src="./images/txt-cards-3.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Text Cards (x3)</div>
+          <div class="label-text">
+            <span class="bold-text">Height: </span>Content-Based
+            <span class="bold-text">Backgrounds: </span> Editable Color
+            <span class="bold-text">Content: </span> Editable Text, Editable Button
+          </div>
+        </div>
+      </figure>
+      <!--Text Cards x2-->
+      <figure class="js-snippet w-1/2 p-2 st-body st-features st-fixed" id="text-cards-2">
+        <img src="./images/txt-cards-2.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Text Cards (x2)</div>
+          <div class="label-text">
+            <span class="bold-text">Height: </span>Content-Based
+            <span class="bold-text">Backgrounds: </span> Editable Color
+            <span class="bold-text">Content: </span> Editable Text, Editable Button
+          </div>
+        </div>
+      </figure>
+      <!--Icon Cards x3-->
+      <figure class="js-snippet w-1/2 p-2 st-body st-features st-fixed" id="icon-cards-3">
+        <img src="./images/icon-cards-3.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Icon Cards (x3)</div>
+          <div class="label-text">
+            <span class="bold-text">Height: </span>Adjustable,
+            <span class="bold-text">Content: </span> Editable Text, Editable Image, Editable Button
+          </div>
+        </div>
+      </figure>
+      <!--Icon Cards x2-->
+      <figure class="js-snippet w-1/2 p-2 st-body st-features st-fixed" id="icon-cards-2">
+        <img src="./images/icon-cards-2.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Icon Cards (x2)</div>
+          <div class="label-text">
+            <span class="bold-text">Height: </span>Adjustable,
+            <span class="bold-text">Content: </span> Editable Text, Editable Image, Editable Button
+          </div>
+        </div>
+      </figure>
+      <!--50/50 Content Section Image Right-->
+      <figure class="js-snippet w-1/2 p-2 st-body st-fixed" id="5050-content-img-right">
+        <img src="./images/5050-content-img-right.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">50/50 Section Image on the Right (Fixed Content)</div>
+          <div class="label-text">
+            <span class="bold-text">A split 50/50 section with an image on the right and fixed editable content (title, paragraph, button) on the left. 
+          </div>
+        </div>
+      </figure>
+      <!--50/50 Content Section Image Left-->
+      <figure class="js-snippet w-1/2 p-2 st-body st-fixed" id="5050-content-img-left">
+        <img src="./images/5050-content-img-left.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">50/50 Section Image on the Left (Fixed Content)</div>
+          <div class="label-text">
+            <span class="bold-text">A split 50/50 section with an image on the left and fixed editable content (title, paragraph, button) on the right. 
+          </div>
+        </div>
+      </figure>
+      <!--50/50 Blank Section Image Right-->
+      <figure class="js-snippet w-1/2 p-2 st-body st-blank " id="5050-blank-img-right">
+        <img src="./images/5050-blank-img-right.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">50/50 Section Image on the Right (Blank Drag'n Drop Area)</div>
+          <div class="label-text">
+            <span class="bold-text">A split 50/50 section with an image on the right and blank drag and drop area on the left. 
+          </div>
+        </div>
+      </figure>
+      <!--50/50 Blank Section Image Left-->
+      <figure class="js-snippet w-1/2 p-2 st-body st-blank" id="5050-blank-img-left">
+        <img src="./images/5050-blank-img-left.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">50/50 Section Image on the Left (Blank Drag 'n Drop Area)</div>
+          <div class="label-text">
+            <span class="bold-text">A split 50/50 section with an image on the left and blank drag and drop area on the right. 
+          </div>
+        </div>
+      </figure>
+      <!--60/40 Split Section Image Left (Color Variation 1)-->
+      <figure class="js-snippet w-1/2 p-2 st-body st-fixed" id="6040-img-left-var1">
+        <img src="./images/6040-img-left-var1.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">60/40 Section with Image on Left (Color Variation 1)</div>
+          <div class="label-text">
+            <span class="bold-text">A split 60/40 Section with an Image on the Left and Content Section with Editable Background Color (Color Variation 1) on the Right
+          </div>
+        </div>
+      </figure>
+      <!--60/40 Split Section Image Right (Color Variation 2)-->
+      <figure class="js-snippet w-1/2 p-2 st-body st-fixed" id="6040-img-right-var2">
+        <img src="./images/6040-img-right-var2.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">60/40 Section with Image on Right (Color Variation 2)</div>
+          <div class="label-text">
+            <span class="bold-text">A split 60/40 Section with an Image on the Right and Content Section with Editable Background Color (Color Variation 2) on the Left
+          </div>
+        </div>
+      </figure>
+      <!--60/40 Split Section Image Left (Color Variation 3)-->
+      <figure class="js-snippet w-1/2 p-2 st-body st-fixed" id="6040-img-left-var3">
+        <img src="./images/6040-img-left-var3.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">60/40 Section with Image on Left (Color Variation 3)</div>
+          <div class="label-text">
+            <span class="bold-text">A split 60/40 Section with an Image on the Left and Content Section with Editable Background Color (Color Variation 3) on the Right
+          </div>
+        </div>
+      </figure>
+      <!--Portfolio Section-->
+      <figure class="js-snippet w-1/2 p-2 st-body st-fixed" id="portfolio">
+        <img src="./images/portfolio.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Portfolio Section (Image on Left, Fixed Content on Right)</div>
+          <div class="label-text">
+            <span class="bold-text">A portfolio section (but you can use it for whatever you'd like) with an image on the left and fixed content on the right
+          </div>
+        </div>
+      </figure>
+      <!--Background Content Block-->
+      <figure class="js-snippet w-1/2 p-2 st-default st-body" id="bodybg-content">
+        <img src="./images/bodybg-content.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Drag 'n Drop Section (Body Background Color)</div>
+          <div class="label-text">
+            <span class="bold-text">A drag 'n drop section that matches with the body background color, enabling a seamless design
+          </div>
+        </div>
+      </figure>
+      <!--Empty Padding Block-->
+      <figure class="js-snippet w-1/2 p-2 st-default st-body st-blank" id="padding-block">
+        <img src="./images/padding.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Empty Padding Block</div>
+          <div class="label-text">
+            <span class="bold-text">Whitespace is key. Use this block to add padding between the sections you drag 'n drop. 
+          </div>
+        </div>
+      </figure>
+      <!--Parallax-->
+      <figure class="js-snippet w-1/2 p-2 st-body st-parallax" id="parallax">
+        <img src="./images/parallax.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">TrueDepth Parallax Section</div>
+          <div class="label-text">
+            <span class="bold-text">A parallax section with TrueDepth. Features an editable image background and a drag 'n drop content area, letting you drag and drop anything over the parallax background image. 
+          </div>
+        </div>
+      </figure>
+      <!--Title + Subtitle Block-->
+      <figure class="js-snippet w-1/2 p-2 st-body st-fixed" id="title-subtitle">
+        <img src="./images/title-subtitle.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Title + Subtitle Section</div>
+          <div class="label-text">
+            <span class="bold-text">A title + subtitle section featuring an editable title and subtitle, with a blended body background
+          </div>
+        </div>
+      </figure>
+      <!--Title + Subtitle Block with Button-->
+      <figure class="js-snippet w-1/2 p-2 st-body st-fixed" id="title-subtitle-button">
+        <img src="./images/title-subtitle-button.png" alt=""
+          class="cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Title + Subtitle Section with Button</div>
+          <div class="label-text">
+            <span class="bold-text">A title + subtitle section with a button featuring an editable title, subtitle, and button.
+          </div>
+        </div>
+      </figure>
+      
+
+    </div>
+  </section>
+  <section class="bg-gray-300 p-8 pb-0 w-1/3 flex flex-col fixed top-0 bottom-0 right-0">
+    <!--<div class="control-panel">
+        <div class="enable-scrollipage-section">
+          <div class="text-wrapper">
+            <p>Enable ScrolliPage (Vertical Nav)</p>
+          </div>
+          <div class="toggle">
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+
+      </div>-->
+    <header class="mb-4">
+      <button
+        class="shadow text-center py-3 px-4 bg-black w-full hover:text-green-500 text-white js-download transition-normal">
+        Publish
+      </button>
+    </header>
+    <div class="flex flex-col flex-1 border js-droppable border-gray-300 overflow-y-auto" style="padding-bottom:100px">
+    </div>
+    <div class="text-center text-black py-4">
+      The footer will be automatically generated and added to your page.
+
+    </div>
+    <div class="bg-white hidden fixed js-delete-btn px-4 py-2 shadow">
+      Delete <i class="far fa-trash-alt pointer-events-none"></i>
+    </div>
+  </section>
+  <script src="./tidy.js"></script>
+  <script src="./bundle.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+  <script src="./codeblock.js"></script>
+
+
+</body>
+
+</html>
