@@ -45,6 +45,28 @@
   var publishText = document.getElementById("Publish-Text");
   var WarningHTML = document.getElementById("Warning-HTML");
 
+ // CODE FOR AUTOGEN STARTS HERE
+  // Get the <figure> element with the ID "myFigure"
+  const figure = document.getElementById("navigation");
+
+  // Get the <div> element with the class "js-droppable"
+  const target = document.querySelector(".js-droppable");
+
+  // Clone the <figure> element
+  const clonedFigure = figure.cloneNode(true);
+
+  // Add the cloned <figure> element to the target <div>
+  target.appendChild(clonedFigure);
+  
+  clonedFigure.innerHTML += deleteBtnHtml;
+  clonedFigure.classList.add ("relative");
+  const label = clonedFigure.querySelector(".figure-label");
+  clonedFigure.removeChild(label);
+  arrayByAddition.push(clonedFigure);
+ 
+
+  // CODE FOR AUTOGEN ENDS HERE
+
   window.onclick = function(event) {
     if (event.target == warningModal) {
       warningModal.style.display = "none";
@@ -107,7 +129,6 @@
       return target !== snippets;
     }
   }).on("drop", (el, target) => {
-    
     el.innerHTML += deleteBtnHtml;
     el.classList.add ("relative");
     arrayByAddition.push(el);
@@ -115,35 +136,10 @@
     lastItemDropped = el.id;
     console.log("last item dropped: " + el.id);
   });
-
-  // CODE FOR AUTOGEN STARTS HERE
-  // Get the <figure> element with the ID "myFigure"
-  const figure = document.getElementById("homepage-header");
-
-  // Get the <div> element with the class "js-droppable"
-  const target = document.querySelector(".js-droppable");
-
-  // Clone the <figure> element
-  const clonedFigure = figure.cloneNode(true);
-
-  // Add the cloned <figure> element to the target <div>
-  target.appendChild(clonedFigure);
   
-  clonedFigure.innerHTML += deleteBtnHtml;
-  clonedFigure.classList.add ("relative");
-  const label = clonedFigure.querySelector(".figure-label");
-  clonedFigure.removeChild(label);
-  arrayByAddition.push(clonedFigure);
- 
-
-  // CODE FOR AUTOGEN ENDS HERE
   
   // Drop Rules
   drake.on('drop', function (el, container, source) {
-    console.log("Element:" + el.innerHTML);
-    console.log("Container" + container.innerHTML);
-    console.log("Source" + source.innerHTML);
-    console.log("Complete");
 
     // Gets rid of label on drop sequence
     $( ".js-droppable > .js-snippet > .figure-label" ).remove();
@@ -182,8 +178,8 @@
       }
     };
 
-    // HEADER RULES --> First element MUST be a header
-    if ((el.id != "video-header") || (el.id != "pureslider-5") || (el.id != "homepage-header") || (el.id != "default-header") || (el.id != "no-header")) {
+    // INACTIVE HEADER RULES --> First element MUST be a header 
+   /* if ((el.id != "video-header") || (el.id != "pureslider-5") || (el.id != "homepage-header") || (el.id != "default-header") || (el.id != "no-header")) {
       if ((selectedBlocksDD[0] != "pureslider-5")) {
         if (selectedBlocksDD[0] != "homepage-header") {
           if (selectedBlocksDD[0] != "default-header") {
@@ -205,7 +201,7 @@
           }
         }
       }
-    }
+    } */
 
     // Section RULES --> No more than one Weebly Section per page
     if ((el.id === "default-section")) {
@@ -229,7 +225,7 @@
     };
 
     // PURESLIDER PROMPT --> How many Slides?
-    if (el.id === "pureslider-5") {
+    if (el.id === "pureslider") {
       puresliderModal.style.display = "block";
     }
 
@@ -301,8 +297,8 @@
    
     // If there is a Scrollipage anchor present upon download, the value of scrolliPage existence will be greater than 0. 
 
-    // Let's make sure the first element is a header
-    if ((selectedBlocks[0] != "pureslider-5")) {
+    // INACTIVE Let's make sure the first element is a header
+    /*if ((selectedBlocks[0] != "pureslider-5")) {
       if (selectedBlocks[0] != "homepage-header") {
         if (selectedBlocks[0] != "default-header") {
           if (selectedBlocks[0] != "no-header") {
@@ -318,7 +314,7 @@
           }
         }
       }
-    }
+    }*/
 
     // Represents head code
     let beginningCode = ``;
@@ -348,73 +344,33 @@
     -->
     `;
 
-    // Import the rest of beginning code WITHOUT ScrolliPage...
+    // A350-Beginning-Code Import the rest of beginning code WITHOUT ScrolliPage...
     beginningCode +=  `
     <!DOCTYPE html>
     <html>
-    
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-        <script src="/files/theme/pureslider.js"></script>
-        <script type="text/javascript" src="/files/theme/scrollipage.js"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0;">
+      <script src="/files/theme/pureslider.js"></script>
+      <script type="text/javascript" src="/files/theme/scrollipage.js"></script>
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     </head>
-    
-    <body class='header-fullscreen  wsite-theme-dark' style="overflow-x: hidden !important; max-width: 100% !important;">
-    
-        <!------------------------------------------------------------------------------------------------------------------------------
-        NON-LAYOUT PARTIALS (Sidenav, Search Overlay)
-        -------------------------------------------------------------------------------------------------------------------------------->
-    
-        <!--Beginning of the search overlay screen-->
-        <div id="searchcontainer">
-            <div id="vertical-wrap"
-                style="width:100%; height:100%; display: flex; flex-direction: column; justify-content: center;">
-                <div id="search">
-                    <div id="search-terms">{search}</div>
-                </div>
-            </div>
+
+    <body class="header-page has-header">
+      <div class="overflow-control">
+      <!-- Theme Control Panel -->
+      <div class="theme-control-panel">
+        <div class="left-control" id="inject-text">
+          <h2>Equinox Theme</h2>
+          <p>Version 2.3.1 | To hide this control panel, go to Theme -> Theme Options -> Toggle Control</p>
         </div>
-    
-        <!--Ensures no excess on mobile-->
-        <div id="main-content" style="overflow-x:hidden !important;">
-            <div id="" style="padding:0px; overflow-x:hidden !important; max-width:100% !important;">
-                <!------------------------------------------------------------------------------------------------------------------------------
-                MAIN WEBSITE CONTENT (Navigation, Banner, Body)
-                -------------------------------------------------------------------------------------------------------------------------------->
-                <div class="wrapper" style="overflow-x:hidden; overflow-y:hidden">
-                    <!--LOWER LEVEL NAVIGATION (Logo, Navigation Menu, Search + Sidebar icons)-->
-                    <div class="birdseye-header">
-                        <div class="nav-wrap">
-                            <div class="container">
-                                <!-- Left -->
-                                <div class="division-1">
-                                    <div class="logo">{logo}</div>
-                                </div>
-                                <!-- Center -->
-                                <div class="division-2">
-                                    <div class="nav desktop-nav">{menu}</div>
-                                </div>
-                                <!-- Right -->
-                                <div class="division-3">
-                                    <!--<div class="social-holder">{social}</div>-->
-                                    <div class="search"><span for="search-terms" id="search-label" class="fa fa-search"
-                                            style="font-weight:bold !important"> </span></div>
-                                    <div class="button-holder">{cta:button}</div>
-                                </div>
-                                <label type="button" class="hamburger">
-                                    <span class="line"></span>
-                                    <span class="line"></span>
-                                    <span class="line"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="butter">
-                        <!-------------------------------------------------------------------------------------
-    HEADER MODULE ENDS HERE WITHOUT SCROLLIPAGE
-    --------------------------------------------------------------------------------------->
+        <div class="right-control">
+          <a class="yellow-button" href="https://luminous-designs.github.io/luminous-designs/page-builders/equinox/index.html" target="_blank">Page Builder</a>
+          <a class="blue-button" href="http://www.example.com" target="_blank">Instructions</a>
+        </div>
+      </div>
+      <!-- END OF HEADER CODE -->
+      <!-- DROP CONTENT BELOW -->
                         
         
     `;
@@ -466,223 +422,230 @@
 
     
 
-    // Represents footer code
+    // A350-Ending-Code Represents footer code
     let endingCode;
 
     endingCode = `
-    <!-- Beginning Footer Import -->
-                    <!-------------------------------------------------------------------------------------
-FOOTER MODULE STARTS HERE
---------------------------------------------------------------------------------------->
-                </div><!-- /.butter -->
-            </div><!-- /.wrapper -->
-        </div>
-    </div>
-    <div class="footer-wrap" >
-						<div class="footer">{footer}</div>
-					</div><!-- end footer-wrap -->
-    <!-------------------------------------------------------------------------------------
-	FOOTER MODULE STARTS HERE
-	--------------------------------------------------------------------------------------->
-    <!--Mobile Navigation Menu-->
-    <div id="navMobile" class="nav mobile-nav">
-        {menu}
-        <div class="button-holder">{cta:button}</div>
-    </div>
-
-    <script type="text/javascript" src="/files/theme/plugins.js"></script>
-    <script type="text/javascript" src="/files/theme/custom.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="/files/theme/pureslider.js"></script>
-    <script type="text/javascript" src="/files/theme/parallax-1.js"></script>
+    <!-- START OF FOOTER CODE -->
+	<!-- </div>-->
+	<!-- Module 1/7: Script Imports -->
+	<script type="text/javascript" src="/files/theme/custom.js"></script>
+	<script type="text/javascript" src="/files/theme/mobile.js"></script>
+	<script src="/files/theme/pureslider.js"></script>
+	<script type="text/javascript" src="/files/theme/parallax-1.js"></script>
     <script type="text/javascript" src="/files/theme/parallax-2.js"></script>
+	<!--<script type="text/javascript" src="/files/theme/bloginit.js"></script>-->
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<!-- Module 1/7: Custom Theme End-->
+	<!-- Module 2/7: PureSlider Start-->
+	  <script>
+		let options = {};
 
-    <!-- Start of ScrolliPage JS Import This Code is Dynamically Generated by PageBuilder -->
-    <script>
-        jQuery(".cd-label:empty").parent().hide();
-    </script>
-    <script>
-        function toggleDots() {
-            jQuery("#cd-vertical-nav").toggle();
-        }
-    </script>
-    <!-- End of ScrolliPage JS Import -->
-    <!-- Start of AOS Animation Import -->
-    <script>
-        if (!(jQuery('#icontent').length)) {
-            AOS.init({
-                duration: 500
-            });
-        }
-    </script>
-    <!-- End of AOS Animation Import -->
-    <!-- Start of Carousel Import -->
-    <script>
-        let optionsCarousel = {};
-        if (jQuery('#icontent').length) {
-            // In the editor
-            optionsCarousel = {
-                slidesPerView: 3,
-                spaceBetween: 30,
-                simulateTouch: false,
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-            }
-        }
+		if (jQuery('#icontent').length) {
+		  // In the editor
+		  options = {
+			spaceBetween: 0,
+			centeredSlides: true,
+			simulateTouch: false,
+			/*autoplay: {
+	delay: 2500,
+	disableOnInteraction: true,
+			},*/
+			pagination: {
+			  el: '.swiper-pagination',
+			  clickable: true,
+			},
+			navigation: {
+			  nextEl: '.swiper-button-next',
+			  prevEl: '.swiper-button-prev',
+			}
+		  }
 
-        else {
-            optionsCarousel = {
-                slidesPerView: 3,
-                spaceBetween: 30,
-                simulateTouch: true,
-                breakpoints: {
-                    // when window width is <= 499px
-                    992: {
-                        slidesPerView: 1,
-                        spaceBetweenSlides: 50
-                    },
-                },
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-            }
+		} else {
+		  options = {
+			spaceBetween: 00,
+			centeredSlides: true,
+			simulateTouch: true,
+			autoplay: {
+			  delay: 2500,
+			  disableOnInteraction: true,
+			},
+			pagination: {
+			  el: '.swiper-pagination',
+			  clickable: true,
+			},
+			navigation: {
+			  nextEl: '.swiper-button-next',
+			  prevEl: '.swiper-button-prev',
+			}
+		  }
+		}
+
+		var swiper = new Swiper('.pureslider-start', options);
+
+	  </script>
+	  <script>
+		function toggleThis() {
+		  var headlineText = document.getElementById("headline-lock");
+		  var buttonText = document.getElementById("button-lock");
+
+		  jQuery('.swiper-weebly-content').toggle();
+
+		  if (jQuery('.swiper-weebly-content').is(":hidden")) {
+			headlineText.innerHTML = "Unlocked";
+			buttonText.innerHTML = "Lock";
+		  } else {
+			headlineText.innerHTML = "Locked";
+			buttonText.innerHTML = "Unlock";
+		  }
+		}
+	  </script>
+	  <!-- Module 2/7: PureSlider End-->
+	  <!-- Module 3/7: Parallax Start-->
+	 
+    <script>
+      function toggleBackground() {
+        jQuery('.toggleSelector1').toggleClass('editable-image');
+        jQuery('.parallaxl').toggle();
+      }
+    </script>
+    <script type="text/javascript">
+      objectFitImages();
+      jarallax(document.querySelectorAll('.jarallax'));
+    </script>
+    <!-- Module 3/7: Parallax End -->
+	<!-- Module 4/7: Scrollipage Start -->
+	<script>
+	    jQuery(".cd-label:empty").parent().hide();
+		
+		function toggleDots() {
+			jQuery( "#cd-vertical-nav" ).toggle();
+		}
+	</script>
+	<!-- Module 4/7: Scrollipage End -->
+	<!-- Module 5/7: Carousel Start -->
+    <script>
+      let optionsCarousel = {};
+      if (jQuery('#icontent').length) {
+        // In the editor
+        optionsCarousel = {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          simulateTouch: false,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
         }
-        var swiper = new Swiper('.mySwiper', optionsCarousel);
+      }
+      
+      else {
+        optionsCarousel = {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          simulateTouch: true,
+          breakpoints: {
+            // when window width is <= 499px
+            992: {
+              slidesPerView: 1,
+              spaceBetweenSlides: 50
+            },
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        }
+      }
+      var swiper = new Swiper('.mySwiper', optionsCarousel);
     </script>
     <!-- End of Carousel Import -->
-    <!-- Start of PureSlider Initialization -->
-    <script>
-        let options = {};
-
-        if (jQuery('#icontent').length) {
-            // In the editor
-            options = {
-                spaceBetween: 0,
-                centeredSlides: true,
-                simulateTouch: false,
-                /*autoplay: {
-                delay: 2500,
-                disableOnInteraction: true,
-                },*/
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                }
-            }
-
-        } else {
-            options = {
-                spaceBetween: 00,
-                centeredSlides: true,
-                simulateTouch: true,
-                autoplay: {
-                    delay: 2500,
-                    disableOnInteraction: true,
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                }
-            }
-        }
-
-        var swiper = new Swiper('.pureslider-start', options);
-
+	<!-- Module 5/7: Carousel End -->
+	<!-- Module 6/7: AOS -->
+	
+	<!-- AOS Initalization -->
+	<script>
+	
+	 if (!(jQuery('#icontent').length)){
+        AOS.init();
+     }
+      
     </script>
-    <!-- End of PureSlider Initialization -->
-    <!-- Start of PureSlider Control -->
-    <script>
-        function toggleThis() {
-            var headlineText = document.getElementById("headline-lock");
-            var buttonText = document.getElementById("button-lock");
+	<!-- Module 6/7 AOS End -->
+	<script>
+// Only run if there is no #icontent div present
+if (!document.querySelector('#icontent')) {
+  // Get the URL from the user-submitted-url div
+  // const url = document.querySelector('#user-submitted-url').textContent.trim();
+  const url = 'https://equinox-theme.weebly.com/blog';
+  // Fetch the page at the specified URL
+  fetch(url)
+    .then(response => response.text())
+    .then(html => {
+      // Parse the HTML and get the .blog-post elements
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      const blogPosts = doc.querySelectorAll('.blog-post');
 
-            jQuery('.swiper-weebly-content').toggle();
+      // Create an array of objects representing the blog posts
+      const posts = [];
+      for (const post of blogPosts) {
+        const title = post.querySelector('.blog-header h2').textContent;
+        const date = post.querySelector('.date-text').textContent;
+        const image = post.querySelector('.blog-content img').src;
+        // Get the link element and extract the link
+        const linkElement = post.querySelector('.blog-link');
+        const link = linkElement.href;
 
-            if (jQuery('.swiper-weebly-content').is(":hidden")) {
-                headlineText.innerHTML = "Unlocked";
-                buttonText.innerHTML = "Lock";
-            } else {
-                headlineText.innerHTML = "Locked";
-                buttonText.innerHTML = "Unlock";
-            }
-        }
-    </script>
-    <!-- End of PureSlider Control -->
-    <!-- Start of Search Function -->
-    <script>
-        var ismobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i) != null
-        var touchorclick = (ismobile) ? 'touchstart' : 'click'
-        var searchcontainer = document.getElementById('searchcontainer')
-        var searchfield = document.getElementById('search-terms')
-        var searchlabel = document.getElementById('search-label')
+        const blogPost = {
+          title,
+          date,
+          image, 
+          link
+        };
+        posts.push(blogPost);
+      }
+	  
+	// Injection Protocol Starts Here - Inject post title into all elements with "inject-blog-title" class
+	const injectTitleElements = document.querySelectorAll('.inject-blog-title');
 
-        searchlabel.addEventListener(touchorclick, function (e) { // when user clicks on search label
-            searchcontainer.classList.toggle('opensearch') // add or remove 'opensearch' to searchcontainer
-            if (!searchcontainer.classList.contains('opensearch')) { // if hiding searchcontainer
-                searchfield.blur() // blur search field
-                e.preventDefault() // prevent default label behavior of focusing on search field again
-            }
-            e.stopPropagation() // stop event from bubbling upwards
-        }, false)
+	injectTitleElements.forEach((element, index) => {
+		element.textContent = posts[index].title;
+	});
+	
+	// Inject image URL into all elements with "inject-blog-image" class
+	const injectImageElements = document.querySelectorAll('.inject-blog-image');
 
-        searchfield.addEventListener(touchorclick, function (e) { // when user clicks on search field
-            e.stopPropagation() // stop event from bubbling upwards
-        }, false)
+	injectImageElements.forEach((element, index) => {
+	  element.src = posts[index].image;
+	});
+	
+	// Inject date text into all elements with "inject-blog-date" class
+	const injectDateElements = document.querySelectorAll('.inject-blog-date');
 
-        document.addEventListener(touchorclick, function (e) { // when user clicks anywhere in document
-            searchcontainer.classList.remove('opensearch')
-            searchfield.blur()
-        }, false)
-    </script>
-    <!-- End of Search Function -->
-    <!-- Start of Parallax Initialization -->
-    <script type="text/javascript">
-        // object-fit polyfill run
-        objectFitImages();
+	injectDateElements.forEach((element, index) => {
+	  element.textContent = posts[index].date;
+	});
+	
+	// Inject link into all elements with the "inject-blog-link" class
+	const injectLinkElements = document.querySelectorAll('.inject-blog-link');
 
-        /* init Jarallax */
-        jarallax(document.querySelectorAll('.jarallax'));
-    </script>
-    <!-- End of Parallax Initialization -->
-    <!-- Start of Homepage Header Animation -->
-    <script>
-        if (!(jQuery('#icontent').length)) {
+	injectLinkElements.forEach((element, index) => {
+	  element.href = posts[index].link;
+	});
 
-            jQuery(window).scroll(function () {
-                var scroll = $(window).scrollTop();
-                jQuery(".banner-wrap").css({
-                    transform: 'translate3d(0, +' + (scroll / 100) + '%, 0) scale(' + (100 - scroll / 100) / 100 + ')'
-                });
-            });
-        }
-    </script>
-    <!-- End of Homepage Header Animation -->
-    <!-- Start of Parallax Control Implementation -->
-    <script>
-        function toggleBackground() {
-            // Raises the parallax image to make it easier to edit
-            jQuery('.toggleSelector1').toggleClass('editable-image');
 
-            // Hides content to make it easier to access image
-            jQuery('.parallaxl').toggle();
-        }
-    </script>
-    <!-- End of Parallax Control Implementation -->
+
+    });
+}
+
+	</script>
+	
+	
+	
+	
 </body>
-
 </html>
-<!-- End of Beginning Footer Import -->
     `;
      endingCode += codeCredits;
 
@@ -690,165 +653,137 @@ FOOTER MODULE STARTS HERE
     finalHTML += beginningCode;
 
     // Counter Variables Initialization
-    let homepageHeader = 0;
-    let carouselSection = 0;
-    let serviceBoxes2_2 = 0;
+    let hero1 = 0;
+    let hero2 = 0;
+    let hero3 = 0;
     let scrollipageAnchor = 0;
-    let serviceBoxes3_2 = 0;
-    let serviceBoxes4_2 = 0;
+    let servicesWhiteIcon = 0;
+    let servicesColorfulIcon = 0;
+    let textLeftImageRight = 0;
+    let imageLeftTextRight = 0;
+    let featureBoxes = 0;
+    let featureBoxesCurved = 0;
+    let testimonial = 0;
+    let stepByStep = 0;
+    let pricing = 0;
+    let callToAction = 0;
+    let pureslider = 0;
+    let defaultWeeblyHeader = 0;
     let parallax = 0;
-    let headlineCount = 0;
-    let imgRightFull = 0;
-    let imgLeftFull = 0;
-    let imgRightHalf = 0;
-    let imgLeftHalf = 0;
-    let pureslider5 = 0;
-    let weeblyMainWrap = 0;
-    let videoHeader = 0;
-    let imageBoxes31 = 0;
+    let carouselFree = 0;
+    let carouselFixed = 0;
+    let blogReference = 0;
+    let weeblySection = 0;
+    
    
     
-    // SECTION ASSEMBLY STICHING CODE
+    // A350-ASSEMBLY SECTION ASSEMBLY STICHING CODE
     for (let element = 0; element < selectedBlocks.length; element++) {
 
 
-      // COMPLETED If element is HomePage Header...
-      if (selectedBlocks[element] === "homepage-header") {
+      // A350 Hero 1 Assembly...
+      if (selectedBlocks[element] === "hero-1") {
+        hero1++;
         finalHTML += `
-        <!-- Fullscreen Background Image Banner -->
-        <div class="banner-wrap wsite-background" style="overflow-y:hidden">
-            <div id="fadeInOnLoad" class="container">
-                <div class="banner">
-                    <h2 style="margin-bottom:50px;">{bannerh2:text global="false"}</h2>
-                    <div class="headline-buttons">
-                        <div class="button-wrap" style="margin-left:10px; margin-right:10px;">{headlinebutton:button global="false"}</div>
-                        <div class="button-wrap" style="margin-left:10px; margin-right:10px;">{headlinebutton2:button global="false"}</div>
-                    </div>
-                </div>
-            </div>
+        <!-------------------------------------------------------------------------------------
+        PREBUILT CONTENT HERO 1 - BLOB -  STARTS HERE
+        --------------------------------------------------------------------------------------->
+        <div class="lynx-content-hero" style="margin-top:100px; margin-bottom:100px;">
+        <div class="lynx-hero-large wsite-background" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="top">
+          <div class="lynx-block-hero-large" data-aos="fade-right" data-aos-delay="100" data-aos-anchor-placement="top">
+            <div class="lynx-subtitle-white" data-aos="fade-right" data-aos-delay="200" data-aos-anchor-placement="top">{${hero1}_hero-1-subtitle:text global="false"}</div>
+            <h1 class="lynx-heading-white" data-aos="fade-right" data-aos-delay="300" data-aos-anchor-placement="top">{${hero1}_hero-1-heading:text global="false"}</h1>
+            <p class="lynx-paragraph-white" data-aos="fade-right" data-aos-delay="400" data-aos-anchor-placement="top">{${hero1}_hero-1-paragraph:text global="false"}</p>
+            <div class="button-wrap">{${hero1}_lynxbutton:button global="false"}</div>
+          </div>
         </div>
+        </div>
+        <!-------------------------------------------------------------------------------------
+        PREBUILT CONTENT HERO 1 - BLOB - ENDS HERE
+        --------------------------------------------------------------------------------------->
         `;
       }
 
-
-      if (selectedBlocks[element] === "service-boxes-2-2") {
-        serviceBoxes2_2++;
+      // A350 Hero 2 Assembly...
+      if (selectedBlocks[element] === "hero-2") {
+        hero2++;
         finalHTML += `
-        <!-------------------------------------------------------------------------------
-        START OF BODY SECTION: Service Boxes
-        --------------------------------------------------------------------------------->
-        <div class="main-wrap">
-            <div class="container">
-                <div class="service-boxes-section">
-                    <!-- Powered by CSSGRID -->
-                    <div class="service-boxes-row service-box-2-col">
-                        <div class="service-box-unit" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="bottom-bottom">
-                            {${serviceBoxes2_2}_servicebox1_2by2:content global="false"}
-                        </div>
-                        <div class="service-box-unit" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="bottom-bottom">
-                            {${serviceBoxes2_2}_servicebox2_2by2:content global="false"}
-                        </div>
-                        <div class="service-box-unit" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="bottom-bottom">
-                            {${serviceBoxes2_2}_servicebox3_2by2:content global="false"}
-                        </div>
-                        <div class="service-box-unit" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="bottom-bottom">
-                            {${serviceBoxes2_2}_servicebox4_2by2:content global="false"}
-                        </div>
-                    </div>
-                </div>
+        <!-------------------------------------------------------------------------------------
+        PREBUILT CONTENT HERO 2 - INLINE BLOB - STARTS HERE
+        --------------------------------------------------------------------------------------->
+        <div class="lynx-content-hero" style="margin-top:100px; margin-bottom:100px;">
+          <div class="lynx-hero wsite-background" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="top">
+            <div class="lynx-block-hero">
+              <div class="lynx-subtitle-white" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top">{${hero2}_content-2-subtitle:text global="false"}</div>
+              <h2 class="lynx-heading-white-small" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top">{${hero2}_content-2-heading:text global="false"}</h2>
+              <!-- Replace With Button --><div data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top" class="button-wrap">{${hero2}_lynxbuttonhero2:button global="false"}</div>
             </div>
+          </div>
         </div>
-        <!-------------------------------------------------------------------------------
-        END OF BODY SECTION: Service Boxes
-        --------------------------------------------------------------------------------->
+        <!-------------------------------------------------------------------------------------
+        PREBUILT CONTENT HERO 2 - INLINE BLOB - ENDS HERE
+        --------------------------------------------------------------------------------------->
         `;
       }
 
-      if (selectedBlocks[element] === "service-boxes-3-2") {
-        serviceBoxes3_2++;
+      // A350 Hero 3 Assembly...
+      if (selectedBlocks[element] === "hero-3") {
+        hero3++;
         finalHTML += `
-        <!-------------------------------------------------------------------------------
-        START OF BODY SECTION: Service Boxes
-        --------------------------------------------------------------------------------->
-        <div class="main-wrap">
-            <div class="container">
-                <div class="service-boxes-section">
-                    <!-- Powered by CSSGRID -->
-                    <div class="service-boxes-row service-box-3-col">
-                        <div class="service-box-unit" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="bottom-bottom">
-                            {${serviceBoxes3_2}_servicebox1_3by2:content global="false"}
-                        </div>
-                        <div class="service-box-unit" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="bottom-bottom">
-                            {${serviceBoxes3_2}_servicebox2_3by2:content global="false"}
-                        </div>
-                        <div class="service-box-unit" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="bottom-bottom">
-                            {${serviceBoxes3_2}_servicebox3_3by2:content global="false"}
-                        </div>
-                        <div class="service-box-unit" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="bottom-bottom">
-                            {${serviceBoxes3_2}_servicebox4_3by2:content global="false"}
-                        </div>
-                        <div class="service-box-unit" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="bottom-bottom">
-                            {${serviceBoxes3_2}_servicebox5_3by2:content global="false"}
-                        </div>
-                        <div class="service-box-unit" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="bottom-bottom">
-                            {${serviceBoxes3_2}_servicebox6_3by2:content global="false"}
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-------------------------------------------------------------------------------------
+        PREBUILT CONTENT HERO 3 - CENTERED HERO - STARTS HERE
+        --------------------------------------------------------------------------------------->
+        <div class="lynx-content-hero" style="margin-top:100px; margin-bottom:100px">
+          <div class="lynx-block-center-hero">
+            <div class="lynx-subtitle" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="top">{${hero3}_content-3-subtitle:text global="false"}</div>
+            <h1 class="lynx-heading-hero" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top">{${hero3}_content-3-heading:text global="false"}</h1>
+            <div class="button-wrap">{${hero3}_lynxbuttonhero3:button global="false"}</div>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top" class="lynx-hero-oval wsite-background"></div>
         </div>
-        <!-------------------------------------------------------------------------------
-        END OF BODY SECTION: Service Boxes
-        --------------------------------------------------------------------------------->
+        <!-------------------------------------------------------------------------------------
+        PREBUILT CONTENT HERO 3 - CENTERED HERO - ENDS HERE
+        --------------------------------------------------------------------------------------->
         `;
       }
 
-    
-      if (selectedBlocks[element] === "service-boxes-4-2") {
-        serviceBoxes4_2++;
+      // A350 Navigation Bar Assembly...
+      if (selectedBlocks[element] === "navigation") {
+        navigation++;
         finalHTML += `
-        <!-------------------------------------------------------------------------------
-        START OF BODY SECTION: Service Boxes
-        --------------------------------------------------------------------------------->
-        <div class="main-wrap">
-            <div class="container">
-                <div class="service-boxes-section">
-                    <!-- Powered by CSSGRID -->
-                    <div class="service-boxes-row service-box-4-col">
-                        <div class="service-box-unit" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="bottom-bottom">
-                            {${serviceBoxes4_2}_servicebox1_4by2:content global="false"}
-                        </div>
-                        <div class="service-box-unit" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="bottom-bottom">
-                            {${serviceBoxes4_2}_servicebox2_4by2:content global="false"}
-                        </div>
-                        <div class="service-box-unit" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="bottom-bottom">
-                            {${serviceBoxes4_2}_servicebox3_4by2:content global="false"}
-                        </div>
-                        <div class="service-box-unit" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="bottom-bottom">
-                            {${serviceBoxes4_2}_servicebox4_4by2:content global="false"}
-                        </div>
-                        <div class="service-box-unit" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="bottom-bottom">
-                            {${serviceBoxes4_2}_servicebox5_4by2:content global="false"}
-                        </div>
-                        <div class="service-box-unit" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="bottom-bottom">
-                            {${serviceBoxes4_2}_servicebox6_4by2:content global="false"}
-                        </div>
-                        <div class="service-box-unit" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="bottom-bottom">
-                            {${serviceBoxes4_2}_servicebox7_4by2:content global="false"}
-                        </div>
-                        <div class="service-box-unit" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="bottom-bottom">
-                            {${serviceBoxes4_2}_servicebox8_4by2:content global="false"}
-                        </div>
-                    </div>
-                </div>
+        <!-------------------------------------------------------------------------------------
+        NAVIGATION BAR STARTS HERE
+        --------------------------------------------------------------------------------------->
+        <div id="header">
+          <div class="lynx-nav-info">
+            <div class="lynx-nav-block">
+            <div class="lynx-text-nav-info">{upperinfotext:text}</div>
+            <div class="lynx-text-nav-info">{upperphonetext:text}</div>
             </div>
+          </div>
+          <div class="header-wrap">
+            <div class="logo">
+              <label id="nav-trigger" class="hamburger" for="mobile-input"><span></span></label>
+              {logo}
+            </div>
+            <div id="nav" class="menu">
+              {menu}
+            </div>
+            <!-- Button Holder Module -->
+            <div class="nav-button-holder">
+              <div class="button-wrap" style="margin-right:10px;">{nav:button}</div>
+              <div class="button-wrap">{nav-2:button}</div>
+            </div>
+            <div id="navmobile" class="menu">{menu}</div>
+          </div>
         </div>
-        <!-------------------------------------------------------------------------------
-        END OF BODY SECTION: Service Boxes
-        --------------------------------------------------------------------------------->
+        <!-------------------------------------------------------------------------------------
+        NAVIGATION BAR ENDS HERE
+        --------------------------------------------------------------------------------------->
         `;
       }
 
+      // A350 ScrolliPage Anchor
       if (selectedBlocks[element] === "scrollipage-anchor") {
         scrollipageAnchor++;
         finalHTML += `
@@ -860,255 +795,248 @@ FOOTER MODULE STARTS HERE
 
 
 
-      // COMPLETED If element is headline
-      if (selectedBlocks[element] === "headline") {
-        headlineCount++;
+      // A350 Services White Icon Assembly - Subject to Variation
+      if (selectedBlocks[element] === "services-white-icon") {
+        servicesWhiteIcon++;
         finalHTML += `
-        <!-------------------------------------------------------------------------------
-        START OF BODY SECTION: Headline Section
-        --------------------------------------------------------------------------------->
-        <div class="main-wrap">
-            <div class="container">
-                <div class="compressed-content">
-                    <div>
-                        <h6 data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="center-bottom">{${headlineCount}_h6text1:text global="false"}</h6>
-                        <h2 data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="center-bottom" class="large-h2">{${headlineCount}_h2text1:text global="false"}</h2>
-                    </div>
-                </div>
+        <!-------------------------------------------------------------------------------------
+        PREBUILT SERVICES 1 - WHITE ICONS - STARTS HERE
+        --------------------------------------------------------------------------------------->
+        <div class="lynx-content section-margins">
+          <div class="lynx-block-center">
+            <div class="lynx-subtitle" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="top">${servicesWhiteIcon}_content-4-subtitle:text global="false"}</div>
+            <h2 class="lynx-heading" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top">{${servicesWhiteIcon}_content-4-heading:text global="false"}</h2>
+          </div>
+          <div class="w-layout-grid lynx-grid-features">
+            <div id="w-node-d9642e40-fd36-7a6b-0035-b51de6a36fcf-39cced0f" class="lynx-features" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="top">
+              <div class="lynx-block-features">
+            <div class="lynx-icon-features">{${servicesWhiteIcon}_content-4-image-1:image global="false"}</div>
+          </div>
+              <h5 class="lynx-heading-features" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top">{${servicesWhiteIcon}_content-4-h5-1:text global="false"}</h5>
+              <p class="lynx-paragraph-features" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top">{${servicesWhiteIcon}_content-4-p-1:text global="false"}</p>
             </div>
-        </div>
-        <!-------------------------------------------------------------------------------
-        END OF BODY SECTION: Headline Section
-        --------------------------------------------------------------------------------->
-        `;
-      }
-
-      // COMPLETED if element is video header
-      if (selectedBlocks[element] === "video-header") {
-        videoHeader++;
-        finalHTML += `
-        <!-------------------------------------------------------------------------------
-        START OF VIDEO BACKGROUND HEADER
-        --------------------------------------------------------------------------------->
-					<div class="banner-wrap full-video" style="height:100vh !important;">
-						 {{#header}}
-						<div class="container">
-							<div class="banner">{content}</div>
-						</div>
-						{{/header}}
-					</div>
-        <!-------------------------------------------------------------------------------
-        END OF VIDEO BACKGROUND HEADER
-        --------------------------------------------------------------------------------->
-        `;
-      }
-
-
-      // COMPLETED If element is Image Right Full
-      if (selectedBlocks[element] === "img-right-full") {
-        imgRightFull++;
-        finalHTML += `
-        <!-------------------------------------------------------------------------------
-        START OF BODY SECTION: IMAGE RIGHT Full 50/50 Section
-        --------------------------------------------------------------------------------->
-        <div class="main-wrap">
-            <div class="container" style="padding-left:0px; padding-right:0px; padding-top:0px !important; padding-bottom:0px !important;">
-                <div class="left-text-right-image" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="center-bottom" style="padding-top:0px !important; padding-bottom:0px !important;">
-                    <div class="left-text"> 
-                        <div class="left-text-content" style="margin-left: 8vw !important; margin-right: 8vw !important; min-height:80px; width:auto; min-width:200px; box-sizing:border-box;">
-                            {${imgRightFull}_img_right_full_content:content global="false"}
-                        </div>
-                    </div>
-                    <div class="right-image" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="center-bottom">
-                        <div>
-                            <div class="image-shift">
-                                <div class="jarallax right-parallax-image " style="max-width:100% !important; pointer-events: auto !important;
-                                -webkit-box-shadow: 0px 1px 33px -13px rgb(0 0 0 / 65%); box-shadow: 0px 1px 33px -13px rgb(0 0 0 / 65%);" data-speed="0.4">
-                                    <div class="jarallax-img" style="pointer-events: auto !important">
-                                        <div style="pointer-events:auto !important;" class="toggleSelector1">{${imgRightFull}_img_right_full_image:image global="false"}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="in-editor-button-wrapper">
-                            <button class="in-editor-button" onclick="toggleBackground()" style="z-index: 100000 !important">Toggle Parallax Editability</button>
-                        </div>
-                    </div>
-                </div>
+            <div id="w-node-d9642e40-fd36-7a6b-0035-b51de6a36fd6-39cced0f" class="lynx-features" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top">
+              <div class="lynx-block-features">
+            <div class="lynx-icon-features">{${servicesWhiteIcon}_content-4-image-2:image global="false"}</div>
+          </div>
+              <h5 class="lynx-heading-features" data-aos="fade-up" data-aos-delay="300" data-aos-anchor-placement="top">{${servicesWhiteIcon}_content-4-h5-2:text global="false"}</h5>
+              <p class="lynx-paragraph-features"data-aos="fade-up" data-aos-delay="400" data-aos-anchor-placement="top">{${servicesWhiteIcon}_content-4-h5-p:text global="false"}</p>
             </div>
-        </div>
-        <!-------------------------------------------------------------------------------
-        END OF BODY SECTION: Full 50/50 Section
-        --------------------------------------------------------------------------------->
-        `;
-      }
-
-      // COMPLETED If element is image boxes
-      if (selectedBlocks[element] === "image-boxes-3-1") {
-        imageBoxes31++;
-        finalHTML += `
-        <!-------------------------------------------------------------------------------
-        START OF BODY SECTION: Image Boxes (3x1)
-        --------------------------------------------------------------------------------->
-        <div class="main-wrap" style="margin-top:0px;">
-				<div class="" style="padding-top:0px; margin-top:30px; margin-left:30px; margin-right:30px;">
-					<div class="grid-layout-2 three-col">
-						<div class="grid-unit">
-							<div class="image-card" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
-								{${imageBoxes31}_imagecard1:image global="false"}
-								<div class="card-content-area">{${imageBoxes31}_imagecardcontent1:content global="false"}</div>
-							</div>
-						</div>
-						<div class="grid-unit">
-							<div class="image-card" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="center-bottom">
-								{${imageBoxes31}_imagecard2:image global="false"}
-								<div class="card-content-area">{${imageBoxes31}_imagecardcontent2:content global="false"}</div>
-							</div>
-						</div>
-						<div class="grid-unit">
-							<div class="image-card" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="center-bottom">
-								{${imageBoxes31}_imagecard3:image global="false"}
-								<div class="card-content-area">{${imageBoxes31}_imagecardcontent3:content global="false"}</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-        <!-------------------------------------------------------------------------------
-        END OF BODY SECTION: Image Boxes (3x1)
-        --------------------------------------------------------------------------------->
-        `;
-      }
-
-      // COMPLETED If element is Image Left Full
-      if (selectedBlocks[element] === "img-left-full") {
-        imgLeftFull++;
-        finalHTML += `
-        <!-------------------------------------------------------------------------------
-        START OF BODY SECTION: Full 50/50 Section
-        --------------------------------------------------------------------------------->
-        <div class="main-wrap">
-            <div class="container" style="padding-left:0px; padding-right:0px;">
-                <div class="left-text-right-image reverse-flex" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="center-bottom" style="padding-top:0px !important; padding-bottom:0px !important;">
-                    <div class="left-text"> 
-                        <div class="left-text-content" style="margin-left: 8vw !important; margin-right: 8vw !important; min-height:80px; width:auto !important; min-width:50px;">
-                            {${imgLeftFull}_img_left_full_content:content global="false"}
-                        </div>
-                    </div>
-                    <div class="right-image" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="center-bottom">
-                        <div>
-                            <div class="image-shift">
-                                <div class="jarallax right-parallax-image " style="max-width:100% !important; pointer-events: auto !important;
-                                -webkit-box-shadow: 0px 1px 33px -13px rgb(0 0 0 / 65%); box-shadow: 0px 1px 33px -13px rgb(0 0 0 / 65%);" data-speed="0.4">
-                                    <div class="jarallax-img" style="pointer-events: auto !important">
-                                        <div style="pointer-events:auto !important;" class="toggleSelector1">{${imgLeftFull}_img_left_full_image:image global="false"}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="in-editor-button-wrapper">
-                            <button class="in-editor-button" onclick="toggleBackground()" style="z-index: 100000 !important">Toggle Parallax Editability</button>
-                        </div>
-                    </div>
-                </div>
+            <div id="w-node-d9642e40-fd36-7a6b-0035-b51de6a36fdd-39cced0f" class="lynx-features" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top">
+              <div class="lynx-block-features">
+            <div class="lynx-icon-features">{${servicesWhiteIcon}_content-4-image-3:image global="false"}</div>
+          </div>
+              <h5 class="lynx-heading-features" data-aos="fade-up" data-aos-delay="500" data-aos-anchor-placement="top">{${servicesWhiteIcon}_content-4-h5-3:text global="false"}</h5>
+              <p class="lynx-paragraph-features" data-aos="fade-up" data-aos-delay="600" data-aos-anchor-placement="top">{${servicesWhiteIcon}_content-4-p-3:text global="false"}</p>
             </div>
+          </div>
         </div>
-        <!-------------------------------------------------------------------------------
-        END OF BODY SECTION: Full 50/50 Section
-        --------------------------------------------------------------------------------->
+        <!-------------------------------------------------------------------------------------
+        PREBUILT SERVICES 1 - WHITE ICONS - ENDS HERE
+        --------------------------------------------------------------------------------------->
         `;
       }
 
-
-      // COMPLETED If element is Image Right Half 
-      if (selectedBlocks[element] === "img-right-half") {
-        imgRightHalf++;
+      // A350 Colored Icons Assembly - Subject to Variation
+      if (selectedBlocks[element] === "services-colorful-icon") {
+        servicesColorfulIcon++;
         finalHTML += `
-        <!-------------------------------------------------------------------------------
-        START OF BODY SECTION: Image Right Half Parallax Image / Text (constricted image width)
-        --------------------------------------------------------------------------------->
-        <div class="main-wrap">
-            <div class="container">
-                <div class="left-text-right-image" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
-                    <div class="left-text">
-                        <div class="left-text-content">
-                            <h2>{${imgRightHalf}_50-50-image-right-half-h2:text global="false"}</h2>
-                            <p style="padding-top:30px;">{${imgRightHalf}_50-50-image-right-half-p:text global="false"}</p>
-                            <div class="button-wrap" style="margin-top:30px;">{${imgRightHalf}_50-50-image-right-half-btn:button global="false"}</div>
-                        </div>
-                    </div>
-                    <div class="right-image" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="center-bottom">
-                        <div>
-                            <div class="image-shift">
-                                <div class="jarallax right-parallax-image " style="max-width:100% !important; pointer-events: auto !important;
-                                -webkit-box-shadow: 0px 1px 33px -13px rgb(0 0 0 / 65%); box-shadow: 0px 1px 33px -13px rgb(0 0 0 / 65%);" data-speed="0.7">
-                                    <div class="jarallax-img" style="pointer-events: auto !important">
-                                        <div style="pointer-events:auto !important;" class="toggleSelector1">{${imgRightHalf}_50-50-image-right-half-parallax:image global="false"}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="in-editor-button-wrapper">
-                            <button class="in-editor-button" onclick="toggleBackground()">Toggle Parallax Editability</button>
-                        </div>
-                    </div>
-                </div>
+        <!-------------------------------------------------------------------------------------
+        PREBUILT SERVICES 2 - COLORED ICONS - STARTS HERE
+        --------------------------------------------------------------------------------------->
+        <div class="lynx-content section-margins" >
+          <div class="lynx-block-center">
+            <div class="lynx-subtitle" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="top">{${servicesColorfulIcon}_content-5-subtitle:text global="false"}</div>
+            <h2 class="lynx-heading" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top">{${servicesColorfulIcon}_content-5-h2:text global="false"}</h2>
+          </div>
+          <div class="w-layout-grid lynx-grid-features-4-columns">
+            <div id="w-node-_1e31d057-267a-04eb-fd32-2bf97caa8438-39cced0f" class="lynx-features" >
+              <div class="lynx-block-features-pink" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="top"><div class="lynx-icon-features-small">{${servicesColorfulIcon}_content-5-image-1:image global="false"}</div></div>
+              <h6 class="lynx-heading-features-small" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top">{${servicesColorfulIcon}_content-5-h6-1:text global="false"}</h6>
+              <p class="lynx-paragraph-features" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top">{${servicesColorfulIcon}_content-5-p-1:text global="false"}</p>
             </div>
+            <div id="w-node-_1e31d057-267a-04eb-fd32-2bf97caa843f-39cced0f" class="lynx-features">
+              <div class="lynx-block-features-purple" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top"><div class="lynx-icon-features-small">{${servicesColorfulIcon}_content-5-image-2:image global="false"}</div></div>
+              <h6 class="lynx-heading-features-small" data-aos="fade-up" data-aos-delay="300" data-aos-anchor-placement="top">{${servicesColorfulIcon}_content-5-h6-2:text global="false"}</h6>
+              <p class="lynx-paragraph-features" data-aos="fade-up" data-aos-delay="400" data-aos-anchor-placement="top">{${servicesColorfulIcon}_content-5-p-2:text global="false"}</p>
+            </div>
+            <div id="w-node-_1e31d057-267a-04eb-fd32-2bf97caa8446-39cced0f" class="lynx-features">
+              <div class="lynx-block-features-green" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top"><div class="lynx-icon-features-small">{${servicesColorfulIcon}_content-5-image-3:image global="false"}</div></div>
+              <h6 class="lynx-heading-features-small" data-aos="fade-up" data-aos-delay="500" data-aos-anchor-placement="top">{${servicesColorfulIcon}_content-5-h6-3:text global="false"}</h6>
+              <p class="lynx-paragraph-features" data-aos="fade-up" data-aos-delay="600" data-aos-anchor-placement="top">{${servicesColorfulIcon}_content-5-p-3:text global="false"}</p>
+            </div>
+            <div id="w-node-_1e31d057-267a-04eb-fd32-2bf97caa844d-39cced0f" class="lynx-features">
+              <div class="lynx-block-features-yellow" data-aos="fade-up" data-aos-delay="300" data-aos-anchor-placement="top"><div class="lynx-icon-features-small">{${servicesColorfulIcon}_content-5-image-4:image global="false"}</div></div>
+              <h6 class="lynx-heading-features-small" data-aos="fade-up" data-aos-delay="700" data-aos-anchor-placement="top">{${servicesColorfulIcon}_content-5-h6-4:text global="false"}</h6>
+              <p class="lynx-paragraph-features" data-aos="fade-up" data-aos-delay="800" data-aos-anchor-placement="top">{${servicesColorfulIcon}_content-5-p-4:text global="false"}</p>
+            </div>
+          </div>
         </div>
-        <!-------------------------------------------------------------------------------
-        END OF BODY SECTION: Parallax Image / Text 
-        --------------------------------------------------------------------------------->
+        <!-------------------------------------------------------------------------------------
+        PREBUILT SERVICES 2 - COLORED ICONS - ENDS HERE
+        --------------------------------------------------------------------------------------->
         `;
       }
 
 
-      // COMPLETED If element is Image Left Half 
-      if (selectedBlocks[element] === "img-left-half") {
-        imgLeftHalf++;
+      // A350 Text Left Image Right Assembly
+      if (selectedBlocks[element] === "text-left-image-right") {
+        textLeftImageRight++;
         finalHTML += `
-        <!-------------------------------------------------------------------------------
-        START OF BODY SECTION: Parallax Image / Text (Constricted Width) (Reversed)
-        --------------------------------------------------------------------------------->
-        <div class="main-wrap">
-            <div class="container">
-                <div class="left-text-right-image reverse-flex" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
-                    <!-- Text -->
-                    <div class="left-text">
-                        <div class="left-text-content">
-                            <h2>{${imgLeftHalf}_img_left_half_h2:text global="false"}</h2>
-                            <p style="padding-top:30px;">{${imgLeftHalf}_img_left_half_p:text global="false"}</p>
-                            <div class="button-wrap" style="margin-top:30px;">{${imgLeftHalf}_img_left_half_btn:button global="false"}</div>
-                        </div>
-                    </div>
-                    <!-- Image -->
-                    <div class="right-image" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="center-bottom">
-                        <div>
-                            <div class="image-shift">
-                                <div class="jarallax right-parallax-image " style="max-width:100% !important; pointer-events: auto !important;
-                                -webkit-box-shadow: 0px 1px 33px -13px rgb(0 0 0 / 65%); box-shadow: 0px 1px 33px -13px rgb(0 0 0 / 65%);" data-speed="0.7">
-                                    <div class="jarallax-img" style="pointer-events: auto !important">
-                                        <div style="pointer-events:auto !important;" class="toggleSelector1">{${imgLeftHalf}_img_left_half_button:image global="false"}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="in-editor-button-wrapper">
-                            <button class="in-editor-button" onclick="toggleBackground()">Toggle Parallax Editability</button>
-                        </div>
-                    </div>
-                </div>
+        <!-------------------------------------------------------------------------------------
+        PREBUILT FEATURE 1 - TEXT LEFT, TWO IMAGE RIGHT - STARTS HERE
+        --------------------------------------------------------------------------------------->
+        <div class="lynx-content-2 section-margins">
+          <div class="w-layout-grid lynx-grid-image-right">
+            <div id="w-node-ab436e2f-f1a8-e3df-ac58-1120e9b13777-39cced0f" class="lynx-block-left">
+              <div class="lynx-subtitle" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="top">{${textLeftImageRight}_content-6-subtitle:text global="false"}</div>
+              <h2 class="lynx-heading" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top">{${textLeftImageRight}_content-6-h2-1:text global="false"}</h2>
+              <p class="lynx-paragraph" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top">{${textLeftImageRight}_content-6-p-1:text global="false"}</p>
+              <!-- Replace With Button --><div data-aos="fade-up" data-aos-delay="300" data-aos-anchor-placement="top" class="button-wrap">{${textLeftImageRight}_lynxbuttonhero6:button global="false"}</div>
             </div>
+            <div id="w-node-ab436e2f-f1a8-e3df-ac58-1120e9b13780-39cced0f" class="lynx-block-image" data-aos="fade-left" data-aos-delay="300" data-aos-anchor-placement="top" >
+            <div class="lynx-image-absolute" >{${textLeftImageRight}_hero-4-image-1:image global="false"}</div>
+            <div class="lynx-image" >{${textLeftImageRight}_hero-4-image-2:image global="false"}</div>
+          </div>
+          </div>
         </div>
-        <!-------------------------------------------------------------------------------
-        END OF BODY SECTION: Parallax Image / Text (Reversed)
-        --------------------------------------------------------------------------------->
+        <!-------------------------------------------------------------------------------------
+        PREBUILT FEATURE 1 - TEXT LEFT, TWO IMAGE RIGHT - ENDS HERE
+        --------------------------------------------------------------------------------------->
+        `;
+      }
+
+      // A350 Image Left Text Right
+      if (selectedBlocks[element] === "image-left-text-right") {
+        imageLeftTextRight++;
+        finalHTML += `
+        <!-------------------------------------------------------------------------------------
+        PREBUILT FEATURE 2 - IMAGE AND CAPTION LEFT, TEXT RIGHT - STARTS HERE
+        --------------------------------------------------------------------------------------->
+        <div class="lynx-content-3 section-margins">
+          <div class="w-layout-grid lynx-grid-image-left">
+            <div id="w-node-cf1543b6-2572-928a-a614-5587a665f911-39cced0f" class="lynx-block-image" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="top">
+              <div class="lynx-block-absolute">
+                <div class="lynx-block-icon-heading"><div class="lynx-icon">{${imageLeftTextRight}_content-7-image-1:image global="false"}</div>
+                  <h6 class="lynx-icon-heading">{${imageLeftTextRight}_content-7-h6-1:text global="false"}</h6>
+                </div>
+                <p class="lynx-paragraph-features">{${imageLeftTextRight}_content-7-p-1:text global="false"}</p>
+              </div><div class="lynx-image">{${imageLeftTextRight}_content-7-image-2:image global="false"}</div>
+            </div>
+            <div id="w-node-cf1543b6-2572-928a-a614-5587a665f91a-39cced0f" class="lynx-block-right">
+              <div class="lynx-subtitle" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="top">{${imageLeftTextRight}_content-7-subtitle-2:text global="false"}</div>
+              <h2 class="lynx-heading" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top">{${imageLeftTextRight}_content-7-h2-2:text global="false"}</h2>
+              <div class="inter-div-content-area" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top">{${imageLeftTextRight}_content-7-area:content global="false"}</div>
+            </div>
+          </div>
+        </div>
+        <!-------------------------------------------------------------------------------------
+        PREBUILT FEATURE 2 - IMAGE AND CAPTION LEFT, TEXT RIGHT - ENDS HERE
+        --------------------------------------------------------------------------------------->
+        `;
+      }
+
+      // A350 feature-boxes
+      if (selectedBlocks[element] === "feature-boxes") {
+        featureBoxes++;
+        finalHTML += `
+        <!-------------------------------------------------------------------------------------
+        PREBUILT FEATURE BOXES 1 - STARTS HERE
+        --------------------------------------------------------------------------------------->
+        <div class="lynx-content-4 section-margins">
+          <div class="w-layout-grid lynx-grid-features">
+            <div id="w-node-_59214a44-86b0-b0ac-62ee-5ee64f934e39-39cced0f" class="lynx-features-bg">
+              <div class="lynx-block-features-pink" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="top"><div class="lynx-icon-features-small">{${featureBoxes}_content-8-image-1:image global="false"}</div></div>
+              <h6 class="lynx-heading-features-small" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top">{${featureBoxes}_content-8-h6-1:text global="false"}</h6>
+              <p class="lynx-paragraph-features" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top">{${featureBoxes}_content-8-p-1:text global="false"}</p>
+            </div>
+            <div id="w-node-_59214a44-86b0-b0ac-62ee-5ee64f934e40-39cced0f" class="lynx-features-bg">
+              <div class="lynx-block-features-purple" data-aos="fade-up" data-aos-delay="300" data-aos-anchor-placement="top"><div class="lynx-icon-features-small">{${featureBoxes}_content-8-image-2:image global="false"}</div></div>
+              <h6 class="lynx-heading-features-small" data-aos="fade-up" data-aos-delay="400" data-aos-anchor-placement="top">{${featureBoxes}_content-8-h6-2:text global="false"}</h6>
+              <p class="lynx-paragraph-features" data-aos="fade-up" data-aos-delay="500" data-aos-anchor-placement="top">{${featureBoxes}_content-8-p-2:text global="false"}</p>
+            </div>
+            <div id="w-node-_59214a44-86b0-b0ac-62ee-5ee64f934e49-39cced0f" class="lynx-features-bg">
+              <div class="lynx-block-features-green" data-aos="fade-up" data-aos-delay="600" data-aos-anchor-placement="top"><div class="lynx-icon-features-small">{${featureBoxes}_content-8-image-3:image global="false"}</div></div>
+              <h6 class="lynx-heading-features-small" data-aos="fade-up" data-aos-delay="700" data-aos-anchor-placement="top">{${featureBoxes}_content-8-h6-3:text global="false"}</h6>
+              <p class="lynx-paragraph-features" data-aos="fade-up" data-aos-delay="800" data-aos-anchor-placement="top">{${featureBoxes}_content-8-p-3:text global="false"}</p>
+            </div>
+          </div>
+        </div>
+        <!-------------------------------------------------------------------------------------
+        PREBUILT FEATURE BOXES 1 - ENDS HERE
+        --------------------------------------------------------------------------------------->
         `;
       }
 
 
-      // COMPLETED If element is PureSlider...
-      if (selectedBlocks[element] === "pureslider-5") {
-        pureslider5++;
+      // A350 feature-boxes-curved
+      if (selectedBlocks[element] === "feature-boxes-curved") {
+        featureBoxesCurved++;
+        finalHTML += `
+        <!-------------------------------------------------------------------------------------
+        PREBUILT SERVICE BOXES 2 - TWO LARGE WITH CURVED IMAGE- STARTS HERE
+        --------------------------------------------------------------------------------------->
+        <div class="lynx-content-4 section-margins">
+          <div class="w-layout-grid lynx-grid-2-columns">
+            <div id="w-node-_9e334ad3-6887-3642-0bc1-e968d76d4b37-39cced0f" class="lynx-features-large">
+              <div class="lynx-block-features-large" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="top">
+                <div class="lynx-subtitle-software" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top">{${featureBoxesCurved}_content-9-label-1:text global="false"}</div>
+                <h3 class="lynx-heading-features-large" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top">{${featureBoxesCurved}_content-9-h3-1:text global="false"}</h3>
+                <p class="lynx-paragraph" data-aos="fade-up" data-aos-delay="300" data-aos-anchor-placement="top">{${featureBoxesCurved}_content-9-p-1:text global="false"}</p>
+              </div>
+              <div class="lynx-link-block-features w-inline-block" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="top"><div class="lynx-image-features">{${featureBoxesCurved}_content-9-image-1:image global="false"}</div>
+                <div class="lynx-arrow-features"></div>
+              </div>
+            </div>
+            <div id="w-node-_9e334ad3-6887-3642-0bc1-e968d76d4b42-39cced0f" class="lynx-features-large">
+              <div class="lynx-block-features-large">
+                <div class="lynx-subtitle-productivity" data-aos="fade-up" data-aos-delay="400" data-aos-anchor-placement="top">{${featureBoxesCurved}_content-9-label-2:text global="false"}</div>
+                <h3 class="lynx-heading-features-large" data-aos="fade-up" data-aos-delay="500" data-aos-anchor-placement="top">{${featureBoxesCurved}_content-9-h3-2:text global="false"}</h3>
+                <p class="lynx-paragraph" data-aos="fade-up" data-aos-delay="600" data-aos-anchor-placement="top">{${featureBoxesCurved}_content-9-p-2:text global="false"}</p>
+              </div>
+              <div class="lynx-link-block-features w-inline-block" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top"><div class="lynx-image-features">{content-9-image-2:image global="false"}</div>
+                <div class="lynx-arrow-features"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-------------------------------------------------------------------------------------
+        PREBUILT SERVICE BOXES 2 - TWO LARGE WITH CURVED IMAGE - ENDS HERE
+        --------------------------------------------------------------------------------------->
+        `;
+      }
+
+
+      // A350 Testimonial
+      if (selectedBlocks[element] === "testimonial") {
+        testimonial++;
+        finalHTML += `
+        <!-------------------------------------------------------------------------------------
+        PREBUILT TESTIMONIAL - STARTS HERE
+        --------------------------------------------------------------------------------------->
+        <div class="lynx-content-5 section-margins">
+          <div class="lynx-reviews-large" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top"><img src="/files/theme/images/Reviews.svg" loading="lazy" alt="" class="lynx-icon-reviews">
+            <div class="lynx-block-reviews-large">
+              <h4 class="lynx-heading-reviews-large" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top">{${testimonial}_content-10-h4-1:text global="false"}</h4>
+              <div class="lynx-client" data-aos="fade-up" data-aos-delay="300" data-aos-anchor-placement="top"><div class="lynx-image-client">{${testimonial}_content-10-image-1:image global="false"}</div>
+                <div class="lynx-text-client">
+                  <h6 class="lynx-heading-client" data-aos="fade-up" data-aos-delay="400" data-aos-anchor-placement="top">{${testimonial}_content-10-h6-1:text global="false"}</h6>
+                  <div class="lynx-client-info" data-aos="fade-up" data-aos-delay="500" data-aos-anchor-placement="top">{${testimonial}_content-10-client-1:text global="false"}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-------------------------------------------------------------------------------------
+        PREBUILT TESTIMONIAL - ENDS HERE
+        --------------------------------------------------------------------------------------->
+        `;
+      }
+
+
+      // NOT COMPLETE PURESLIDER - VARIABLE COMPONENT GENERATION
+      if (selectedBlocks[element] === "step-by-step") {
+        stepByStep++;
 
         // BEGINNING of PureSlider HTML
         finalHTML += `
@@ -1203,7 +1131,7 @@ FOOTER MODULE STARTS HERE
 
       }
 
-      // COMPLETED - If element is Carousel...
+      // NOT COMPLETED CAROUSEL- VARIABLE COMPONENT GENERATION
       if (selectedBlocks[element] === "carousel") {
         carouselSection++;
 
