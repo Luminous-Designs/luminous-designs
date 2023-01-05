@@ -1033,9 +1033,163 @@ if (!document.querySelector('#icontent')) {
         `;
       }
 
+      // A350 Step By Step
+      if (selectedBlocks[element] === "step-by-step") {
+        stepByStep++;
+        finalHTML += `
+        
+        <!-------------------------------------------------------------------------------------
+        PREBUILT STEP-BY-STEP - STARTS HERE
+        --------------------------------------------------------------------------------------->
+        <div class="lynx-content-6 section-margins">
+          <div class="lynx-block-center">
+            <div class="lynx-subtitle" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="top">{${stepByStep}_content-11-subtitle-1:text global="false"}</div>
+            <h2 class="lynx-heading" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top">{${stepByStep}_content-11-h2-1:text global="false"}</h2>
+          </div>
+          <div class="w-layout-grid lynx-grid-process">
+            <div id="w-node-_07a8bdf6-b645-fa64-277c-cf4c00dd55bb-39cced0f" class="lynx-process">
+              <div class="lynx-block-process-pink" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="top">
+                <div class="lynx-process-number">{${stepByStep}_content-11-number-1:text global="false"}</div>
+              </div>
+              <h5 class="lynx-heading-process" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top">{${stepByStep}_content-11-h5-1:text global="false"}</h5>
+              <p class="lynx-paragraph-process" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top">{${stepByStep}_content-11-p-1:text global="false"}</p>
+            </div>
+            <div id="w-node-_07a8bdf6-b645-fa64-277c-cf4c00dd55c3-39cced0f" class="lynx-process">
+              <div class="lynx-block-process-purple" data-aos="fade-up" data-aos-delay="300" data-aos-anchor-placement="top">
+                <div class="lynx-process-number">{${stepByStep}_content-11-number-2:text global="false"}</div>
+              </div>
+              <h5 class="lynx-heading-process" data-aos="fade-up" data-aos-delay="400" data-aos-anchor-placement="top">{${stepByStep}_content-11-h5-2:text global="false"}</h5>
+              <p class="lynx-paragraph-process" data-aos="fade-up" data-aos-delay="500" data-aos-anchor-placement="top">{${stepByStep}_content-11-p-2:text global="false"}</p>
+            </div>
+            <div id="w-node-_07a8bdf6-b645-fa64-277c-cf4c00dd55cb-39cced0f" class="lynx-process">
+              <div class="lynx-block-process-green" data-aos="fade-up" data-aos-delay="600" data-aos-anchor-placement="top">
+                <div class="lynx-process-number">{${stepByStep}_content-11-number-3:text global="false"}</div>
+              </div>
+              <h5 class="lynx-heading-process" data-aos="fade-up" data-aos-delay="700" data-aos-anchor-placement="top">{${stepByStep}_content-11-h5-3:text global="false"}</h5>
+              <p class="lynx-paragraph-process" data-aos="fade-up" data-aos-delay="800" data-aos-anchor-placement="top">{${stepByStep}_content-11-p-3:text global="false"}</p>
+            </div>
+          </div>
+        </div>
+        <!-------------------------------------------------------------------------------------
+        PREBUILT STEP-BY-STEP - ENDS HERE
+        --------------------------------------------------------------------------------------->
+        `;
+      }
+
+      // A350 Pricing
+      if (selectedBlocks[element] === "pricing") {
+        pricing++;
+        finalHTML += `
+        
+        <!-------------------------------------------------------------------------------------
+        PREBUILT PRICING - STARTS HERE
+        --------------------------------------------------------------------------------------->
+        <div class="lynx-content-7 section-margins">
+          <div class="lynx-block-center">
+            <div class="lynx-subtitle" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="top">{${pricing}_content-12-subtitle-1:text global="false"}</div>
+            <h2 class="lynx-heading" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top">{${pricing}_content-12-h2-1:text global="false"}</h2>
+          </div>
+          <div class="w-layout-grid lynx-grid-plans-tight">
+            <div id="w-node-_29d0f8be-441f-2e92-b107-11717272ce4e-39cced0f" class="lynx-plans-left" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="top">
+              <div class="lynx-block-plans">
+                <div class="lynx-text-plans-pink-fill">{${pricing}_content-12-plan-1:text global="false"}</div>
+              </div>
+              <div class="lynx-price-pink">{${pricing}_content-12-price-1:text global="false"}</div>
+              <p class="lynx-paragraph-plans">{${pricing}_content-12-paragraph-1:text global="false"}</p>
+              <div class="lynx-check-plans" style="width:100% !important;"> <!-- Width set to 100% to allow bottom content to display -->
+              <div style="min-height: 20px; width:100% !important;" class="inter-div-content-area">{${pricing}_content-12-content-1:content global="false"}</div>
+              </div>
+            </div>
+            <div id="w-node-_29d0f8be-441f-2e92-b107-11717272ce5f-39cced0f" class="lynx-plans-purple-center" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top">
+              <div class="lynx-block-plans">
+                <div class="lynx-text-plans-white-fill">{${pricing}_content-12-plan-2:text global="false"}</div>
+              </div>
+              <div class="lynx-price-white">{${pricing}_content-12-price-2:text global="false"}</div>
+              <p class="lynx-paragraph-plans-white">{${pricing}_content-12-paragraph-2:text global="false"}</p>
+              <div class="lynx-check-plans" style="width:100% !important;"> <!-- Width set to 100% to allow bottom content to display -->
+                <div style="min-height: 20px; width:100% !important;" class="inter-div-content-area">{${pricing}_content-12-content-2:content global="false"}</div>
+              </div>
+            </div>
+            <div id="w-node-_29d0f8be-441f-2e92-b107-11717272ce78-39cced0f" class="lynx-plans-right" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top">
+              <div class="lynx-block-plans">
+                <div class="lynx-text-plans-green-fill">{${pricing}_content-12-plan-3:text global="false"}</div>
+              </div>
+              <div class="lynx-price-green">{${pricing}_content-12-price-3:text global="false"}</div>
+              <p class="lynx-paragraph-plans">{${pricing}_content-12-paragraph-3:text global="false"}</p>
+              <div class="lynx-check-plans" style="width:100% !important;"> <!-- Width set to 100% to allow bottom content to display -->
+                <div style="min-height: 20px; width:100% !important;" class="inter-div-content-area">{${pricing}_content-12-content-3:content global="false"}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-------------------------------------------------------------------------------------
+        PREBUILT PRICING - ENDS HERE
+        --------------------------------------------------------------------------------------->
+        `;
+      }
+
+      // A350 Call to Action
+      if (selectedBlocks[element] === "call-to-action") {
+        callToAction++;
+        finalHTML += `
+        <!-------------------------------------------------------------------------------------
+        PREBUILT CALL-TO-ACTION - STARTS HERE
+        --------------------------------------------------------------------------------------->
+        <div class="lynx-content-9 section-margins">
+          <div class="lynx-newsletter" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="top">
+            <div class="lynx-subtitle-white" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top">{${callToAction}_content-13-subtitle-1:text global="false"}</div>
+            <h2 class="lynx-heading-white-small" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top">{${callToAction}_content-13-h2-1:text global="false"}</h2>
+            <div style="padding-top:10px; padding-bottom:10px; width:100% !important; min-height:20px;" class="inter-div-content-area" data-aos="fade-up" data-aos-delay="300" data-aos-anchor-placement="top">{${callToAction}_content13area:content global="false"}</div>
+          </div>
+        </div>
+        <!-------------------------------------------------------------------------------------
+        PREBUILT STEP-BY-STEP - ENDS HERE
+        --------------------------------------------------------------------------------------->
+        
+        `;
+      }
+
+      // A350 Default Weebly Header
+      if (selectedBlocks[element] === "default-weebly-header") {
+        
+        finalHTML += `
+        <!-------------------------------------------------------------------------------------
+        DEFAULT WEEBLY HEADER STARTS HERE
+        --------------------------------------------------------------------------------------->
+        <div class="banner-wrap">
+          {{#header}}
+            <div class="banner">
+              <div class="banner-inner">{content}</div>
+            </div>
+          {{/header}}
+        </div>
+        <!-------------------------------------------------------------------------------------
+        DEFAULT WEEBLY HEADER ENDS HERE
+        --------------------------------------------------------------------------------------->
+        
+        `;
+      }
+
+      // A350 Default Weebly Header
+      if (selectedBlocks[element] === "default-weebly-section") {
+        
+        finalHTML += `
+        <!-------------------------------------------------------------------------------------
+        DEFAULT WEEBLY SECTION STARTS HERE
+        --------------------------------------------------------------------------------------->
+        {{#sections}}
+          <div class="content-wrap container">{content}</div>
+        {{/sections}}
+        <!-------------------------------------------------------------------------------------
+        DEFAULT WEEBLY SECTION ENDS HERE
+        --------------------------------------------------------------------------------------->
+        
+        `;
+      }
+
 
       // NOT COMPLETE PURESLIDER - VARIABLE COMPONENT GENERATION
-      if (selectedBlocks[element] === "step-by-step") {
+      if (selectedBlocks[element] === "pureslider") {
         stepByStep++;
 
         // BEGINNING of PureSlider HTML
