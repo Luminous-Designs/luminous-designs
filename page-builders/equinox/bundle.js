@@ -1170,20 +1170,165 @@ if (!document.querySelector('#icontent')) {
         `;
       }
 
-      // A350 Default Weebly Header
-      if (selectedBlocks[element] === "default-weebly-section") {
-        
+      // A350 Parallax
+      if (selectedBlocks[element] === "parallax") {
+        parallax++;
         finalHTML += `
         <!-------------------------------------------------------------------------------------
-        DEFAULT WEEBLY SECTION STARTS HERE
+        PARALLAX STARTS HERE
         --------------------------------------------------------------------------------------->
-        {{#sections}}
-          <div class="content-wrap container">{content}</div>
-        {{/sections}}
+        <div class="editor" style="width:100%; height:60px; color:white; background-color: black; text-align:center; padding-top:15px;">
+          <p style="font-color:white; line-height:10px; font-size: 12px;">[ i ] Parallax section below. Click on the section below to upload image.
+          Don't worry if it looks weird in the Weebly editor. It'll look normal on your published site. To edit or delete your image, press the "toggle" button below. Then,
+          hover over your image until a popup appears with the "edit" and "delete" options.</p>
+        </div>
+        <!--Parallax Section #1-->
+        <div id="parent1" class="jarallax" data-speed="0.4" style="pointer-events: auto !important;">
+          <div id="section1" class="jarallax-img" style="pointer-events: auto !important">
+          <div style="pointer-events:auto !important;" class="toggleSelector1">{${parallax}_3_imageone:image global="false"}</div>
+          </div>
+          <!--Content Section-->
+          <div class="parallaxl" id="content-controller-1" style="background-color:rgba(0,0,0,0.4);">
+          <div class="container">{${parallax}_3_parallaxone:content global="false"}</div>
+          </div>
+        </div>
+        <!--Control Panel for Section #1-->
+        <div class="parallax-control">
+          <div class="main-wrap" style="padding-left:0px; padding-right:0px; width:100%;">
+          <div id="wsite-content" class="wsite-elements wsite-not-footer">
+            <div class="wsite-section-wrap">
+            <div class="wsite-section wsite-body-section wsite-section-bg-color wsite-background-53" style="height: auto;background-color: #020202;background-image: none;">
+              <div class="wsite-section-content">
+              <div class="container" style="padding-top:15px; padding-bottom:15px">
+                <div class="wsite-section-elements">
+
+                <div style="text-align:center;">
+                  <div style="height: 0px; overflow: hidden;"></div>
+                  <a class="wsite-button wsite-button-large wsite-button-normal" onclick="toggleBackground()">
+                  <span class="wsite-button-inner">Toggle Above Background Editability</span>
+                  </a>
+                  <div style="height: 0px; overflow: hidden;"></div>
+                </div>
+                </div>
+              </div>
+              </div>
+            </div>
+            </div>
+          </div>
+          </div>
+        </div>
         <!-------------------------------------------------------------------------------------
-        DEFAULT WEEBLY SECTION ENDS HERE
+        PARALLAX ENDS HERE
         --------------------------------------------------------------------------------------->
+        `;
+      }
+
+      // A350 Blog Reference Section
+      if (selectedBlocks[element] === "blog-reference") {
         
+        finalHTML += `
+        <!-- Experimental Blog Section Starts Below --> 
+        <div class="blog-information-section">
+          <div>
+            <h6>Below is a blog section. In the right text area, please enter the URL slug of your blog page (for example, /blog)</h6>
+            <p style="color: white;">Only type in your blog's URL page slug, not full URL (i.e /blog, not domain.com/blog)</p>
+          </div>
+          <div id="user-submitted-url">{usersubmittedurl:text global="false"}</div>
+        </div>
+        
+        <section class="combine-section_blog4">
+          <div class="container">
+            <div class="combine-padding-section-medium-2">
+              <div class="combine-container-small-2">
+                <div class="combine-text-align-center-2">
+                  <h2 class="combine-heading-style-h2-2" data-aos-delay="000" data-aos-anchor-placement="top">Our Blog</h2>
+                  <div class="combine-space-medium-2"></div>
+                  <div class="combine-text-size-regular-2" data-aos-delay="000" data-aos-anchor-placement="top">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.</div>
+                </div>
+              </div>
+              <div class="combine-space-large"></div>
+              <div class="combine-container-large-3">
+                <div class="combine-blog4_component">
+            
+            <!-- New Blog Thumbnail -->
+                  <a href="#" class="combine-blog4_featured w-inline-block inject-blog-link" data-aos-delay="000" data-aos-anchor-placement="top">
+                    <div class="combine-blog4_image-featured"><img src="https://d1zdxptf8tk3f9.cloudfront.net/ckeditor_assets/pictures/2509/content_geordanna-cordero-fields-762612-unsplash.jpg" loading="lazy" sizes="100vw" srcset="" alt="placeholder purple" class="combine-blog4_image inject-blog-image"></div>
+                    <div class="combine-blog4_content-featured">
+                      <div class="combine-blog4_date inject-blog-date">Sept 26, 2022</div>
+                      <h3 class="combine-heading-style-h5 inject-blog-title">Top 8 ways to supercharge Weebly site performance</h3>
+                      <div class="combine-text-size-regular-2 inject-blog-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum porta enim et pellentesque.</div>
+                      <div class="combine-button-icon">
+                        <div class="combine-button-content">
+                          <div>Read Article</div>
+                          <div class="combine-chevron-right_icon w-embed"><svg width="100%" height="currentHeight" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M6.83301 13L11.833 8L6.83301 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg></div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <div id="w-node-ca5e8404-8160-2880-db0f-eb8e332fca17-bcd0182b" class="combine-blog4_wrapper">
+            
+              <!-- New Blog Thumbnail -->
+                    <a href="#" class="combine-blog4_item w-inline-block inject-blog-link" data-aos-delay="000" data-aos-anchor-placement="top" >
+                      <div class="combine-blog4_image-wrapper"><img src="https://d1zdxptf8tk3f9.cloudfront.net/ckeditor_assets/pictures/2509/content_geordanna-cordero-fields-762612-unsplash.jpg" loading="lazy" sizes="100vw" srcset="" alt="placeholder blue" class="combine-blog4_image inject-blog-image"></div>
+                      <div class="combine-blog4_content">
+                        <div class="combine-blog4_date inject-blog-date">Sept 12, 2022</div>
+                        <h3 class="combine-heading-style-h6 inject-blog-title">Low fidelity vs. high fidelity: the differences between design prototypes</h3>
+                        <div class="combine-blog4_paragraph inject-blog-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                        <div class="combine-button-icon">
+                          <div class="combine-button-content">
+                            <div>Read Article</div>
+                            <div class="combine-chevron-right_icon w-embed"><svg width="100%" height="currentHeight" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.83301 13L11.833 8L6.83301 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                              </svg></div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+              
+              <!-- New Blog Thumbnail -->
+                    <a href="#" class="combine-blog4_item w-inline-block inject-blog-link" data-aos-delay="000" data-aos-anchor-placement="top">
+                      <div class="combine-blog4_image-wrapper"><img src="https://d1zdxptf8tk3f9.cloudfront.net/ckeditor_assets/pictures/2509/content_geordanna-cordero-fields-762612-unsplash.jpg" loading="lazy" sizes="100vw" srcset="" alt="placeholder orange" class="combine-blog4_image inject-blog-image"></div>
+                      <div class="combine-blog4_content">
+                        <div class="combine-blog4_date inject-blog-date">Aug 30, 2022</div>
+                        <h3 class="combine-heading-style-h6 inject-blog-title">The power of automation, natively in Webflow</h3>
+                        <div class="combine-blog4_paragraph inject-blog-paragraph" >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                        <div class="combine-button-icon">
+                          <div class="combine-button-content">
+                            <div>Read Article</div>
+                            <div class="combine-chevron-right_icon w-embed"><svg width="100%" height="currentHeight" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.83301 13L11.833 8L6.83301 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                              </svg></div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+              
+              <!-- New Blog Thumbnail -->
+                    <a href="#" class="combine-blog4_item w-inline-block inject-blog-link" data-aos-delay="000" data-aos-anchor-placement="top">
+                      <div class="combine-blog4_image-wrapper"><img src="https://d1zdxptf8tk3f9.cloudfront.net/ckeditor_assets/pictures/2509/content_geordanna-cordero-fields-762612-unsplash.jpg" loading="lazy" sizes="100vw" srcset="" alt="placeholder purple" class="combine-blog4_image inject-blog-image"></div>
+                      <div class="combine-blog4_content">
+                        <div class="combine-blog4_date inject-blog-date">Aug 08, 2022</div>
+                        <h3 class="combine-heading-style-h6 inject-blog-title">What is a content management system?</h3>
+                        <div class="combine-blog4_paragraph inject-blog-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                        <div class="combine-button-icon">
+                          <div class="combine-button-content">
+                            <div>Read Article</div>
+                            <div class="combine-chevron-right_icon w-embed"><svg width="100%" height="currentHeight" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.83301 13L11.833 8L6.83301 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                              </svg></div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      
         `;
       }
 
