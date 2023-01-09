@@ -332,40 +332,33 @@
 
   .figure-label {
     background-color: #f2f2f2;
-    padding-left: 15px;
+    
     padding-right: 15px;
     padding-top: 15px;
     padding-bottom: 15px;
-    align-content: center;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-align-items: center;
-    align-items: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    border-left: 1px solid rgba(0, 0, 0, 0.2);
-    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    padding-left: 15px;
+    border: 1px dashed rgba(0,0,0,0.3);
 
   }
 
   .label-header {
     font-size: 14px;
     padding-bottom: 0px;
-    font-weight: 700;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
-    margin-bottom: 10px;
+    font-weight: 600;
+    
+    margin-bottom: 5px;
     text-transform: uppercase;
+    letter-spacing: 1px;
   }
 
   .label-text {
     font-size: 12px;
-    text-align: center;
-    font-style: italic;
+    
+    
   }
 
   .bold-text {
-    font-weight: 700;
+    font-weight: 400;
   }
 
 
