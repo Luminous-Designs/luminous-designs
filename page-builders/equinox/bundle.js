@@ -154,16 +154,23 @@
       selectedBlocksDD.push(selectedSnippetsDD[i].id);
     }
     
-    // HEADER RULES --> No more than one header per page
-    if ((lastItemDropped === "pureslider-5") || (lastItemDropped === "homepage-header") || (lastItemDropped === "default-header") || (lastItemDropped === "no-header")) {
-      console.log("we have a header");
-      let numberOfHeaders = 0; // How many pre-existing headers we have
+    // ONLY ONE ITEM Rule --> No more than one BG-background-utilizing-item per page
+    if ((lastItemDropped === "pureslider-5") || 
+        (lastItemDropped === "homepage-header") || 
+        (lastItemDropped === "default-header") ||  
+        (lastItemDropped === "no-header")) {
+
+          console.log("we have a header");
+          let numberOfHeaders = 0; // How many pre-existing headers we have
       
-      for (let headerCount = 0; headerCount < selectedBlocksDD.length; headerCount++) {
-        if ((selectedBlocksDD[headerCount] == "pureslider-5" ) || (selectedBlocksDD[headerCount] == "homepage-header") || (selectedBlocksDD[headerCount] == "no-header") || (selectedBlocksDD[headerCount] == "default-header")) {
-            numberOfHeaders = numberOfHeaders + 1;
-        }
-      };
+          for (let headerCount = 0; headerCount < selectedBlocksDD.length; headerCount++) {
+            if ((selectedBlocksDD[headerCount] == "hero-1") || 
+                (selectedBlocksDD[headerCount] == "hero-2") || 
+                (selectedBlocksDD[headerCount] == "hero-3") ||  
+                (selectedBlocksDD[headerCount] == "default-weebly-header"))  {
+                  numberOfHeaders = numberOfHeaders + 1;
+              }
+            };
       if (numberOfHeaders > 1) {
           // Deletion script occurs
           console.log("Element has been deleted due to violation of header count");
@@ -173,7 +180,7 @@
           // Display Warning Modal with Generated Content
           warningModal.style.display = "block";
           WarningHeader.innerText = "Whoops! You can only have one header per page.";
-          WarningText.innerText = "Looks like you tried to add more than one header. You can only have one header per page, and it should be placed on top as the first element. Headers include the Homepage Header element, the PureSlider Element, and the Weebly 4 Header element";
+          WarningText.innerText = "Looks like you tried to add more than one header. You can only have one header per page. Headers include the Hero Header elements and the Weebly 4 Header element";
           return;
       }
     };
@@ -674,6 +681,8 @@ if (!document.querySelector('#icontent')) {
     let carouselFixed = 0;
     let blogReference = 0;
     let weeblySection = 0;
+    let carouselSectionFixed = 0;
+    let carouselSectionFree = 0;
     
    
     
@@ -1430,20 +1439,21 @@ if (!document.querySelector('#icontent')) {
 
       }
 
-      // NOT COMPLETED CAROUSEL- VARIABLE COMPONENT GENERATION
-      if (selectedBlocks[element] === "carousel") {
-        carouselSection++;
+      // A350 Carousel Section Fixed
+      if (selectedBlocks[element] === "carousel-fixed") {
+        carouselSectionFixed++;
 
         // BEGINNING - Build beginning of Carousel Block
         finalHTML += 
         `
         <!-------------------------------------------------------------------------------
-        START OF BODY SECTION: Carousel
+        START OF BODY SECTION: Carousel Fixed
         --------------------------------------------------------------------------------->
-        <div class="main-wrap">
+        <div class="main-wrap" style="padding-top:30px; padding-bottom: 30px;">
+          <div class="container">{${carouselSectionFixed}_top-carousel-content:content global="false"}</div>
             <div class="container" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
-                <div class="swiper mySwiper carousel-slider">
-                    <div class="swiper-wrapper">
+            <div class="swiper mySwiper carousel-slider">
+              <div class="swiper-wrapper">
         `;
 
         // CENTRE - Start Dynamically Generating Carousel Content Based on Number of Carousel Slides 
@@ -1452,12 +1462,56 @@ if (!document.querySelector('#icontent')) {
                     <!-- Start of Carousel Slide -->
                     <div class="swiper-slide" style="min-height:200px; height:auto;">
                         <div class="swiper-container">
-                            {${carouselSection}_carouselimage_${carouselGen}:image global="false"}
-                            <h2 style="color:white">{${carouselSection}_carouselh2_${carouselGen}:text global="false"}</h2>
-                            <p style="color:white">{${carouselSection}_carouselp_${carouselGen}:text global="false"}</p>
+                            {${carouselSectionFixed}_carouselimage_${carouselGen}:image global="false"}
+                            <h2 style="color:white">{${carouselSectionFixed}_carouselh2_${carouselGen}:text global="false"}</h2>
+                            <p style="color:white">{${carouselSectionFixed}_carouselp_${carouselGen}:text global="false"}</p>
                         </div>
                     </div>
                     <!-- End of Carousel Slide -->
+        `;
+        }
+
+        // END - Attach End of Carousel Block
+        finalHTML += 
+        `
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+        <!-------------------------------------------------------------------------------
+        END OF BODY SECTION: Carousel
+        --------------------------------------------------------------------------------->
+        `;
+      }
+
+      // A350 Carousel Section Free
+      if (selectedBlocks[element] === "carousel-free") {
+        carouselSectionFree++;
+
+        // BEGINNING - Build beginning of Carousel Block
+        finalHTML += 
+        `
+        <!-------------------------------------------------------------------------------
+        START OF BODY SECTION: Carousel Free
+        --------------------------------------------------------------------------------->
+        <div class="main-wrap" style="padding-top:30px; padding-bottom: 30px;">
+          <div class="container">{${carouselSectionFree}_top-carousel-content:content global="false"}</div>
+            <div class="container" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+            <div class="swiper mySwiper carousel-slider">
+              <div class="swiper-wrapper">
+        `;
+
+        // CENTRE - Start Dynamically Generating Carousel Content Based on Number of Carousel Slides 
+        for (var carouselGen = 0; carouselGen < numberOfCarousel; carouselGen++) {
+        finalHTML += `
+                <!-- Start of Carousel Slide -->
+                <div class="swiper-slide" style="min-height:200px; height:auto;">
+                  <div class="swiper-container">
+                  <div class="custom-content-area">{${carouselSectionFree}_carousel-custom-content-1_${carouselGen}:content global="false"}</div>
+                  </div>
+                </div>
+                <!-- End of Carousel Slide -->
         `;
         }
 
