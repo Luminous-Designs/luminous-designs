@@ -1333,9 +1333,9 @@ if (!document.querySelector('#icontent')) {
       }
 
 
-      // NOT COMPLETE PURESLIDER - VARIABLE COMPONENT GENERATION
+      // A350 PureSlider 
       if (selectedBlocks[element] === "pureslider") {
-        stepByStep++;
+        pureslider++;
 
         // BEGINNING of PureSlider HTML
         finalHTML += `
@@ -1354,7 +1354,7 @@ if (!document.querySelector('#icontent')) {
             <div class="swiper-slide" style="pointer-events: auto !important;">
                 <div class="swiper-weebly-total">
                     <div class="swiper-weebly-image">
-                        {${pureslider5}_sliderimage_${sliderCount}:image global="false"}
+                        {${pureslider}_sliderimage_${sliderCount}:image global="false"}
                     </div>
                     <div class="swiper-weebly-content" id="swiper-content-area" style="display: table;">
                         <!--Outer-->
@@ -1363,7 +1363,7 @@ if (!document.querySelector('#icontent')) {
                             <!--Middle-->
                             <div class="slider-container">
                                 <!--Inner-->
-                                <div id="slide-0">{${pureslider5}_slidercontent_${sliderCount}:content global="false"}</div>
+                                <div id="slide-0">{${pureslider}_slidercontent_${sliderCount}:content global="false"}</div>
                             </div>
                         </div>
                     </div>
