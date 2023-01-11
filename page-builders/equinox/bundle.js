@@ -155,10 +155,10 @@
     }
     
     // ONLY ONE ITEM Rule --> No more than one BG-background-utilizing-item per page
-    if ((lastItemDropped === "pureslider-5") || 
-        (lastItemDropped === "homepage-header") || 
-        (lastItemDropped === "default-header") ||  
-        (lastItemDropped === "no-header")) {
+    if ((lastItemDropped === "hero-1") || 
+        (lastItemDropped === "hero-2") || 
+        (lastItemDropped === "hero-3") ||  
+        (lastItemDropped === "default-weebly-header")) {
 
           console.log("we have a header");
           let numberOfHeaders = 0; // How many pre-existing headers we have
