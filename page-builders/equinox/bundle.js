@@ -90,35 +90,6 @@
   publishClose.onclick = function() {
     publishModal.style.display = "none";
   }
-
-
-  // Get the pureslider prompt modal
-  var puresliderModal = document.getElementById("puresliderModal");
-  var puresliderClose = document.getElementById("puresliderClose");
-  
-  // Get the carousel prompt modal
-  var carouselModal = document.getElementById("carouselModal");
-  var carouselClose = document.getElementById("carouselClose");;
-  
-  // Capture No. of Slides and Close PureSlider Modal
-  puresliderClose.onclick = function() {
-    let selectElement =  document.querySelector('#pureslider-slides'); 
-    let output = selectElement.value; 
-    console.log("Pureslider count recorded");
-    numberOfSlides = output;
-    console.log("Pureslider count "+ numberOfSlides);
-    puresliderModal.style.display = "none";
-  }
-
-   // Capture No. of Carousel Slides and Close Carousel Modal
-   carouselClose.onclick = function() {
-    let selectElement =  document.querySelector('#carousel-slides'); 
-    let outputCarousel = selectElement.value; 
-    console.log("Carousel count recorded");
-    numberOfCarousel = outputCarousel;
-    console.log("Carousel count "+ numberOfCarousel);
-    carouselModal.style.display = "none";
-  }
   
   let lastItemDropped = 0;
   var drake = dragula([snippets, droppable], {
@@ -193,30 +164,6 @@
           }
       };
 
-    // INACTIVE HEADER RULES --> First element MUST be a header 
-   /* if ((el.id != "video-header") || (el.id != "pureslider-5") || (el.id != "homepage-header") || (el.id != "default-header") || (el.id != "no-header")) {
-      if ((selectedBlocksDD[0] != "pureslider-5")) {
-        if (selectedBlocksDD[0] != "homepage-header") {
-          if (selectedBlocksDD[0] != "default-header") {
-            if (selectedBlocksDD[0] != "no-header") {
-              if (selectedBlocksDD[0] != "video-header") {
-              
-                source.appendChild(el);
-                source.removeChild(el);
-
-                // Display Warning Modal with Generated Content
-                warningModal.style.display = "block";
-                WarningHeader.innerText = "Whoops! Your first section should be a header";
-                WarningText.innerText = "Looks like you tried to drag in a non-header as the first section on your webpage. The first section on your page needs to be a header. This includes the homepage-header, pureslider, or any other header type. It cannot be anything else. Try dragging in a header.";
-                
-                
-                return;
-              }
-            }
-          }
-        }
-      }
-    } */
 
     // Section RULES --> No more than one Weebly Section per page
     if ((el.id === "default-section")) {
@@ -239,13 +186,15 @@
       }
     };
 
-    // PURESLIDER PROMPT --> How many Slides?
-    if (el.id === "pureslider") {
-      puresliderModal.style.display = "block";
+    // Count Selection Prompt 2023 - Carousel Free
+    if (el.id === "carousel-free") {
+      // this function automatically opens the modern modal interface. selection variable is stored as a property of the relevant object in rawElements array. 
+      showModal(el);
     }
 
-    // CAROUSEL PROMPT - How many carousels?
-    if (el.id === "carousel-free") {
+    // Count Selection Prompt 2023 - PureSlider
+    if (el.id === "pureslider") {
+      // this function automatically opens the modern modal interface. selection variable is stored as a property of the relevant object in rawElements array. 
       showModal(el);
     }
    
@@ -292,13 +241,16 @@
   downloadBtn.addEventListener("click", event => {
     containsPureSlider = false;
     let selectedBlocks = [];
+    let rawElements = [];
     let selectedSnippets = document.querySelectorAll(
       ".js-droppable > .js-snippet"
     );
   
     for (var i = 0; i < selectedSnippets.length; i++) {
       selectedBlocks.push(selectedSnippets[i].id);
+      rawElements.push(selectedSnippets[i]);
     }
+
     let html = "";
     console.log(selectedBlocks);
     
@@ -684,6 +636,8 @@ if (!document.querySelector('#icontent')) {
     let carouselFixed = 0;
     let blogReference = 0;
     let weeblySection = 0;
+
+    let freeCarouselCount = 0;
     
    
     
@@ -1436,8 +1390,10 @@ if (!document.querySelector('#icontent')) {
       }
 
       // NOT COMPLETED CAROUSEL- VARIABLE COMPONENT GENERATION
-      if (selectedBlocks[element] === "carousel") {
-        carouselSection++;
+      if (selectedBlocks[element] === "carousel-free") {
+        let currentElementCount = rawElements[element].selectedCustomization;
+        freeCarouselCount++;
+        console.log("Alrighty folks. Here we have a carousel free element with " + rawElements[element].selectedCustomization);
 
         // BEGINNING - Build beginning of Carousel Block
         finalHTML += 
@@ -1452,14 +1408,14 @@ if (!document.querySelector('#icontent')) {
         `;
 
         // CENTRE - Start Dynamically Generating Carousel Content Based on Number of Carousel Slides 
-        for (var carouselGen = 0; carouselGen < numberOfCarousel; carouselGen++) {
+        for (var carouselGen = 0; carouselGen < rawElements[element].selectedCustomization; carouselGen++) {
         finalHTML += `
                     <!-- Start of Carousel Slide -->
                     <div class="swiper-slide" style="min-height:200px; height:auto;">
                         <div class="swiper-container">
-                            {${carouselSection}_carouselimage_${carouselGen}:image global="false"}
-                            <h2 style="color:white">{${carouselSection}_carouselh2_${carouselGen}:text global="false"}</h2>
-                            <p style="color:white">{${carouselSection}_carouselp_${carouselGen}:text global="false"}</p>
+                            {${freeCarouselCount}_carouselimage_${carouselGen}:image global="false"}
+                            <h2 style="color:white">{${freeCarouselCount}_carouselh2_${carouselGen}:text global="false"}</h2>
+                            <p style="color:white">{${freeCarouselCount}_carouselp_${carouselGen}:text global="false"}</p>
                         </div>
                     </div>
                     <!-- End of Carousel Slide -->
@@ -1497,15 +1453,15 @@ if (!document.querySelector('#icontent')) {
     // Tidy up the HTML a bit
   });
 
-  // 19823Experimental
+  // 19823 Experimental
   function showModal(obj) {
     // Create the modal container
     let modal = document.createElement("div");
-    modal.classList.add("modal");
+    modal.classList.add("modal-equinox");
   
     // Create the modal content
     let modalContent = document.createElement("div");
-    modalContent.classList.add("modal-content");
+    modalContent.classList.add("modal-content-equinox");
   
     // Create the title
     let title = document.createElement("h2");
@@ -1538,8 +1494,9 @@ if (!document.querySelector('#icontent')) {
     document.body.appendChild(modal);
   
     // Animate the modal
-    modal.classList.add("show-modal");
+    modal.classList.add("show-modal-equinox");
   }
+  
   
   
   document.addEventListener("click", function(event) {

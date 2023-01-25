@@ -167,6 +167,47 @@
 
   }
 
+ /* The background overlay */
+.modal-equinox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+  visibility: hidden; /* Hide the modal by default */
+  z-index: 1; /* Sit on top of other elements */
+  transition: visibility 0.3s ease-in-out;
+}
+
+/* The modal content */
+.modal-content-equinox {
+  background-color: #fefefe;
+  margin: 10% auto; /* Center the modal vertically and horizontally */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Width of the modal */
+}
+
+/* Show the modal when it's class is "show-modal" */
+.show-modal-equinox {
+  visibility: visible;
+}
+
+/* Add animation to the modal when it's class is "show-modal" */
+.show-modal-equinox {
+  visibility: visible;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* The keyframe for the animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+
   /* Next Button */
 
   .next-btn {
