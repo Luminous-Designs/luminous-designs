@@ -28,6 +28,23 @@
       
     
     }
+    
+    /* Label Buttons */
+    .text-black.font-semibold.px-2.py-1.transition-normal {
+
+      font-size: 10px;
+      background-color: #e2e8f0;
+      border-radius: 20px;
+    }
+
+    /* Label Buttons Section */
+    .border-l-2.mx-2.mb-3.js-filter.pl-3.border-black {
+      padding-left:0px;
+      margin-left:0px;
+      border-left:none;
+
+    }
+
 
     .subtitle-prompt {
       margin-left:10px;
@@ -225,7 +242,7 @@
       <!-- General -->
       <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal"
         data-filter="js-snippet">
-        All
+        All Sections
       </button>
       <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal" data-filter="st-header">
         Header Sections
@@ -233,24 +250,19 @@
       <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal" data-filter="st-body">
         Body Sections
       </button>
-      <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal"
-        data-filter="st-pureslider">
+      <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal" data-filter="st-pureslider">
         PureSlider
       </button>
-      <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal" data-filter="st-icons">
-        Icon Sections
+      <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal" data-filter="st-carousel">
+        Carousel
       </button>
-      <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal"
-        data-filter="st-parallax">
+      <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal" data-filter="st-parallax">
         Parallax
       </button>
       <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal" data-filter="st-blank">
         Blank Drag 'n Drop Sections
       </button>
-      <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal"
-        data-filter="st-default">
-        Default Sections
-      </button>
+      
       <!-- Marketing -->
 
     </div>
@@ -431,7 +443,7 @@
       </figure>
 
       <!--Carousel Free-->
-      <figure class="js-snippet w-1/2 p-2 st-pureslider" id="carousel-free">
+      <figure class="js-snippet w-1/2 p-2 st-carousel" id="carousel-free">
         <img src="./images/carousel-free.png" alt=""
           class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
         <div class="figure-label">
@@ -443,7 +455,7 @@
       </figure>
 
       <!--Carousel Fixed-->
-      <figure class="js-snippet w-1/2 p-2 st-pureslider" id="carousel-fixed">
+      <figure class="js-snippet w-1/2 p-2 st-carousel" id="carousel-fixed">
         <img src="./images/carousel-fixed.png" alt=""
           class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
         <div class="figure-label">
@@ -454,7 +466,7 @@
         </div>
       </figure>
       <!--Default Weebly Header-->
-      <figure class="js-snippet w-1/2 p-2 st-blank st-default st-header" id="default-weebly-header">
+      <figure class="js-snippet w-1/2 p-2 st-blank st-header" id="default-weebly-header">
         <img src="./images/default-weebly-header.png" alt=""
           class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
         <div class="figure-label">
@@ -465,7 +477,7 @@
         </div>
       </figure>
       <!--Weebly Sections-->
-      <figure class="js-snippet w-1/2 p-2 st-body st-blank st-default" id="default-section">
+      <figure class="js-snippet w-1/2 p-2 st-body st-blank" id="default-section">
         <img src="./images/weebly-sections.jpeg" alt=""
           class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
         <div class="figure-label">
@@ -476,7 +488,7 @@
         </div>
       </figure>
       <!--Weebly Sections-->
-      <figure class="js-snippet w-1/2 p-2 st-body st-blank st-default" id="scrollipage-anchor">
+      <figure class="js-snippet w-1/2 p-2 st-body st-blank" id="scrollipage-anchor">
         <img src="./images/anchor.jpeg" alt=""
           class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
         <div class="figure-label">
@@ -498,7 +510,7 @@
         </div>
       </figure>
       <!-- Parallax -->
-      <figure class="js-snippet w-1/2 p-2 st-body st-blank" id="parallax">
+      <figure class="js-snippet w-1/2 p-2 st-body st-parallax" id="parallax">
         <img src="./images/parallax.png" alt=""
           class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
         <div class="figure-label">
@@ -509,7 +521,7 @@
         </div>
       </figure>
       <!-- Blog Reference -->
-      <figure class="js-snippet w-1/2 p-2 st-body st-blank" id="blog-reference">
+      <figure class="js-snippet w-1/2 p-2 st-body" id="blog-reference">
         <img src="./images/blog-reference.png" alt=""
           class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
         <div class="figure-label">
@@ -518,18 +530,7 @@
             A section that shows your four latest blog posts.
           </div>
         </div>
-      </figure>
-      <!-- Video Header -->
-      <figure class="js-snippet w-1/2 p-2 st-header st-blank" id="video-header">
-        <img src="./images/video-header.png" alt=""
-          class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
-        <div class="figure-label">
-          <div class="label-header">Full Screen Background Video Header</div>
-          <div class="label-text">
-            This is a full screen background video header where you can drag and drop content
-          </div>
-        </div>
-      </figure>      
+      </figure>    
     </div>
   </section>
   <section class="bg-gray-300 p-8 pb-0 w-1/3 flex flex-col fixed top-0 bottom-0 right-0">

@@ -138,13 +138,12 @@
   });
   
   
-  // Drop Rules
+  // On-Drop
   drake.on('drop', function (el, container, source) {
 
     // Gets rid of label on drop sequence
     $( ".js-droppable > .js-snippet > .figure-label" ).remove();
 
-    // Begin Analyze Procedures
     let selectedBlocksDD = [];
     let selectedSnippetsDD = document.querySelectorAll(
       ".js-droppable > .js-snippet"
@@ -154,10 +153,15 @@
       selectedBlocksDD.push(selectedSnippetsDD[i].id);
     }
     
-    // ONLY ONE ITEM Rule --> No more than one BG-background-utilizing-item per page
+    /* On-Drop Rules
+    ----------------------------------------------------------------------------------------*/
+
+
+    // Rule 1: ONLY ONE ITEM Rule --> No more than one BG-background-utilizing-item per page
     if ((lastItemDropped === "hero-1") || 
         (lastItemDropped === "hero-2") || 
         (lastItemDropped === "hero-3") ||  
+        
         (lastItemDropped === "default-weebly-header")) {
 
           console.log("we have a header");
@@ -167,6 +171,7 @@
             if ((selectedBlocksDD[headerCount] == "hero-1") || 
                 (selectedBlocksDD[headerCount] == "hero-2") || 
                 (selectedBlocksDD[headerCount] == "hero-3") ||  
+                
                 (selectedBlocksDD[headerCount] == "default-weebly-header"))  {
                   numberOfHeaders = numberOfHeaders + 1;
               }
@@ -185,32 +190,7 @@
       }
     };
 
-    // INACTIVE HEADER RULES --> First element MUST be a header 
-   /* if ((el.id != "video-header") || (el.id != "pureslider-5") || (el.id != "homepage-header") || (el.id != "default-header") || (el.id != "no-header")) {
-      if ((selectedBlocksDD[0] != "pureslider-5")) {
-        if (selectedBlocksDD[0] != "homepage-header") {
-          if (selectedBlocksDD[0] != "default-header") {
-            if (selectedBlocksDD[0] != "no-header") {
-              if (selectedBlocksDD[0] != "video-header") {
-              
-                source.appendChild(el);
-                source.removeChild(el);
-
-                // Display Warning Modal with Generated Content
-                warningModal.style.display = "block";
-                WarningHeader.innerText = "Whoops! Your first section should be a header";
-                WarningText.innerText = "Looks like you tried to drag in a non-header as the first section on your webpage. The first section on your page needs to be a header. This includes the homepage-header, pureslider, or any other header type. It cannot be anything else. Try dragging in a header.";
-                
-                
-                return;
-              }
-            }
-          }
-        }
-      }
-    } */
-
-    // Section RULES --> No more than one Weebly Section per page
+    // Rule #2: Section RULES --> No more than one Weebly Section per page
     if ((el.id === "default-section")) {
       let numberOfSections = 0; // How many pre-existing headers we have
       for (let sectionCount = 0; sectionCount < selectedBlocksDD.length; sectionCount++) {
@@ -231,15 +211,38 @@
       }
     };
 
-    // PURESLIDER PROMPT --> How many Slides?
-    if (el.id === "pureslider") {
-      puresliderModal.style.display = "block";
-    }
+    // Rule #3: Section RULES --> No More Than One Carousel Or PureSlider Per Page
+    if ((el.id === "default-section")) {
+      let numberOfSections = 0; // How many pre-existing headers we have
+      for (let sectionCount = 0; sectionCount < selectedBlocksDD.length; sectionCount++) {
+        if ((selectedBlocksDD[sectionCount] == "default-section" )) {
+            numberOfSections = numberOfSections + 1;
+        }
+      };
+      if (numberOfSections > 1) {
+          // Deletion script occurs
+          source.appendChild(el);
+          source.removeChild(el);
 
-    // CAROUSEL PROMPT - How many carousels?
-    if (el.id === "carousel") {
-        carouselModal.style.display = "block";
-    }
+          // Display Warning Modal with Generated Content
+          warningModal.style.display = "block";
+          WarningHeader.innerText = "Whoops! You can only have one WeeblyFlex Section per page.";
+          WarningText.innerText = "Looks like you tried to drag in multiple WeeblyFlex Sections. Weebly only allows one WeeblyFlex per page. Do note that you can create additional sections inside of the WeeblyFlex section once you import your layout into the Weebly Editor, each with their own backgrounds (video backgrounds, image backgrounds, color backgrounds, graident backgrounds). If you need to add another white section somewhere else on the page, add a Weebly Blank section. Please contact us at luminousthemes.com/support if you're having trouble.";
+          return;
+      }
+    };
+
+    /* How Many Variations Pop-Up Prompt
+    ----------------------------------------------------------------------------------------*/
+
+    // PURESLIDER PROMPT --> How many Slides?
+    if (el.id === "pureslider") { puresliderModal.style.display = "block"; }
+
+    // CAROUSEL Free PROMPT - How many carousels?
+    if (el.id === "carousel-free") { carouselFreeModal.style.display = "block"; }
+
+    // CAROUSEL Fixed PROMPT - How many carousels?
+    if (el.id === "carousel-fixed") { carouselFixedModal.style.display = "block"; }
    
   });
   
@@ -280,7 +283,7 @@
   }
   
   
-  // Download Protocol
+  // On Publish - Download Protocol
   downloadBtn.addEventListener("click", event => {
     containsPureSlider = false;
     let selectedBlocks = [];
@@ -295,7 +298,8 @@
     console.log(selectedBlocks);
     
     let scrollipageExistence = 0;
-    // Search for ScrolliPage Block. If present...
+
+    // Stage 1: Search for ScrolliPage Block. If present...
     for (var iki = 0; iki < selectedBlocks.length; iki++) {
         if (selectedBlocks[iki] === "scrollipage-anchor") {
             scrollipageExistence = scrollipageExistence + 1;
@@ -304,26 +308,16 @@
    
     // If there is a Scrollipage anchor present upon download, the value of scrolliPage existence will be greater than 0. 
 
-    // INACTIVE Let's make sure the first element is a header
-    /*if ((selectedBlocks[0] != "pureslider-5")) {
-      if (selectedBlocks[0] != "homepage-header") {
-        if (selectedBlocks[0] != "default-header") {
-          if (selectedBlocks[0] != "no-header") {
-            if (selectedBlocks[0] != "video-header") {
+    // Stage 2: Rule: First element should be a navigation bar
+    if ((selectedBlocks[0] != "navigation")) {
+      // Display Warning Modal with Generated Content
+      warningModal.style.display = "block";
+      WarningHeader.innerText = "Uh oh! Look's like you're missing a navigation bar";
+      WarningText.innerText = "The first element on your page should be a navigation bar";
+      return;
+    }
 
-              // Display Warning Modal with Generated Content
-              warningModal.style.display = "block";
-              WarningHeader.innerText = "Uh oh! Look's like you're missing a header";
-              WarningText.innerText = "The first element on your page should be a header section";
-              return;
-
-            }
-          }
-        }
-      }
-    }*/
-
-    // Represents head code
+    // 3. Represents head code
     let beginningCode = ``;
     let codeCredits;
     // Add layout description 
@@ -343,8 +337,6 @@
         ${selectedBlocks[listofModules]}
         `;
     }
-        
-
     // End Tag
     codeCredits += 
     `
@@ -424,12 +416,7 @@
         `;
     } 
 
-
-   
-
-    
-
-    // A350-Ending-Code Represents footer code
+    // 4. A350-Ending-Code Represents footer code
     let endingCode;
 
     endingCode = `
@@ -659,7 +646,7 @@ if (!document.querySelector('#icontent')) {
     let finalHTML = ``;
     finalHTML += beginningCode;
 
-    // Counter Variables Initialization
+    // PreBuilt Block Initialization
     let hero1 = 0;
     let hero2 = 0;
     let hero3 = 0;
@@ -675,18 +662,13 @@ if (!document.querySelector('#icontent')) {
     let pricing = 0;
     let callToAction = 0;
     let pureslider = 0;
-    let defaultWeeblyHeader = 0;
     let parallax = 0;
-    let carouselFree = 0;
-    let carouselFixed = 0;
-    let blogReference = 0;
-    let weeblySection = 0;
     let carouselSectionFixed = 0;
     let carouselSectionFree = 0;
     
    
     
-    // A350-ASSEMBLY SECTION ASSEMBLY STICHING CODE
+    // Pre-Built Blocks HTML Assembly Section
     for (let element = 0; element < selectedBlocks.length; element++) {
 
 
