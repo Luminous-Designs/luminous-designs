@@ -97,7 +97,26 @@
     font-size: 12px;
   }
 
+  .count-button {
+    min-width: 30px;
+    height: 20px;
+    background-color: white;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 2px 2px 5px #888888;
+    font-size: 8px;
+    font-weight: 600;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+    padding-bottom: 2px;
+    
+    text-transform: uppercase;
 
+  }
 
   /*PureSlider Prompt Window*/
   .pureslider-prompt-container {
@@ -188,6 +207,33 @@
   border: 1px solid #888;
   width: 50%; /* Width of the modal */
 }
+
+.modal-content-equinox select {
+  min-width: 100px;
+  background-color: #f2f2f2;
+  border: 1px solid black;
+  margin-right: 30px;
+  
+}
+
+.modal-content-equinox h2 {
+  font-size: 20px;
+  font-weight: 500;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.modal-content-equinox button {
+  outline: 1px solid rgba(0,0,0,1);
+  transition: all 0.3s;
+  padding: 5px;
+}
+.modal-content-equinox button:hover {
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  outline: none;
+}
+
 
 /* Show the modal when it's class is "show-modal" */
 .show-modal-equinox {

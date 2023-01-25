@@ -7,6 +7,8 @@
   const snippet = document.querySelectorAll(".js-snippet");
   const filter = document.querySelector(".js-filter");
   const downloadBtn = document.querySelector(".js-download");
+
+  
   const deleteBtnHtml =
     "<div class='bg-white hidden absolute top-0 left-0 js-delete-btn px-4 py-2 shadow'><i class='far fa-trash-alt pointer-events-none'></i></div>";
   const stitchesCSSPath = "https://stitches.hyperyolo.com/output.css";
@@ -48,16 +50,9 @@
  // CODE FOR AUTOGEN STARTS HERE
   // Get the <figure> element with the ID "myFigure"
   const figure = document.getElementById("navigation");
-
-  // Get the <div> element with the class "js-droppable"
   const target = document.querySelector(".js-droppable");
-
-  // Clone the <figure> element
   const clonedFigure = figure.cloneNode(true);
-
-  // Add the cloned <figure> element to the target <div>
   target.appendChild(clonedFigure);
-  
   clonedFigure.innerHTML += deleteBtnHtml;
   clonedFigure.classList.add ("relative");
   const label = clonedFigure.querySelector(".figure-label");
@@ -71,7 +66,6 @@
     if (event.target == warningModal) {
       warningModal.style.display = "none";
     }
-    
   }
 
   window.onclick = function(event) {
@@ -102,6 +96,8 @@
   }).on("drop", (el, target) => {
     el.innerHTML += deleteBtnHtml;
     el.classList.add ("relative");
+    // if el id is carousel or pureslider
+
     arrayByAddition.push(el);
     
     lastItemDropped = el.id;
@@ -125,16 +121,7 @@
       selectedBlocksDD.push(selectedSnippetsDD[i].id);
     }
     
-    /* ON DROP: RULES START BELOW (PART 1 OF RULE INSPECTION) 
-    Equinox Specific Rules: No More Than 1, No more Than 1 BG hero
-    */
-
-    // BG Hero Rule
-    // Navigation Must Be First Rule
-    // No More Than 1 Instance Rule
-
-
-    // BG HERO RULES --> No more than one Background IMG-utilizing section per page
+    // Rule Check -> No more than one Background IMG-utilizing section per page
     if ((lastItemDropped === "hero-1") || 
         (lastItemDropped === "hero-2") || 
         (lastItemDropped === "hero-3") || 
@@ -304,7 +291,6 @@
         `;
     }
         
-
     // End Tag
     codeCredits += 
     `
@@ -613,6 +599,8 @@ if (!document.querySelector('#icontent')) {
 
     let finalHTML = ``;
     finalHTML += beginningCode;
+
+    // finalHTML = middle code (from other JS file)
 
     // Counter Variables Initialization
     let hero1 = 0;
@@ -1291,7 +1279,6 @@ if (!document.querySelector('#icontent')) {
         `;
       }
 
-
       // NOT COMPLETE PURESLIDER - VARIABLE COMPONENT GENERATION
       if (selectedBlocks[element] === "pureslider") {
         stepByStep++;
@@ -1449,8 +1436,6 @@ if (!document.querySelector('#icontent')) {
     publishHeader.innerText = "Success! Layout Code Generated";
     publishText.innerText = cleanCode;
     
-  
-    // Tidy up the HTML a bit
   });
 
   // 19823 Experimental
@@ -1465,7 +1450,7 @@ if (!document.querySelector('#icontent')) {
   
     // Create the title
     let title = document.createElement("h2");
-    title.textContent = "Enter Number of Items";
+    title.textContent = "Please select how many slides/carousels you'd like in this section.";
     modalContent.appendChild(title);
   
     // Create the select element
@@ -1483,6 +1468,7 @@ if (!document.querySelector('#icontent')) {
     continueButton.textContent = "Continue";
     continueButton.addEventListener("click", function() {
       obj.selectedCustomization = select.value;
+      obj.innerHTML += `<div class='count-button'>${obj.selectedCustomization} Items</div>`;
       document.body.removeChild(modal);
     });
     modalContent.appendChild(continueButton);
@@ -1495,6 +1481,8 @@ if (!document.querySelector('#icontent')) {
   
     // Animate the modal
     modal.classList.add("show-modal-equinox");
+
+    
   }
   
   
