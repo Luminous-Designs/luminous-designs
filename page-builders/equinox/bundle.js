@@ -138,12 +138,13 @@
   });
   
   
-  // On-Drop
+  // Drop Rules
   drake.on('drop', function (el, container, source) {
 
     // Gets rid of label on drop sequence
     $( ".js-droppable > .js-snippet > .figure-label" ).remove();
 
+    // Begin Analyze Procedures
     let selectedBlocksDD = [];
     let selectedSnippetsDD = document.querySelectorAll(
       ".js-droppable > .js-snippet"
@@ -153,44 +154,71 @@
       selectedBlocksDD.push(selectedSnippetsDD[i].id);
     }
     
-    /* On-Drop Rules
-    ----------------------------------------------------------------------------------------*/
+    /* ON DROP: RULES START BELOW (PART 1 OF RULE INSPECTION) 
+    Equinox Specific Rules: No More Than 1, No more Than 1 BG hero
+    */
+
+    // BG Hero Rule
+    // Navigation Must Be First Rule
+    // No More Than 1 Instance Rule
 
 
-    // Rule 1: ONLY ONE ITEM Rule --> No more than one BG-background-utilizing-item per page
+    // BG HERO RULES --> No more than one Background IMG-utilizing section per page
     if ((lastItemDropped === "hero-1") || 
         (lastItemDropped === "hero-2") || 
-        (lastItemDropped === "hero-3") ||  
-        
-        (lastItemDropped === "default-weebly-header")) {
-
-          console.log("we have a header");
+        (lastItemDropped === "hero-3") || 
+        (lastItemDropped === "default-header")) {
+          console.log("Rule Inspection Triggered: No More Than One Element Allowed");
           let numberOfHeaders = 0; // How many pre-existing headers we have
       
           for (let headerCount = 0; headerCount < selectedBlocksDD.length; headerCount++) {
-            if ((selectedBlocksDD[headerCount] == "hero-1") || 
+            if ((selectedBlocksDD[headerCount] == "hero-1" ) || 
                 (selectedBlocksDD[headerCount] == "hero-2") || 
-                (selectedBlocksDD[headerCount] == "hero-3") ||  
-                
-                (selectedBlocksDD[headerCount] == "default-weebly-header"))  {
+                (selectedBlocksDD[headerCount] == "hero-3") || 
+                (selectedBlocksDD[headerCount] == "default-header")) {
                   numberOfHeaders = numberOfHeaders + 1;
+            }
+          };
+          if (numberOfHeaders > 1) {
+            // Deletion script occurs
+            console.log("Element has been deleted due to violation of header count");
+            source.appendChild(el);
+            source.removeChild(el);
+
+            // Display Warning Modal with Generated Content
+            warningModal.style.display = "block";
+            WarningHeader.innerText = "Whoops! You can only have one HERO or default header element per page";
+            WarningText.innerText = "Looks like you tried to add more than one hero element or header element. You can only have one of these per page, due to how Weebly handles hero background images. Headers include the Hero Image Headers and Weebly default headers";
+            return;
+          }
+      };
+
+    // INACTIVE HEADER RULES --> First element MUST be a header 
+   /* if ((el.id != "video-header") || (el.id != "pureslider-5") || (el.id != "homepage-header") || (el.id != "default-header") || (el.id != "no-header")) {
+      if ((selectedBlocksDD[0] != "pureslider-5")) {
+        if (selectedBlocksDD[0] != "homepage-header") {
+          if (selectedBlocksDD[0] != "default-header") {
+            if (selectedBlocksDD[0] != "no-header") {
+              if (selectedBlocksDD[0] != "video-header") {
+              
+                source.appendChild(el);
+                source.removeChild(el);
+
+                // Display Warning Modal with Generated Content
+                warningModal.style.display = "block";
+                WarningHeader.innerText = "Whoops! Your first section should be a header";
+                WarningText.innerText = "Looks like you tried to drag in a non-header as the first section on your webpage. The first section on your page needs to be a header. This includes the homepage-header, pureslider, or any other header type. It cannot be anything else. Try dragging in a header.";
+                
+                
+                return;
               }
-            };
-      if (numberOfHeaders > 1) {
-          // Deletion script occurs
-          console.log("Element has been deleted due to violation of header count");
-          source.appendChild(el);
-          source.removeChild(el);
-
-          // Display Warning Modal with Generated Content
-          warningModal.style.display = "block";
-          WarningHeader.innerText = "Whoops! You can only have one header per page.";
-          WarningText.innerText = "Looks like you tried to add more than one header. You can only have one header per page. Headers include the Hero Header elements and the Weebly 4 Header element";
-          return;
+            }
+          }
+        }
       }
-    };
+    } */
 
-    // Rule #2: Section RULES --> No more than one Weebly Section per page
+    // Section RULES --> No more than one Weebly Section per page
     if ((el.id === "default-section")) {
       let numberOfSections = 0; // How many pre-existing headers we have
       for (let sectionCount = 0; sectionCount < selectedBlocksDD.length; sectionCount++) {
@@ -210,39 +238,16 @@
           return;
       }
     };
-
-    // Rule #3: Section RULES --> No More Than One Carousel Or PureSlider Per Page
-    if ((el.id === "default-section")) {
-      let numberOfSections = 0; // How many pre-existing headers we have
-      for (let sectionCount = 0; sectionCount < selectedBlocksDD.length; sectionCount++) {
-        if ((selectedBlocksDD[sectionCount] == "default-section" )) {
-            numberOfSections = numberOfSections + 1;
-        }
-      };
-      if (numberOfSections > 1) {
-          // Deletion script occurs
-          source.appendChild(el);
-          source.removeChild(el);
-
-          // Display Warning Modal with Generated Content
-          warningModal.style.display = "block";
-          WarningHeader.innerText = "Whoops! You can only have one WeeblyFlex Section per page.";
-          WarningText.innerText = "Looks like you tried to drag in multiple WeeblyFlex Sections. Weebly only allows one WeeblyFlex per page. Do note that you can create additional sections inside of the WeeblyFlex section once you import your layout into the Weebly Editor, each with their own backgrounds (video backgrounds, image backgrounds, color backgrounds, graident backgrounds). If you need to add another white section somewhere else on the page, add a Weebly Blank section. Please contact us at luminousthemes.com/support if you're having trouble.";
-          return;
-      }
-    };
-
-    /* How Many Variations Pop-Up Prompt
-    ----------------------------------------------------------------------------------------*/
 
     // PURESLIDER PROMPT --> How many Slides?
-    if (el.id === "pureslider") { puresliderModal.style.display = "block"; }
+    if (el.id === "pureslider") {
+      puresliderModal.style.display = "block";
+    }
 
-    // CAROUSEL Free PROMPT - How many carousels?
-    if (el.id === "carousel-free") { carouselFreeModal.style.display = "block"; }
-
-    // CAROUSEL Fixed PROMPT - How many carousels?
-    if (el.id === "carousel-fixed") { carouselFixedModal.style.display = "block"; }
+    // CAROUSEL PROMPT - How many carousels?
+    if (el.id === "carousel-free") {
+      showModal(el);
+    }
    
   });
   
@@ -283,7 +288,7 @@
   }
   
   
-  // On Publish - Download Protocol
+  // Download Protocol
   downloadBtn.addEventListener("click", event => {
     containsPureSlider = false;
     let selectedBlocks = [];
@@ -298,8 +303,7 @@
     console.log(selectedBlocks);
     
     let scrollipageExistence = 0;
-
-    // Stage 1: Search for ScrolliPage Block. If present...
+    // Search for ScrolliPage Block. If present...
     for (var iki = 0; iki < selectedBlocks.length; iki++) {
         if (selectedBlocks[iki] === "scrollipage-anchor") {
             scrollipageExistence = scrollipageExistence + 1;
@@ -308,16 +312,26 @@
    
     // If there is a Scrollipage anchor present upon download, the value of scrolliPage existence will be greater than 0. 
 
-    // Stage 2: Rule: First element should be a navigation bar
-    if ((selectedBlocks[0] != "navigation")) {
-      // Display Warning Modal with Generated Content
-      warningModal.style.display = "block";
-      WarningHeader.innerText = "Uh oh! Look's like you're missing a navigation bar";
-      WarningText.innerText = "The first element on your page should be a navigation bar";
-      return;
-    }
+    // INACTIVE Let's make sure the first element is a header
+    /*if ((selectedBlocks[0] != "pureslider-5")) {
+      if (selectedBlocks[0] != "homepage-header") {
+        if (selectedBlocks[0] != "default-header") {
+          if (selectedBlocks[0] != "no-header") {
+            if (selectedBlocks[0] != "video-header") {
 
-    // 3. Represents head code
+              // Display Warning Modal with Generated Content
+              warningModal.style.display = "block";
+              WarningHeader.innerText = "Uh oh! Look's like you're missing a header";
+              WarningText.innerText = "The first element on your page should be a header section";
+              return;
+
+            }
+          }
+        }
+      }
+    }*/
+
+    // Represents head code
     let beginningCode = ``;
     let codeCredits;
     // Add layout description 
@@ -337,6 +351,8 @@
         ${selectedBlocks[listofModules]}
         `;
     }
+        
+
     // End Tag
     codeCredits += 
     `
@@ -375,7 +391,7 @@
     `;
 
 
-    // Set the beginning code depending on whether ScrolliPage is present or not present...
+    // A350 Set the beginning code depending on whether ScrolliPage is present or not present...
     if (scrollipageExistence > 0) {
         // Beginning Code WITH ScrolliPage
 
@@ -416,9 +432,9 @@
         `;
     } 
 
-    // 4. A350-Ending-Code Represents footer code
     let endingCode;
 
+    // A350 Ending Code
     endingCode = `
     <!-- START OF FOOTER CODE -->
 	<!-- </div>-->
@@ -646,7 +662,7 @@ if (!document.querySelector('#icontent')) {
     let finalHTML = ``;
     finalHTML += beginningCode;
 
-    // PreBuilt Block Initialization
+    // Counter Variables Initialization
     let hero1 = 0;
     let hero2 = 0;
     let hero3 = 0;
@@ -662,13 +678,16 @@ if (!document.querySelector('#icontent')) {
     let pricing = 0;
     let callToAction = 0;
     let pureslider = 0;
+    let defaultWeeblyHeader = 0;
     let parallax = 0;
-    let carouselSectionFixed = 0;
-    let carouselSectionFree = 0;
+    let carouselFree = 0;
+    let carouselFixed = 0;
+    let blogReference = 0;
+    let weeblySection = 0;
     
    
     
-    // Pre-Built Blocks HTML Assembly Section
+    // A350-ASSEMBLY SECTION ASSEMBLY STICHING CODE
     for (let element = 0; element < selectedBlocks.length; element++) {
 
 
@@ -784,8 +803,6 @@ if (!document.querySelector('#icontent')) {
         `;
       }
 
-
-
       // A350 Services White Icon Assembly - Subject to Variation
       if (selectedBlocks[element] === "services-white-icon") {
         servicesWhiteIcon++;
@@ -868,7 +885,6 @@ if (!document.querySelector('#icontent')) {
         --------------------------------------------------------------------------------------->
         `;
       }
-
 
       // A350 Text Left Image Right Assembly
       if (selectedBlocks[element] === "text-left-image-right") {
@@ -959,7 +975,6 @@ if (!document.querySelector('#icontent')) {
         `;
       }
 
-
       // A350 feature-boxes-curved
       if (selectedBlocks[element] === "feature-boxes-curved") {
         featureBoxesCurved++;
@@ -996,7 +1011,6 @@ if (!document.querySelector('#icontent')) {
         --------------------------------------------------------------------------------------->
         `;
       }
-
 
       // A350 Testimonial
       if (selectedBlocks[element] === "testimonial") {
@@ -1324,9 +1338,9 @@ if (!document.querySelector('#icontent')) {
       }
 
 
-      // A350 PureSlider 
+      // NOT COMPLETE PURESLIDER - VARIABLE COMPONENT GENERATION
       if (selectedBlocks[element] === "pureslider") {
-        pureslider++;
+        stepByStep++;
 
         // BEGINNING of PureSlider HTML
         finalHTML += `
@@ -1345,7 +1359,7 @@ if (!document.querySelector('#icontent')) {
             <div class="swiper-slide" style="pointer-events: auto !important;">
                 <div class="swiper-weebly-total">
                     <div class="swiper-weebly-image">
-                        {${pureslider}_sliderimage_${sliderCount}:image global="false"}
+                        {${pureslider5}_sliderimage_${sliderCount}:image global="false"}
                     </div>
                     <div class="swiper-weebly-content" id="swiper-content-area" style="display: table;">
                         <!--Outer-->
@@ -1354,7 +1368,7 @@ if (!document.querySelector('#icontent')) {
                             <!--Middle-->
                             <div class="slider-container">
                                 <!--Inner-->
-                                <div id="slide-0">{${pureslider}_slidercontent_${sliderCount}:content global="false"}</div>
+                                <div id="slide-0">{${pureslider5}_slidercontent_${sliderCount}:content global="false"}</div>
                             </div>
                         </div>
                     </div>
@@ -1421,21 +1435,20 @@ if (!document.querySelector('#icontent')) {
 
       }
 
-      // A350 Carousel Section Fixed
-      if (selectedBlocks[element] === "carousel-fixed") {
-        carouselSectionFixed++;
+      // NOT COMPLETED CAROUSEL- VARIABLE COMPONENT GENERATION
+      if (selectedBlocks[element] === "carousel") {
+        carouselSection++;
 
         // BEGINNING - Build beginning of Carousel Block
         finalHTML += 
         `
         <!-------------------------------------------------------------------------------
-        START OF BODY SECTION: Carousel Fixed
+        START OF BODY SECTION: Carousel
         --------------------------------------------------------------------------------->
-        <div class="main-wrap" style="padding-top:30px; padding-bottom: 30px;">
-          <div class="container">{${carouselSectionFixed}_top-carousel-content:content global="false"}</div>
+        <div class="main-wrap">
             <div class="container" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
-            <div class="swiper mySwiper carousel-slider">
-              <div class="swiper-wrapper">
+                <div class="swiper mySwiper carousel-slider">
+                    <div class="swiper-wrapper">
         `;
 
         // CENTRE - Start Dynamically Generating Carousel Content Based on Number of Carousel Slides 
@@ -1444,56 +1457,12 @@ if (!document.querySelector('#icontent')) {
                     <!-- Start of Carousel Slide -->
                     <div class="swiper-slide" style="min-height:200px; height:auto;">
                         <div class="swiper-container">
-                            {${carouselSectionFixed}_carouselimage_${carouselGen}:image global="false"}
-                            <h2 style="color:white">{${carouselSectionFixed}_carouselh2_${carouselGen}:text global="false"}</h2>
-                            <p style="color:white">{${carouselSectionFixed}_carouselp_${carouselGen}:text global="false"}</p>
+                            {${carouselSection}_carouselimage_${carouselGen}:image global="false"}
+                            <h2 style="color:white">{${carouselSection}_carouselh2_${carouselGen}:text global="false"}</h2>
+                            <p style="color:white">{${carouselSection}_carouselp_${carouselGen}:text global="false"}</p>
                         </div>
                     </div>
                     <!-- End of Carousel Slide -->
-        `;
-        }
-
-        // END - Attach End of Carousel Block
-        finalHTML += 
-        `
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
-        </div>
-        <!-------------------------------------------------------------------------------
-        END OF BODY SECTION: Carousel
-        --------------------------------------------------------------------------------->
-        `;
-      }
-
-      // A350 Carousel Section Free
-      if (selectedBlocks[element] === "carousel-free") {
-        carouselSectionFree++;
-
-        // BEGINNING - Build beginning of Carousel Block
-        finalHTML += 
-        `
-        <!-------------------------------------------------------------------------------
-        START OF BODY SECTION: Carousel Free
-        --------------------------------------------------------------------------------->
-        <div class="main-wrap" style="padding-top:30px; padding-bottom: 30px;">
-          <div class="container">{${carouselSectionFree}_top-carousel-content:content global="false"}</div>
-            <div class="container" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
-            <div class="swiper mySwiper carousel-slider">
-              <div class="swiper-wrapper">
-        `;
-
-        // CENTRE - Start Dynamically Generating Carousel Content Based on Number of Carousel Slides 
-        for (var carouselGen = 0; carouselGen < numberOfCarousel; carouselGen++) {
-        finalHTML += `
-                <!-- Start of Carousel Slide -->
-                <div class="swiper-slide" style="min-height:200px; height:auto;">
-                  <div class="swiper-container">
-                  <div class="custom-content-area">{${carouselSectionFree}_carousel-custom-content-1_${carouselGen}:content global="false"}</div>
-                  </div>
-                </div>
-                <!-- End of Carousel Slide -->
         `;
         }
 
@@ -1527,6 +1496,51 @@ if (!document.querySelector('#icontent')) {
   
     // Tidy up the HTML a bit
   });
+
+  // 19823Experimental
+  function showModal(obj) {
+    // Create the modal container
+    let modal = document.createElement("div");
+    modal.classList.add("modal");
+  
+    // Create the modal content
+    let modalContent = document.createElement("div");
+    modalContent.classList.add("modal-content");
+  
+    // Create the title
+    let title = document.createElement("h2");
+    title.textContent = "Enter Number of Items";
+    modalContent.appendChild(title);
+  
+    // Create the select element
+    let select = document.createElement("select");
+    for (let i = 1; i <= 12; i++) {
+      let option = document.createElement("option");
+      option.value = i;
+      option.textContent = i;
+      select.appendChild(option);
+    }
+    modalContent.appendChild(select);
+  
+    // Create the continue button
+    let continueButton = document.createElement("button");
+    continueButton.textContent = "Continue";
+    continueButton.addEventListener("click", function() {
+      obj.selectedCustomization = select.value;
+      document.body.removeChild(modal);
+    });
+    modalContent.appendChild(continueButton);
+  
+    // Add the content to the modal container
+    modal.appendChild(modalContent);
+  
+    // Add the modal to the body
+    document.body.appendChild(modal);
+  
+    // Animate the modal
+    modal.classList.add("show-modal");
+  }
+  
   
   document.addEventListener("click", function(event) {
     if (event.target.classList.contains("js-delete-btn")) {
