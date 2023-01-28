@@ -8,6 +8,36 @@
   const filter = document.querySelector(".js-filter");
   const downloadBtn = document.querySelector(".js-download");
 
+  let importButton123 = document.getElementById("importButton");
+  let modal123 = document.querySelector(".modal-123");
+  let close123 = document.querySelector(".close-123");
+  let importLayoutButton123 = document.getElementById("importLayoutButton-123");
+  let userInput123 = document.getElementById("userInput");
+
+  // Page Import Modal
+  importButton123.onclick = function() {
+    modal123.style.display = "block";
+  }
+
+  close123.onclick = function() {
+    modal123.style.display = "none";
+  }
+
+  importLayoutButton123.onclick = function() {
+    let inputValue = userInput123.value;
+    console.log(inputValue); // send this variable to your backend or use it as needed
+    modal123.style.display = "none";
+    convertElementStringToArray(inputValue);
+  }
+
+  // Close the modal if user clicks outside of it
+  window.onclick = function(event) {
+    if (event.target == modal123) {
+      modal123.style.display = "none";
+    }
+  }
+
+
   
   const deleteBtnHtml =
     "<div class='bg-white hidden absolute top-0 left-0 js-delete-btn px-4 py-2 shadow'><i class='far fa-trash-alt pointer-events-none'></i></div>";
@@ -61,6 +91,87 @@
  
 
   // AUTOGENERATE - CODE FOR AUTOGEN ENDS HERE
+
+function convertElementStringToArray(string) {
+  // Remove spaces from string
+  string = string.replace(/\s+/g, '');
+
+  // Split string into array using comma as the separator
+  let newArray = string.split(',');
+
+  // Create a double array to store the element and its number
+  let doubleArray = [];
+
+  // Iterate over the newArray
+  for (let i = 0; i < newArray.length; i++) {
+      // Check if element has a number in parentheses
+      if (newArray[i].includes('(') && newArray[i].includes(')')) {
+          // Extract number between parentheses
+          let number = newArray[i].match(/\d+/g);
+          // Remove the number and parentheses from the first array value
+          let element = newArray[i].replace(/\s*\(\d+\)/g, '');
+          doubleArray.push([element, number[0]]);
+      } else {
+          doubleArray.push([newArray[i], undefined]);
+      }
+  }
+
+  // Return the double array
+  console.log(doubleArray);
+  convertDoubleArray(doubleArray);
+}
+
+// Converts double array into a single array of objects
+function convertDoubleArray(doubleArray) {
+  let singleArray = [];
+  for (let i = 0; i < doubleArray.length; i++) {
+      let obj = {
+          id: doubleArray[i][0],
+          selectedCustomization: parseInt(doubleArray[i][1]) || undefined
+      }
+      singleArray.push(obj);
+  }
+  console.log(singleArray);
+  assembleElements(singleArray);
+}
+
+
+
+// Duplicates selected object and adds it to the array
+function elementDuplication(duplicateMe) {
+  const figure = document.getElementById(duplicateMe.id);
+  const target = document.querySelector(".js-droppable");
+  const clonedFigure = figure.cloneNode(true);
+  target.appendChild(clonedFigure);
+  clonedFigure.innerHTML += deleteBtnHtml;
+  clonedFigure.classList.add ("relative");
+  const label = clonedFigure.querySelector(".figure-label");
+  clonedFigure.removeChild(label);
+
+  // Check for counts, if so add count 
+  if (duplicateMe.selectedCustomization !== undefined) {
+    clonedFigure.innerHTML += `<div class='count-button'>${duplicateMe.selectedCustomization} Items</div>`;
+  }
+  arrayByAddition.push(clonedFigure);
+}
+
+// Parses through the array of objects and calls generate function on them
+function assembleElements(arrayOfObjects) {
+  // Remove previously placed navigation bar
+  target.removeChild(clonedFigure);
+
+    // Iterate over the array of objects
+    for (let i = 0; i < arrayOfObjects.length; i++) {
+      let currentObject = arrayOfObjects[i];
+      elementDuplication(currentObject);
+    }
+}
+
+
+
+
+
+  
 
   window.onclick = function(event) {
     if (event.target == warningModal) {
@@ -1523,7 +1634,7 @@ if (!document.querySelector('#icontent')) {
     
   });
 
-  // 19823 
+  // Opens Count Modal
   function showModal(obj) {
     // Create the modal container
     let modal = document.createElement("div");
@@ -1553,6 +1664,7 @@ if (!document.querySelector('#icontent')) {
     continueButton.textContent = "Continue";
     continueButton.addEventListener("click", function() {
       obj.selectedCustomization = select.value;
+      addItemCount(obj);
       obj.innerHTML += `<div class='count-button'>${obj.selectedCustomization} Items</div>`;
       document.body.removeChild(modal);
     });
@@ -1566,11 +1678,11 @@ if (!document.querySelector('#icontent')) {
   
     // Animate the modal
     modal.classList.add("show-modal-equinox");
-
-    
   }
-  
-  
+  // Adds Item Count
+  function addItemCount(element) {
+    element.innerHTML += `<div class='count-button'>${element.selectedCustomization} Items</div>`;
+  }
   
   document.addEventListener("click", function(event) {
     if (event.target.classList.contains("js-delete-btn")) {

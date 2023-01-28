@@ -5,6 +5,48 @@
     padding-bottom: 10px;
   }
 
+  .pagebuilder-menu {
+    width: 100%; 
+    min-height: 40px; 
+    margin-bottom: 20px;
+  }
+
+  /* Page Import Modal  */
+  .modal-123 {
+    display: none; /* hide the modal by default */
+    position: fixed; /* position the modal in the center of the screen */
+    z-index: 10000; /* ensure the modal is on top of other elements */
+    left: 0;
+    top: 0;
+    width: 100%; /* full width */
+    height: 100%; /* full height */
+    overflow: auto; /* enable scroll if needed */
+    background-color: rgb(0,0,0); /* black background */
+    background-color: rgba(0,0,0,0.4); /* black background with transparency */
+  }
+  
+  .modal-content-123 {
+    background-color: #fefefe; /* white background */
+    margin: 15% auto; /* center the modal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* set the width of the modal */
+  }
+  
+  .close-123 {
+    color: #aaa; /* text color */
+    float: right; /* float the close button to the right */
+    font-size: 28px; /* font size */
+    font-weight: bold; /* bold text */
+  }
+  
+  .close-123:hover,
+  .close-123:focus {
+    color: black; /* change text color on hover */
+    text-decoration: none; /* remove underline */
+    cursor: pointer; /* change cursor to pointer */
+  }
+  
   .enable-scrollipage-section {
     width: 100%;
     min-height: 30px;
