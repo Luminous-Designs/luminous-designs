@@ -47,7 +47,7 @@
   var publishText = document.getElementById("Publish-Text");
   var WarningHTML = document.getElementById("Warning-HTML");
 
- // CODE FOR AUTOGEN STARTS HERE
+ // AUTOGENERATE - NAVIGATION BAR - CODE FOR AUTOGEN STARTS HERE
   // Get the <figure> element with the ID "myFigure"
   const figure = document.getElementById("navigation");
   const target = document.querySelector(".js-droppable");
@@ -60,7 +60,7 @@
   arrayByAddition.push(clonedFigure);
  
 
-  // CODE FOR AUTOGEN ENDS HERE
+  // AUTOGENERATE - CODE FOR AUTOGEN ENDS HERE
 
   window.onclick = function(event) {
     if (event.target == warningModal) {
@@ -105,7 +105,7 @@
   });
   
   
-  // Drop Rules
+  // On-Drop - On Element Drop, Do This...
   drake.on('drop', function (el, container, source) {
 
     // Gets rid of label on drop sequence
@@ -118,42 +118,35 @@
     );
     
     for (var i = 0; i < selectedSnippetsDD.length; i++) {
-      selectedBlocksDD.push(selectedSnippetsDD[i].id);
+      selectedBlocksDD.push(selectedSnippetsDD[i].id); // SelectedBlocksDD features the name of each element. 
     }
-    
-    // Rule Check -> No more than one Background IMG-utilizing section per page
-    if ((lastItemDropped === "hero-1") || 
-        (lastItemDropped === "hero-2") || 
-        (lastItemDropped === "hero-3") || 
-        (lastItemDropped === "default-header")) {
-          console.log("Rule Inspection Triggered: No More Than One Element Allowed");
+    /*
+    ON-DROP RULES 
+    -----------------------------------------------------------------------------*/
+    // No more than one wsite-background section per page
+    if ((lastItemDropped === "hero-1") || (lastItemDropped === "hero-2") || (lastItemDropped === "hero-3") || (lastItemDropped === "default-header")) {
           let numberOfHeaders = 0; // How many pre-existing headers we have
       
           for (let headerCount = 0; headerCount < selectedBlocksDD.length; headerCount++) {
-            if ((selectedBlocksDD[headerCount] == "hero-1" ) || 
-                (selectedBlocksDD[headerCount] == "hero-2") || 
-                (selectedBlocksDD[headerCount] == "hero-3") || 
-                (selectedBlocksDD[headerCount] == "default-header")) {
+            if ((selectedBlocksDD[headerCount] == "hero-1" ) || (selectedBlocksDD[headerCount] == "hero-2") || (selectedBlocksDD[headerCount] == "hero-3") || (selectedBlocksDD[headerCount] == "default-header")) {
                   numberOfHeaders = numberOfHeaders + 1;
             }
           };
           if (numberOfHeaders > 1) {
-            // Deletion script occurs
-            console.log("Element has been deleted due to violation of header count");
+            // Deletion script occurs - Delete offending element 
             source.appendChild(el);
             source.removeChild(el);
 
-            // Display Warning Modal with Generated Content
+            // Display Warning Modal - Pop-up modal informing user of deletion
             warningModal.style.display = "block";
             WarningHeader.innerText = "Whoops! You can only have one HERO or default header element per page";
             WarningText.innerText = "Looks like you tried to add more than one hero element or header element. You can only have one of these per page, due to how Weebly handles hero background images. Headers include the Hero Image Headers and Weebly default headers";
             return;
           }
-      };
+    }; 
 
-
-    // Section RULES --> No more than one Weebly Section per page
-    if ((el.id === "default-section")) {
+    // No more than one Weebly Section per page
+    if ((lastItemDropped === "default-section")) {
       let numberOfSections = 0; // How many pre-existing headers we have
       for (let sectionCount = 0; sectionCount < selectedBlocksDD.length; sectionCount++) {
         if ((selectedBlocksDD[sectionCount] == "default-section" )) {
@@ -173,13 +166,22 @@
       }
     };
 
-    // Count Selection Prompt 2023 - Carousel Free
+    /*
+    ELEMENT COUNT USER PROMPT POP-UP MODALS
+    -----------------------------------------------------------------------------*/
+    // Count Selection Prompt Pop-Up 2023 - Carousel Free
     if (el.id === "carousel-free") {
       // this function automatically opens the modern modal interface. selection variable is stored as a property of the relevant object in rawElements array. 
       showModal(el);
     }
 
-    // Count Selection Prompt 2023 - PureSlider
+    // Count Selection Prompt Pop-Up 2023 - Carousel Fixed
+    if (el.id === "carousel-fixed") {
+      // this function automatically opens the modern modal interface. selection variable is stored as a property of the relevant object in rawElements array. 
+      showModal(el);
+    }
+
+    // Count Selection Prompt Pop-Up 2023 - PureSlider
     if (el.id === "pureslider") {
       // this function automatically opens the modern modal interface. selection variable is stored as a property of the relevant object in rawElements array. 
       showModal(el);
@@ -273,6 +275,8 @@
     // Represents head code
     let beginningCode = ``;
     let codeCredits;
+    let finalHTML = ``;
+    let endingCode;
     // Add layout description 
     codeCredits = 
     `
@@ -297,7 +301,7 @@
     -->
     `;
 
-    // A350-Beginning-Code Import the rest of beginning code WITHOUT ScrolliPage...
+    // HTML Building Process Stage 1
     beginningCode +=  `
     <!DOCTYPE html>
     <html>
@@ -320,16 +324,26 @@
         <div class="right-control">
           <a class="yellow-button" href="https://luminous-designs.github.io/luminous-designs/page-builders/equinox/index.html" target="_blank">Page Builder</a>
           <a class="blue-button" href="http://www.example.com" target="_blank">Instructions</a>
+          <button id="pageCodePopup" class="blue-button">Open This Layout in Page Builder</button>
         </div>
       </div>
+
+      <!-- PAGE BUILDER POPUP MODAL-->
+      <div id="myModal-pagebuilder" class="modal-pagebuildercode">
+        <div class="modal-content-pagebuildercode">
+        <span class="close-pagebuildercode">&times;</span>
+        <p id="PageBuilderImportHeading"></p>
+        <p id="PageBuilderImportCode" class="pageBuilderCodeSelect"></p>
+        </div>
+      </div>
+
       <!-- END OF HEADER CODE -->
       <!-- DROP CONTENT BELOW -->
                         
         
     `;
 
-
-    // A350 Set the beginning code depending on whether ScrolliPage is present or not present...
+    // HTML Building Process Stage 2 (ScrolliPage)
     if (scrollipageExistence > 0) {
         // Beginning Code WITH ScrolliPage
 
@@ -370,15 +384,39 @@
         `;
     } 
 
-    let endingCode;
 
-    // A350 Ending Code
+    // Existing Page Import Module
+    let pageLayout = '';
+    for (let element = 0; element < selectedBlocks.length; element++) { 
+      if (rawElements[element]["selectedCustomization"] !== undefined) {
+        pageLayout += rawElements[element].id + '(' + rawElements[element].selectedCustomization + ')' + ',';
+      } else {
+        pageLayout += rawElements[element].id + ',';
+      }
+    }
+
+    console.log("The Page Layout is As Follows " + pageLayout);
+    
+
+
+    // HTML Buildilng Process Stage 3
     endingCode = `
     <!-- START OF FOOTER CODE -->
-	<!-- </div>-->
+	</div>
 	<!-- Module 1/7: Script Imports -->
 	<script type="text/javascript" src="/files/theme/custom.js"></script>
 	<script type="text/javascript" src="/files/theme/mobile.js"></script>
+  <script>
+		function injectText() {
+		  if (document.getElementById("icontent")) {
+			var code = document.getElementById("PageBuilderImportCode");
+			var heading = document.getElementById("PageBuilderImportHeading");
+			code.innerHTML = "${pageLayout}";
+			heading.innerHTML = "You can clone this current page layout in Page Builder. For instance, if you'd like to make a modification to the layout of this page without having to re-create it in Page Builder. The code below is the page code for this layout. Simply go to Page Builder, click on the Import Existing Layout button, and copy-paste this code below. You'll then see the Page Layout re-created in Page Builder. ";
+		  }
+		}
+	</script>
+  <script src="/files/theme/pagebuildermodal.js"></script>
 	<script src="/files/theme/pureslider.js"></script>
 	<script type="text/javascript" src="/files/theme/parallax-1.js"></script>
     <script type="text/javascript" src="/files/theme/parallax-2.js"></script>
@@ -597,7 +635,7 @@ if (!document.querySelector('#icontent')) {
     `;
      endingCode += codeCredits;
 
-    let finalHTML = ``;
+    
     finalHTML += beginningCode;
 
     // finalHTML = middle code (from other JS file)
@@ -626,6 +664,7 @@ if (!document.querySelector('#icontent')) {
     let weeblySection = 0;
 
     let freeCarouselCount = 0;
+    let fixedCarouselCount = 0;
     
    
     
@@ -1172,7 +1211,7 @@ if (!document.querySelector('#icontent')) {
 
       // A350 Blog Reference Section
       if (selectedBlocks[element] === "blog-reference") {
-        
+        blogReference++;
         finalHTML += `
         <!-- Experimental Blog Section Starts Below --> 
         <div class="blog-information-section">
@@ -1188,9 +1227,7 @@ if (!document.querySelector('#icontent')) {
             <div class="combine-padding-section-medium-2">
               <div class="combine-container-small-2">
                 <div class="combine-text-align-center-2">
-                  <h2 class="combine-heading-style-h2-2" data-aos-delay="000" data-aos-anchor-placement="top">Our Blog</h2>
-                  <div class="combine-space-medium-2"></div>
-                  <div class="combine-text-size-regular-2" data-aos-delay="000" data-aos-anchor-placement="top">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.</div>
+                  {${blogReference}_blog-reference-content:content global="false"}
                 </div>
               </div>
               <div class="combine-space-large"></div>
@@ -1279,108 +1316,156 @@ if (!document.querySelector('#icontent')) {
         `;
       }
 
-      // NOT COMPLETE PURESLIDER - VARIABLE COMPONENT GENERATION
+      // A350 PureSlider
       if (selectedBlocks[element] === "pureslider") {
-        stepByStep++;
+        pureslider++;
+
+        // Obtains the count that the user selected in pop-up
+        let currentElementCount = rawElements[element].selectedCustomization;
 
         // BEGINNING of PureSlider HTML
         finalHTML += `
         <!-------------------------------------------------------------------------------------
-        PURESLIDER HEADER MODULE STARTS HERE
+        PURESLIDER STARTS HERE
         --------------------------------------------------------------------------------------->
         <!--PureSlider-10-->
         <div class="swiper-container pureslider-start" style="pointer-events: auto !important;">
-            <div class="swiper-wrapper" style="pointer-events: auto !important;">
+          <div class="swiper-wrapper" style="pointer-events: auto !important;">
         `;
 
         // MIDDLE Slider Generation
-        for (let sliderCount = 0; sliderCount < numberOfSlides; sliderCount++) {
+        for (let sliderCount = 0; sliderCount < currentElementCount; sliderCount++) {
             finalHTML += `
             <!-- PureSlider Slide Starts Here -->
-            <div class="swiper-slide" style="pointer-events: auto !important;">
+              <div class="swiper-slide" style="pointer-events: auto !important;">
                 <div class="swiper-weebly-total">
-                    <div class="swiper-weebly-image">
-                        {${pureslider5}_sliderimage_${sliderCount}:image global="false"}
-                    </div>
-                    <div class="swiper-weebly-content" id="swiper-content-area" style="display: table;">
-                        <!--Outer-->
-                        <div class="middle-container"
-                            style="display: table-cell; vertical-align: middle; padding-left: 20px; padding-right: 20px;">
-                            <!--Middle-->
-                            <div class="slider-container">
-                                <!--Inner-->
-                                <div id="slide-0">{${pureslider5}_slidercontent_${sliderCount}:content global="false"}</div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="swiper-weebly-image">
+                  {${pureslider}_sliderimage_${sliderCount}:image global="false"}
                 </div>
-            </div>
-            <!-- PureSlider Slide Ends Here -->
+                <div class="swiper-weebly-content" id="swiper-content-area" style="display: table;">
+                  <!--Outer-->
+                  <div class="middle-container"
+                  style="display: table-cell; vertical-align: middle; padding-left: 20px; padding-right: 20px;">
+                  <!--Middle-->
+                  <div class="slider-container">
+                    <!--Inner-->
+                    <div id="slide-0">{${pureslider}__slidercontent_${sliderCount}:content global="false"}</div>
+                  </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+              <!-- PureSlider Slide Ends Here -->
             `;
         }
 
         // END of PureSlider HTML
         finalHTML += `
         </div>
-						<!-- Add Pagination -->
-						<div class="swiper-pagination"></div>
-						<!-- Add Arrows -->
-						<div class="swiper-button-next" id="next-button"><i class="fa fa-angle-right"></i></div>
-						<div class="swiper-button-prev" id="prev-button"><i class="fa fa-angle-left"></i></div>
-					</div>
-					<!-------------------------------------------------------------------------------------
-					[ADD-ON] START Control Panel For PureSlider
-					--------------------------------------------------------------------------------------->
-					<div class="editor">
-						<div class="wsite-section-wrap">
-							<div class="wsite-section wsite-body-section wsite-section-bg-color wsite-background-53"
-								style="height: auto; background-color: #020202; background-image: none;">
-								<div class="wsite-section-content">
-									<div class="container" style="padding-top: 40px; padding-bottom: 40px;">
-										<div class="wsite-section-elements">
-											<h2 class="wsite-content-title" style="text-align: center;">
-												<font color="#ffffff" size="6">Background Editing for PureSlider Currently <span
-														id="headline-lock">Locked</span></font>
-											</h2>
-											<div class="paragraph" style="text-align: center;">
-												<em>
-													<font color="#ffffff">
-														Section must be unlocked to edit the background image above. Unlocking the
-														background editing will hide any content you dragged and dropped, and let you
-														add/change/remove the background image for each
-														slide. This black section is a helper section and is only visible in the Weebly
-														editor. This black section will not show on your live published website.
-													</font>
-												</em>
-											</div>
-											<div style="text-align: center;">
-												<div style="height: 0px; overflow: hidden;"></div>
-												<a class="wsite-button wsite-button-large wsite-button-normal" onclick="toggleThis()">
-													<span class="wsite-button-inner"><span id="button-lock">Unlock</span> section</span>
-												</a>
-												<div style="height: 0px; overflow: hidden;"></div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-------------------------------------------------------------------------------------
-					[ADD-ON] END Control Panel for PureSlider Ends
-					--------------------------------------------------------------------------------------->
-					<!-------------------------------------------------------------------------------------
-					PURESLIDER HEADER MODULE ENDS HERE
-					--------------------------------------------------------------------------------------->
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next" id="next-button"><i class="fa fa-angle-right"></i></div>
+            <div class="swiper-button-prev" id="prev-button"><i class="fa fa-angle-left"></i></div>
+          </div>
+          <!-- Add-On Below-->
+          <div class="editor">
+            <div class="wsite-section-wrap">
+            <div class="wsite-section wsite-body-section wsite-section-bg-color wsite-background-53"
+              style="height: auto; background-color: #020202; background-image: none;">
+              <div class="wsite-section-content">
+              <div class="container" style="padding-top: 40px; padding-bottom: 40px;">
+                <div class="wsite-section-elements">
+                <h2 class="wsite-content-title" style="text-align: center;">
+                  <font color="#ffffff" size="6">Background Editing for PureSlider Currently <span
+                  id="headline-lock">Locked</span></font>
+                </h2>
+                <div class="paragraph" style="text-align: center;">
+                  <em>
+                  <font color="#ffffff">
+                    Section must be unlocked to edit the background image above. Unlocking the
+                    background editing will hide any content you dragged and dropped, and let you
+                    add/change/remove the background image for each
+                    slide. This black section is a helper section and is only visible in the Weebly
+                    editor. This black section will not show on your live published website.
+                    </font>
+                    </em>
+                    </div>
+                    <div style="text-align: center;">
+                    <div style="height: 0px; overflow: hidden;"></div>
+                    <a class="wsite-button wsite-button-large wsite-button-normal" onclick="toggleThis()">
+                      <span class="wsite-button-inner"><span id="button-lock">Unlock</span> section</span>
+                    </a>
+                    <div style="height: 0px; overflow: hidden;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <!-------------------------------------------------------------------------------------
+          PURESLIDER ENDS HERE
+          --------------------------------------------------------------------------------------->
         `;
 
       }
 
-      // NOT COMPLETED CAROUSEL- VARIABLE COMPONENT GENERATION
+      // A350 Carousel Fixed
+      if (selectedBlocks[element] === "carousel-fixed") {
+
+        // References same item index but in Raw Elements Array - An Array of Objects
+        let currentElementCount = rawElements[element].selectedCustomization;
+        fixedCarouselCount++;
+
+        // BEGINNING - Build beginning of Carousel Block
+        finalHTML += 
+        `
+        <!-------------------------------------------------------------------------------
+        CAROUSEL FIXED STARTS HERE
+        --------------------------------------------------------------------------------->
+        <div class="main-wrap" style="padding-top:30px; padding-bottom: 30px;">
+        <div class="container">{top-carousel-content:content global="false"}</div>
+          <div class="container" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+          <div class="swiper mySwiper carousel-slider">
+            <div class="swiper-wrapper">
+        `;
+
+        // MIDDLE - Individual Carousel Blocks - Section count comes first, carouselGen count comes second 
+        for (var carouselGen = 0; carouselGen < currentElementCount; carouselGen++) {
+        finalHTML += `
+        <!-- Start of Carousel Slide -->
+        <div class="swiper-slide" style="min-height:200px; height:auto;">
+          <div class="swiper-container">
+          {${fixedCarouselCount}_carouselimage_${carouselGen}:image global="false"}
+          <h2>{${fixedCarouselCount}_carouselh2_${carouselGen}:text global="false"}</h2>
+          <p>{${fixedCarouselCount}_carouselp_${carouselGen}:text global="false"}</p>
+          </div>
+        </div>
+        <!-- End of Carousel Slide -->
+        `;
+        }
+
+        // END - Attach End of Carousel Block
+        finalHTML += 
+        `
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          </div>
+        </div>
+        <!-------------------------------------------------------------------------------------
+        CAROUSEL FIXED ENDS HERE
+        --------------------------------------------------------------------------------------->
+        `;
+      }
+
+      // A350 Carousel Free
       if (selectedBlocks[element] === "carousel-free") {
+
+        // References same item index but in Raw Elements Array - An Array of Objects
         let currentElementCount = rawElements[element].selectedCustomization;
         freeCarouselCount++;
-        console.log("Alrighty folks. Here we have a carousel free element with " + rawElements[element].selectedCustomization);
 
         // BEGINNING - Build beginning of Carousel Block
         finalHTML += 
@@ -1395,7 +1480,7 @@ if (!document.querySelector('#icontent')) {
         `;
 
         // CENTRE - Start Dynamically Generating Carousel Content Based on Number of Carousel Slides 
-        for (var carouselGen = 0; carouselGen < rawElements[element].selectedCustomization; carouselGen++) {
+        for (var carouselGen = 0; carouselGen < currentElementCount; carouselGen++) {
         finalHTML += `
                     <!-- Start of Carousel Slide -->
                     <div class="swiper-slide" style="min-height:200px; height:auto;">
@@ -1438,7 +1523,7 @@ if (!document.querySelector('#icontent')) {
     
   });
 
-  // 19823 Experimental
+  // 19823 
   function showModal(obj) {
     // Create the modal container
     let modal = document.createElement("div");
