@@ -1290,28 +1290,19 @@ if (!document.querySelector('#icontent')) {
           </div>
         </div>
         <!--Control Panel for Section #1-->
-        <div class="parallax-control">
-          <div class="main-wrap" style="padding-left:0px; padding-right:0px; width:100%;">
-          <div id="wsite-content" class="wsite-elements wsite-not-footer">
-            <div class="wsite-section-wrap">
-            <div class="wsite-section wsite-body-section wsite-section-bg-color wsite-background-53" style="height: auto;background-color: #020202;background-image: none;">
-              <div class="wsite-section-content">
-              <div class="container" style="padding-top:15px; padding-bottom:15px">
-                <div class="wsite-section-elements">
-
-                <div style="text-align:center;">
-                  <div style="height: 0px; overflow: hidden;"></div>
-                  <a class="wsite-button wsite-button-large wsite-button-normal" onclick="toggleBackground()">
-                  <span class="wsite-button-inner">Toggle Above Background Editability</span>
-                  </a>
-                  <div style="height: 0px; overflow: hidden;"></div>
-                </div>
-                </div>
-              </div>
-              </div>
+        <!-- In-Editor Parallax Control -->
+        <div class="ineditor-control">
+          <div class="ineditor-control-grid">
+            <div class="ineditor-icon"></div>
+            <div class="ineditor-title-field">
+              <div class="ineditor-title">Parallax Section Above</div>
+              <div class="ineditor-paragraph-parallax"><!--Pseudo-Element--></div>
             </div>
+            <div class="ineditor-button">
+               <a class="wsite-button wsite-button-large wsite-button-normal" onclick="toggleBackground()">
+              <span class="wsite-button-inner">Toggle Above Background Editability</span>
+              </a>
             </div>
-          </div>
           </div>
         </div>
         <!-------------------------------------------------------------------------------------
@@ -1480,38 +1471,17 @@ if (!document.querySelector('#icontent')) {
             <div class="swiper-button-prev" id="prev-button"><i class="fa fa-angle-left"></i></div>
           </div>
           <!-- Add-On Below-->
-          <div class="editor">
-            <div class="wsite-section-wrap">
-            <div class="wsite-section wsite-body-section wsite-section-bg-color wsite-background-53"
-              style="height: auto; background-color: #020202; background-image: none;">
-              <div class="wsite-section-content">
-              <div class="container" style="padding-top: 40px; padding-bottom: 40px;">
-                <div class="wsite-section-elements">
-                <h2 class="wsite-content-title" style="text-align: center;">
-                  <font color="#ffffff" size="6">Background Editing for PureSlider Currently <span
-                  id="headline-lock">Locked</span></font>
-                </h2>
-                <div class="paragraph" style="text-align: center;">
-                  <em>
-                  <font color="#ffffff">
-                    Section must be unlocked to edit the background image above. Unlocking the
-                    background editing will hide any content you dragged and dropped, and let you
-                    add/change/remove the background image for each
-                    slide. This black section is a helper section and is only visible in the Weebly
-                    editor. This black section will not show on your live published website.
-                    </font>
-                    </em>
-                    </div>
-                    <div style="text-align: center;">
-                    <div style="height: 0px; overflow: hidden;"></div>
-                    <a class="wsite-button wsite-button-large wsite-button-normal" onclick="toggleThis()">
-                      <span class="wsite-button-inner"><span id="button-lock">Unlock</span> section</span>
-                    </a>
-                    <div style="height: 0px; overflow: hidden;"></div>
-                    </div>
-                  </div>
-                </div>
+          <!-- In-Editor PureSlider Control -->
+          <div class="ineditor-control">
+            <div class="ineditor-control-grid">
+              <div class="ineditor-title-field">
+                <div class="ineditor-title">Background Editing for PureSlider Currently: <span id="headline-lock">Locked</span></div>
+                <div class="ineditor-paragraph-pureslider"><!--Pseudo-Element--></div>
               </div>
+              <div class="ineditor-button">
+                <a class="wsite-button wsite-button-large wsite-button-normal" onclick="toggleThis()">
+                  <span class="wsite-button-inner"><span id="button-lock">Unlock</span> section</span>
+                </a>
               </div>
             </div>
           </div>
