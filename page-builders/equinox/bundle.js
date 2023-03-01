@@ -1,4 +1,5 @@
 import { assemblyGen } from "./assembly.js";
+import { wsiteBgCheck, sectionsCheck, onlyOneCheck, navigationFirst } from "./rules.js";
 
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
   const dragula = require("dragula");
@@ -234,51 +235,25 @@ function assembleElements(arrayOfObjects) {
     for (var i = 0; i < selectedSnippetsDD.length; i++) {
       selectedBlocksDD.push(selectedSnippetsDD[i].id); // SelectedBlocksDD features the name of each element. 
     }
+
+  
     /*
     ON-DROP RULES 
     -----------------------------------------------------------------------------*/
-    // No more than one wsite-background section per page
-    if ((lastItemDropped === "hero-1") || (lastItemDropped === "hero-2") || (lastItemDropped === "hero-3") || (lastItemDropped === "default-header")) {
-          let numberOfHeaders = 0; // How many pre-existing headers we have
-      
-          for (let headerCount = 0; headerCount < selectedBlocksDD.length; headerCount++) {
-            if ((selectedBlocksDD[headerCount] == "hero-1" ) || (selectedBlocksDD[headerCount] == "hero-2") || (selectedBlocksDD[headerCount] == "hero-3") || (selectedBlocksDD[headerCount] == "default-header")) {
-                  numberOfHeaders = numberOfHeaders + 1;
-            }
-          };
-          if (numberOfHeaders > 1) {
-            // Deletion script occurs - Delete offending element 
-            source.appendChild(el);
-            source.removeChild(el);
 
-            // Display Warning Modal - Pop-up modal informing user of deletion
-            warningModal.style.display = "block";
-            WarningHeader.innerText = "Whoops! You can only have one HERO or default header element per page";
-            WarningText.innerText = "Looks like you tried to add more than one hero element or header element. You can only have one of these per page, due to how Weebly handles hero background images. Headers include the Hero Image Headers and Weebly default headers";
-            return;
-          }
-    }; 
+    // No more than one section that utilizes wsite-background per page 
+    let wsiteBgCheckLimitedArray = ["hero-1", "hero-2", "hero-3", "default-header"];
+    wsiteBgCheck(wsiteBgCheckLimitedArray, lastItemDropped, selectedBlocksDD, source, el, warningModal, WarningHeader, WarningText);
 
     // No more than one Weebly Section per page
-    if ((lastItemDropped === "default-section")) {
-      let numberOfSections = 0; // How many pre-existing headers we have
-      for (let sectionCount = 0; sectionCount < selectedBlocksDD.length; sectionCount++) {
-        if ((selectedBlocksDD[sectionCount] == "default-section" )) {
-            numberOfSections = numberOfSections + 1;
-        }
-      };
-      if (numberOfSections > 1) {
-          // Deletion script occurs
-          source.appendChild(el);
-          source.removeChild(el);
+    let sectionsList = ["default-section"];
+    sectionsCheck(sectionsList, lastItemDropped, selectedBlocksDD, source, el, warningModal, WarningHeader, WarningText);
 
-          // Display Warning Modal with Generated Content
-          warningModal.style.display = "block";
-          WarningHeader.innerText = "Whoops! You can only have one WeeblyFlex Section per page.";
-          WarningText.innerText = "Looks like you tried to drag in multiple WeeblyFlex Sections. Weebly only allows one WeeblyFlex per page. Do note that you can create additional sections inside of the WeeblyFlex section once you import your layout into the Weebly Editor, each with their own backgrounds (video backgrounds, image backgrounds, color backgrounds, graident backgrounds). If you need to add another white section somewhere else on the page, add a Weebly Blank section. Please contact us at luminousthemes.com/support if you're having trouble.";
-          return;
-      }
-    };
+    // No More Than One Of Each Per Page
+    let oneOfEach = ["carousel-free"]
+    onlyOneCheck(oneOfEach, lastItemDropped, selectedBlocksDD, source, el, warningModal, WarningHeader, WarningText);
+
+   
 
     /*
     ELEMENT COUNT USER PROMPT POP-UP MODALS
@@ -364,27 +339,6 @@ function assembleElements(arrayOfObjects) {
             scrollipageExistence = scrollipageExistence + 1;
         }
     }
-   
-    // If there is a Scrollipage anchor present upon download, the value of scrolliPage existence will be greater than 0. 
-
-    // INACTIVE Let's make sure the first element is a header
-    /*if ((selectedBlocks[0] != "pureslider-5")) {
-      if (selectedBlocks[0] != "homepage-header") {
-        if (selectedBlocks[0] != "default-header") {
-          if (selectedBlocks[0] != "no-header") {
-            if (selectedBlocks[0] != "video-header") {
-
-              // Display Warning Modal with Generated Content
-              warningModal.style.display = "block";
-              WarningHeader.innerText = "Uh oh! Look's like you're missing a header";
-              WarningText.innerText = "The first element on your page should be a header section";
-              return;
-
-            }
-          }
-        }
-      }
-    }*/
 
     // Represents head code
     let beginningCode = ``;
