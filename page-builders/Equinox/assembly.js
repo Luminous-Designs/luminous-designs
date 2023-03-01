@@ -1,4 +1,3 @@
-
 export function assemblyGen(rawElements, selectedBlocks) {
     
     let assemblyHTML = '';
