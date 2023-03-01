@@ -1286,7 +1286,7 @@ if (!document.querySelector('#icontent')) {
           </div>
           <!--Content Section-->
           <div class="parallaxl" id="content-controller-1" style="background-color:rgba(0,0,0,0.4);">
-          <div class="container">{${parallax}_3_parallaxone:content global="false"}</div>
+          <div class="container" class="inter-div-content-area">{${parallax}_3_parallaxone:content global="false"}</div>
           </div>
         </div>
         <!--Control Panel for Section #1-->
@@ -1451,7 +1451,7 @@ if (!document.querySelector('#icontent')) {
                   <!--Middle-->
                   <div class="slider-container">
                     <!--Inner-->
-                    <div id="slide-0">{${pureslider}__slidercontent_${sliderCount}:content global="false"}</div>
+                    <div id="slide-0" class="inter-div-content-area">{${pureslider}__slidercontent_${sliderCount}:content global="false"}</div>
                   </div>
                   </div>
                 </div>
