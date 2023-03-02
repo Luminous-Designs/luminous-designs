@@ -500,6 +500,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
 
       if (selectedBlocks[element] === "parallax") {
         parallax++;
+        // ${parallax}_
         assemblyHTML += `
         <!-------------------------------------------------------------------------------------
         PARALLAX STARTS HERE
