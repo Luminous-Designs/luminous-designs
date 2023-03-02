@@ -30,8 +30,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
     // A350-ASSEMBLY SECTION ASSEMBLY STICHING CODE
     for (let element = 0; element < selectedBlocks.length; element++) {
 
-
-      // A350 Hero 1 Assembly...
       if (selectedBlocks[element] === "hero-1") {
         hero1++;
         assemblyHTML += `
@@ -54,7 +52,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
-      // A350 Hero 2 Assembly...
       if (selectedBlocks[element] === "hero-2") {
         hero2++;
         assemblyHTML += `
@@ -76,7 +73,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
-      // A350 Hero 3 Assembly...
       if (selectedBlocks[element] === "hero-3") {
         hero3++;
         assemblyHTML += `
@@ -97,7 +93,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
-      // A350 Navigation Bar Assembly...
       if (selectedBlocks[element] === "navigation") {
         navigation++;
         assemblyHTML += `
@@ -133,7 +128,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
-      // A350 ScrolliPage Anchor
       if (selectedBlocks[element] === "scrollipage-anchor") {
         scrollipageAnchor++;
         assemblyHTML += `
@@ -143,7 +137,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
-      // A350 Services White Icon Assembly - Subject to Variation
       if (selectedBlocks[element] === "services-white-icon") {
         servicesWhiteIcon++;
         assemblyHTML += `
@@ -185,7 +178,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
-      // A350 Colored Icons Assembly - Subject to Variation
       if (selectedBlocks[element] === "services-colorful-icon") {
         servicesColorfulIcon++;
         assemblyHTML += `
@@ -226,7 +218,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
-      // A350 Text Left Image Right Assembly
       if (selectedBlocks[element] === "text-left-image-right") {
         textLeftImageRight++;
         assemblyHTML += `
@@ -253,7 +244,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
-      // A350 Image Left Text Right
       if (selectedBlocks[element] === "image-left-text-right") {
         imageLeftTextRight++;
         assemblyHTML += `
@@ -283,7 +273,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
-      // A350 feature-boxes
       if (selectedBlocks[element] === "feature-boxes") {
         featureBoxes++;
         assemblyHTML += `
@@ -315,7 +304,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
-      // A350 feature-boxes-curved
       if (selectedBlocks[element] === "feature-boxes-curved") {
         featureBoxesCurved++;
         assemblyHTML += `
@@ -352,7 +340,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
-      // A350 Testimonial
       if (selectedBlocks[element] === "testimonial") {
         testimonial++;
         assemblyHTML += `
@@ -378,7 +365,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
-      // A350 Step By Step
       if (selectedBlocks[element] === "step-by-step") {
         stepByStep++;
         assemblyHTML += `
@@ -421,7 +407,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
-      // A350 Pricing
       if (selectedBlocks[element] === "pricing") {
         pricing++;
         assemblyHTML += `
@@ -473,7 +458,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
-      // A350 Call to Action
       if (selectedBlocks[element] === "call-to-action") {
         callToAction++;
         assemblyHTML += `
@@ -494,7 +478,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
-      // A350 Default Weebly Header
       if (selectedBlocks[element] === "default-weebly-header") {
         
         assemblyHTML += `
@@ -515,7 +498,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
-      // A350 Parallax
       if (selectedBlocks[element] === "parallax") {
         parallax++;
         assemblyHTML += `
@@ -559,7 +541,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
-      // A350 Blog Reference Section
       if (selectedBlocks[element] === "blog-reference") {
         blogReference++;
         assemblyHTML += `
@@ -666,7 +647,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
-      // A350 PureSlider
       if (selectedBlocks[element] === "pureslider") {
         pureslider++;
 
@@ -740,7 +720,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
 
       }
 
-      // A350 Carousel Fixed
       if (selectedBlocks[element] === "carousel-fixed") {
 
         // References same item index but in Raw Elements Array - An Array of Objects
@@ -789,7 +768,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
-      // A350 Carousel Free
       if (selectedBlocks[element] === "carousel-free") {
 
         // References same item index but in Raw Elements Array - An Array of Objects

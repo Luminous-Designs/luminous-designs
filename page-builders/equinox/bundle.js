@@ -87,7 +87,7 @@ import { wsiteBgCheck, sectionsCheck, onlyOneCheck, navigationFirst } from "./ru
   const target = document.querySelector(".js-droppable");
   const clonedFigure = figure.cloneNode(true);
   target.appendChild(clonedFigure);
-  clonedFigure.innerHTML += deleteBtnHtml;
+  // clonedFigure.innerHTML += deleteBtnHtml; This is hidden because we want the navigation bar to remain always on the screen. 
   clonedFigure.classList.add ("relative");
   const label = clonedFigure.querySelector(".figure-label");
   clonedFigure.removeChild(label);
@@ -172,11 +172,6 @@ function assembleElements(arrayOfObjects) {
 }
 
 
-
-
-
-  
-
   window.onclick = function(event) {
     if (event.target == warningModal) {
       warningModal.style.display = "none";
@@ -242,16 +237,23 @@ function assembleElements(arrayOfObjects) {
     -----------------------------------------------------------------------------*/
 
     // No more than one section that utilizes wsite-background per page 
-    let wsiteBgCheckLimitedArray = ["hero-1", "hero-2", "hero-3", "default-header"];
-    wsiteBgCheck(wsiteBgCheckLimitedArray, lastItemDropped, selectedBlocksDD, source, el, warningModal, WarningHeader, WarningText);
+    let wsiteBgCheckLimitedArray = ["hero-1", "hero-2", "hero-3", "default-weebly-header"];
+    if (!(wsiteBgCheck(wsiteBgCheckLimitedArray, lastItemDropped, selectedBlocksDD, source, el, warningModal, WarningHeader, WarningText))) {
+      return;
+    }
 
     // No more than one Weebly Section per page
     let sectionsList = ["default-section"];
-    sectionsCheck(sectionsList, lastItemDropped, selectedBlocksDD, source, el, warningModal, WarningHeader, WarningText);
+    if (!(sectionsCheck(sectionsList, lastItemDropped, selectedBlocksDD, source, el, warningModal, WarningHeader, WarningText))) {
+      return;
+    }
+    
 
     // No More Than One Of Each Per Page
-    let oneOfEach = ["carousel-free"]
-    onlyOneCheck(oneOfEach, lastItemDropped, selectedBlocksDD, source, el, warningModal, WarningHeader, WarningText);
+    let oneOfEach = ["navigation", "blog-reference", "hero-1", "hero-2", "hero-3", "default-weebly-header"];
+    if (!(onlyOneCheck(oneOfEach, lastItemDropped, selectedBlocksDD, source, el, warningModal, WarningHeader, WarningText))) {
+      return;
+    }
 
    
 
@@ -331,6 +333,15 @@ function assembleElements(arrayOfObjects) {
 
     let html = "";
     console.log(selectedBlocks);
+
+    // CHECK - Ensure that first element is navigation
+    let acceptedNavs = ["navigation"];
+    if (!(navigationFirst(acceptedNavs, selectedBlocks))) {
+      warningModal.style.display = "block";
+      WarningHeader.innerText = "Whoops! It looks like you don't have a navigation bar as the first element on your page.";
+      WarningText.innerText = "You need a navigation bar on your page. Drag and drop a navigation bar and put it on the top of your page.";
+      return;
+    }
     
     let scrollipageExistence = 0;
     // Search for ScrolliPage Block. If present...

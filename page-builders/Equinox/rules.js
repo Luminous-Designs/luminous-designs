@@ -27,7 +27,9 @@ export function wsiteBgCheck(wsiteBgCheckLimitedArray, lastItemDropped, selected
         warningModal.style.display = "block";
         WarningHeader.innerText = "Whoops! You can only have one HERO or default header element per page";
         WarningText.innerText = "Looks like you tried to add more than one hero element or header element. You can only have one of these per page, due to how Weebly handles hero background images. Headers include the Hero Image Headers and Weebly default headers";
-        return;
+        return false;
+    } else {
+        return true;
     }
 
 }
@@ -61,7 +63,9 @@ export function sectionsCheck(sectionsList, lastItemDropped, selectedBlocksDD, s
         warningModal.style.display = "block";
         WarningHeader.innerText = "Whoops! You can only have one Weebly Sections element per page.";
         WarningText.innerText = "Looks like you tried to drag in multiple Weebly Sections elements onto the page. Weebly only allows one Weebly Sections per page. Do note that you can create additional sections inside of the Weebly Sections element once you import your layout into the Weebly Editor, each with their own backgrounds (video backgrounds, image backgrounds, color backgrounds, graident backgrounds). If you need to add another white section somewhere else on the page, add a Weebly Blank section. Please contact us at luminousthemes.com/support if you're having trouble.";
-        return;
+        return false;
+    } else {
+        return true;
     }
 
 }
@@ -93,33 +97,31 @@ export function onlyOneCheck(oneOfEach, lastItemDropped, selectedBlocksDD, sourc
         warningModal.style.display = "block";
         WarningHeader.innerText = "Whoops! You can only have one of these per page!";
         WarningText.innerText = "It seems like you already have one of these present on your page. Due to Weebly framework rules, you can only have one of these per page.";
-        return;
+        return false;
+    } else {
+        return true;
     }
 
 }
 
-export function navigationFirst(navElements, selectedBlocksDD, source, el, warningModal, WarningHeader, WarningText) { 
+export function navigationFirst(navElements, selectedBlocks) { 
   
     let acceptableNav = navElements; // Array of blacklisted elements
-    let fullList = selectedBlocksDD; // Full list of existing items
-    let navPresent = 0;
+    let fullList = selectedBlocks; // Full list of existing items
+    let navNotPresent = 0;
     
     // Iterate through all existing elements, see what the first element is 
-    for (let j = 0; j < navElements.length; j++) {
-        if (navElements[j] === fullList[0]) {
-            navPresent++;
+    for (let j = 0; j < acceptableNav.length; j++) {
+        if (acceptableNav[j] != fullList[0]) {
+            navNotPresent++;
         }
     }
      
 
-    if (navPresent = 0) {
-        
-        // Display Warning Modal - Pop-up modal informing user of deletion
-        warningModal.style.display = "block";
-        WarningHeader.innerText = "Whoops! Looks like your page is missing a navigation bar";
-        WarningText.innerText = "You need a navigation bar. Find the navigation bar component, and drag it to the top of the page.";
-        return;
+    if (navNotPresent > 0) {
+        return false;
+    } else {
+        return true;
     }
-
 }
     
