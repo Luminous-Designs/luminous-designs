@@ -140,8 +140,8 @@ export function assemblyGen(rawElements, selectedBlocks) {
       if (selectedBlocks[element] === "scrollipage-anchor") {
         scrollipageAnchor++;
         assemblyHTML += `
-        <div id="uniqueAnchor_${scrollipageAnchor}" class="scrollipage-anchor" style="width:100%; min-height:100px; padding-top: 40px; padding-bottom: 40px; background-color:gray; display:-webkit-flex; display:flex; -webkit-justify-content:center; justify-content:center; -webkit-align-items:center; align-items:center;">
-            <p>ScrolliPage Anchor ${scrollipageAnchor} - Clicking on Dot ${scrollipageAnchor} Will Go Here </p>
+        <div id="uniqueAnchor_${scrollipageAnchor}" class="scrollipage-anchor">
+          <p>ScrolliPage Anchor ${scrollipageAnchor} - Clicking on Dot ${scrollipageAnchor} Will Go Here </p>
         </div>
         `;
       }
