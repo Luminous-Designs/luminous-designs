@@ -30,6 +30,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
     // A350-ASSEMBLY SECTION ASSEMBLY STICHING CODE
     for (let element = 0; element < selectedBlocks.length; element++) {
 
+      // Confirmed
       if (selectedBlocks[element] === "hero-1") {
         hero1++;
         assemblyHTML += `
@@ -52,6 +53,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
+      // Confirmed
       if (selectedBlocks[element] === "hero-2") {
         hero2++;
         assemblyHTML += `
@@ -73,6 +75,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
+      // Confirmed
       if (selectedBlocks[element] === "hero-3") {
         hero3++;
         assemblyHTML += `
@@ -93,12 +96,14 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
+      // Confirmed
       if (selectedBlocks[element] === "navigation") {
         navigation++;
         assemblyHTML += `
         <!-------------------------------------------------------------------------------------
         NAVIGATION BAR STARTS HERE
         --------------------------------------------------------------------------------------->
+        
         <div id="header">
           <div class="lynx-nav-info">
             <div class="lynx-nav-block">
@@ -108,18 +113,21 @@ export function assemblyGen(rawElements, selectedBlocks) {
           </div>
           <div class="header-wrap">
             <div class="logo">
-              <label id="nav-trigger" class="hamburger" for="mobile-input"><span></span></label>
-              {logo}
+                <label id="nav-trigger" class="hamburger" for="mobile-input"><span></span></label>
+                {logo}
             </div>
-            <div id="nav" class="menu">
+            
+            <div class="collective-two-thirds-end">
+              <div id="nav" class="menu">
               {menu}
+              </div>
+              <!-- Button Holder Module -->
+              <div class="nav-button-holder">
+                <div id="nav-button-1" class="button-wrap" style="margin-right:10px;">{nav:button}</div>
+                <div id="nav-button-2" class="button-wrap">{nav-2:button}</div>
+              </div>
+              <div id="navmobile" class="menu">{menu}</div>
             </div>
-            <!-- Button Holder Module -->
-            <div class="nav-button-holder">
-              <div class="button-wrap" style="margin-right:10px;">{nav:button}</div>
-              <div class="button-wrap">{nav-2:button}</div>
-            </div>
-            <div id="navmobile" class="menu">{menu}</div>
           </div>
         </div>
         <!-------------------------------------------------------------------------------------
@@ -128,6 +136,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
+      // TO TEST 
       if (selectedBlocks[element] === "scrollipage-anchor") {
         scrollipageAnchor++;
         assemblyHTML += `
@@ -137,6 +146,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
+      // Confirmed
       if (selectedBlocks[element] === "services-white-icon") {
         servicesWhiteIcon++;
         assemblyHTML += `
@@ -178,6 +188,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
+      // Confirmed
       if (selectedBlocks[element] === "services-colorful-icon") {
         servicesColorfulIcon++;
         assemblyHTML += `
@@ -218,6 +229,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
+      // Confirmed
       if (selectedBlocks[element] === "text-left-image-right") {
         textLeftImageRight++;
         assemblyHTML += `
@@ -244,6 +256,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
+      // Confirmed
       if (selectedBlocks[element] === "image-left-text-right") {
         imageLeftTextRight++;
         assemblyHTML += `
@@ -273,6 +286,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
+      // Confirmed
       if (selectedBlocks[element] === "feature-boxes") {
         featureBoxes++;
         assemblyHTML += `
@@ -304,6 +318,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
+      // Confirmed
       if (selectedBlocks[element] === "feature-boxes-curved") {
         featureBoxesCurved++;
         assemblyHTML += `
@@ -340,6 +355,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
+      // Confirmed
       if (selectedBlocks[element] === "testimonial") {
         testimonial++;
         assemblyHTML += `
@@ -365,6 +381,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
+      // Confirmed
       if (selectedBlocks[element] === "step-by-step") {
         stepByStep++;
         assemblyHTML += `
@@ -407,6 +424,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
+      // Confirmed
       if (selectedBlocks[element] === "pricing") {
         pricing++;
         assemblyHTML += `
@@ -458,6 +476,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
+      // Confirmed
       if (selectedBlocks[element] === "call-to-action") {
         callToAction++;
         assemblyHTML += `
@@ -478,6 +497,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
+      // Confirmed
       if (selectedBlocks[element] === "default-weebly-header") {
         
         assemblyHTML += `
@@ -497,7 +517,8 @@ export function assemblyGen(rawElements, selectedBlocks) {
         
         `;
       }
-
+      
+      // Confirmed
       if (selectedBlocks[element] === "parallax") {
         parallax++;
         // ${parallax}_
@@ -505,11 +526,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         <!-------------------------------------------------------------------------------------
         PARALLAX STARTS HERE
         --------------------------------------------------------------------------------------->
-        <div class="editor" style="width:100%; height:60px; color:white; background-color: black; text-align:center; padding-top:15px;">
-          <p style="font-color:white; line-height:10px; font-size: 12px;">[ i ] Parallax section below. Click on the section below to upload image.
-          Don't worry if it looks weird in the Weebly editor. It'll look normal on your published site. To edit or delete your image, press the "toggle" button below. Then,
-          hover over your image until a popup appears with the "edit" and "delete" options.</p>
-        </div>
+        
         <!--Parallax Section #1-->
         <div id="parent1" class="jarallax" data-speed="0.4" style="pointer-events: auto !important;">
           <div id="section1" class="jarallax-img" style="pointer-events: auto !important">
@@ -520,7 +537,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
           <div class="container" class="inter-div-content-area">{${parallax}_3_parallaxone:content global="false"}</div>
           </div>
         </div>
-        <!--Control Panel for Section #1-->
         <!-- In-Editor Parallax Control -->
         <div class="ineditor-control">
           <div class="ineditor-control-grid">
@@ -530,36 +546,44 @@ export function assemblyGen(rawElements, selectedBlocks) {
               <div class="ineditor-paragraph-parallax"><!--Pseudo-Element--></div>
             </div>
             <div class="ineditor-button">
-               <a class="wsite-button wsite-button-large wsite-button-normal" onclick="toggleBackground()">
+              <a class="wsite-button wsite-button-large wsite-button-normal" onclick="toggleBackground()">
               <span class="wsite-button-inner">Toggle Above Background Editability</span>
               </a>
             </div>
           </div>
         </div>
+        
         <!-------------------------------------------------------------------------------------
         PARALLAX ENDS HERE
         --------------------------------------------------------------------------------------->
         `;
       }
 
+      // Confirmed
       if (selectedBlocks[element] === "blog-reference") {
-        blogReference++;
+        blogReference++; 
+        // ${blogReference}_
         assemblyHTML += `
-        <!-- Experimental Blog Section Starts Below --> 
-        <div class="blog-information-section">
-          <div>
-            <h6>Below is a blog section. In the right text area, please enter the URL slug of your blog page (for example, /blog)</h6>
-            <p style="color: white;">Only type in your blog's URL page slug, not full URL (i.e /blog, not domain.com/blog)</p>
+        <!-- In-Editor Dynamic Blog Control -->
+        <div class="ineditor-control">
+          <div class="ineditor-control-grid">
+            <div class="ineditor-icon"></div>
+            <div class="ineditor-title-field">
+              <div class="ineditor-title">Below is a blog section. In the right text area, please enter the URL slug of your blog page (for example, /blog)</div>
+              <div class="ineditor-paragraph-blog"><!--Pseudo-Element--></div>
+            </div>
+            <div class="ineditor-button">
+              <div id="user-submitted-url" class="user-submitted-url-text">{usersubmittedurl:text global="false"}</div>
+            </div>
           </div>
-          <div id="user-submitted-url">{usersubmittedurl:text global="false"}</div>
         </div>
         
         <section class="combine-section_blog4">
           <div class="container">
             <div class="combine-padding-section-medium-2">
               <div class="combine-container-small-2">
-                <div class="combine-text-align-center-2">
-                  {${blogReference}_blog-reference-content:content global="false"}
+                <div class="combine-text-align-center-2 inter-div-content-area">
+                  {${blogReference}_1_blogreferencecontent:content global="false"}
                 </div>
               </div>
               <div class="combine-space-large"></div>
@@ -648,6 +672,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
+      // TO CHANGE
       if (selectedBlocks[element] === "pureslider") {
         pureslider++;
 
@@ -693,34 +718,34 @@ export function assemblyGen(rawElements, selectedBlocks) {
         // END of PureSlider HTML
         assemblyHTML += `
         </div>
-            <!-- Add Pagination -->
-            <div class="swiper-pagination"></div>
-            <!-- Add Arrows -->
-            <div class="swiper-button-next" id="next-button"><i class="fa fa-angle-right"></i></div>
-            <div class="swiper-button-prev" id="prev-button"><i class="fa fa-angle-left"></i></div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next" id="next-button"><i class="fa fa-angle-right"></i></div>
+        <div class="swiper-button-prev" id="prev-button"><i class="fa fa-angle-left"></i></div>
+      </div>
+      <!-- In-Editor PureSlider Control -->
+      <div class="ineditor-control">
+        <div class="ineditor-control-grid">
+          <div class="ineditor-title-field">
+            <div class="ineditor-title">Background Editing for PureSlider Currently: <span id="headline-lock">Locked</span></div>
+            <div class="ineditor-paragraph-pureslider"><!--Pseudo-Element--></div>
           </div>
-          <!-- Add-On Below-->
-          <!-- In-Editor PureSlider Control -->
-          <div class="ineditor-control">
-            <div class="ineditor-control-grid">
-              <div class="ineditor-title-field">
-                <div class="ineditor-title">Background Editing for PureSlider Currently: <span id="headline-lock">Locked</span></div>
-                <div class="ineditor-paragraph-pureslider"><!--Pseudo-Element--></div>
-              </div>
-              <div class="ineditor-button">
-                <a class="wsite-button wsite-button-large wsite-button-normal" onclick="toggleThis()">
-                  <span class="wsite-button-inner"><span id="button-lock">Unlock</span> section</span>
-                </a>
-              </div>
-            </div>
+          <div class="ineditor-button">
+            <a class="wsite-button wsite-button-large wsite-button-normal" onclick="toggleThis()">
+              <span class="wsite-button-inner"><span id="button-lock">Unlock</span> section</span>
+            </a>
           </div>
-          <!-------------------------------------------------------------------------------------
-          PURESLIDER ENDS HERE
-          --------------------------------------------------------------------------------------->
+        </div>
+      </div>
+      <!-------------------------------------------------------------------------------------
+      PURESLIDER ENDS HERE
+      --------------------------------------------------------------------------------------->
         `;
 
       }
 
+      // Confirmed
       if (selectedBlocks[element] === "carousel-fixed") {
 
         // References same item index but in Raw Elements Array - An Array of Objects
@@ -769,6 +794,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
+      // Confirmed
       if (selectedBlocks[element] === "carousel-free") {
 
         // References same item index but in Raw Elements Array - An Array of Objects
