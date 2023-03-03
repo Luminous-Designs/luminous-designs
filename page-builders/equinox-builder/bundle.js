@@ -400,7 +400,7 @@ function assembleElements(arrayOfObjects) {
             
           </div>
           <div class="right-control">
-            <a class="yellow-button" href="https://luminous-designs.github.io/luminous-designs/page-builders/equinox/index.html" target="_blank">Page Builder</a>
+            <a class="yellow-button" href="https://luminous-designs.github.io/luminous-designs/page-builders/equinox-builder/index.html" target="_blank">Page Builder</a>
             <a class="blue-button" href="http://www.example.com" target="_blank">Instructions</a>
           </div>
         </div>
@@ -457,8 +457,8 @@ function assembleElements(arrayOfObjects) {
 
     // HTML Buildilng Process Stage 3
     endingCode = `
-    <div class="theme-architecture">
-		<p>Theme ID: E19823942023LUMIN283</p>
+    <div class="theme-architecture" style="display: none">
+		<p>E19823942023LUMIN283</p>
 	</div>
 </div>
 	
@@ -655,7 +655,7 @@ function assembleElements(arrayOfObjects) {
   
     // Create the select element
     let select = document.createElement("select");
-    for (let i = 1; i <= 12; i++) {
+    for (let i = 1; i <= 25; i++) {
       let option = document.createElement("option");
       option.value = i;
       option.textContent = i;

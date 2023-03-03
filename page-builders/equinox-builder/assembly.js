@@ -54,6 +54,35 @@ export function assemblyGen(rawElements, selectedBlocks) {
       }
 
       // Confirmed
+      if (selectedBlocks[element] === "default-section") {
+        assemblyHTML += `
+        <!-------------------------------------------------------------------------------------
+        DEFAULT WEEBLY SECTION STARTS HERE
+        --------------------------------------------------------------------------------------->
+        {{#sections}}
+          <div class="content-wrap container">{content}</div>
+        {{/sections}}
+        <!-------------------------------------------------------------------------------------
+        DEFAULT WEEBLY SECTION ENDS HERE
+        --------------------------------------------------------------------------------------->
+        `;
+      }
+
+      // Confirmed
+      if (selectedBlocks[element] === "weebly-main-wrap") {
+        weeblySection++;
+        assemblyHTML += `
+        <!-------------------------------------------------------------------------------------
+        DEFAULT WEEBLY SECTION STARTS HERE
+        --------------------------------------------------------------------------------------->
+          <div class="content-wrap container">{${weeblySection}_MainContent:content global="false"}</div>
+        <!-------------------------------------------------------------------------------------
+        DEFAULT WEEBLY SECTION ENDS HERE
+        --------------------------------------------------------------------------------------->
+        `;
+      }
+
+      // Confirmed
       if (selectedBlocks[element] === "hero-2") {
         hero2++;
         assemblyHTML += `
@@ -136,7 +165,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
-      // TO TEST 
+      // Confirmed
       if (selectedBlocks[element] === "scrollipage-anchor") {
         scrollipageAnchor++;
         assemblyHTML += `
@@ -672,7 +701,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         `;
       }
 
-      // TO CHANGE
+      // Confirmed
       if (selectedBlocks[element] === "pureslider") {
         pureslider++;
 
@@ -799,7 +828,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
 
         // References same item index but in Raw Elements Array - An Array of Objects
         let currentElementCount = rawElements[element].selectedCustomization;
-        freeCarouselCount++;
+        freeCarouselCount++; // ${freeCarouselCount}_
 
         // BEGINNING - Build beginning of Carousel Block
         assemblyHTML += 
@@ -816,15 +845,13 @@ export function assemblyGen(rawElements, selectedBlocks) {
         // CENTRE - Start Dynamically Generating Carousel Content Based on Number of Carousel Slides 
         for (var carouselGen = 0; carouselGen < currentElementCount; carouselGen++) {
             assemblyHTML += `
-                    <!-- Start of Carousel Slide -->
-                    <div class="swiper-slide" style="min-height:200px; height:auto;">
-                        <div class="swiper-container">
-                            {${freeCarouselCount}_carouselimage_${carouselGen}:image global="false"}
-                            <h2 style="color:white">{${freeCarouselCount}_carouselh2_${carouselGen}:text global="false"}</h2>
-                            <p style="color:white">{${freeCarouselCount}_carouselp_${carouselGen}:text global="false"}</p>
-                        </div>
-                    </div>
-                    <!-- End of Carousel Slide -->
+            <!-- Start of Carousel Slide -->
+            <div class="swiper-slide" style="min-height:200px; height:auto;">
+              <div class="swiper-container">
+              <div class="custom-content-area">{${freeCarouselCount}_carousel-custom-content-${carouselGen}_:content global="false"}</div>
+              </div>
+            </div>
+            <!-- End of Carousel Slide -->
         `;
         }
 
