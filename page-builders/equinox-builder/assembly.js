@@ -186,7 +186,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         --------------------------------------------------------------------------------------->
         <div class="lynx-content section-margins">
           <div class="lynx-block-center">
-            <div class="lynx-subtitle" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="top">${servicesWhiteIcon}_content-4-subtitle:text global="false"}</div>
+            <div class="lynx-subtitle" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="top">{${servicesWhiteIcon}_content-4-subtitle:text global="false"}</div>
             <h2 class="lynx-heading" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top">{${servicesWhiteIcon}_content-4-heading:text global="false"}</h2>
           </div>
           <div class="w-layout-grid lynx-grid-features">
