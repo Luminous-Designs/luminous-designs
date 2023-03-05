@@ -457,12 +457,42 @@ function assembleElements(arrayOfObjects) {
 
     // HTML Buildilng Process Stage 3
     endingCode = `
-    <div class="theme-architecture" style="display: none">
+    <!-- FOOTER VARIATION MODULES - END CODE STARTS HERE!-->
+						
+						
+						
+                        <!-------------------------------------------------------------------------------------
+        PREBUILT FOOTER - STARTS HERE
+                        --------------------------------------------------------------------------------------->
+						</div>
+                        <div class="lynx-footer-dark pop-up-footer" style="padding-top:20px; padding-bottom: 20px;">
+                          {thebottomfooter:content}
+                          <div class="lynx-block-footer-down">
+                            {lynxfooter2a:content}
+                          </div>
+                        </div>
+						
+						 <!-------------------------------------------------------------------------------------
+						WEEBLY FOOTER - STARTS HERE
+						--------------------------------------------------------------------------------------->
+						<div class="footer-wrap default-weebly-footer">
+							<div class="site-footer container">
+								{footer}
+							</div>
+						</div>
+						<!-------------------------------------------------------------------------------------
+						WEEBLY FOOTER - STARTS HERE
+						--------------------------------------------------------------------------------------->
+                        <!-------------------------------------------------------------------------------------
+        PREBUILT FOOTER - ENDS HERE
+                        --------------------------------------------------------------------------------------->
+                        
+                        
+                        <div class="theme-architecture" style="display: none">
                           <p>E19823942023LUMIN283</p>
                         </div>
-                        </div>
                         
-                        
+                      
                         
                         
                         
@@ -476,8 +506,8 @@ function assembleElements(arrayOfObjects) {
                         <script src="/files/theme/pureslider.js"></script>
                         <script type="text/javascript" src="/files/theme/parallax-1.js"></script>
                         <script type="text/javascript" src="/files/theme/parallax-2.js"></script>
-						<script type="text/javascript" src="/files/theme/bloginit-2.js"></script>
-						
+                        <script type="text/javascript" src="/files/theme/bloginit-2.js"></script>
+                        
                         <!--<script type="text/javascript" src="/files/theme/bloginit.js"></script>-->
                         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
                         <!-- Module 1/7: Custom Theme End-->
@@ -615,11 +645,14 @@ function assembleElements(arrayOfObjects) {
                           }
                           
                         </script>
-						
-						
-	
+                        
+                        
+                        
+                        
 </body>
                         </html>
+                        
+                        
     `;
     endingCode += codeCredits;
     

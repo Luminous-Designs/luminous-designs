@@ -532,18 +532,13 @@ export function assemblyGen(rawElements, selectedBlocks) {
         defaultFooter++;
         assemblyHTML += `
         <!-------------------------------------------------------------------------------------
-        PREBUILT CALL-TO-ACTION - STARTS HERE
-        --------------------------------------------------------------------------------------->
-        <div class="lynx-content-9 section-margins">
-          <div class="lynx-newsletter" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="top">
-            <div class="lynx-subtitle-white" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top">{${callToAction}_content-13-subtitle-1:text global="false"}</div>
-            <h2 class="lynx-heading-white-small" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top">{${callToAction}_content-13-h2-1:text global="false"}</h2>
-            <div style="padding-top:10px; padding-bottom:10px; width:100% !important; min-height:20px;" class="inter-div-content-area" data-aos="fade-up" data-aos-delay="300" data-aos-anchor-placement="top">{${callToAction}_content13area:content global="false"}</div>
+          WEEBLY FOOTER - STARTS HERE
+          --------------------------------------------------------------------------------------->
+        <div class="footer-wrap">
+          <div class="site-footer container">
+            {footer}
           </div>
         </div>
-        <!-------------------------------------------------------------------------------------
-        PREBUILT STEP-BY-STEP - ENDS HERE
-        --------------------------------------------------------------------------------------->
         
         `;
       }
@@ -552,17 +547,16 @@ export function assemblyGen(rawElements, selectedBlocks) {
         curvedFooter++;
         assemblyHTML += `
         <!-------------------------------------------------------------------------------------
-        PREBUILT CALL-TO-ACTION - STARTS HERE
+        PREBUILT FOOTER - STARTS HERE
         --------------------------------------------------------------------------------------->
-        <div class="lynx-content-9 section-margins">
-          <div class="lynx-newsletter" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="top">
-            <div class="lynx-subtitle-white" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top">{${callToAction}_content-13-subtitle-1:text global="false"}</div>
-            <h2 class="lynx-heading-white-small" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top">{${callToAction}_content-13-h2-1:text global="false"}</h2>
-            <div style="padding-top:10px; padding-bottom:10px; width:100% !important; min-height:20px;" class="inter-div-content-area" data-aos="fade-up" data-aos-delay="300" data-aos-anchor-placement="top">{${callToAction}_content13area:content global="false"}</div>
+        <div class="lynx-footer-dark" style="padding-top:80px; padding-bottom: 80px;">
+          {thebottomfooter:content}
+          <div class="lynx-block-footer-down">
+            {lynxfooter2a:content}
           </div>
         </div>
         <!-------------------------------------------------------------------------------------
-        PREBUILT STEP-BY-STEP - ENDS HERE
+        PREBUILT FOOTER - ENDS HERE
         --------------------------------------------------------------------------------------->
         
         `;
