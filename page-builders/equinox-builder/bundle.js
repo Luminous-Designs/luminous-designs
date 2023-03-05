@@ -458,163 +458,168 @@ function assembleElements(arrayOfObjects) {
     // HTML Buildilng Process Stage 3
     endingCode = `
     <div class="theme-architecture" style="display: none">
-		<p>E19823942023LUMIN283</p>
-	</div>
-</div>
-	
-
-	
-	
-	
-	<!-- -->
-	<!-- START OF FOOTER CODE -->
-	<!-- </div>-->
-	<!-- Module 1/7: Script Imports -->
-	<script type="text/javascript" src="/files/theme/custom.js"></script>
-	<script type="text/javascript" src="/files/theme/mobile.js"></script>
-
-	<script src="/files/theme/pureslider.js"></script>
-	<script type="text/javascript" src="/files/theme/parallax-1.js"></script>
-    <script type="text/javascript" src="/files/theme/parallax-2.js"></script>
-	<!--<script type="text/javascript" src="/files/theme/bloginit.js"></script>-->
-	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-	<!-- Module 1/7: Custom Theme End-->
-	<!-- Module 2/7: PureSlider Start-->
-	  <script>
-		let options = {};
-
-		if (jQuery('#icontent').length) {
-		  // In the editor
-		  options = {
-			spaceBetween: 0,
-			centeredSlides: true,
-			simulateTouch: false,
-			/*autoplay: {
+                          <p>E19823942023LUMIN283</p>
+                        </div>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                        <!-- -->
+                        <!-- START OF FOOTER CODE -->
+                        <!-- </div>-->
+                        <!-- Module 1/7: Script Imports -->
+                        <script type="text/javascript" src="/files/theme/custom.js"></script>
+                        <script type="text/javascript" src="/files/theme/mobile.js"></script>
+                        
+                        <script src="/files/theme/pureslider.js"></script>
+                        <script type="text/javascript" src="/files/theme/parallax-1.js"></script>
+                        <script type="text/javascript" src="/files/theme/parallax-2.js"></script>
+						<script type="text/javascript" src="/files/theme/bloginit-2.js"></script>
+						
+                        <!--<script type="text/javascript" src="/files/theme/bloginit.js"></script>-->
+                        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+                        <!-- Module 1/7: Custom Theme End-->
+                        <!-- Module 2/7: PureSlider Start-->
+                        <script>
+                          let options = {};
+                          
+                          if (jQuery('#icontent').length) {
+                            // In the editor
+                            options = {
+                              spaceBetween: 0,
+                              centeredSlides: true,
+                              simulateTouch: false,
+                              /*autoplay: {
 	delay: 2500,
 	disableOnInteraction: true,
-			},*/
-			pagination: {
-			  el: '.swiper-pagination',
-			  clickable: true,
-			},
-			navigation: {
-			  nextEl: '.swiper-button-next',
-			  prevEl: '.swiper-button-prev',
-			}
-		  }
-
-		} else {
-		  options = {
-			spaceBetween: 00,
-			centeredSlides: true,
-			simulateTouch: true,
-			autoplay: {
-			  delay: 2500,
-			  disableOnInteraction: true,
-			},
-			pagination: {
-			  el: '.swiper-pagination',
-			  clickable: true,
-			},
-			navigation: {
-			  nextEl: '.swiper-button-next',
-			  prevEl: '.swiper-button-prev',
-			}
-		  }
-		}
-
-		var swiper = new Swiper('.pureslider-start', options);
-
-	  </script>
-	  <script>
-		function toggleThis() {
-		  var headlineText = document.getElementById("headline-lock");
-		  var buttonText = document.getElementById("button-lock");
-
-		  jQuery('.swiper-weebly-content').toggle();
-
-		  if (jQuery('.swiper-weebly-content').is(":hidden")) {
-			headlineText.innerHTML = "Unlocked";
-			buttonText.innerHTML = "Lock";
-		  } else {
-			headlineText.innerHTML = "Locked";
-			buttonText.innerHTML = "Unlock";
-		  }
-		}
-	  </script>
-	  <!-- Module 2/7: PureSlider End-->
-	  <!-- Module 3/7: Parallax Start-->
-	 
-    <script>
-      function toggleBackground() {
-        jQuery('.toggleSelector1').toggleClass('editable-image');
-        jQuery('.parallaxl').toggle();
-      }
-    </script>
-    <script type="text/javascript">
-      objectFitImages();
-      jarallax(document.querySelectorAll('.jarallax'));
-    </script>
-    <!-- Module 3/7: Parallax End -->
-	<!-- Module 4/7: Scrollipage Start -->
-	<script>
-	    jQuery(".cd-label:empty").parent().hide();
-		
-		function toggleDots() {
-			jQuery( "#cd-vertical-nav" ).toggle();
-		}
-	</script>
-	<!-- Module 4/7: Scrollipage End -->
-	<!-- Module 5/7: Carousel Start -->
-    <script>
-      let optionsCarousel = {};
-      if (jQuery('#icontent').length) {
-        // In the editor
-        optionsCarousel = {
-          slidesPerView: 3,
-          spaceBetween: 30,
-          simulateTouch: false,
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
-        }
-      }
-      
-      else {
-        optionsCarousel = {
-          slidesPerView: 3,
-          spaceBetween: 30,
-          simulateTouch: true,
-          breakpoints: {
-            // when window width is <= 499px
-            992: {
-              slidesPerView: 1,
-              spaceBetweenSlides: 50
-            },
-          },
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
-        }
-      }
-      var swiper = new Swiper('.mySwiper', optionsCarousel);
-    </script>
-    <!-- End of Carousel Import -->
-	<!-- Module 5/7: Carousel End -->
-	<!-- Module 6/7: AOS -->
+                              },*/
+                              pagination: {
+                                el: '.swiper-pagination',
+                                clickable: true,
+                              },
+                              navigation: {
+                                nextEl: '.swiper-button-next',
+                                prevEl: '.swiper-button-prev',
+                              }
+                            }
+                            
+                          } else {
+                            options = {
+                              spaceBetween: 00,
+                              centeredSlides: true,
+                              simulateTouch: true,
+                              autoplay: {
+                                delay: 2500,
+                                disableOnInteraction: true,
+                              },
+                              pagination: {
+                                el: '.swiper-pagination',
+                                clickable: true,
+                              },
+                              navigation: {
+                                nextEl: '.swiper-button-next',
+                                prevEl: '.swiper-button-prev',
+                              }
+                            }
+                          }
+                          
+                          var swiper = new Swiper('.pureslider-start', options);
+                          
+                        </script>
+                        <script>
+                          function toggleThis() {
+                            var headlineText = document.getElementById("headline-lock");
+                            var buttonText = document.getElementById("button-lock");
+                            
+                            jQuery('.swiper-weebly-content').toggle();
+                            
+                            if (jQuery('.swiper-weebly-content').is(":hidden")) {
+                              headlineText.innerHTML = "Unlocked";
+                              buttonText.innerHTML = "Lock";
+                            } else {
+                              headlineText.innerHTML = "Locked";
+                              buttonText.innerHTML = "Unlock";
+                            }
+                          }
+                        </script>
+                        <!-- Module 2/7: PureSlider End-->
+                        <!-- Module 3/7: Parallax Start-->
+                        
+                        <script>
+                          function toggleBackground() {
+                            jQuery('.toggleSelector1').toggleClass('editable-image');
+                            jQuery('.parallaxl').toggle();
+                          }
+                        </script>
+                        <script type="text/javascript">
+                          objectFitImages();
+                          jarallax(document.querySelectorAll('.jarallax'));
+                        </script>
+                        <!-- Module 3/7: Parallax End -->
+                        <!-- Module 4/7: Scrollipage Start -->
+                        <script>
+                          jQuery(".cd-label:empty").parent().hide();
+                          
+                          function toggleDots() {
+                            jQuery( "#cd-vertical-nav" ).toggle();
+                          }
+                        </script>
+                        <!-- Module 4/7: Scrollipage End -->
+                        <!-- Module 5/7: Carousel Start -->
+                        <script>
+                          let optionsCarousel = {};
+                          if (jQuery('#icontent').length) {
+                            // In the editor
+                            optionsCarousel = {
+                              slidesPerView: 3,
+                              spaceBetween: 30,
+                              simulateTouch: false,
+                              pagination: {
+                                el: ".swiper-pagination",
+                                clickable: true,
+                              },
+                            }
+                          }
+                          
+                          else {
+                            optionsCarousel = {
+                              slidesPerView: 3,
+                              spaceBetween: 30,
+                              simulateTouch: true,
+                              breakpoints: {
+                                // when window width is <= 499px
+                                992: {
+                                  slidesPerView: 1,
+                                  spaceBetweenSlides: 50
+                                },
+                              },
+                              pagination: {
+                                el: ".swiper-pagination",
+                                clickable: true,
+                              },
+                            }
+                          }
+                          var swiper = new Swiper('.mySwiper', optionsCarousel);
+                        </script>
+                        <!-- End of Carousel Import -->
+                        <!-- Module 5/7: Carousel End -->
+                        <!-- Module 6/7: AOS -->
+                        
+                        <!-- AOS Initalization -->
+                        <script>
+                          
+                          if (!(jQuery('#icontent').length)){
+                            AOS.init();
+                          }
+                          
+                        </script>
+						
+						
 	
-	<!-- AOS Initalization -->
-	<script>
-	
-	 if (!(jQuery('#icontent').length)){
-        AOS.init();
-     }
-      
-    </script>
 </body>
-</html>
+                        </html>
     `;
     endingCode += codeCredits;
     

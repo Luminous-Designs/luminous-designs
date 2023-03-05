@@ -22,6 +22,8 @@ export function assemblyGen(rawElements, selectedBlocks) {
     let carouselFixed = 0;
     let blogReference = 0;
     let weeblySection = 0;
+    let defaultFooter = 0;
+    let curvedFooter = 0;
 
     let freeCarouselCount = 0;
     let fixedCarouselCount = 0;
@@ -508,6 +510,46 @@ export function assemblyGen(rawElements, selectedBlocks) {
       // Confirmed
       if (selectedBlocks[element] === "call-to-action") {
         callToAction++;
+        assemblyHTML += `
+        <!-------------------------------------------------------------------------------------
+        PREBUILT CALL-TO-ACTION - STARTS HERE
+        --------------------------------------------------------------------------------------->
+        <div class="lynx-content-9 section-margins">
+          <div class="lynx-newsletter" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="top">
+            <div class="lynx-subtitle-white" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top">{${callToAction}_content-13-subtitle-1:text global="false"}</div>
+            <h2 class="lynx-heading-white-small" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top">{${callToAction}_content-13-h2-1:text global="false"}</h2>
+            <div style="padding-top:10px; padding-bottom:10px; width:100% !important; min-height:20px;" class="inter-div-content-area" data-aos="fade-up" data-aos-delay="300" data-aos-anchor-placement="top">{${callToAction}_content13area:content global="false"}</div>
+          </div>
+        </div>
+        <!-------------------------------------------------------------------------------------
+        PREBUILT STEP-BY-STEP - ENDS HERE
+        --------------------------------------------------------------------------------------->
+        
+        `;
+      }
+
+      if (selectedBlocks[element] === "default-footer") {
+        defaultFooter++;
+        assemblyHTML += `
+        <!-------------------------------------------------------------------------------------
+        PREBUILT CALL-TO-ACTION - STARTS HERE
+        --------------------------------------------------------------------------------------->
+        <div class="lynx-content-9 section-margins">
+          <div class="lynx-newsletter" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="top">
+            <div class="lynx-subtitle-white" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top">{${callToAction}_content-13-subtitle-1:text global="false"}</div>
+            <h2 class="lynx-heading-white-small" data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="top">{${callToAction}_content-13-h2-1:text global="false"}</h2>
+            <div style="padding-top:10px; padding-bottom:10px; width:100% !important; min-height:20px;" class="inter-div-content-area" data-aos="fade-up" data-aos-delay="300" data-aos-anchor-placement="top">{${callToAction}_content13area:content global="false"}</div>
+          </div>
+        </div>
+        <!-------------------------------------------------------------------------------------
+        PREBUILT STEP-BY-STEP - ENDS HERE
+        --------------------------------------------------------------------------------------->
+        
+        `;
+      }
+
+      if (selectedBlocks[element] === "curved-footer") {
+        curvedFooter++;
         assemblyHTML += `
         <!-------------------------------------------------------------------------------------
         PREBUILT CALL-TO-ACTION - STARTS HERE
