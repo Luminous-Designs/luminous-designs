@@ -136,12 +136,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
         --------------------------------------------------------------------------------------->
         
         <div id="header">
-          <div class="lynx-nav-info">
-            <div class="lynx-nav-block">
-            <div class="lynx-text-nav-info">{upperinfotext:text}</div>
-            <div class="lynx-text-nav-info">{upperphonetext:text}</div>
-            </div>
-          </div>
           <div class="header-wrap">
             <div class="logo">
                 <label id="nav-trigger" class="hamburger" for="mobile-input"><span></span></label>
@@ -159,6 +153,8 @@ export function assemblyGen(rawElements, selectedBlocks) {
               </div>
               <div id="navmobile" class="menu">{menu}</div>
             </div>
+            
+            
           </div>
         </div>
         <!-------------------------------------------------------------------------------------
