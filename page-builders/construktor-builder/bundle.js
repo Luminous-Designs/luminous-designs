@@ -295,7 +295,7 @@ function assembleElements(arrayOfObjects) {
       }
     }
   
-    masonry(".js-snippets", ".js-snippet", 0, 2, 2, 1);
+    masonry(".js-snippets", ".js-snippet", 0, 3, 2, 1);
   });
   
   function masonry(grid, gridCell, gridGutter, dGridCol, tGridCol, mGridCol) {
@@ -389,7 +389,7 @@ function assembleElements(arrayOfObjects) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0;">
         <script src="/files/theme/pureslider.js"></script>
         <script type="text/javascript" src="/files/theme/scrollipage.js"></script>
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link href="/files/theme/aos.css" rel="stylesheet">
       </head>
 
       <body class="header-page has-header">
@@ -407,6 +407,7 @@ function assembleElements(arrayOfObjects) {
         
         
         <!-- END OF HEADER CODE -->
+        <div class="builder-content-wrap">
         <!-- DROP CONTENT BELOW -->
                         
         
@@ -458,7 +459,7 @@ function assembleElements(arrayOfObjects) {
     // HTML Buildilng Process Stage 3
     endingCode = `
     <!-- FOOTER VARIATION MODULES - END CODE STARTS HERE!-->
-						
+		</div> <!-- End of Page Builder Components Wrap -->
 						
 						
                         <!-------------------------------------------------------------------------------------
@@ -506,10 +507,10 @@ function assembleElements(arrayOfObjects) {
                         <script src="/files/theme/pureslider.js"></script>
                         <script type="text/javascript" src="/files/theme/parallax-1.js"></script>
                         <script type="text/javascript" src="/files/theme/parallax-2.js"></script>
-                        <script type="text/javascript" src="/files/theme/bloginit-2.js"></script>
+                        <!--<script type="text/javascript" src="/files/theme/bloginit-2.js"></script>-->
                         
                         <!--<script type="text/javascript" src="/files/theme/bloginit.js"></script>-->
-                        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+                        <script type="text/javascript" src="/files/theme/aos.js"></script>
                         <!-- Module 1/7: Custom Theme End-->
                         <!-- Module 2/7: PureSlider Start-->
                         <script>
@@ -738,7 +739,7 @@ function assembleElements(arrayOfObjects) {
     window.addEventListener(event, function() {
       imagesLoaded(snippets, function() {
         // A masonry grid with 0px gutter, with 2 columns on desktop, 2 on tablet, and 1 column on mobile devices.
-        masonry(".js-snippets", ".js-snippet", 0, 2, 2, 1);
+        masonry(".js-snippets", ".js-snippet", 0, 3, 2, 1);
       });
     });
   });
