@@ -400,8 +400,7 @@ function assembleElements(arrayOfObjects) {
             
           </div>
           <div class="right-control">
-            <a class="yellow-button" href="https://luminous-designs.github.io/luminous-designs/page-builders/construktor-builder/index.html" target="_blank">Page Builder</a>
-            <a class="blue-button" href="https://www.luminousthemes.com/construktor-docs/home" target="_blank">Instructions</a>
+            
           </div>
         </div>
         
