@@ -506,7 +506,7 @@ function assembleElements(arrayOfObjects) {
                         <script src="/files/theme/pureslider.js"></script>
                         <script type="text/javascript" src="/files/theme/parallax-1.js"></script>
                         <script type="text/javascript" src="/files/theme/parallax-2.js"></script>
-                        <!--<script type="text/javascript" src="/files/theme/bloginit-2.js"></script>-->
+                        <script type="text/javascript" src="/files/theme/bloginit-2.js"></script>
                         
                         <!--<script type="text/javascript" src="/files/theme/bloginit.js"></script>-->
                         <script type="text/javascript" src="/files/theme/aos.js"></script>
