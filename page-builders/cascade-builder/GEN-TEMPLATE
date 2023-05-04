@@ -1,0 +1,417 @@
+<!-- Beginning Header Import -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="/files/theme/pureslider.js"></script>
+    <script type="text/javascript" src="/files/theme/scrollipage.js"></script>
+</head>
+
+<body class='header-fullscreen  wsite-theme-dark' style="overflow-x: hidden !important; max-width: 100% !important;">
+
+    <!------------------------------------------------------------------------------------------------------------------------------
+	NON-LAYOUT PARTIALS (Sidenav, Search Overlay)
+	-------------------------------------------------------------------------------------------------------------------------------->
+
+    <!--Beginning of the search overlay screen-->
+    <div id="searchcontainer">
+        <div id="vertical-wrap"
+            style="width:100%; height:100%; display: flex; flex-direction: column; justify-content: center;">
+            <div id="search">
+                <div id="search-terms">{search}</div>
+            </div>
+        </div>
+    </div>
+
+    <!--Ensures no excess on mobile-->
+    <div id="main-content" style="overflow-x:hidden !important;">
+        <div id="" style="padding:0px; overflow-x:hidden !important; max-width:100% !important;">
+            <!------------------------------------------------------------------------------------------------------------------------------
+			MAIN WEBSITE CONTENT (Navigation, Banner, Body)
+			-------------------------------------------------------------------------------------------------------------------------------->
+            <div class="wrapper" style="overflow-x:hidden; overflow-y:hidden">
+                <!--LOWER LEVEL NAVIGATION (Logo, Navigation Menu, Search + Sidebar icons)-->
+                <div class="birdseye-header">
+                    <div class="nav-wrap">
+                        <div class="container">
+                            <!-- Left -->
+                            <div class="division-1">
+                                <div class="logo">{logo}</div>
+                            </div>
+                            <!-- Center -->
+                            <div class="division-2">
+                                <div class="nav desktop-nav">{menu}</div>
+                            </div>
+                            <!-- Right -->
+                            <div class="division-3">
+                                <!--<div class="social-holder">{social}</div>-->
+                                <div class="search"><span for="search-terms" id="search-label" class="fa fa-search"
+                                        style="font-weight:bold !important"> </span></div>
+                                <div class="button-holder">{cta:button}</div>
+                            </div>
+                            <label type="button" class="hamburger">
+                                <span class="line"></span>
+                                <span class="line"></span>
+                                <span class="line"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div id="butter">
+                    <!-------------------------------------------------------------------------------------
+HEADER MODULE ENDS HERE WITHOUT SCROLLIPAGE
+--------------------------------------------------------------------------------------->
+                    <!-------------------------------------------------------------------------------------
+				[ADD-ON START] ScrolliPage Vertical Navigation Markup starts here
+				--------------------------------------------------------------------------------------->
+                    <nav id="cd-vertical-nav" style="z-index:10;">
+                        <ul>
+                            <li>
+                                <a data-number="1" href="#uniqueAnchor_1" class="">
+                                    <span class="cd-dot"></span>
+                                    <span class="cd-label">{section1:text global="false"}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-number="2" href="#uniqueId_2" class="">
+                                    <span class="cd-dot"></span>
+                                    <span class="cd-label">{section2:text global="false"}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-number="3" href="#uniqueId_3" class="">
+                                    <span class="cd-dot"></span>
+                                    <span class="cd-label">{section3:text global="false"}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-number="4" href="#uniqueId_4" class="">
+                                    <span class="cd-dot"></span>
+                                    <span class="cd-label">{section4:text global="false"}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-number="5" href="#uniqueId_5">
+                                    <span class="cd-dot"></span>
+                                    <span class="cd-label">{section5:text global="false"}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-number="6" href="#uniqueId_6">
+                                    <span class="cd-dot"></span>
+                                    <span class="cd-label">{section6:text global="false"}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-number="7" href="#uniqueId_7">
+                                    <span class="cd-dot"></span>
+                                    <span class="cd-label">{section7:text global="false"}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-number="8" href="#uniqueId_8">
+                                    <span class="cd-dot"></span>
+                                    <span class="cd-label">{section8:text global="false"}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-number="9" href="#uniqueId_9">
+                                    <span class="cd-dot"></span>
+                                    <span class="cd-label">{section9:text global="false"}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-number="10" href="#uniqueId_10">
+                                    <span class="cd-dot"></span>
+                                    <span class="cd-label">{section10:text global="false"}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-number="11" href="#uniqueId_11">
+                                    <span class="cd-dot"></span>
+                                    <span class="cd-label">{section11:text global="false"}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-number="12" href="#uniqueId_12">
+                                    <span class="cd-dot"></span>
+                                    <span class="cd-label">{section12:text global="false"}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-number="13" href="#uniqueId_13">
+                                    <span class="cd-dot"></span>
+                                    <span class="cd-label">{section13:text global="false"}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-number="14" href="#uniqueId_14">
+                                    <span class="cd-dot"></span>
+                                    <span class="cd-label">{section14:text global="false"}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-number="15" href="#uniqueId_15">
+                                    <span class="cd-dot"></span>
+                                    <span class="cd-label">{section15:text global="false"}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-number="16" href="#uniqueId_16">
+                                    <span class="cd-dot"></span>
+                                    <span class="cd-label">{section16:text global="false"}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-number="17" href="#uniqueId_17">
+                                    <span class="cd-dot"></span>
+                                    <span class="cd-label">{section17:text global="false"}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-number="18" href="#uniqueId_18">
+                                    <span class="cd-dot"></span>
+                                    <span class="cd-label">{section18:text global="false"}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-number="19" href="#uniqueId_19">
+                                    <span class="cd-dot"></span>
+                                    <span class="cd-label">{section19:text global="false"}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-number="20" href="#uniqueId_20">
+                                    <span class="cd-dot"></span>
+                                    <span class="cd-label">{section20:text global="false"}</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-------------------------------------------------------------------------------------
+				[ADD-ON END] ScrolliPage Vertical Navigation Markup ends here
+				--------------------------------------------------------------------------------------->
+                <div class="editor">
+					<div id="floating-div" onclick = "toggleDots()" style="position:fixed; width:auto; padding-left:10px; padding-right:10px; padding-top:5px; padding-bottom:5px; height:auto; bottom:10px; left:30px; background-color:#000; z-index:1000;">
+						<p style="color:white">Toggle ScrolliPage Nav</p>
+					</div>
+				</div>
+                    <!-- End of Beginning Header Import -->
+
+
+
+
+
+                    <!-- Beginning Footer Import -->
+                    <!-------------------------------------------------------------------------------------
+FOOTER MODULE STARTS HERE
+--------------------------------------------------------------------------------------->
+                </div><!-- /.butter -->
+            </div><!-- /.wrapper -->
+        </div>
+    </div>
+    <!-------------------------------------------------------------------------------------
+	FOOTER MODULE STARTS HERE
+	--------------------------------------------------------------------------------------->
+    <!--Mobile Navigation Menu-->
+    <div id="navMobile" class="nav mobile-nav">
+        {menu}
+        <div class="button-holder">{cta:button}</div>
+    </div>
+
+    <script type="text/javascript" src="/files/theme/plugins.js"></script>
+    <script type="text/javascript" src="/files/theme/custom.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/files/theme/pureslider.js"></script>
+    <script type="text/javascript" src="/files/theme/parallax-1.js"></script>
+    <script type="text/javascript" src="/files/theme/parallax-2.js"></script>
+
+    <!-- Start of ScrolliPage JS Import This Code is Dynamically Generated by PageBuilder -->
+    <script>
+        jQuery(".cd-label:empty").parent().hide();
+    </script>
+    <script>
+        function toggleDots() {
+            jQuery("#cd-vertical-nav").toggle();
+        }
+    </script>
+    <!-- End of ScrolliPage JS Import -->
+    <!-- Start of AOS Animation Import -->
+    <script>
+        if (!(jQuery('#icontent').length)) {
+            AOS.init({
+                duration: 500
+            });
+        }
+    </script>
+    <!-- End of AOS Animation Import -->
+    <!-- Start of Carousel Import -->
+    <script>
+        let optionsCarousel = {};
+        if (jQuery('#icontent').length) {
+            // In the editor
+            optionsCarousel = {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                simulateTouch: false,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+            }
+        }
+
+        else {
+            optionsCarousel = {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                simulateTouch: true,
+                breakpoints: {
+                    // when window width is <= 499px
+                    992: {
+                        slidesPerView: 1,
+                        spaceBetweenSlides: 50
+                    },
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+            }
+        }
+        var swiper = new Swiper('.mySwiper', optionsCarousel);
+    </script>
+    <!-- End of Carousel Import -->
+    <!-- Start of PureSlider Initialization -->
+    <script>
+        let options = {};
+
+        if (jQuery('#icontent').length) {
+            // In the editor
+            options = {
+                spaceBetween: 0,
+                centeredSlides: true,
+                simulateTouch: false,
+                /*autoplay: {
+                delay: 2500,
+                disableOnInteraction: true,
+                },*/
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                }
+            }
+
+        } else {
+            options = {
+                spaceBetween: 00,
+                centeredSlides: true,
+                simulateTouch: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: true,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                }
+            }
+        }
+
+        var swiper = new Swiper('.pureslider-start', options);
+
+    </script>
+    <!-- End of PureSlider Initialization -->
+    <!-- Start of PureSlider Control -->
+    <script>
+        function toggleThis() {
+            var headlineText = document.getElementById("headline-lock");
+            var buttonText = document.getElementById("button-lock");
+
+            jQuery('.swiper-weebly-content').toggle();
+
+            if (jQuery('.swiper-weebly-content').is(":hidden")) {
+                headlineText.innerHTML = "Unlocked";
+                buttonText.innerHTML = "Lock";
+            } else {
+                headlineText.innerHTML = "Locked";
+                buttonText.innerHTML = "Unlock";
+            }
+        }
+    </script>
+    <!-- End of PureSlider Control -->
+    <!-- Start of Search Function -->
+    <script>
+        var ismobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i) != null
+        var touchorclick = (ismobile) ? 'touchstart' : 'click'
+        var searchcontainer = document.getElementById('searchcontainer')
+        var searchfield = document.getElementById('search-terms')
+        var searchlabel = document.getElementById('search-label')
+
+        searchlabel.addEventListener(touchorclick, function (e) { // when user clicks on search label
+            searchcontainer.classList.toggle('opensearch') // add or remove 'opensearch' to searchcontainer
+            if (!searchcontainer.classList.contains('opensearch')) { // if hiding searchcontainer
+                searchfield.blur() // blur search field
+                e.preventDefault() // prevent default label behavior of focusing on search field again
+            }
+            e.stopPropagation() // stop event from bubbling upwards
+        }, false)
+
+        searchfield.addEventListener(touchorclick, function (e) { // when user clicks on search field
+            e.stopPropagation() // stop event from bubbling upwards
+        }, false)
+
+        document.addEventListener(touchorclick, function (e) { // when user clicks anywhere in document
+            searchcontainer.classList.remove('opensearch')
+            searchfield.blur()
+        }, false)
+    </script>
+    <!-- End of Search Function -->
+    <!-- Start of Parallax Initialization -->
+    <script type="text/javascript">
+        // object-fit polyfill run
+        objectFitImages();
+
+        /* init Jarallax */
+        jarallax(document.querySelectorAll('.jarallax'));
+    </script>
+    <!-- End of Parallax Initialization -->
+    <!-- Start of Homepage Header Animation -->
+    <script>
+        if (!(jQuery('#icontent').length)) {
+
+            jQuery(window).scroll(function () {
+                var scroll = $(window).scrollTop();
+                jQuery(".banner-wrap").css({
+                    transform: 'translate3d(0, +' + (scroll / 100) + '%, 0) scale(' + (100 - scroll / 100) / 100 + ')'
+                });
+            });
+        }
+    </script>
+    <!-- End of Homepage Header Animation -->
+    <!-- Start of Parallax Control Implementation -->
+    <script>
+        function toggleBackground() {
+            // Raises the parallax image to make it easier to edit
+            jQuery('.toggleSelector1').toggleClass('editable-image');
+
+            // Hides content to make it easier to access image
+            jQuery('.parallaxl').toggle();
+        }
+    </script>
+    <!-- End of Parallax Control Implementation -->
+</body>
+
+</html>
+<!-- End of Beginning Footer Import -->
