@@ -237,7 +237,7 @@ function assembleElements(arrayOfObjects) {
     -----------------------------------------------------------------------------*/
 
     // No more than one section that utilizes wsite-background per page 
-    let wsiteBgCheckLimitedArray = ["hero-1", "hero-2", "hero-3", "default-weebly-header"];
+    let wsiteBgCheckLimitedArray = ["prebuilt-header-1", "prebuilt-header-2", "prebuilt-header-3", "prebuilt-header-4", "prebuilt-header-5", "default-weebly-header"];
     if (!(wsiteBgCheck(wsiteBgCheckLimitedArray, lastItemDropped, selectedBlocksDD, source, el, warningModal, WarningHeader, WarningText))) {
       return;
     }
@@ -250,7 +250,7 @@ function assembleElements(arrayOfObjects) {
     
 
     // No More Than One Of Each Per Page
-    let oneOfEach = ["navigation", "blog-reference", "hero-1", "hero-2", "hero-3", "default-weebly-header"];
+    let oneOfEach = ["prebuilt-header-1", "prebuilt-header-2", "prebuilt-header-3", "prebuilt-header-4", "prebuilt-header-5", "default-weebly-header"];
     if (!(onlyOneCheck(oneOfEach, lastItemDropped, selectedBlocksDD, source, el, warningModal, WarningHeader, WarningText))) {
       return;
     }
@@ -335,11 +335,11 @@ function assembleElements(arrayOfObjects) {
     console.log(selectedBlocks);
 
     // CHECK - Ensure that first element is navigation
-    let acceptedNavs = ["navigation"];
+    let acceptedNavs = ["prebuilt-header-1", "prebuilt-header-2", "prebuilt-header-3", "prebuilt-header-4", "prebuilt-header-5", "default-weebly-header"];
     if (!(navigationFirst(acceptedNavs, selectedBlocks))) {
       warningModal.style.display = "block";
       WarningHeader.innerText = "Whoops! It looks like you don't have a navigation bar as the first element on your page.";
-      WarningText.innerText = "You need a navigation bar on your page. Drag and drop a navigation bar and put it on the top of your page.";
+      WarningText.innerText = "You need a navigation bar on your page. Drag and drop a navigation bar or header element and put it on the top of your page.";
       return;
     }
     
@@ -383,26 +383,29 @@ function assembleElements(arrayOfObjects) {
     // HTML Building Process Stage 1
     beginningCode +=  `
     <!DOCTYPE html>
-      <html>
-      <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0;">
-        <script src="/files/theme/pureslider.js"></script>
-        <script type="text/javascript" src="/files/theme/scrollipage.js"></script>
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-      </head>
+    <html>
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <script src="/files/theme/core/pureslider.js"></script>
+      <script type="text/javascript" src="/files/theme/core/scrollipage.js"></script>
+      <link href="/files/theme/core/aos.css" rel="stylesheet">
+      
+    </head>
 
-      <body class="header-page has-header">
-        <div class="overflow-control">
-        <!-- Theme Control Panel -->
-        <div class="theme-control-panel">
-          <div class="left-control" id="inject-text">
-            
-          </div>
-          <div class="right-control">
-            <a class="yellow-button" href="https://luminous-designs.github.io/luminous-designs/page-builders/equinox-builder/index.html" target="_blank">Page Builder</a>
+    <body class="header-page">
+
+      <div class="wrapper">
+        <div class="birdseye-header">
+          <div class="nav-wrap">
+            <div class="container">
+              <div class="logo">{logo}</div>
+              <div class="nav desktop-nav">{menu}</div>
+              <a class="hamburger" aria-label="Menu" href="#"><span></span></a>
+            </div>
           </div>
         </div>
+      <div class="overflow-limiter"> <!-- Overflow Limiter -->
         
         
         <!-- END OF HEADER CODE -->
@@ -456,200 +459,26 @@ function assembleElements(arrayOfObjects) {
 
     // HTML Buildilng Process Stage 3
     endingCode = `
-    <!-- FOOTER VARIATION MODULES - END CODE STARTS HERE!-->
-						
-						
-						
-                        <!-------------------------------------------------------------------------------------
-        PREBUILT FOOTER - STARTS HERE
-                        --------------------------------------------------------------------------------------->
-						</div>
-                        <div class="lynx-footer-dark pop-up-footer" style="padding-top:20px; padding-bottom: 20px;">
-                          {thebottomfooter:content}
-                          <div class="lynx-block-footer-down">
-                            {lynxfooter2a:content}
-                          </div>
-                        </div>
-						
-						 <!-------------------------------------------------------------------------------------
-						WEEBLY FOOTER - STARTS HERE
-						--------------------------------------------------------------------------------------->
-						<div class="footer-wrap default-weebly-footer">
-							<div class="site-footer container">
-								{footer}
-							</div>
-						</div>
-						<!-------------------------------------------------------------------------------------
-						WEEBLY FOOTER - STARTS HERE
-						--------------------------------------------------------------------------------------->
-                        <!-------------------------------------------------------------------------------------
-        PREBUILT FOOTER - ENDS HERE
-                        --------------------------------------------------------------------------------------->
-                        
-                        
-                        <div class="theme-architecture" style="display: none">
-                          <p>E19823942023LUMIN283</p>
-                        </div>
-                        
-                      
-                        
-                        
-                        
-                        <!-- -->
-                        <!-- START OF FOOTER CODE -->
-                        <!-- </div>-->
-                        <!-- Module 1/7: Script Imports -->
-                        <script type="text/javascript" src="/files/theme/custom.js"></script>
-                        <script type="text/javascript" src="/files/theme/mobile.js"></script>
-                        
-                        <script src="/files/theme/pureslider.js"></script>
-                        <script type="text/javascript" src="/files/theme/parallax-1.js"></script>
-                        <script type="text/javascript" src="/files/theme/parallax-2.js"></script>
-                        <script type="text/javascript" src="/files/theme/bloginit-2.js"></script>
-                        
-                        <!--<script type="text/javascript" src="/files/theme/bloginit.js"></script>-->
-                        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-                        <!-- Module 1/7: Custom Theme End-->
-                        <!-- Module 2/7: PureSlider Start-->
-                        <script>
-                          let options = {};
-                          
-                          if (jQuery('#icontent').length) {
-                            // In the editor
-                            options = {
-                              spaceBetween: 0,
-                              centeredSlides: true,
-                              simulateTouch: false,
-                              /*autoplay: {
-	delay: 2500,
-	disableOnInteraction: true,
-                              },*/
-                              pagination: {
-                                el: '.swiper-pagination',
-                                clickable: true,
-                              },
-                              navigation: {
-                                nextEl: '.swiper-button-next',
-                                prevEl: '.swiper-button-prev',
-                              }
-                            }
-                            
-                          } else {
-                            options = {
-                              spaceBetween: 00,
-                              centeredSlides: true,
-                              simulateTouch: true,
-                              autoplay: {
-                                delay: 2500,
-                                disableOnInteraction: true,
-                              },
-                              pagination: {
-                                el: '.swiper-pagination',
-                                clickable: true,
-                              },
-                              navigation: {
-                                nextEl: '.swiper-button-next',
-                                prevEl: '.swiper-button-prev',
-                              }
-                            }
-                          }
-                          
-                          var swiper = new Swiper('.pureslider-start', options);
-                          
-                        </script>
-                        <script>
-                          function toggleThis() {
-                            var headlineText = document.getElementById("headline-lock");
-                            var buttonText = document.getElementById("button-lock");
-                            
-                            jQuery('.swiper-weebly-content').toggle();
-                            
-                            if (jQuery('.swiper-weebly-content').is(":hidden")) {
-                              headlineText.innerHTML = "Unlocked";
-                              buttonText.innerHTML = "Lock";
-                            } else {
-                              headlineText.innerHTML = "Locked";
-                              buttonText.innerHTML = "Unlock";
-                            }
-                          }
-                        </script>
-                        <!-- Module 2/7: PureSlider End-->
-                        <!-- Module 3/7: Parallax Start-->
-                        
-                        <script>
-                          function toggleBackground() {
-                            jQuery('.toggleSelector1').toggleClass('editable-image');
-                            jQuery('.parallaxl').toggle();
-                          }
-                        </script>
-                        <script type="text/javascript">
-                          objectFitImages();
-                          jarallax(document.querySelectorAll('.jarallax'));
-                        </script>
-                        <!-- Module 3/7: Parallax End -->
-                        <!-- Module 4/7: Scrollipage Start -->
-                        <script>
-                          jQuery(".cd-label:empty").parent().hide();
-                          
-                          function toggleDots() {
-                            jQuery( "#cd-vertical-nav" ).toggle();
-                          }
-                        </script>
-                        <!-- Module 4/7: Scrollipage End -->
-                        <!-- Module 5/7: Carousel Start -->
-                        <script>
-                          let optionsCarousel = {};
-                          if (jQuery('#icontent').length) {
-                            // In the editor
-                            optionsCarousel = {
-                              slidesPerView: 3,
-                              spaceBetween: 30,
-                              simulateTouch: false,
-                              pagination: {
-                                el: ".swiper-pagination",
-                                clickable: true,
-                              },
-                            }
-                          }
-                          
-                          else {
-                            optionsCarousel = {
-                              slidesPerView: 3,
-                              spaceBetween: 30,
-                              simulateTouch: true,
-                              breakpoints: {
-                                // when window width is <= 499px
-                                992: {
-                                  slidesPerView: 1,
-                                  spaceBetweenSlides: 50
-                                },
-                              },
-                              pagination: {
-                                el: ".swiper-pagination",
-                                clickable: true,
-                              },
-                            }
-                          }
-                          var swiper = new Swiper('.mySwiper', optionsCarousel);
-                        </script>
-                        <!-- End of Carousel Import -->
-                        <!-- Module 5/7: Carousel End -->
-                        <!-- Module 6/7: AOS -->
-                        
-                        <!-- AOS Initalization -->
-                        <script>
-                          
-                          if (!(jQuery('#icontent').length)){
-                            AOS.init();
-                          }
-                          
-                        </script>
-                        
-                        
-                        
-                        
+    <div class="footer-wrap">
+			<div class="footer">{footer}</div>
+		</div><!-- end footer-wrap -->
+	  </div><!-- /.wrapper -->
+	</div><!-- end overflow limiter -->
+  <!-- START OF END CODE -->
+  <div id="navMobile" class="nav mobile-nav">
+    <a class="hamburger" aria-label="Menu" href="#"><span></span></a>
+    {menu}
+  </div>
+
+  <script type="text/javascript" src="/files/theme/plugins.js"></script>
+  <script type="text/javascript" src="/files/theme/custom.js"></script>
+  <script type="text/javascript" src="/files/theme/core/pureslider.js"></script>
+  <script type="text/javascript" src="/files/theme/core/parallax-1.js"></script>
+  <script type="text/javascript" src="/files/theme/core/parallax-2.js"></script>
+  <script type="text/javascript" src="/files/theme/core/aos.js"></script>
+  <script type="text/javascript" src="/files/theme/core/main-init.js"></script>
 </body>
-                        </html>
+</html>
                         
                         
     `;
