@@ -83,15 +83,15 @@ import { wsiteBgCheck, sectionsCheck, onlyOneCheck, navigationFirst } from "./ru
 
  // AUTOGENERATE - NAVIGATION BAR - CODE FOR AUTOGEN STARTS HERE
   // Get the <figure> element with the ID "myFigure"
-  const figure = document.getElementById("navigation");
-  const target = document.querySelector(".js-droppable");
-  const clonedFigure = figure.cloneNode(true);
-  target.appendChild(clonedFigure);
+  //const figure = document.getElementById("navigation");
+  //const target = document.querySelector(".js-droppable");
+  //const clonedFigure = figure.cloneNode(true);
+  //target.appendChild(clonedFigure);
   // clonedFigure.innerHTML += deleteBtnHtml; This is hidden because we want the navigation bar to remain always on the screen. 
-  clonedFigure.classList.add ("relative");
-  const label = clonedFigure.querySelector(".figure-label");
-  clonedFigure.removeChild(label);
-  arrayByAddition.push(clonedFigure);
+  //clonedFigure.classList.add ("relative");
+  //const label = clonedFigure.querySelector(".figure-label");
+  //clonedFigure.removeChild(label);
+  //arrayByAddition.push(clonedFigure);
  
 
   // AUTOGENERATE - CODE FOR AUTOGEN ENDS HERE
