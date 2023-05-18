@@ -335,7 +335,7 @@ function assembleElements(arrayOfObjects) {
     console.log(selectedBlocks);
 
     // CHECK - Ensure that first element is navigation
-    let acceptedNavs = ["prebuilt-header-1", "prebuilt-header-2", "prebuilt-header-3", "prebuilt-header-4", "prebuilt-header-5", "default-weebly-header"];
+    let acceptedNavs = ["prebuilt-header-1", "prebuilt-header-2", "prebuilt-header-3", "prebuilt-header-4", "prebuilt-header-5", "default-weebly-header", "pureslider"];
     if (!(navigationFirst(acceptedNavs, selectedBlocks))) {
       warningModal.style.display = "block";
       WarningHeader.innerText = "Whoops! It looks like you don't have a navigation bar as the first element on your page.";

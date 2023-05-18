@@ -109,19 +109,24 @@ export function navigationFirst(navElements, selectedBlocks) {
     let acceptableNav = navElements; // Array of blacklisted elements
     let fullList = selectedBlocks; // Full list of existing items
     let navNotPresent = 0;
+    console.log("Initiating navigation first check");
+    console.log("Acceptable Navigation Elements: "+ navElements);
+    console.log("List of current blocks: "+ selectedBlocks);
     
-    // Iterate through all existing elements, see what the first element is 
+ 
+
+    // Assume navNotPresent is not present initially
+    let isPresent = false;
+
+    // Iterate through all acceptableNav elements and check for the first element of fullList
     for (let j = 0; j < acceptableNav.length; j++) {
-        if (acceptableNav[j] != fullList[0]) {
-            navNotPresent++;
+        if (acceptableNav[j] == fullList[0]) {
+            isPresent = true;
+            break; // No need to check the rest, as we have found a match
         }
     }
      
 
-    if (navNotPresent > 0) {
-        return false;
-    } else {
-        return true;
-    }
+    return isPresent;
 }
     

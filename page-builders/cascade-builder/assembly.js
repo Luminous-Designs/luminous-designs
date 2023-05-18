@@ -46,72 +46,386 @@ let prebuiltheader5 = 0;
     // A350-ASSEMBLY SECTION ASSEMBLY STICHING CODE
     for (let element = 0; element < selectedBlocks.length; element++) {
 
+
+      /* 
+      ============================================================================================================================================
+      Assembly Area 1: Header Sections + Navigation Bars (Acceptable Headers)
+      ============================================================================================================================================
+      */
+
+      // Prebuilt Header 1
+      if (selectedBlocks[element] === "prebuilt-header-1") {
+        prebuiltheader1++;
+        assemblyHTML += `
+        <!-------------------------------------------------------------------------------------
+        prebuilt-header-1 STARTS HERE
+        --------------------------------------------------------------------------------------->
+        <section id="prebuilt-header-1" class="main-section ls-8 wf-section">
+      <div class="padding-global">
+        <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar ls-8 w-nav"></div>
+      </div>
+      <div class="hero ls-8">
+        <div class="padding-global header">
+          <div class="w-layout-grid grid ls-8">
+            <div id="w-node-_075915ca-0a20-a03f-dc75-e4af52f309cf-bf3dcddd" class="column">
+              <div class="info-text text-color-white replace-this-text">{${prebuiltheader1}_div62:text global="false"}</div>
+            </div>
+            <div id="w-node-_075915ca-0a20-a03f-dc75-e4af52f309d2-bf3dcddd" class="column">
+              <div class="overflow-hidden">
+                <h1 class="heading-xxlarge replace-this-text">{${prebuiltheader1}_text21:text global="false"}</h1>
+              </div>
+              <div class="overflow-hidden"></div>
+            </div>
+            <div id="w-node-_075915ca-0a20-a03f-dc75-e4af52f309d7-bf3dcddd" class="column-wrapper ls-8">
+              <div class="info-text ls-8 replace-this-text">{${prebuiltheader1}_div63:text global="false"}</div>
+            </div>
+          </div>
+        </div>
+        <div class="padding-global header">
+          <div class="w-layout-grid grid ls-8">
+            <div class="link-style ls-8">
+              <div class="hover-line top">
+                <div class="hover-line-fill background-color-white"></div>
+              </div>
+              <div class="replace-this-text">{${prebuiltheader1}_div64:text global="false"}</div>
+            </div>
+            <div class="link-style ls-8">
+              <div class="hover-line top">
+                <div class="hover-line-fill background-color-white"></div>
+              </div>
+              <div class="replace-this-text">{${prebuiltheader1}_div65:text global="false"}</div>
+            </div>
+            <div class="link-style ls-8">
+              <div class="hover-line top">
+                <div class="hover-line-fill background-color-white"></div>
+              </div>
+              <div class="replace-this-text">{${prebuiltheader1}_div66:text global="false"}</div>
+            </div>
+            <div class="link-style ls-8">
+              <div class="hover-line top">
+                <div class="hover-line-fill background-color-white"></div>
+              </div>
+              <div class="replace-this-text">{${prebuiltheader1}_div67:text global="false"}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="background-image ls-8 wsite-background"></div>
+    </section>
+        <!-------------------------------------------------------------------------------------
+        prebuilt-header-1 ENDS HERE
+        --------------------------------------------------------------------------------------->
+        `;
+      }
+
+      // Prebuilt Header 2
+      if (selectedBlocks[element] === "prebuilt-header-2") {
+        prebuiltheader2++;
+        assemblyHTML += `
+        <!-------------------------------------------------------------------------------------
+        prebuilt-header-2 STARTS HERE
+        --------------------------------------------------------------------------------------->
+        <section id="prebuilt-header-2" class="main-section wf-section">
+      <div class="hero ls-3">
+        <div class="hero-sub ls-3">
+          <div id="w-node-_03178dd8-6a53-0ebd-7d86-e17493d1afcd-bf3dcddd" class="column-wrapper ls-3">
+            <div class="overflow-hidden">
+              <h1 class="heading ls-3 replace-this-text">{${prebuiltheader2}_text54:text global="false"}</h1>
+            </div>
+          </div>
+          <div class="w-layout-grid grid ls-3">
+            <div id="w-node-_03178dd8-6a53-0ebd-7d86-e17493d1afd2-bf3dcddd" class="column">
+              <div class="replace-this-text">{${prebuiltheader2}_div76:text global="false"}</div>
+            </div>
+            <div id="w-node-_03178dd8-6a53-0ebd-7d86-e17493d1afd7-bf3dcddd" class="column flex">
+              <div class="text-max-width-50 replace-this-text">{${prebuiltheader2}_div77:text global="false"}</div>
+              <div class="text-max-width-50 replace-this-text">{${prebuiltheader2}_div78:text global="false"}</div>
+            </div>
+            <div id="w-node-_03178dd8-6a53-0ebd-7d86-e17493d1afdc-bf3dcddd" class="column-list ls-3">
+              <div class="link-style ls-3">
+                <div class="replace-this-text">{${prebuiltheader2}_div79:text global="false"}</div>
+                <div class="underline dark"></div>
+              </div>
+              <div class="link-style ls-3">
+                <div class="replace-this-text">{${prebuiltheader2}_div80:text global="false"}</div>
+                <div class="underline dark"></div>
+              </div>
+              <div class="link-style ls-3">
+                <div class="replace-this-text">{${prebuiltheader2}_div81:text global="false"}</div>
+                <div class="underline dark"></div>
+              </div>
+            </div>
+            <div class="replace-this-text">{${prebuiltheader2}_div82:text global="false"}</div>
+          </div>
+          <div id="w-node-_03178dd8-6a53-0ebd-7d86-e17493d1afeb-bf3dcddd" class="image-container ls-3">
+            <div class="background-image-wrapper">
+              <div class="background-image ls-3-detail wsite-background"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="background-image ls-3"></div>
+    </section>
+        <!-------------------------------------------------------------------------------------
+        prebuilt-header-2 ENDS HERE
+        --------------------------------------------------------------------------------------->
+        `;
+      }
+
+      // Prebuilt Header 3
+      if (selectedBlocks[element] === "prebuilt-header-3") {
+        prebuiltheader3++;
+        assemblyHTML += `
+        <!-------------------------------------------------------------------------------------
+        prebuilt-header-3 STARTS HERE
+        --------------------------------------------------------------------------------------->
+        <section id="prebuilt-header-3" class="main-section wf-section">
+      <div class="padding-global third-header-style">
+        <div class="hero ls-2">
+          <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar ls-2 w-nav"></div>
+          <div class="w-layout-grid grid ls-2">
+            <h1 id="w-node-_1cd466a6-ae72-7838-115a-a4b2dff0eef7-bf3dcddd" class="heading-11">{${prebuiltheader3}_text55:text global="false"}</h1>
+            <div id="w-node-_1cd466a6-ae72-7838-115a-a4b2dff0eefb-bf3dcddd" class="column ls-2">
+              <div class="text-color-grey replace-this-text">{${prebuiltheader3}_div83:text global="false"}</div>
+              <div class="link-style ls-2">
+                <div class="replace-this-text">{${prebuiltheader3}_div84:text global="false"}</div>
+                <div class="hover-line">
+                  <div class="hover-line-fill"></div>
+                </div>
+              </div>
+            </div>
+            <div id="w-node-_1cd466a6-ae72-7838-115a-a4b2dff0ef03-bf3dcddd" class="column ls-2">
+              <div class="text-color-grey replace-this-text">{${prebuiltheader3}_div85:text global="false"}</div>
+              <div class="link-style ls-2">
+                <div class="replace-this-text">{${prebuiltheader3}_div86:text global="false"}</div>
+                <div class="hover-line">
+                  <div class="hover-line-fill"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-sub ls-2"></div>
+      <div class="background-image ls-2 wsite-background"></div>
+    </section>
+        <!-------------------------------------------------------------------------------------
+        prebuilt-header-3 ENDS HERE
+        --------------------------------------------------------------------------------------->
+        `;
+      }
+
+      // Prebuilt Header 4
+      if (selectedBlocks[element] === "prebuilt-header-4") {
+        prebuiltheader4++;
+        assemblyHTML += `
+        <!-------------------------------------------------------------------------------------
+        prebuilt-header-4 STARTS HERE
+        --------------------------------------------------------------------------------------->
+        <section id="prebuilt-header-4" class="main-section wf-section">
+      <div class="hero ls-4">
+        <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar ls-4 w-nav"></div>
+        <div class="w-layout-grid grid ls-4">
+          <div id="w-node-_9db5d159-08e2-e7ac-a455-2d737eebe626-bf3dcddd" class="hero-sub-container ls-4">
+            <div class="hero-sub-column ls-4">
+              <h1 class="heading ls-4">{${prebuiltheader4}_text56:text global="false"}</h1>
+            </div>
+            <div>
+              <div class="line ls-4"></div>
+              <div class="info-text ls-4 paragraph-image replace-this-text">{${prebuiltheader4}_div87:text global="false"}</div>
+              <div class="link-style ls-4">
+                <h4 class="heading-small margin-bottom margin-xsmall">{${prebuiltheader4}_text57:text global="false"}</h4>
+                <div class="w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="butt" stroke-linejoin="bevel">
+                    <path d="M5 12h13M12 5l7 7-7 7"></path>
+                  </svg></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="background-image ls-4 wsite-background"></div>
+    </section>
+        <!-------------------------------------------------------------------------------------
+        prebuilt-header-4 ENDS HERE
+        --------------------------------------------------------------------------------------->
+        `;
+      }
+
+      // Prebuilt Header 5
+      if (selectedBlocks[element] === "prebuilt-header-5") {
+        prebuiltheader5++;
+        assemblyHTML += `
+        <!-------------------------------------------------------------------------------------
+        prebuilt-header-5 STARTS HERE
+        --------------------------------------------------------------------------------------->
+        <section id="prebuilt-header-5" class="main-section wf-section">
+      <div class="hero ls-9 image-content-theme">
+        <div class="w-layout-grid grid ls-9 text-and-image-area">
+          <div id="w-node-fcc5fb43-9c6a-174a-067d-ff038818647f-bf3dcddd" class="hero-sub-column ls-9">
+            <div class="overflow-hidden">
+              <h1 class="heading ls-9">{${prebuiltheader5}_text58:text global="false"}</h1>
+            </div>
+          </div>
+        </div>
+        <div class="background-image ls-9 wsite-background"></div>
+      </div>
+      <div class="hero ls-9-bottom image-area-theme">
+        <div class="w-layout-grid grid ls-9 sub">
+          <div id="w-node-fcc5fb43-9c6a-174a-067d-ff0388186486-bf3dcddd" class="column ls-9">
+            <h2 class="heading ls-9-small">{${prebuiltheader5}_text59:text global="false"}</h2>
+          </div>
+          <div class="column-wrapper ls-9">
+            <h3 class="heading-12">{${prebuiltheader5}_text60:text global="false"}</h3>
+            <div class="link-style ls-9">
+              <div class="arrow-icon ls-9 w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="bevel">
+                  <path d="M5 12h13M12 5l7 7-7 7"></path>
+                </svg></div>
+              <div class="replace-this-text">{${prebuiltheader5}_div88:text global="false"}</div>
+            </div>
+          </div>
+          <div class="column-wrapper ls-9">
+            <h3>{${prebuiltheader5}_text61:text global="false"}</h3>
+            <div class="link-style ls-9">
+              <div class="arrow-icon ls-9 w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="bevel">
+                  <path d="M5 12h13M12 5l7 7-7 7"></path>
+                </svg></div>
+              <div class="replace-this-text">{${prebuiltheader5}_div89:text global="false"}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+        <!-------------------------------------------------------------------------------------
+        prebuilt-header-5 ENDS HERE
+        --------------------------------------------------------------------------------------->
+        `;
+      }
+
+      // Default Weebly Header
+      if (selectedBlocks[element] === "default-weebly-header") {
+        
+        assemblyHTML += `
+        <!-------------------------------------------------------------------------------------
+        DEFAULT WEEBLY HEADER STARTS HERE
+        --------------------------------------------------------------------------------------->
+        <div class="banner-wrap">
+          {{#header}}
+            <div class="banner">
+              <div class="banner-inner">{content}</div>
+            </div>
+          {{/header}}
+        </div>
+        <!-------------------------------------------------------------------------------------
+        DEFAULT WEEBLY HEADER ENDS HERE
+        --------------------------------------------------------------------------------------->
+        
+        `;
+      }
+
+      // PureSlider
+      if (selectedBlocks[element] === "pureslider") {
+        pureslider++;
+
+        // Obtains the count that the user selected in pop-up
+        let currentElementCount = rawElements[element].selectedCustomization;
+
+        // BEGINNING of PureSlider HTML
+        assemblyHTML += `
+        <!-------------------------------------------------------------------------------------
+        PURESLIDER STARTS HERE
+        --------------------------------------------------------------------------------------->
+        <!--PureSlider-10-->
+        <div class="swiper-container pureslider-start" style="pointer-events: auto !important;">
+          <div class="swiper-wrapper" style="pointer-events: auto !important;">
+        `;
+
+        // MIDDLE Slider Generation
+        for (let sliderCount = 0; sliderCount < currentElementCount; sliderCount++) {
+            assemblyHTML += `
+            <!-- PureSlider Slide Starts Here -->
+              <div class="swiper-slide" style="pointer-events: auto !important;">
+                <div class="swiper-weebly-total">
+                <div class="swiper-weebly-image">
+                  {${pureslider}_sliderimage_${sliderCount}:image global="false"}
+                </div>
+                <div class="swiper-weebly-content" id="swiper-content-area" style="display: table;">
+                  <!--Outer-->
+                  <div class="middle-container"
+                  style="display: table-cell; vertical-align: middle; padding-left: 20px; padding-right: 20px;">
+                  <!--Middle-->
+                  <div class="slider-container">
+                    <!--Inner-->
+                    <div id="slide-0" class="inter-div-content-area">{${pureslider}__slidercontent_${sliderCount}:content global="false"}</div>
+                  </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+              <!-- PureSlider Slide Ends Here -->
+            `;
+        }
+
+        // END of PureSlider HTML
+        assemblyHTML += `
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next" id="next-button"><i class="fa fa-angle-right"></i></div>
+        <div class="swiper-button-prev" id="prev-button"><i class="fa fa-angle-left"></i></div>
+      </div>
+      <!-- In-Editor PureSlider Control -->
+      <div class="ineditor-control">
+        <div class="ineditor-control-grid">
+          <div class="ineditor-title-field">
+            <div class="ineditor-title">Background Editing for PureSlider Currently: <span id="headline-lock">Locked</span></div>
+            <div class="ineditor-paragraph-pureslider"><!--Pseudo-Element--></div>
+          </div>
+          <div class="ineditor-button">
+            <a class="wsite-button wsite-button-large wsite-button-normal" onclick="toggleThis()">
+              <span class="wsite-button-inner"><span id="button-lock">Unlock</span> section</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-------------------------------------------------------------------------------------
+      PURESLIDER ENDS HERE
+      --------------------------------------------------------------------------------------->
+        `;
+
+      }
+
+
+
+
+      /* 
+      ============================================================================================================================================
+      Assembly Area 2: Prebuilt Webflow Content Sections (Non-Default)
+      ============================================================================================================================================
+      */
+
+
+
+
+
+
+
+
+
+
+
+
+
+      /* 
+      ============================================================================================================================================
+      Assembly Area 3: Custom Default Sections (Carousels, ScrolliPage, etc)
+      ============================================================================================================================================
+      */
+
       
 
 // This is the start of the prebuilt-header-1
-    if (selectedBlocks[element] === "prebuilt-header-1") {
-      prebuiltheader1++;
-      assemblyHTML += `
-      <!-------------------------------------------------------------------------------------
-      prebuilt-header-1 STARTS HERE
-      --------------------------------------------------------------------------------------->
-      <section id="prebuilt-header-1" class="main-section ls-8 wf-section">
-    <div class="padding-global">
-      <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar ls-8 w-nav"></div>
-    </div>
-    <div class="hero ls-8">
-      <div class="padding-global header">
-        <div class="w-layout-grid grid ls-8">
-          <div id="w-node-_075915ca-0a20-a03f-dc75-e4af52f309cf-bf3dcddd" class="column">
-            <div class="info-text text-color-white replace-this-text">{${prebuiltheader1}_div62:text global="false"}</div>
-          </div>
-          <div id="w-node-_075915ca-0a20-a03f-dc75-e4af52f309d2-bf3dcddd" class="column">
-            <div class="overflow-hidden">
-              <h1 class="heading-xxlarge replace-this-text">{${prebuiltheader1}_text21:text global="false"}</h1>
-            </div>
-            <div class="overflow-hidden"></div>
-          </div>
-          <div id="w-node-_075915ca-0a20-a03f-dc75-e4af52f309d7-bf3dcddd" class="column-wrapper ls-8">
-            <div class="info-text ls-8 replace-this-text">{${prebuiltheader1}_div63:text global="false"}</div>
-          </div>
-        </div>
-      </div>
-      <div class="padding-global header">
-        <div class="w-layout-grid grid ls-8">
-          <div class="link-style ls-8">
-            <div class="hover-line top">
-              <div class="hover-line-fill background-color-white"></div>
-            </div>
-            <div class="replace-this-text">{${prebuiltheader1}_div64:text global="false"}</div>
-          </div>
-          <div class="link-style ls-8">
-            <div class="hover-line top">
-              <div class="hover-line-fill background-color-white"></div>
-            </div>
-            <div class="replace-this-text">{${prebuiltheader1}_div65:text global="false"}</div>
-          </div>
-          <div class="link-style ls-8">
-            <div class="hover-line top">
-              <div class="hover-line-fill background-color-white"></div>
-            </div>
-            <div class="replace-this-text">{${prebuiltheader1}_div66:text global="false"}</div>
-          </div>
-          <div class="link-style ls-8">
-            <div class="hover-line top">
-              <div class="hover-line-fill background-color-white"></div>
-            </div>
-            <div class="replace-this-text">{${prebuiltheader1}_div67:text global="false"}</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="background-image ls-8 wsite-background"></div>
-  </section>
-      <!-------------------------------------------------------------------------------------
-      prebuilt-header-1 ENDS HERE
-      --------------------------------------------------------------------------------------->
-      `;
-    }
+    
 // End of prebuilt-header-1
 
 // This is the start of the service-boxes-4-1
@@ -497,190 +811,19 @@ let prebuiltheader5 = 0;
 // End of prebuilt-footer
 
 // This is the start of the prebuilt-header-2
-    if (selectedBlocks[element] === "prebuilt-header-2") {
-      prebuiltheader2++;
-      assemblyHTML += `
-      <!-------------------------------------------------------------------------------------
-      prebuilt-header-2 STARTS HERE
-      --------------------------------------------------------------------------------------->
-      <section id="prebuilt-header-2" class="main-section wf-section">
-    <div class="hero ls-3">
-      <div class="hero-sub ls-3">
-        <div id="w-node-_03178dd8-6a53-0ebd-7d86-e17493d1afcd-bf3dcddd" class="column-wrapper ls-3">
-          <div class="overflow-hidden">
-            <h1 class="heading ls-3 replace-this-text">{${prebuiltheader2}_text54:text global="false"}</h1>
-          </div>
-        </div>
-        <div class="w-layout-grid grid ls-3">
-          <div id="w-node-_03178dd8-6a53-0ebd-7d86-e17493d1afd2-bf3dcddd" class="column">
-            <div class="replace-this-text">{${prebuiltheader2}_div76:text global="false"}</div>
-          </div>
-          <div id="w-node-_03178dd8-6a53-0ebd-7d86-e17493d1afd7-bf3dcddd" class="column flex">
-            <div class="text-max-width-50 replace-this-text">{${prebuiltheader2}_div77:text global="false"}</div>
-            <div class="text-max-width-50 replace-this-text">{${prebuiltheader2}_div78:text global="false"}</div>
-          </div>
-          <div id="w-node-_03178dd8-6a53-0ebd-7d86-e17493d1afdc-bf3dcddd" class="column-list ls-3">
-            <div class="link-style ls-3">
-              <div class="replace-this-text">{${prebuiltheader2}_div79:text global="false"}</div>
-              <div class="underline dark"></div>
-            </div>
-            <div class="link-style ls-3">
-              <div class="replace-this-text">{${prebuiltheader2}_div80:text global="false"}</div>
-              <div class="underline dark"></div>
-            </div>
-            <div class="link-style ls-3">
-              <div class="replace-this-text">{${prebuiltheader2}_div81:text global="false"}</div>
-              <div class="underline dark"></div>
-            </div>
-          </div>
-          <div class="replace-this-text">{${prebuiltheader2}_div82:text global="false"}</div>
-        </div>
-        <div id="w-node-_03178dd8-6a53-0ebd-7d86-e17493d1afeb-bf3dcddd" class="image-container ls-3">
-          <div class="background-image-wrapper">
-            <div class="background-image ls-3-detail wsite-background"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="background-image ls-3"></div>
-  </section>
-      <!-------------------------------------------------------------------------------------
-      prebuilt-header-2 ENDS HERE
-      --------------------------------------------------------------------------------------->
-      `;
-    }
+    
 // End of prebuilt-header-2
 
 // This is the start of the prebuilt-header-3
-    if (selectedBlocks[element] === "prebuilt-header-3") {
-      prebuiltheader3++;
-      assemblyHTML += `
-      <!-------------------------------------------------------------------------------------
-      prebuilt-header-3 STARTS HERE
-      --------------------------------------------------------------------------------------->
-      <section id="prebuilt-header-3" class="main-section wf-section">
-    <div class="padding-global third-header-style">
-      <div class="hero ls-2">
-        <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar ls-2 w-nav"></div>
-        <div class="w-layout-grid grid ls-2">
-          <h1 id="w-node-_1cd466a6-ae72-7838-115a-a4b2dff0eef7-bf3dcddd" class="heading-11">{${prebuiltheader3}_text55:text global="false"}</h1>
-          <div id="w-node-_1cd466a6-ae72-7838-115a-a4b2dff0eefb-bf3dcddd" class="column ls-2">
-            <div class="text-color-grey replace-this-text">{${prebuiltheader3}_div83:text global="false"}</div>
-            <div class="link-style ls-2">
-              <div class="replace-this-text">{${prebuiltheader3}_div84:text global="false"}</div>
-              <div class="hover-line">
-                <div class="hover-line-fill"></div>
-              </div>
-            </div>
-          </div>
-          <div id="w-node-_1cd466a6-ae72-7838-115a-a4b2dff0ef03-bf3dcddd" class="column ls-2">
-            <div class="text-color-grey replace-this-text">{${prebuiltheader3}_div85:text global="false"}</div>
-            <div class="link-style ls-2">
-              <div class="replace-this-text">{${prebuiltheader3}_div86:text global="false"}</div>
-              <div class="hover-line">
-                <div class="hover-line-fill"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="hero-sub ls-2"></div>
-    <div class="background-image ls-2 wsite-background"></div>
-  </section>
-      <!-------------------------------------------------------------------------------------
-      prebuilt-header-3 ENDS HERE
-      --------------------------------------------------------------------------------------->
-      `;
-    }
+    
 // End of prebuilt-header-3
 
 // This is the start of the prebuilt-header-4
-    if (selectedBlocks[element] === "prebuilt-header-4") {
-      prebuiltheader4++;
-      assemblyHTML += `
-      <!-------------------------------------------------------------------------------------
-      prebuilt-header-4 STARTS HERE
-      --------------------------------------------------------------------------------------->
-      <section id="prebuilt-header-4" class="main-section wf-section">
-    <div class="hero ls-4">
-      <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar ls-4 w-nav"></div>
-      <div class="w-layout-grid grid ls-4">
-        <div id="w-node-_9db5d159-08e2-e7ac-a455-2d737eebe626-bf3dcddd" class="hero-sub-container ls-4">
-          <div class="hero-sub-column ls-4">
-            <h1 class="heading ls-4">{${prebuiltheader4}_text56:text global="false"}</h1>
-          </div>
-          <div>
-            <div class="line ls-4"></div>
-            <div class="info-text ls-4 paragraph-image replace-this-text">{${prebuiltheader4}_div87:text global="false"}</div>
-            <div class="link-style ls-4">
-              <h4 class="heading-small margin-bottom margin-xsmall">{${prebuiltheader4}_text57:text global="false"}</h4>
-              <div class="w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="butt" stroke-linejoin="bevel">
-                  <path d="M5 12h13M12 5l7 7-7 7"></path>
-                </svg></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="background-image ls-4 wsite-background"></div>
-  </section>
-      <!-------------------------------------------------------------------------------------
-      prebuilt-header-4 ENDS HERE
-      --------------------------------------------------------------------------------------->
-      `;
-    }
+    
 // End of prebuilt-header-4
 
 // This is the start of the prebuilt-header-5
-    if (selectedBlocks[element] === "prebuilt-header-5") {
-      prebuiltheader5++;
-      assemblyHTML += `
-      <!-------------------------------------------------------------------------------------
-      prebuilt-header-5 STARTS HERE
-      --------------------------------------------------------------------------------------->
-      <section id="prebuilt-header-5" class="main-section wf-section">
-    <div class="hero ls-9 image-content-theme">
-      <div class="w-layout-grid grid ls-9 text-and-image-area">
-        <div id="w-node-fcc5fb43-9c6a-174a-067d-ff038818647f-bf3dcddd" class="hero-sub-column ls-9">
-          <div class="overflow-hidden">
-            <h1 class="heading ls-9">{${prebuiltheader5}_text58:text global="false"}</h1>
-          </div>
-        </div>
-      </div>
-      <div class="background-image ls-9 wsite-background"></div>
-    </div>
-    <div class="hero ls-9-bottom image-area-theme">
-      <div class="w-layout-grid grid ls-9 sub">
-        <div id="w-node-fcc5fb43-9c6a-174a-067d-ff0388186486-bf3dcddd" class="column ls-9">
-          <h2 class="heading ls-9-small">{${prebuiltheader5}_text59:text global="false"}</h2>
-        </div>
-        <div class="column-wrapper ls-9">
-          <h3 class="heading-12">{${prebuiltheader5}_text60:text global="false"}</h3>
-          <div class="link-style ls-9">
-            <div class="arrow-icon ls-9 w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="bevel">
-                <path d="M5 12h13M12 5l7 7-7 7"></path>
-              </svg></div>
-            <div class="replace-this-text">{${prebuiltheader5}_div88:text global="false"}</div>
-          </div>
-        </div>
-        <div class="column-wrapper ls-9">
-          <h3>{${prebuiltheader5}_text61:text global="false"}</h3>
-          <div class="link-style ls-9">
-            <div class="arrow-icon ls-9 w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="bevel">
-                <path d="M5 12h13M12 5l7 7-7 7"></path>
-              </svg></div>
-            <div class="replace-this-text">{${prebuiltheader5}_div89:text global="false"}</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-      <!-------------------------------------------------------------------------------------
-      prebuilt-header-5 ENDS HERE
-      --------------------------------------------------------------------------------------->
-      `;
-    }
+    
 // End of prebuilt-header-5
 
 
@@ -729,25 +872,7 @@ let prebuiltheader5 = 0;
 
 
       // Confirmed
-      if (selectedBlocks[element] === "default-weebly-header") {
-        
-        assemblyHTML += `
-        <!-------------------------------------------------------------------------------------
-        DEFAULT WEEBLY HEADER STARTS HERE
-        --------------------------------------------------------------------------------------->
-        <div class="banner-wrap">
-          {{#header}}
-            <div class="banner">
-              <div class="banner-inner">{content}</div>
-            </div>
-          {{/header}}
-        </div>
-        <!-------------------------------------------------------------------------------------
-        DEFAULT WEEBLY HEADER ENDS HERE
-        --------------------------------------------------------------------------------------->
-        
-        `;
-      }
+      
       
       // Confirmed
       if (selectedBlocks[element] === "parallax") {
@@ -792,77 +917,7 @@ let prebuiltheader5 = 0;
 
 
       // Confirmed
-      if (selectedBlocks[element] === "pureslider") {
-        pureslider++;
-
-        // Obtains the count that the user selected in pop-up
-        let currentElementCount = rawElements[element].selectedCustomization;
-
-        // BEGINNING of PureSlider HTML
-        assemblyHTML += `
-        <!-------------------------------------------------------------------------------------
-        PURESLIDER STARTS HERE
-        --------------------------------------------------------------------------------------->
-        <!--PureSlider-10-->
-        <div class="swiper-container pureslider-start" style="pointer-events: auto !important;">
-          <div class="swiper-wrapper" style="pointer-events: auto !important;">
-        `;
-
-        // MIDDLE Slider Generation
-        for (let sliderCount = 0; sliderCount < currentElementCount; sliderCount++) {
-            assemblyHTML += `
-            <!-- PureSlider Slide Starts Here -->
-              <div class="swiper-slide" style="pointer-events: auto !important;">
-                <div class="swiper-weebly-total">
-                <div class="swiper-weebly-image">
-                  {${pureslider}_sliderimage_${sliderCount}:image global="false"}
-                </div>
-                <div class="swiper-weebly-content" id="swiper-content-area" style="display: table;">
-                  <!--Outer-->
-                  <div class="middle-container"
-                  style="display: table-cell; vertical-align: middle; padding-left: 20px; padding-right: 20px;">
-                  <!--Middle-->
-                  <div class="slider-container">
-                    <!--Inner-->
-                    <div id="slide-0" class="inter-div-content-area">{${pureslider}__slidercontent_${sliderCount}:content global="false"}</div>
-                  </div>
-                  </div>
-                </div>
-                </div>
-              </div>
-              <!-- PureSlider Slide Ends Here -->
-            `;
-        }
-
-        // END of PureSlider HTML
-        assemblyHTML += `
-        </div>
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
-        <!-- Add Arrows -->
-        <div class="swiper-button-next" id="next-button"><i class="fa fa-angle-right"></i></div>
-        <div class="swiper-button-prev" id="prev-button"><i class="fa fa-angle-left"></i></div>
-      </div>
-      <!-- In-Editor PureSlider Control -->
-      <div class="ineditor-control">
-        <div class="ineditor-control-grid">
-          <div class="ineditor-title-field">
-            <div class="ineditor-title">Background Editing for PureSlider Currently: <span id="headline-lock">Locked</span></div>
-            <div class="ineditor-paragraph-pureslider"><!--Pseudo-Element--></div>
-          </div>
-          <div class="ineditor-button">
-            <a class="wsite-button wsite-button-large wsite-button-normal" onclick="toggleThis()">
-              <span class="wsite-button-inner"><span id="button-lock">Unlock</span> section</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <!-------------------------------------------------------------------------------------
-      PURESLIDER ENDS HERE
-      --------------------------------------------------------------------------------------->
-        `;
-
-      }
+      
 
       // Confirmed
       if (selectedBlocks[element] === "carousel-fixed") {
