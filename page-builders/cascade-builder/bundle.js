@@ -396,15 +396,7 @@ function assembleElements(arrayOfObjects) {
     <body class="header-page">
 
       <div class="wrapper">
-        <div class="birdseye-header">
-          <div class="nav-wrap">
-            <div class="container">
-              <div class="logo">{logo}</div>
-              <div class="nav desktop-nav">{menu}</div>
-              <a class="hamburger" aria-label="Menu" href="#"><span></span></a>
-            </div>
-          </div>
-        </div>
+        
       <div class="overflow-limiter"> <!-- Overflow Limiter -->
         
         
