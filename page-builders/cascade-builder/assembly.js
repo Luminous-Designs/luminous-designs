@@ -902,7 +902,8 @@ export function assemblyGen(rawElements, selectedBlocks) {
         <!-------------------------------------------------------------------------------
         START OF BODY SECTION: Carousel
         --------------------------------------------------------------------------------->
-        <div class="main-wrap">
+        <div class="main-wrap" style="padding-top:30px; padding-bottom: 30px;">
+        <div class="container">{top-carousel-content:content global="false"}</div>
             <div class="container" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
                 <div class="swiper mySwiper carousel-slider">
                     <div class="swiper-wrapper">
