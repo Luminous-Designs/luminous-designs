@@ -406,18 +406,18 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <h4 class="h5-scene-carbon replace-this-text">{${prebuiltfooter}_text47:text global="false"}</h4>
             <div class="div-national-gasoline">
               <div class="div-block-9">
-                <div class="div-block-10 footer-drag-drop replace-this-content"><div class="inter-div-content-area">{${prebuiltfooter}_content100:content global="false"}</div></div>
+                <div class="div-block-10 footer-drag-drop replace-this-content"><div class="inter-div-content-area">{${prebuiltfooter}_content100:content}</div></div>
               </div>
             </div>
           </div>
           <div class="div-seven-cover"></div>
           <div class="div-exist-born">
             <div class="div-block-8">
-              <p class="a-waste-victory">{${prebuiltfooter}_text48:text global="false"}</p>
-              <p class="a-waste-victory">{${prebuiltfooter}_text49:text global="false"}</p>
-              <p class="a-waste-victory">{${prebuiltfooter}_text50:text global="false"}</p>
+              <p class="a-waste-victory">{${prebuiltfooter}_text48:text}</p>
+              <p class="a-waste-victory">{${prebuiltfooter}_text49:text}</p>
+              <p class="a-waste-victory">{${prebuiltfooter}_text50:text}</p>
             </div>
-            <p class="p-bicycle-desert">{${prebuiltfooter}_text51:text global="false"}</p>
+            <p class="p-bicycle-desert">{${prebuiltfooter}_text51:text}</p>
           </div>
         </div>
       </section>
