@@ -366,14 +366,22 @@ function assembleElements(arrayOfObjects) {
 
     `;
 
-    // List of Blocks
-    for (var listofModules = 0; listofModules < selectedBlocks.length; listofModules++) {
-        codeCredits += 
-        `
-        ${selectedBlocks[listofModules]}
-        `;
-    }
-        
+
+    // Creates a META tag containing all elements present on the page from PageBuilder
+    let acceptableValues = ["pureslider", "carousel-fixed", "carousel-free"];
+    let pageBuilderMetaString = selectedBlocks.map((block, index) => {
+      if (acceptableValues.includes(block)) {
+        return block + "_" + rawElements[index].selectedCustomization;
+      } else {
+        return block;
+      }
+    });
+
+    
+
+
+    
+    
     // End Tag
     codeCredits += 
     `
@@ -390,7 +398,7 @@ function assembleElements(arrayOfObjects) {
       <script src="/files/theme/core/pureslider.js"></script>
       <script type="text/javascript" src="/files/theme/core/scrollipage.js"></script>
       <link href="/files/theme/core/aos.css" rel="stylesheet">
-      
+      <meta name="custom-pagebuilder" content="${pageBuilderMetaString}">
     </head>
 
     <body class="header-page">
