@@ -403,7 +403,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
           <section id="prebuilt-footer" class="div-together-central">
         <div class="div-jungle-soap">
           <div class="div-surprise-nest">
-            <h4 class="h5-scene-carbon replace-this-text">{${prebuiltfooter}_text47:text global="false"}</h4>
+            <h4 class="h5-scene-carbon replace-this-text">{${prebuiltfooter}_text47:text}</h4>
             <div class="div-national-gasoline">
               <div class="div-block-9">
                 <div class="div-block-10 footer-drag-drop replace-this-content"><div class="inter-div-content-area">{${prebuiltfooter}_content100:content}</div></div>
