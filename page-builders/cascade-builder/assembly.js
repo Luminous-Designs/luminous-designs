@@ -36,6 +36,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
       let icons32 = 0;
       let fiftyfiftyblurredbox = 0;
       let prebuiltfooter = 0;
+      let prebuiltheader1 = 0;
       let prebuiltheader2 = 0;
       let prebuiltheader3 = 0;
       let prebuiltheader4 = 0;
@@ -55,7 +56,71 @@ export function assemblyGen(rawElements, selectedBlocks) {
       */
      
      
-      
+      if (selectedBlocks[element] === "prebuilt-header-1") {
+        prebuiltheader1++;
+        assemblyHTML += `
+        <!-------------------------------------------------------------------------------------
+        prebuilt-header-1 STARTS HERE
+        --------------------------------------------------------------------------------------->
+        <section id="prebuilt-header-1" class="main-section ls-8 wf-section">
+      <div class="padding-global">
+        <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar ls-8 w-nav"></div>
+      </div>
+      <div class="hero ls-8">
+        <div class="padding-global header">
+          <div class="w-layout-grid grid ls-8">
+            <div id="w-node-_075915ca-0a20-a03f-dc75-e4af52f309cf-bf3dcddd" class="column">
+              <div class="info-text text-color-white replace-this-text">{${prebuiltheader1}_div60:text global="false"}</div>
+            </div>
+            <div id="w-node-_075915ca-0a20-a03f-dc75-e4af52f309d2-bf3dcddd" class="column">
+              <div class="overflow-hidden">
+                <h1 class="heading-xxlarge replace-this-text">{${prebuiltheader1}_text19:text global="false"}</h1>
+              </div>
+              <div class="overflow-hidden"></div>
+            </div>
+            <div id="w-node-_075915ca-0a20-a03f-dc75-e4af52f309d7-bf3dcddd" class="column-wrapper ls-8">
+              <div class="info-text ls-8 replace-this-text">{${prebuiltheader1}_div61:text global="false"}</div>
+            </div>
+          </div>
+        </div>
+        <div class="padding-global header">
+          <div class="w-layout-grid grid ls-8">
+            <div class="link-style ls-8">
+              <div class="hover-line top">
+                <div class="hover-line-fill background-color-white"></div>
+              </div>
+              <div class="replace-this-text">{${prebuiltheader1}_div62:text global="false"}</div>
+            </div>
+            <div class="link-style ls-8">
+              <div class="hover-line top">
+                <div class="hover-line-fill background-color-white"></div>
+              </div>
+              <div class="replace-this-text">{${prebuiltheader1}_div63:text global="false"}</div>
+            </div>
+            <div class="link-style ls-8">
+              <div class="hover-line top">
+                <div class="hover-line-fill background-color-white"></div>
+              </div>
+              <div class="replace-this-text">{${prebuiltheader1}_div64:text global="false"}</div>
+            </div>
+            <div class="link-style ls-8">
+              <div class="hover-line top">
+                <div class="hover-line-fill background-color-white"></div>
+              </div>
+              <div class="replace-this-text">{${prebuiltheader1}_div65:text global="false"}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="background-image ls-8 wsite-background"></div>
+    </section>
+        <!-------------------------------------------------------------------------------------
+        prebuilt-header-1 ENDS HERE
+        --------------------------------------------------------------------------------------->
+        `;
+      }
+  // End of prebuilt-header-1
+  
       
       
       // This is the start of the service-boxes-3-1
@@ -1328,6 +1393,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
           }
       // End of prebuilt-footer
       
+
       // This is the start of the prebuilt-header-2
           if (selectedBlocks[element] === "prebuilt-header-2") {
             prebuiltheader2++;
