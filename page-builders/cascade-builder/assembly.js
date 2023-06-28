@@ -36,7 +36,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
       let icons32 = 0;
       let fiftyfiftyblurredbox = 0;
       let prebuiltfooter = 0;
-      let prebuiltheader1 = 0;
       let prebuiltheader2 = 0;
       let prebuiltheader3 = 0;
       let prebuiltheader4 = 0;
@@ -51,76 +50,9 @@ export function assemblyGen(rawElements, selectedBlocks) {
 
       /* 
       ============================================================================================================================================
-      Assembly Area 1: Prebuilt Sections (Imported from Webflow)
+      Assembly Area 1 STARTS: Prebuilt Sections (Imported from Webflow)
       ============================================================================================================================================
       */
-     
-     
-      if (selectedBlocks[element] === "prebuilt-header-1") {
-        prebuiltheader1++;
-        assemblyHTML += `
-        <!-------------------------------------------------------------------------------------
-        prebuilt-header-1 STARTS HERE
-        --------------------------------------------------------------------------------------->
-        <section id="prebuilt-header-1" class="main-section ls-8 wf-section">
-      <div class="padding-global">
-        <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar ls-8 w-nav"></div>
-      </div>
-      <div class="hero ls-8">
-        <div class="padding-global header">
-          <div class="w-layout-grid grid ls-8">
-            <div id="w-node-_075915ca-0a20-a03f-dc75-e4af52f309cf-bf3dcddd" class="column">
-              <div class="info-text text-color-white replace-this-text">{${prebuiltheader1}_div60:text global="false"}</div>
-            </div>
-            <div id="w-node-_075915ca-0a20-a03f-dc75-e4af52f309d2-bf3dcddd" class="column">
-              <div class="overflow-hidden">
-                <h1 class="heading-xxlarge replace-this-text">{${prebuiltheader1}_text19:text global="false"}</h1>
-              </div>
-              <div class="overflow-hidden"></div>
-            </div>
-            <div id="w-node-_075915ca-0a20-a03f-dc75-e4af52f309d7-bf3dcddd" class="column-wrapper ls-8">
-              <div class="info-text ls-8 replace-this-text">{${prebuiltheader1}_div61:text global="false"}</div>
-            </div>
-          </div>
-        </div>
-        <div class="padding-global header">
-          <div class="w-layout-grid grid ls-8">
-            <div class="link-style ls-8">
-              <div class="hover-line top">
-                <div class="hover-line-fill background-color-white"></div>
-              </div>
-              <div class="replace-this-text">{${prebuiltheader1}_div62:text global="false"}</div>
-            </div>
-            <div class="link-style ls-8">
-              <div class="hover-line top">
-                <div class="hover-line-fill background-color-white"></div>
-              </div>
-              <div class="replace-this-text">{${prebuiltheader1}_div63:text global="false"}</div>
-            </div>
-            <div class="link-style ls-8">
-              <div class="hover-line top">
-                <div class="hover-line-fill background-color-white"></div>
-              </div>
-              <div class="replace-this-text">{${prebuiltheader1}_div64:text global="false"}</div>
-            </div>
-            <div class="link-style ls-8">
-              <div class="hover-line top">
-                <div class="hover-line-fill background-color-white"></div>
-              </div>
-              <div class="replace-this-text">{${prebuiltheader1}_div65:text global="false"}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="background-image ls-8 wsite-background"></div>
-    </section>
-        <!-------------------------------------------------------------------------------------
-        prebuilt-header-1 ENDS HERE
-        --------------------------------------------------------------------------------------->
-        `;
-      }
-  // End of prebuilt-header-1
-  
       
       
       // This is the start of the service-boxes-3-1
@@ -130,7 +62,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             service-boxes-3-1 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="service-boxes-3-1" theme-option="a1" class="section-4 white-bg">
+            <section id="service-boxes-3-1" theme-option="a1" class="section-4 white-bg capture">
           <div class="container-section">
             <div class="stacked-content">
               <div class="dual-grid single-column">
@@ -138,13 +70,13 @@ export function assemblyGen(rawElements, selectedBlocks) {
               </div>
               <div class="w-layout-grid grid-6 service-icons sb3x1">
                 <div class="card first">
-                  <div id="w-node-ccc99eba-4301-b282-47cf-7e68c8784f08-0a6d3d82" class="card-icon-circle animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">{${serviceboxes31}_image0:image global="false"}</div>
+                  <div id="w-node-ccc99eba-4301-b282-47cf-7e68c8784f08-0a6d3d82" class="card-icon-circle animate-this-left">{${serviceboxes31}_image0:image global="false"}</div>
                   <div class="card-bottom-info">
-                    <div class="card-description animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                    <div class="card-description animate-this-left">
                       <h3 class="heading-9">{${serviceboxes31}_text70:text global="false"}</h3>
                       <div class="body-display small replace-this-text">{${serviceboxes31}_div197:text global="false"}</div>
                     </div>
-                    <div class="card-hover-link animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                    <div class="card-hover-link animate-this-left">
                       <div href="#" class="underline-hover-link dark">
                         <div class="subtitle-2 replace-this-text">{${serviceboxes31}_div198:text global="false"}</div>
                         <div class="hover-line-2">
@@ -156,14 +88,14 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="hover-card-circle"></div>
                 </div>
                 <div class="card second">
-                  <div id="w-node-ccc99eba-4301-b282-47cf-7e68c8784f18-0a6d3d82" class="card-icon-circle animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">{${serviceboxes31}_image1:image global="false"}</div>
+                  <div id="w-node-ccc99eba-4301-b282-47cf-7e68c8784f18-0a6d3d82" class="card-icon-circle animate-this-left">{${serviceboxes31}_image1:image global="false"}</div>
                   <div class="hover-card-circle"></div>
                   <div class="card-bottom-info">
-                    <div class="card-description animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                    <div class="card-description animate-this-left">
                       <h3 class="heading-8">{${serviceboxes31}_text71:text global="false"}</h3>
                       <div class="body-display small replace-this-text">{${serviceboxes31}_div199:text global="false"}</div>
                     </div>
-                    <div class="card-hover-link animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                    <div class="card-hover-link animate-this-left">
                       <div href="#" class="underline-hover-link dark">
                         <div class="subtitle-2 replace-this-text">{${serviceboxes31}_div200:text global="false"}</div>
                         <div class="hover-line-2">
@@ -174,14 +106,14 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   </div>
                 </div>
                 <div class="card third">
-                  <div id="w-node-ccc99eba-4301-b282-47cf-7e68c8784f28-0a6d3d82" class="card-icon-circle animate-this-right" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">{${serviceboxes31}_image2:image global="false"}</div>
+                  <div id="w-node-ccc99eba-4301-b282-47cf-7e68c8784f28-0a6d3d82" class="card-icon-circle animate-this-right">{${serviceboxes31}_image2:image global="false"}</div>
                   <div class="hover-card-circle"></div>
                   <div class="card-bottom-info">
-                    <div class="card-description animate-this-right" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                    <div class="card-description animate-this-right">
                       <h3 class="heading-7">{${serviceboxes31}_text72:text global="false"}</h3>
                       <div class="body-display small replace-this-text">{${serviceboxes31}_div201:text global="false"}</div>
                     </div>
-                    <div class="card-hover-link animate-this-right" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                    <div class="card-hover-link animate-this-right">
                       <div href="#" class="underline-hover-link dark">
                         <div class="subtitle-2 replace-this-text">{${serviceboxes31}_div202:text global="false"}</div>
                         <div class="hover-line-2">
@@ -209,7 +141,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             service-boxes-2 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="service-boxes-2" theme-option="a1" class="section-4 white-bg">
+            <section id="service-boxes-2" theme-option="a1" class="section-4 white-bg capture">
           <div class="container-section">
             <div class="stacked-content">
               <div class="dual-grid single-column">
@@ -217,13 +149,13 @@ export function assemblyGen(rawElements, selectedBlocks) {
               </div>
               <div class="w-layout-grid grid-6 service-icons sb2x1">
                 <div class="card first">
-                  <div id="w-node-_3ccefd32-d523-1527-85e8-8da2d405d9e0-0a6d3d82" class="card-icon-circle animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">{${serviceboxes2}_image3:image global="false"}</div>
+                  <div id="w-node-_3ccefd32-d523-1527-85e8-8da2d405d9e0-0a6d3d82" class="card-icon-circle animate-this-left">{${serviceboxes2}_image3:image global="false"}</div>
                   <div class="card-bottom-info">
-                    <div class="card-description animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                    <div class="card-description animate-this-left">
                       <h3 class="heading-9">{${serviceboxes2}_text73:text global="false"}</h3>
                       <div class="body-display small replace-this-text">{${serviceboxes2}_div203:text global="false"}</div>
                     </div>
-                    <div class="card-hover-link animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                    <div class="card-hover-link animate-this-left">
                       <div href="#" class="underline-hover-link dark">
                         <div class="subtitle-2 replace-this-text">{${serviceboxes2}_div204:text global="false"}</div>
                         <div class="hover-line-2">
@@ -235,14 +167,14 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="hover-card-circle"></div>
                 </div>
                 <div class="card second">
-                  <div id="w-node-_3ccefd32-d523-1527-85e8-8da2d405d9f0-0a6d3d82" class="card-icon-circle animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">{${serviceboxes2}_image4:image global="false"}</div>
+                  <div id="w-node-_3ccefd32-d523-1527-85e8-8da2d405d9f0-0a6d3d82" class="card-icon-circle animate-this-left">{${serviceboxes2}_image4:image global="false"}</div>
                   <div class="hover-card-circle"></div>
                   <div class="card-bottom-info">
-                    <div class="card-description animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                    <div class="card-description animate-this-left">
                       <h3 class="heading-8">{${serviceboxes2}_text74:text global="false"}</h3>
                       <div class="body-display small replace-this-text">{${serviceboxes2}_div205:text global="false"}</div>
                     </div>
-                    <div class="card-hover-link animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                    <div class="card-hover-link animate-this-left">
                       <div href="#" class="underline-hover-link dark">
                         <div class="subtitle-2 replace-this-text">{${serviceboxes2}_div206:text global="false"}</div>
                         <div class="hover-line-2">
@@ -270,14 +202,14 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             work-boxes-6 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="work-boxes-6" theme-option="a3" class="section bg-white-smoke wf-section">
+            <section id="work-boxes-6" theme-option="a3" class="section bg-white-smoke capture wf-section">
           <div class="container-section">
             <div class="padding-inner">
               <div class="drag-drop-section">
-                <div class="replace-this-content second animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom"><div class="inter-div-content-area">{${workboxes6}_content250:content global="false"}</div></div>
+                <div class="replace-this-content second animate-this-left"><div class="inter-div-content-area">{${workboxes6}_content250:content global="false"}</div></div>
               </div>
               <div class="w-layout-grid works-grid wg6">
-                <div theme-option="a4" class="work-link animate-this-left wg6" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                <div theme-option="a4" class="work-link animate-this-left wg6">
                   <div class="work-image-size">
                     <div class="image-animation-trigger"><div class="cover-image">{${workboxes6}_image5:image global="false"}</div>
                       <div class="bg-for-animation"></div>
@@ -295,7 +227,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   </div>
                   <div class="work-background"></div>
                 </div>
-                <div theme-option="a4" class="work-link animate-this-left wg6" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                <div theme-option="a4" class="work-link animate-this-left wg6">
                   <div class="work-image-size">
                     <div class="image-animation-trigger"><div class="cover-image">{${workboxes6}_image6:image global="false"}</div>
                       <div class="bg-for-animation"></div>
@@ -313,7 +245,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                     <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes6}_content252:content global="false"}</div></div>
                   </div>
                 </div>
-                <div theme-option="a4" class="work-link animate-this-left wg6" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                <div theme-option="a4" class="work-link animate-this-left wg6">
                   <div class="work-image-size">
                     <div class="image-animation-trigger"><div class="cover-image">{${workboxes6}_image7:image global="false"}</div>
                       <div class="bg-for-animation"></div>
@@ -331,7 +263,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                     <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes6}_content253:content global="false"}</div></div>
                   </div>
                 </div>
-                <div theme-option="a4" class="work-link animate-this-left wg6" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                <div theme-option="a4" class="work-link animate-this-left wg6">
                   <div class="work-image-size">
                     <div class="image-animation-trigger"><div class="cover-image">{${workboxes6}_image8:image global="false"}</div>
                       <div class="bg-for-animation"></div>
@@ -349,7 +281,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                     <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes6}_content254:content global="false"}</div></div>
                   </div>
                 </div>
-                <div theme-option="a4" class="work-link animate-this-left wg6" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                <div theme-option="a4" class="work-link animate-this-left wg6">
                   <div class="work-image-size">
                     <div class="image-animation-trigger"><div class="cover-image">{${workboxes6}_image9:image global="false"}</div>
                       <div class="bg-for-animation"></div>
@@ -367,7 +299,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                     <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes6}_content255:content global="false"}</div></div>
                   </div>
                 </div>
-                <div theme-option="a4" class="work-link animate-this-left wg6" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                <div theme-option="a4" class="work-link animate-this-left wg6">
                   <div class="work-image-size">
                     <div class="image-animation-trigger"><div class="cover-image">{${workboxes6}_image10:image global="false"}</div>
                       <div class="bg-for-animation"></div>
@@ -386,7 +318,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   </div>
                 </div>
               </div>
-              <div class="cta-block-2 animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div class="cta-block-2 animate-this-left">
                 <div>
                   <p class="ctas-title">{${workboxes6}_text81:text global="false"}</p>
                 </div>
@@ -411,14 +343,14 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             work-boxes-5 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="work-boxes-5" theme-option="a3" class="section bg-white-smoke wf-section">
+            <section id="work-boxes-5" theme-option="a3" class="section bg-white-smoke capture wf-section">
           <div class="container-section">
             <div class="padding-inner">
               <div class="drag-drop-section">
-                <div class="replace-this-content second animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom"><div class="inter-div-content-area">{${workboxes5}_content257:content global="false"}</div></div>
+                <div class="replace-this-content second animate-this-left"><div class="inter-div-content-area">{${workboxes5}_content257:content global="false"}</div></div>
               </div>
-              <div class="w-layout-grid works-grid wg6">
-                <div theme-option="a4" class="work-link animate-this-left wg6" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div class="w-layout-grid works-grid wg6 col-6">
+                <div theme-option="a4" id="w-node-b51a773f-5a19-1502-0828-9f040e608cdc-0a6d3d82" class="work-link animate-this-left wg6">
                   <div class="work-image-size">
                     <div class="image-animation-trigger"><div class="cover-image">{${workboxes5}_image11:image global="false"}</div>
                       <div class="bg-for-animation"></div>
@@ -436,7 +368,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   </div>
                   <div class="work-background"></div>
                 </div>
-                <div theme-option="a4" class="work-link animate-this-left wg6" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                <div theme-option="a4" id="w-node-b51a773f-5a19-1502-0828-9f040e608cea-0a6d3d82" class="work-link animate-this-left wg6">
                   <div class="work-image-size">
                     <div class="image-animation-trigger"><div class="cover-image">{${workboxes5}_image12:image global="false"}</div>
                       <div class="bg-for-animation"></div>
@@ -454,7 +386,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                     <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes5}_content259:content global="false"}</div></div>
                   </div>
                 </div>
-                <div theme-option="a4" class="work-link animate-this-left wg6" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                <div theme-option="a4" id="w-node-b51a773f-5a19-1502-0828-9f040e608cf8-0a6d3d82" class="work-link animate-this-left wg6">
                   <div class="work-image-size">
                     <div class="image-animation-trigger"><div class="cover-image">{${workboxes5}_image13:image global="false"}</div>
                       <div class="bg-for-animation"></div>
@@ -472,7 +404,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                     <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes5}_content260:content global="false"}</div></div>
                   </div>
                 </div>
-                <div theme-option="a4" class="work-link animate-this-left wg6" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                <div theme-option="a4" id="w-node-b51a773f-5a19-1502-0828-9f040e608d06-0a6d3d82" class="work-link animate-this-left wg6">
                   <div class="work-image-size">
                     <div class="image-animation-trigger"><div class="cover-image">{${workboxes5}_image14:image global="false"}</div>
                       <div class="bg-for-animation"></div>
@@ -490,7 +422,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                     <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes5}_content261:content global="false"}</div></div>
                   </div>
                 </div>
-                <div theme-option="a4" id="w-node-b51a773f-5a19-1502-0828-9f040e608d14-0a6d3d82" class="work-link animate-this-left wg6" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                <div theme-option="a4" id="w-node-b51a773f-5a19-1502-0828-9f040e608d14-0a6d3d82" class="work-link animate-this-left wg6">
                   <div class="work-image-size">
                     <div class="image-animation-trigger"><div class="cover-image">{${workboxes5}_image15:image global="false"}</div>
                       <div class="bg-for-animation"></div>
@@ -509,7 +441,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   </div>
                 </div>
               </div>
-              <div class="cta-block-2 animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div class="cta-block-2 animate-this-left">
                 <div>
                   <p class="ctas-title">{${workboxes5}_text87:text global="false"}</p>
                 </div>
@@ -534,14 +466,14 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             work-boxes-4 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="work-boxes-4" theme-option="a3" class="section bg-white-smoke wf-section">
+            <section id="work-boxes-4" theme-option="a3" class="section bg-white-smoke capture wf-section">
           <div class="container-section">
             <div class="padding-inner">
               <div class="drag-drop-section">
-                <div class="replace-this-content second animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom"><div class="inter-div-content-area">{${workboxes4}_content263:content global="false"}</div></div>
+                <div class="replace-this-content second animate-this-left"><div class="inter-div-content-area">{${workboxes4}_content263:content global="false"}</div></div>
               </div>
               <div class="w-layout-grid works-grid">
-                <div theme-option="a4" class="work-link animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                <div theme-option="a4" class="work-link animate-this-left">
                   <div class="work-image-size">
                     <div class="image-animation-trigger"><div class="cover-image">{${workboxes4}_image16:image global="false"}</div>
                       <div class="bg-for-animation"></div>
@@ -559,7 +491,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   </div>
                   <div class="work-background"></div>
                 </div>
-                <div theme-option="a4" class="work-link animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                <div theme-option="a4" class="work-link animate-this-left">
                   <div class="work-image-size">
                     <div class="image-animation-trigger"><div class="cover-image">{${workboxes4}_image17:image global="false"}</div>
                       <div class="bg-for-animation"></div>
@@ -577,7 +509,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                     <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes4}_content265:content global="false"}</div></div>
                   </div>
                 </div>
-                <div theme-option="a4" class="work-link animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                <div theme-option="a4" class="work-link animate-this-left">
                   <div class="work-image-size">
                     <div class="image-animation-trigger"><div class="cover-image">{${workboxes4}_image18:image global="false"}</div>
                       <div class="bg-for-animation"></div>
@@ -595,7 +527,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                     <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes4}_content266:content global="false"}</div></div>
                   </div>
                 </div>
-                <div theme-option="a4" class="work-link animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                <div theme-option="a4" class="work-link animate-this-left">
                   <div class="work-image-size">
                     <div class="image-animation-trigger"><div class="cover-image">{${workboxes4}_image19:image global="false"}</div>
                       <div class="bg-for-animation"></div>
@@ -614,7 +546,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   </div>
                 </div>
               </div>
-              <div class="cta-block-2 animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div class="cta-block-2 animate-this-left">
                 <div>
                   <p class="ctas-title">{${workboxes4}_text92:text global="false"}</p>
                 </div>
@@ -639,14 +571,14 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             work-boxes-3 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="work-boxes-3" theme-option="a3" class="section bg-white-smoke wf-section">
+            <section id="work-boxes-3" theme-option="a3" class="section bg-white-smoke capture wf-section">
           <div class="container-section">
             <div class="padding-inner">
               <div class="drag-drop-section">
-                <div class="replace-this-content second animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom"><div class="inter-div-content-area">{${workboxes3}_content268:content global="false"}</div></div>
+                <div class="replace-this-content second animate-this-left"><div class="inter-div-content-area">{${workboxes3}_content268:content global="false"}</div></div>
               </div>
               <div class="w-layout-grid works-grid">
-                <div theme-option="a4" class="work-link animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                <div theme-option="a4" class="work-link animate-this-left">
                   <div class="work-image-size">
                     <div class="image-animation-trigger"><div class="cover-image">{${workboxes3}_image20:image global="false"}</div>
                       <div class="bg-for-animation"></div>
@@ -664,7 +596,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   </div>
                   <div class="work-background"></div>
                 </div>
-                <div theme-option="a4" class="work-link animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                <div theme-option="a4" class="work-link animate-this-left">
                   <div class="work-image-size">
                     <div class="image-animation-trigger"><div class="cover-image">{${workboxes3}_image21:image global="false"}</div>
                       <div class="bg-for-animation"></div>
@@ -682,7 +614,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                     <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes3}_content270:content global="false"}</div></div>
                   </div>
                 </div>
-                <div theme-option="a4" id="w-node-_7bec0e84-63ca-cd9c-a310-5f56c9cac8cc-0a6d3d82" class="work-link animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                <div theme-option="a4" id="w-node-_7bec0e84-63ca-cd9c-a310-5f56c9cac8cc-0a6d3d82" class="work-link animate-this-left">
                   <div class="work-image-size">
                     <div class="image-animation-trigger"><div class="cover-image">{${workboxes3}_image22:image global="false"}</div>
                       <div class="bg-for-animation"></div>
@@ -702,7 +634,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                 </div>
                 <div id="w-node-_365764f1-4d58-6974-8b49-a514f562291b-0a6d3d82" class="replace-this-content"><div class="inter-div-content-area">{${workboxes3}_content272:content global="false"}</div></div>
               </div>
-              <div class="cta-block-2 animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div class="cta-block-2 animate-this-left">
                 <div>
                   <p class="ctas-title">{${workboxes3}_text96:text global="false"}</p>
                 </div>
@@ -727,14 +659,14 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             work-boxes-2 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="work-boxes-2" theme-option="a3" class="section bg-white-smoke wf-section">
+            <section id="work-boxes-2" theme-option="a3" class="section bg-white-smoke capture wf-section">
           <div class="container-section">
             <div class="padding-inner">
               <div class="drag-drop-section">
-                <div class="replace-this-content second animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom"><div class="inter-div-content-area">{${workboxes2}_content273:content global="false"}</div></div>
+                <div class="replace-this-content second animate-this-left"><div class="inter-div-content-area">{${workboxes2}_content273:content global="false"}</div></div>
               </div>
               <div class="w-layout-grid works-grid">
-                <div theme-option="a4" class="work-link animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                <div theme-option="a4" class="work-link animate-this-left">
                   <div class="work-image-size">
                     <div class="image-animation-trigger"><div class="cover-image">{${workboxes2}_image23:image global="false"}</div>
                       <div class="bg-for-animation"></div>
@@ -752,7 +684,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   </div>
                   <div class="work-background"></div>
                 </div>
-                <div theme-option="a4" class="work-link animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                <div theme-option="a4" class="work-link animate-this-left">
                   <div class="work-image-size">
                     <div class="image-animation-trigger"><div class="cover-image">{${workboxes2}_image24:image global="false"}</div>
                       <div class="bg-for-animation"></div>
@@ -771,7 +703,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   </div>
                 </div>
               </div>
-              <div class="cta-block-2 animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div class="cta-block-2 animate-this-left">
                 <div>
                   <p class="ctas-title">{${workboxes2}_text99:text global="false"}</p>
                 </div>
@@ -796,14 +728,14 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             work-boxes-1 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="work-boxes-1" theme-option="a3" class="section bg-white-smoke wf-section">
+            <section id="work-boxes-1" theme-option="a3" class="section bg-white-smoke capture wf-section">
           <div class="container-section">
             <div class="padding-inner">
               <div class="drag-drop-section">
-                <div class="replace-this-content second animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom"><div class="inter-div-content-area">{${workboxes1}_content276:content global="false"}</div></div>
+                <div class="replace-this-content second animate-this-left"><div class="inter-div-content-area">{${workboxes1}_content276:content global="false"}</div></div>
               </div>
               <div class="w-layout-grid works-grid">
-                <div theme-option="a4" id="w-node-ce074b1c-bc8e-39ab-e177-f2bd91ea36cb-0a6d3d82" class="work-link animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                <div theme-option="a4" id="w-node-ce074b1c-bc8e-39ab-e177-f2bd91ea36cb-0a6d3d82" class="work-link animate-this-left">
                   <div class="work-image-size ws1">
                     <div class="image-animation-trigger"><div class="cover-image">{${workboxes1}_image25:image global="false"}</div>
                       <div class="bg-for-animation"></div>
@@ -822,7 +754,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="work-background"></div>
                 </div>
               </div>
-              <div class="cta-block-2 animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div class="cta-block-2 animate-this-left">
                 <div>
                   <p class="ctas-title">{${workboxes1}_text101:text global="false"}</p>
                 </div>
@@ -847,75 +779,75 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             image-boxes-8 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="image-boxes-8" theme-option="a7" class="default-theme-padding white wf-section">
+            <section id="image-boxes-8" theme-option="a7" class="default-theme-padding white capture wf-section">
           <div class="theme-padding">
-            <div class="top-drag-drop animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+            <div class="top-drag-drop animate-this-left">
               <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes8}_content278:content global="false"}</div></div>
             </div>
-            <div class="w-layout-grid image-boxes ib8">
-              <div id="w-node-_26c80a81-5077-67b7-ec84-3601cfc1b40c-0a6d3d82" class="individual-image-box animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+            <div class="w-layout-grid image-box-grid _12-col">
+              <div id="w-node-_390490f4-9b53-7d0f-b1eb-c9bd0fc2c99c-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes8}_image26:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes8}_text102:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes8}_text103:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes8}_image26:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-_26c80a81-5077-67b7-ec84-3601cfc1b414-0a6d3d82" class="individual-image-box animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-_3d14352a-6ec8-950a-e018-9533167ac8da-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes8}_image27:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes8}_text104:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes8}_text105:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes8}_image27:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-_26c80a81-5077-67b7-ec84-3601cfc1b41c-0a6d3d82" class="individual-image-box animate-this-right" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-b5834bec-bd8b-afdd-1ef6-2d1843edc85f-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes8}_image28:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes8}_text106:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes8}_text107:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes8}_image28:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-_26c80a81-5077-67b7-ec84-3601cfc1b424-0a6d3d82" class="individual-image-box animate-this-right" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-d0ec6d8f-b1dd-98f4-6798-1cd6de21e4bd-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes8}_image29:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes8}_text108:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes8}_text109:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes8}_image29:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-b3473097-1132-8859-f8a3-0d0e07dacaaa-0a6d3d82" class="individual-image-box animate-this-right" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-_9d959f8e-4b8e-2f31-574e-80b6099fafe3-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes8}_image30:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes8}_text110:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes8}_text111:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes8}_image30:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-_4e856509-c02f-0253-7299-ee9ba32c5ef3-0a6d3d82" class="individual-image-box animate-this-right" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-_2c1e9dd5-1449-85bb-c58e-8df80fce1bd6-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes8}_image31:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes8}_text112:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes8}_text113:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes8}_image31:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-_2bce972e-4990-853b-8957-6893edb13d12-0a6d3d82" class="individual-image-box animate-this-right" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-_891f7bd3-f374-1769-0ac1-7d820c1a5481-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes8}_image32:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes8}_text114:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes8}_text115:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes8}_image32:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-f33726b1-d236-2284-5d3a-516aeb1cd8cb-0a6d3d82" class="individual-image-box animate-this-right" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-d6b57ee4-3c62-ae8f-43d3-e24e41433273-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes8}_image33:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes8}_text116:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes8}_text117:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes8}_image33:image global="false"}</div>
+                </div>
               </div>
             </div>
           </div>
@@ -934,67 +866,67 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             image-boxes-7 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="image-boxes-7" theme-option="a7" class="default-theme-padding white wf-section">
+            <section id="image-boxes-7" theme-option="a7" class="default-theme-padding white capture wf-section">
           <div class="theme-padding">
-            <div class="top-drag-drop animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+            <div class="top-drag-drop animate-this-left">
               <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes7}_content279:content global="false"}</div></div>
             </div>
-            <div class="w-layout-grid image-boxes ib8">
-              <div id="w-node-f5148f33-5a9b-2445-56bb-1d2ca512989c-0a6d3d82" class="individual-image-box animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+            <div class="w-layout-grid image-box-grid _12-col">
+              <div id="w-node-_094367e8-8011-101c-2a55-df769886e9fb-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes7}_image34:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes7}_text118:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes7}_text119:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes7}_image34:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-f5148f33-5a9b-2445-56bb-1d2ca51298a4-0a6d3d82" class="individual-image-box animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-_094367e8-8011-101c-2a55-df769886ea02-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes7}_image35:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes7}_text120:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes7}_text121:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes7}_image35:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-f5148f33-5a9b-2445-56bb-1d2ca51298ac-0a6d3d82" class="individual-image-box animate-this-right" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-_094367e8-8011-101c-2a55-df769886ea09-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes7}_image36:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes7}_text122:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes7}_text123:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes7}_image36:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-f5148f33-5a9b-2445-56bb-1d2ca51298b4-0a6d3d82" class="individual-image-box animate-this-right" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-_094367e8-8011-101c-2a55-df769886ea10-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes7}_image37:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes7}_text124:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes7}_text125:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes7}_image37:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-f5148f33-5a9b-2445-56bb-1d2ca51298bc-0a6d3d82" class="individual-image-box animate-this-right" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-_094367e8-8011-101c-2a55-df769886ea17-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes7}_image38:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes7}_text126:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes7}_text127:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes7}_image38:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-f5148f33-5a9b-2445-56bb-1d2ca51298c4-0a6d3d82" class="individual-image-box animate-this-right" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-_094367e8-8011-101c-2a55-df769886ea1e-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes7}_image39:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes7}_text128:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes7}_text129:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes7}_image39:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-f5148f33-5a9b-2445-56bb-1d2ca51298cc-0a6d3d82" class="individual-image-box animate-this-right" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-_094367e8-8011-101c-2a55-df769886ea25-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes7}_image40:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes7}_text130:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes7}_text131:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes7}_image40:image global="false"}</div>
+                </div>
               </div>
             </div>
           </div>
@@ -1013,59 +945,59 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             image-boxes-6 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="image-boxes-6" theme-option="a7" class="default-theme-padding white wf-section">
+            <section id="image-boxes-6" theme-option="a7" class="default-theme-padding white capture wf-section">
           <div class="theme-padding">
-            <div class="top-drag-drop animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+            <div class="top-drag-drop animate-this-left">
               <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes6}_content280:content global="false"}</div></div>
             </div>
-            <div class="w-layout-grid image-boxes ib6">
-              <div id="w-node-f8333466-4d0e-9ab1-1319-c94110d9e004-0a6d3d82" class="individual-image-box animate-this-left ib6" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+            <div class="w-layout-grid image-box-grid _12-col">
+              <div id="w-node-_2ae38857-1dcf-c0cd-cb04-d8ffd7ff5469-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes6}_image41:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes6}_text132:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes6}_text133:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes6}_image41:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-f8333466-4d0e-9ab1-1319-c94110d9e00c-0a6d3d82" class="individual-image-box animate-this-left ib6" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-_2ae38857-1dcf-c0cd-cb04-d8ffd7ff5470-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes6}_image42:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes6}_text134:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes6}_text135:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes6}_image42:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-f8333466-4d0e-9ab1-1319-c94110d9e014-0a6d3d82" class="individual-image-box animate-this-right ib6" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-_2ae38857-1dcf-c0cd-cb04-d8ffd7ff5477-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes6}_image43:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes6}_text136:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes6}_text137:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes6}_image43:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-f8333466-4d0e-9ab1-1319-c94110d9e01c-0a6d3d82" class="individual-image-box animate-this-right ib6" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-_2ae38857-1dcf-c0cd-cb04-d8ffd7ff547e-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes6}_image44:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes6}_text138:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes6}_text139:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes6}_image44:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-f8333466-4d0e-9ab1-1319-c94110d9e024-0a6d3d82" class="individual-image-box animate-this-right ib6" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-_2ae38857-1dcf-c0cd-cb04-d8ffd7ff5485-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes6}_image45:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes6}_text140:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes6}_text141:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes6}_image45:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-f8333466-4d0e-9ab1-1319-c94110d9e02c-0a6d3d82" class="individual-image-box animate-this-right ib6" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-_2ae38857-1dcf-c0cd-cb04-d8ffd7ff548c-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes6}_image46:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes6}_text142:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes6}_text143:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes6}_image46:image global="false"}</div>
+                </div>
               </div>
             </div>
           </div>
@@ -1084,51 +1016,51 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             image-boxes-5 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="image-boxes-5" theme-option="a7" class="default-theme-padding white wf-section">
+            <section id="image-boxes-5" theme-option="a7" class="default-theme-padding white capture wf-section">
           <div class="theme-padding">
-            <div class="top-drag-drop animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+            <div class="top-drag-drop animate-this-left">
               <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes5}_content281:content global="false"}</div></div>
             </div>
-            <div class="w-layout-grid image-boxes ib6">
-              <div id="w-node-b819b73b-3253-28dc-5181-2777e53618d8-0a6d3d82" class="individual-image-box animate-this-left ib6" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+            <div class="w-layout-grid image-box-grid _12-col">
+              <div id="w-node-d32495f6-26af-9432-0dde-4d7ebbf2ba32-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes5}_image47:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes5}_text144:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes5}_text145:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes5}_image47:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-b819b73b-3253-28dc-5181-2777e53618e0-0a6d3d82" class="individual-image-box animate-this-left ib6" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-d32495f6-26af-9432-0dde-4d7ebbf2ba39-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes5}_image48:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes5}_text146:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes5}_text147:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes5}_image48:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-b819b73b-3253-28dc-5181-2777e53618e8-0a6d3d82" class="individual-image-box animate-this-right ib6" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-d32495f6-26af-9432-0dde-4d7ebbf2ba40-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes5}_image49:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes5}_text148:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes5}_text149:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes5}_image49:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-b819b73b-3253-28dc-5181-2777e53618f0-0a6d3d82" class="individual-image-box animate-this-right ib6" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-d32495f6-26af-9432-0dde-4d7ebbf2ba47-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes5}_image50:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes5}_text150:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes5}_text151:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes5}_image50:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-b819b73b-3253-28dc-5181-2777e53618f8-0a6d3d82" class="individual-image-box animate-this-right ib6" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-d32495f6-26af-9432-0dde-4d7ebbf2ba4e-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes5}_image51:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes5}_text152:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes5}_text153:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes5}_image51:image global="false"}</div>
+                </div>
               </div>
             </div>
           </div>
@@ -1147,43 +1079,43 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             image-boxes-4 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="image-boxes-4" theme-option="a7" class="default-theme-padding white wf-section">
+            <section id="image-boxes-4" theme-option="a7" class="default-theme-padding white capture wf-section">
           <div class="theme-padding">
-            <div class="top-drag-drop animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+            <div class="top-drag-drop animate-this-left">
               <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes4}_content282:content global="false"}</div></div>
             </div>
-            <div class="w-layout-grid image-boxes ib4">
-              <div id="w-node-_7201af5a-2215-c96d-55d0-872ab6d3cd60-0a6d3d82" class="individual-image-box animate-this-left ib6" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+            <div class="w-layout-grid image-box-grid _12-col">
+              <div id="w-node-_0c5725d5-2eca-23b3-462c-8a2d26f91ab6-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes4}_image52:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes4}_text154:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes4}_text155:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes4}_image52:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-_7201af5a-2215-c96d-55d0-872ab6d3cd68-0a6d3d82" class="individual-image-box animate-this-left ib6" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-_0c5725d5-2eca-23b3-462c-8a2d26f91abd-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes4}_image53:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes4}_text156:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes4}_text157:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes4}_image53:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-_7201af5a-2215-c96d-55d0-872ab6d3cd70-0a6d3d82" class="individual-image-box animate-this-right ib6" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-_0c5725d5-2eca-23b3-462c-8a2d26f91ac4-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes4}_image54:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes4}_text158:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes4}_text159:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes4}_image54:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-_7201af5a-2215-c96d-55d0-872ab6d3cd78-0a6d3d82" class="individual-image-box animate-this-right ib6" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-_0c5725d5-2eca-23b3-462c-8a2d26f91acb-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes4}_image55:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes4}_text160:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes4}_text161:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes4}_image55:image global="false"}</div>
+                </div>
               </div>
             </div>
           </div>
@@ -1202,35 +1134,35 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             image-boxes-3 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="image-boxes-3" theme-option="a7" class="default-theme-padding white wf-section">
+            <section id="image-boxes-3" theme-option="a7" class="default-theme-padding white capture wf-section">
           <div class="theme-padding">
-            <div class="top-drag-drop animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+            <div class="top-drag-drop animate-this-left">
               <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes3}_content283:content global="false"}</div></div>
             </div>
-            <div class="w-layout-grid image-boxes ib3">
-              <div id="w-node-_2bc97d09-fecc-afac-d0f3-e36111b6f154-0a6d3d82" class="individual-image-box animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+            <div class="w-layout-grid image-box-grid _12-col">
+              <div id="w-node-_314339d0-fd73-f543-35bc-39c32d057637-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes3}_image56:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes3}_text162:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes3}_text163:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes3}_image56:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-_2bc97d09-fecc-afac-d0f3-e36111b6f15c-0a6d3d82" class="individual-image-box animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-_314339d0-fd73-f543-35bc-39c32d05763e-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes3}_image57:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes3}_text164:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes3}_text165:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes3}_image57:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-_2bc97d09-fecc-afac-d0f3-e36111b6f164-0a6d3d82" class="individual-image-box animate-this-right" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-_314339d0-fd73-f543-35bc-39c32d057645-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes3}_image58:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes3}_text166:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes3}_text167:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes3}_image58:image global="false"}</div>
+                </div>
               </div>
             </div>
           </div>
@@ -1249,27 +1181,27 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             image-boxes-2 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="image-boxes-2" theme-option="a7" class="default-theme-padding white wf-section">
+            <section id="image-boxes-2" theme-option="a7" class="default-theme-padding white capture wf-section">
           <div class="theme-padding">
-            <div class="top-drag-drop animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+            <div class="top-drag-drop animate-this-left">
               <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes2}_content284:content global="false"}</div></div>
             </div>
-            <div class="w-layout-grid image-boxes ib2">
-              <div id="w-node-_1a9357ea-9d02-24d8-bec8-70d5ea850bc1-0a6d3d82" class="individual-image-box animate-this-left ib2" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+            <div class="w-layout-grid image-box-grid _12-col">
+              <div id="w-node-_8dc3b37b-bbce-a5d6-7ea8-2b83486cd91b-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes2}_image59:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes2}_text168:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes2}_text169:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes2}_image59:image global="false"}</div>
+                </div>
               </div>
-              <div id="w-node-_1a9357ea-9d02-24d8-bec8-70d5ea850bc9-0a6d3d82" class="individual-image-box animate-this-left ib2" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+              <div id="w-node-_8dc3b37b-bbce-a5d6-7ea8-2b83486cd922-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes2}_image60:image global="false"}</div>
                 <div class="content-overlay no-pointer-events">
                   <div class="content-overlay-portion allow-pointer-events">
                     <h4 class="heading-10">{${imageboxes2}_text170:text global="false"}</h4>
                     <p class="white-text-images">{${imageboxes2}_text171:text global="false"}</p>
                   </div>
-                </div><div class="image-3">{${imageboxes2}_image60:image global="false"}</div>
+                </div>
               </div>
             </div>
           </div>
@@ -1288,33 +1220,33 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             icons-3-2 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="icons-3-2" theme-option="a5" class="section-zipper-known wf-section">
+            <section id="icons-3-2" theme-option="a5" class="section-zipper-known capture wf-section">
           <div class="div-case-mixture">
             <div class="div-married-think">
               <div class="top-area-content replace-this-content"><div class="inter-div-content-area">{${icons32}_content285:content global="false"}</div></div>
             </div>
             <div class="div-official-thousand">
-              <div class="div-characteristic-chapter animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom"><div class="img-finger-strike">{${icons32}_image61:image global="false"}</div>
+              <div class="div-characteristic-chapter animate-this-left"><div class="img-finger-strike">{${icons32}_image61:image global="false"}</div>
                 <h4 class="h3-excellent-storm">{${icons32}_text172:text global="false"}</h4>
                 <p class="p-onto-nearer">{${icons32}_text173:text global="false"}</p>
               </div>
-              <div class="div-everything-represent animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom"><div class="img-finger-strike">{${icons32}_image62:image global="false"}</div>
+              <div class="div-everything-represent animate-this-left"><div class="img-finger-strike">{${icons32}_image62:image global="false"}</div>
                 <h4 class="h3-excellent-storm">{${icons32}_text174:text global="false"}</h4>
                 <p class="p-onto-nearer">{${icons32}_text175:text global="false"}</p>
               </div>
-              <div class="div-everything-represent animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom"><div class="img-finger-strike">{${icons32}_image63:image global="false"}</div>
+              <div class="div-everything-represent animate-this-left"><div class="img-finger-strike">{${icons32}_image63:image global="false"}</div>
                 <h4 class="h3-excellent-storm">{${icons32}_text176:text global="false"}</h4>
                 <p class="p-onto-nearer">{${icons32}_text177:text global="false"}</p>
               </div>
-              <div class="div-recognize-us animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom"><div class="img-finger-strike">{${icons32}_image64:image global="false"}</div>
+              <div class="div-recognize-us animate-this-left"><div class="img-finger-strike">{${icons32}_image64:image global="false"}</div>
                 <h4 class="h3-excellent-storm">{${icons32}_text178:text global="false"}</h4>
                 <p class="p-onto-nearer">{${icons32}_text179:text global="false"}</p>
               </div>
-              <div class="div-lips-built animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom"><div class="img-finger-strike">{${icons32}_image65:image global="false"}</div>
+              <div class="div-lips-built animate-this-left"><div class="img-finger-strike">{${icons32}_image65:image global="false"}</div>
                 <h4 class="h3-excellent-storm">{${icons32}_text180:text global="false"}</h4>
                 <p class="p-onto-nearer">{${icons32}_text181:text global="false"}</p>
               </div>
-              <div class="div-lips-built animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom"><div class="img-finger-strike">{${icons32}_image66:image global="false"}</div>
+              <div class="div-lips-built animate-this-left"><div class="img-finger-strike">{${icons32}_image66:image global="false"}</div>
                 <h4 class="h3-excellent-storm">{${icons32}_text182:text global="false"}</h4>
                 <p class="p-onto-nearer">{${icons32}_text183:text global="false"}</p>
               </div>
@@ -1340,7 +1272,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <div class="div-scientist">
               <div class="div-obtain"><div class="image-second">{${fiftyfiftyblurredbox}_image67:image global="false"}</div></div>
               <div class="div-music no-pointer-events">
-                <div class="div-deeply animate-this-right" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+                <div class="div-deeply animate-this-right">
                   <div class="div-pretty allow-pointer-events">
                     <div class="div-block-6">
                       <div class="content-transparent replace-this-content"><div class="inter-div-content-area">{${fiftyfiftyblurredbox}_content286:content global="false"}</div></div>
@@ -1393,7 +1325,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
           }
       // End of prebuilt-footer
       
-
       // This is the start of the prebuilt-header-2
           if (selectedBlocks[element] === "prebuilt-header-2") {
             prebuiltheader2++;
@@ -1590,10 +1521,10 @@ export function assemblyGen(rawElements, selectedBlocks) {
             --------------------------------------------------------------------------------------->
             <section id="fifty-fifty-image-left" class="theme-section wf-section">
           <div class="w-layout-grid grid-7">
-            <div id="w-node-a65e8fe2-862b-a090-0304-092ba75412db-0a6d3d82" class="grid-child-left animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+            <div id="w-node-a65e8fe2-862b-a090-0304-092ba75412db-0a6d3d82" class="grid-child-left animate-this-left">
               <div class="grid-image-holder"><div class="image-2">{${fiftyfiftyimageleft}_image68:image global="false"}</div></div>
             </div>
-            <div theme-option="a2" id="w-node-a65e8fe2-862b-a090-0304-092ba75412de-0a6d3d82" class="grid-child-right animate-this-right" data-aos="fade-left" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+            <div theme-option="a2" id="w-node-a65e8fe2-862b-a090-0304-092ba75412de-0a6d3d82" class="grid-child-right animate-this-right">
               <div class="individual-block replace-this-content"><div class="inter-div-content-area">{${fiftyfiftyimageleft}_content288:content global="false"}</div></div>
             </div>
           </div>
@@ -1614,7 +1545,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             --------------------------------------------------------------------------------------->
             <section id="fifty-fifty-image-right" class="theme-section wf-section">
           <div class="w-layout-grid grid-7">
-            <div theme-option="a6" id="w-node-d8158278-4ee5-00d4-d8d9-9000a626d417-0a6d3d82" class="grid-child-right gray animate-this-left" data-aos="fade-right" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+            <div theme-option="a6" id="w-node-d8158278-4ee5-00d4-d8d9-9000a626d417-0a6d3d82" class="grid-child-right gray animate-this-left">
               <div class="individual-block replace-this-content"><div class="inter-div-content-area">{${fiftyfiftyimageright}_content289:content global="false"}</div></div>
             </div>
             <div id="w-node-d8158278-4ee5-00d4-d8d9-9000a626d419-0a6d3d82" class="grid-child-left">
@@ -1629,6 +1560,13 @@ export function assemblyGen(rawElements, selectedBlocks) {
           }
       // End of fifty-fifty-image-right
       
+      /* 
+      ============================================================================================================================================
+      Assembly Area 1 ENDS: Prebuilt Sections (Imported from Webflow)
+      ============================================================================================================================================
+      */
+     
+     
     // End of prebuilt-header-5
 
 
