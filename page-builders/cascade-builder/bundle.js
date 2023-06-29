@@ -1,6 +1,7 @@
 import { assemblyGen } from "./assembly.js";
 import { wsiteBgCheck, sectionsCheck, onlyOneCheck, navigationFirst } from "./rules.js";
 
+
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
   const dragula = require("dragula");
   const imagesLoaded = require("imagesloaded");
@@ -10,38 +11,6 @@ import { wsiteBgCheck, sectionsCheck, onlyOneCheck, navigationFirst } from "./ru
   const snippet = document.querySelectorAll(".js-snippet");
   const filter = document.querySelector(".js-filter");
   const downloadBtn = document.querySelector(".js-download");
-  
-
-  let importButton123 = document.getElementById("importButton");
-  let modal123 = document.querySelector(".modal-123");
-  let close123 = document.querySelector(".close-123");
-  let importLayoutButton123 = document.getElementById("importLayoutButton-123");
-  let userInput123 = document.getElementById("userInput");
-
-  // Page Import Modal
-  importButton123.onclick = function() {
-    modal123.style.display = "block";
-  }
-
-  close123.onclick = function() {
-    modal123.style.display = "none";
-  }
-
-  importLayoutButton123.onclick = function() {
-    let inputValue = userInput123.value;
-    console.log(inputValue); // send this variable to your backend or use it as needed
-    modal123.style.display = "none";
-    convertElementStringToArray(inputValue);
-  }
-
-  // Close the modal if user clicks outside of it
-  window.onclick = function(event) {
-    if (event.target == modal123) {
-      modal123.style.display = "none";
-    }
-  }
-
-
   
   const deleteBtnHtml =
     "<div class='bg-white hidden absolute top-0 left-0 js-delete-btn px-4 py-2 shadow'><i class='far fa-trash-alt pointer-events-none'></i></div>";
@@ -81,64 +50,59 @@ import { wsiteBgCheck, sectionsCheck, onlyOneCheck, navigationFirst } from "./ru
   var publishText = document.getElementById("Publish-Text");
   var WarningHTML = document.getElementById("Warning-HTML");
 
- // AUTOGENERATE - NAVIGATION BAR - CODE FOR AUTOGEN STARTS HERE
-  // Get the <figure> element with the ID "myFigure"
-  //const figure = document.getElementById("navigation");
-  //const target = document.querySelector(".js-droppable");
-  //const clonedFigure = figure.cloneNode(true);
-  //target.appendChild(clonedFigure);
-  // clonedFigure.innerHTML += deleteBtnHtml; This is hidden because we want the navigation bar to remain always on the screen. 
-  //clonedFigure.classList.add ("relative");
-  //const label = clonedFigure.querySelector(".figure-label");
-  //clonedFigure.removeChild(label);
-  //arrayByAddition.push(clonedFigure);
+  
+
+
+
+
+  /* ----------------------------------------------------------------------------------------------------------- 
+  PageBuilder Import System: Starts Here
+  ----------------------------------------------------------------------------------------------------------- */
   // Get modal and button elements
   var themeModal = document.getElementById("theme-modal");
   var themeBtn = document.getElementById("theme-openModalButton");
   var themeCloseButton = document.getElementsByClassName("theme-close-button")[0];
   var themeSubmitButton = document.getElementById("theme-submitInput");
   var themeTextInput = document.getElementById("theme-textInput");
-  
+
   // When the user clicks the button, open the modal
   themeBtn.onclick = function() {
     themeModal.style.display = "block";
   }
-  
+
   // When the user clicks on <span> (x), close the modal
   themeCloseButton.onclick = function() {
     themeModal.style.display = "none";
   }
-  
+
   // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
     if (event.target == themeModal) {
       themeModal.style.display = "none";
     }
   }
-  
+
   // When the user clicks on the submit button, store the input and convert it into an array
   themeSubmitButton.onclick = function() {
     var text = themeTextInput.value;
-    var themeIdArray = text.split(', ');
-    console.log(themeIdArray); // Output array to console for testing
+    //var themeIdArray = text.split(', ');
+    console.log(text); // Output array to console for testing
     themeModal.style.display = "none"; // Close the modal
+    convertElementStringToArray(text); // Start the chain
   }
-  
 
-  // AUTOGENERATE - CODE FOR AUTOGEN ENDS HERE
+  function convertElementStringToArray(string) {
+    // Remove spaces from string
+    string = string.replace(/\s+/g, '');
 
-function convertElementStringToArray(string) {
-  // Remove spaces from string
-  string = string.replace(/\s+/g, '');
+    // Split string into array using comma as the separator
+    let newArray = string.split(',');
 
-  // Split string into array using comma as the separator
-  let newArray = string.split(',');
+    // Create a double array to store the element and its number
+    let doubleArray = [];
 
-  // Create a double array to store the element and its number
-  let doubleArray = [];
-
-  // Iterate over the newArray
-  for (let i = 0; i < newArray.length; i++) {
+    // Iterate over the newArray
+    for (let i = 0; i < newArray.length; i++) {
       // Check if element has a number in parentheses
       if (newArray[i].includes('(') && newArray[i].includes(')')) {
           // Extract number between parentheses
@@ -149,28 +113,38 @@ function convertElementStringToArray(string) {
       } else {
           doubleArray.push([newArray[i], undefined]);
       }
+    }
+
+    // Return the double array
+    console.log(doubleArray);
+    convertDoubleArray(doubleArray); // Proceed to Step 2
   }
 
-  // Return the double array
-  console.log(doubleArray);
-  convertDoubleArray(doubleArray);
-}
-
-// Converts double array into a single array of objects
-function convertDoubleArray(doubleArray) {
-  let singleArray = [];
-  for (let i = 0; i < doubleArray.length; i++) {
+  // Converts double array into a single array of objects
+  function convertDoubleArray(doubleArray) {
+    let singleArray = [];
+    for (let i = 0; i < doubleArray.length; i++) {
       let obj = {
-          id: doubleArray[i][0],
-          selectedCustomization: parseInt(doubleArray[i][1]) || undefined
+        id: doubleArray[i][0],
+        selectedCustomization: parseInt(doubleArray[i][1]) || undefined
       }
       singleArray.push(obj);
-  }
-  console.log(singleArray);
-  assembleElements(singleArray);
+    }
+    console.log(singleArray);
+    assembleElements(singleArray);
 }
 
-
+// Parses through the array of objects and calls generate function on them
+function assembleElements(arrayOfObjects) {
+  // Remove previously placed navigation bar
+  //target.removeChild(clonedFigure);
+  
+  // Iterate over the array of objects
+  for (let i = 0; i < arrayOfObjects.length; i++) {
+    let currentObject = arrayOfObjects[i];
+    elementDuplication(currentObject);
+  }
+}
 
 // Duplicates selected object and adds it to the array
 function elementDuplication(duplicateMe) {
@@ -189,18 +163,10 @@ function elementDuplication(duplicateMe) {
   }
   arrayByAddition.push(clonedFigure);
 }
+/* ----------------------------------------------------------------------------------------------------------- 
+PageBuilder Import System: Ends Here
+----------------------------------------------------------------------------------------------------------- */
 
-// Parses through the array of objects and calls generate function on them
-function assembleElements(arrayOfObjects) {
-  // Remove previously placed navigation bar
-  target.removeChild(clonedFigure);
-
-    // Iterate over the array of objects
-    for (let i = 0; i < arrayOfObjects.length; i++) {
-      let currentObject = arrayOfObjects[i];
-      elementDuplication(currentObject);
-    }
-}
 
 
   window.onclick = function(event) {
@@ -213,10 +179,8 @@ function assembleElements(arrayOfObjects) {
     if (event.target == publishModal) {
       publishModal.style.display = "none";
     }
-    
   }
 
-  
   // When the user clicks on <span> (x), close the modal
   warningClose.onclick = function() {
     warningModal.style.display = "none";
