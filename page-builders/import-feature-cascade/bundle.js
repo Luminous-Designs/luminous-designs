@@ -169,8 +169,6 @@ function elementDuplication(duplicateMe) {
 PageBuilder Import System: Ends Here
 ----------------------------------------------------------------------------------------------------------- */
 
-
-
   window.onclick = function(event) {
     if (event.target == warningModal) {
       warningModal.style.display = "none";
@@ -232,7 +230,6 @@ PageBuilder Import System: Ends Here
     /*
     ON-DROP RULES 
     -----------------------------------------------------------------------------*/
-
     // No more than one section that utilizes wsite-background per page 
     let wsiteBgCheckLimitedArray = ["prebuilt-header-1", "prebuilt-header-2", "prebuilt-header-3", "prebuilt-header-4", "prebuilt-header-5", "default-weebly-header"];
     if (!(wsiteBgCheck(wsiteBgCheckLimitedArray, lastItemDropped, selectedBlocksDD, source, el, warningModal, WarningHeader, WarningText))) {
@@ -244,15 +241,12 @@ PageBuilder Import System: Ends Here
     if (!(sectionsCheck(sectionsList, lastItemDropped, selectedBlocksDD, source, el, warningModal, WarningHeader, WarningText))) {
       return;
     }
-    
-
+  
     // No More Than One Of Each Per Page
     let oneOfEach = ["prebuilt-header-1", "prebuilt-header-2", "prebuilt-header-3", "prebuilt-header-4", "prebuilt-header-5", "default-weebly-header"];
     if (!(onlyOneCheck(oneOfEach, lastItemDropped, selectedBlocksDD, source, el, warningModal, WarningHeader, WarningText))) {
       return;
     }
-
-   
 
     /*
     ELEMENT COUNT USER PROMPT POP-UP MODALS
@@ -274,9 +268,7 @@ PageBuilder Import System: Ends Here
       // this function automatically opens the modern modal interface. selection variable is stored as a property of the relevant object in rawElements array. 
       showModal(el);
     }
-   
   });
-  
   
   filter.addEventListener("click", event => {
     if (event.target.tagName !== "BUTTON") {
@@ -312,7 +304,6 @@ PageBuilder Import System: Ends Here
       g.style.height = gHeight / tGridCol + gHeight / (gcLength + 1) + "px";
     else g.style.height = gHeight / mGridCol + gHeight / (gcLength + 1) + "px";
   }
-  
   
   // Download Protocol
   downloadBtn.addEventListener("click", event => {
@@ -356,13 +347,11 @@ PageBuilder Import System: Ends Here
     // Add layout description 
     codeCredits = 
     `
-    
     <!-- 
     This HTML layout was created with Page Builder. If you'd like to edit this page layout, you'll need to re-create it in Page Builder. 
     This page is made with the following PageBuilder blocks:
 
     `;
-
 
     // Creates a META tag containing all elements present on the page from PageBuilder
     let acceptableValues = ["pureslider", "carousel-fixed", "carousel-free"];
@@ -374,11 +363,6 @@ PageBuilder Import System: Ends Here
       }
     });
 
-    
-
-
-    
-    
     // End Tag
     codeCredits += 
     `
@@ -399,15 +383,10 @@ PageBuilder Import System: Ends Here
     </head>
 
     <body class="header-page">
-
       <div class="wrapper">
-        
-      <div class="overflow-limiter"> <!-- Overflow Limiter -->
-        
-        
-        <!-- END OF HEADER CODE -->
-        <!-- DROP CONTENT BELOW -->
-                        
+        <div class="overflow-limiter"> <!-- Overflow Limiter -->
+          <!-- END OF HEADER CODE -->
+          <!-- DROP CONTENT BELOW -->                 
         
     `;
 
@@ -433,7 +412,6 @@ PageBuilder Import System: Ends Here
                     <span class="cd-label">{section${numOfAnchors}:text global="false"}</span>
                 </a>
             </li>
-
              `;
         }
 
@@ -456,9 +434,9 @@ PageBuilder Import System: Ends Here
 
     // HTML Buildilng Process Stage 3
     endingCode = `
-    <div class="footer-wrap">
-			<div class="footer">{footer}</div>
-		</div><!-- end footer-wrap -->
+      <div class="footer-wrap">
+			  <div class="footer">{footer}</div>
+		  </div><!-- end footer-wrap -->
 	  </div><!-- /.wrapper -->
 	</div><!-- end overflow limiter -->
   <!-- START OF END CODE -->
@@ -494,7 +472,6 @@ PageBuilder Import System: Ends Here
     console.log(finalHTML);
     // Let's tidy up the JS a bit
     var cleanCode = indent.js(finalHTML, {tabString: '  '});
-
     publishModal.style.display = "block";
     publishHeader.innerText = "Success! Layout Code Generated";
     publishText.innerText = cleanCode;
