@@ -62,7 +62,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             service-boxes-3-1 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="service-boxes-3-1" theme-option="a1" class="section-4 white-bg capture">
+            <section id="service-boxes-3-1" theme-option="a1" class="section-4 white-bg capture" data-sectiontype="service-boxes-3-1">
           <div class="container-section">
             <div class="stacked-content">
               <div class="dual-grid single-column">
@@ -141,7 +141,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             service-boxes-2 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="service-boxes-2" theme-option="a1" class="section-4 white-bg capture">
+            <section id="service-boxes-2" theme-option="a1" class="section-4 white-bg capture" data-sectiontype="service-boxes-2">
           <div class="container-section">
             <div class="stacked-content">
               <div class="dual-grid single-column">
@@ -202,7 +202,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             work-boxes-6 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="work-boxes-6" theme-option="a3" class="section bg-white-smoke capture wf-section">
+            <section id="work-boxes-6" theme-option="a3" class="section bg-white-smoke capture wf-section" data-sectiontype="work-boxes-6">
           <div class="container-section">
             <div class="padding-inner">
               <div class="drag-drop-section">
@@ -343,7 +343,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             work-boxes-5 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="work-boxes-5" theme-option="a3" class="section bg-white-smoke capture wf-section">
+            <section id="work-boxes-5" theme-option="a3" class="section bg-white-smoke capture wf-section" data-sectiontype="work-boxes-5">
           <div class="container-section">
             <div class="padding-inner">
               <div class="drag-drop-section">
@@ -460,13 +460,13 @@ export function assemblyGen(rawElements, selectedBlocks) {
       // End of work-boxes-5
       
       // This is the start of the work-boxes-4
-          if (selectedBlocks[element] === "work-boxes-4") {
+          if (selectedBlocks[element] === "work-boxes-4" ) {
             workboxes4++;
             assemblyHTML += `
             <!-------------------------------------------------------------------------------------
             work-boxes-4 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="work-boxes-4" theme-option="a3" class="section bg-white-smoke capture wf-section">
+            <section id="work-boxes-4" theme-option="a3" class="section bg-white-smoke capture wf-section" data-sectiontype="work-boxes-4">
           <div class="container-section">
             <div class="padding-inner">
               <div class="drag-drop-section">
@@ -571,7 +571,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             work-boxes-3 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="work-boxes-3" theme-option="a3" class="section bg-white-smoke capture wf-section">
+            <section id="work-boxes-3" theme-option="a3" class="section bg-white-smoke capture wf-section" data-sectiontype="work-boxes-3">
           <div class="container-section">
             <div class="padding-inner">
               <div class="drag-drop-section">
@@ -659,7 +659,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             work-boxes-2 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="work-boxes-2" theme-option="a3" class="section bg-white-smoke capture wf-section">
+            <section id="work-boxes-2" theme-option="a3" class="section bg-white-smoke capture wf-section" data-sectiontype="work-boxes-2">
           <div class="container-section">
             <div class="padding-inner">
               <div class="drag-drop-section">
@@ -728,7 +728,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             work-boxes-1 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="work-boxes-1" theme-option="a3" class="section bg-white-smoke capture wf-section">
+            <section id="work-boxes-1" theme-option="a3" class="section bg-white-smoke capture wf-section" data-sectiontype="work-boxes-1">
           <div class="container-section">
             <div class="padding-inner">
               <div class="drag-drop-section">
@@ -779,7 +779,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             image-boxes-8 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="image-boxes-8" theme-option="a7" class="default-theme-padding white capture wf-section">
+            <section id="image-boxes-8" theme-option="a7" class="default-theme-padding white capture wf-section" data-sectiontype="image-boxes-8">
           <div class="theme-padding">
             <div class="top-drag-drop animate-this-left">
               <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes8}_content278:content global="false"}</div></div>
@@ -866,7 +866,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             image-boxes-7 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="image-boxes-7" theme-option="a7" class="default-theme-padding white capture wf-section">
+            <section id="image-boxes-7" theme-option="a7" class="default-theme-padding white capture wf-section" data-sectiontype="image-boxes-7">
           <div class="theme-padding">
             <div class="top-drag-drop animate-this-left">
               <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes7}_content279:content global="false"}</div></div>
@@ -945,7 +945,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             image-boxes-6 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="image-boxes-6" theme-option="a7" class="default-theme-padding white capture wf-section">
+            <section id="image-boxes-6" theme-option="a7" class="default-theme-padding white capture wf-section" data-sectiontype="image-boxes-6">
           <div class="theme-padding">
             <div class="top-drag-drop animate-this-left">
               <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes6}_content280:content global="false"}</div></div>
@@ -1016,7 +1016,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             image-boxes-5 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="image-boxes-5" theme-option="a7" class="default-theme-padding white capture wf-section">
+            <section id="image-boxes-5" theme-option="a7" class="default-theme-padding white capture wf-section" data-sectiontype="image-boxes-5">
           <div class="theme-padding">
             <div class="top-drag-drop animate-this-left">
               <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes5}_content281:content global="false"}</div></div>
@@ -1079,7 +1079,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             image-boxes-4 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="image-boxes-4" theme-option="a7" class="default-theme-padding white capture wf-section">
+            <section id="image-boxes-4" theme-option="a7" class="default-theme-padding white capture wf-section" data-sectiontype="image-boxes-4">
           <div class="theme-padding">
             <div class="top-drag-drop animate-this-left">
               <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes4}_content282:content global="false"}</div></div>
@@ -1134,7 +1134,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             image-boxes-3 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="image-boxes-3" theme-option="a7" class="default-theme-padding white capture wf-section">
+            <section id="image-boxes-3" theme-option="a7" class="default-theme-padding white capture wf-section" data-sectiontype="image-boxes-3">
           <div class="theme-padding">
             <div class="top-drag-drop animate-this-left">
               <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes3}_content283:content global="false"}</div></div>
@@ -1181,7 +1181,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             image-boxes-2 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="image-boxes-2" theme-option="a7" class="default-theme-padding white capture wf-section">
+            <section id="image-boxes-2" theme-option="a7" class="default-theme-padding white capture wf-section" data-sectiontype="image-boxes-2">
           <div class="theme-padding">
             <div class="top-drag-drop animate-this-left">
               <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes2}_content284:content global="false"}</div></div>
@@ -1220,7 +1220,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             icons-3-2 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="icons-3-2" theme-option="a5" class="section-zipper-known capture wf-section">
+            <section id="icons-3-2" theme-option="a5" class="section-zipper-known capture wf-section" data-sectiontype="icons-3-2">
           <div class="div-case-mixture">
             <div class="div-married-think">
               <div class="top-area-content replace-this-content"><div class="inter-div-content-area">{${icons32}_content285:content global="false"}</div></div>
@@ -1267,7 +1267,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             fifty-fifty-blurred-box STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="fifty-fifty-blurred-box" class="section-low wf-section">
+            <section id="fifty-fifty-blurred-box" class="section-low wf-section" data-sectiontype="fifty-fifty-blurred-box">
           <div class="div-opposite">
             <div class="div-scientist">
               <div class="div-obtain"><div class="image-second">{${fiftyfiftyblurredbox}_image67:image global="false"}</div></div>
@@ -1297,7 +1297,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             prebuilt-footer STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="prebuilt-footer" theme-option="a8" class="div-together-central">
+            <section id="prebuilt-footer" theme-option="a8" class="div-together-central" data-sectiontype="prebuilt-footer">
           <div class="div-jungle-soap">
             <div class="div-surprise-nest">
               <h4 class="h5-scene-carbon replace-this-text">{${prebuiltfooter}_text184:text global="false"}</h4>
@@ -1332,7 +1332,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             prebuilt-header-2 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="prebuilt-header-2" class="main-section wf-section">
+            <section id="prebuilt-header-2" class="main-section wf-section" data-sectiontype="prebuilt-header-2">
           <div class="hero ls-3">
             <div class="hero-sub ls-3">
               <div id="w-node-_03178dd8-6a53-0ebd-7d86-e17493d1afcd-0a6d3d82" class="column-wrapper ls-3">
@@ -1387,7 +1387,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             prebuilt-header-3 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="prebuilt-header-3" class="main-section wf-section">
+            <section id="prebuilt-header-3" class="main-section wf-section" data-sectiontype="prebuilt-header-3">
           <div class="padding-global third-header-style">
             <div theme-option="a10" class="hero ls-2">
               <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar ls-2 w-nav"></div>
@@ -1431,7 +1431,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             prebuilt-header-4 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="prebuilt-header-4" class="main-section wf-section">
+            <section id="prebuilt-header-4" class="main-section wf-section" data-sectiontype="prebuilt-header-4">
           <div class="hero ls-4">
             <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar ls-4 w-nav"></div>
             <div class="w-layout-grid grid ls-4">
@@ -1468,7 +1468,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             prebuilt-header-5 STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="prebuilt-header-5" class="main-section wf-section">
+            <section id="prebuilt-header-5" class="main-section wf-section" data-sectiontype="prebuilt-header-5">
           <div class="hero ls-9 image-content-theme">
             <div class="w-layout-grid grid ls-9 text-and-image-area">
               <div id="w-node-fcc5fb43-9c6a-174a-067d-ff038818647f-0a6d3d82" class="hero-sub-column ls-9">
@@ -1519,7 +1519,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             fifty-fifty-image-left STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="fifty-fifty-image-left" class="theme-section wf-section">
+            <section id="fifty-fifty-image-left" class="theme-section wf-section" data-sectiontype="fifty-fifty-image-left">
           <div class="w-layout-grid grid-7">
             <div id="w-node-a65e8fe2-862b-a090-0304-092ba75412db-0a6d3d82" class="grid-child-left animate-this-left">
               <div class="grid-image-holder"><div class="image-2">{${fiftyfiftyimageleft}_image68:image global="false"}</div></div>
@@ -1543,7 +1543,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <!-------------------------------------------------------------------------------------
             fifty-fifty-image-right STARTS HERE
             --------------------------------------------------------------------------------------->
-            <section id="fifty-fifty-image-right" class="theme-section wf-section">
+            <section id="fifty-fifty-image-right" class="theme-section wf-section" data-sectiontype="fifty-fifty-image-right">
           <div class="w-layout-grid grid-7">
             <div theme-option="a6" id="w-node-d8158278-4ee5-00d4-d8d9-9000a626d417-0a6d3d82" class="grid-child-right gray animate-this-left">
               <div class="individual-block replace-this-content"><div class="inter-div-content-area">{${fiftyfiftyimageright}_content289:content global="false"}</div></div>
@@ -1584,7 +1584,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         <!-------------------------------------------------------------------------------------
         DEFAULT WEEBLY SECTION STARTS HERE
         --------------------------------------------------------------------------------------->
-        <div class="main-wrap">
+        <div id="default-section" class="main-wrap" data-sectiontype="default-section">
           {{#sections}}
               <div class="container">{content}</div>
           {{/sections}}
@@ -1601,7 +1601,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         <!-------------------------------------------------------------------------------------
         WEEBLY MAIN WRAP CONTENT SECTION STARTS HERE
         --------------------------------------------------------------------------------------->
-        <div class="main-wrap"><div class="container">{${weeblySection}_MainContent:content global="false"}</div></div>
+        <div id="weebly-main-wrap" data-sectiontype="weebly-main-wrap" class="main-wrap"><div class="container">{${weeblySection}_MainContent:content global="false"}</div></div>
         <!-------------------------------------------------------------------------------------
         WEEBLY MAIN WRAP CONTENT SECTION ENDS HERE
         --------------------------------------------------------------------------------------->
@@ -1611,7 +1611,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
       if (selectedBlocks[element] === "scrollipage-anchor") {
         scrollipageAnchor++;
         assemblyHTML += `
-        <div id="uniqueAnchor_${scrollipageAnchor}" class="scrollipage-anchor">
+        <div id="uniqueAnchor_${scrollipageAnchor}" class="scrollipage-anchor" data-sectiontype="scrollipage-anchor">
           <p>ScrolliPage Anchor ${scrollipageAnchor} - Clicking on Dot ${scrollipageAnchor} Will Go Here </p>
         </div>
         `;
@@ -1626,7 +1626,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         --------------------------------------------------------------------------------------->
         
         <!--Parallax Section #1-->
-        <div id="parent1" class="jarallax" data-speed="0.4" style="pointer-events: auto !important;">
+        <div id="parent1" class="jarallax" data-speed="0.4" style="pointer-events: auto !important;" data-sectiontype="parallax">
           <div id="section1" class="jarallax-img" style="pointer-events: auto !important">
           <div style="pointer-events:auto !important;" class="toggleSelector1">{${parallax}_3_imageone:image global="false"}</div>
           </div>
@@ -1669,7 +1669,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         <!-------------------------------------------------------------------------------
         CAROUSEL FIXED STARTS HERE
         --------------------------------------------------------------------------------->
-        <div class="main-wrap" style="padding-top:30px; padding-bottom: 30px;">
+        <div class="main-wrap" style="padding-top:30px; padding-bottom: 30px;" data-sectiontype="carousel-fixed" data-count="${currentElementCount}">
         <div class="container">{top-carousel-content:content global="false"}</div>
           <div class="container" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
           <div class="swiper mySwiper carousel-slider">
@@ -1717,7 +1717,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         <!-------------------------------------------------------------------------------
         START OF BODY SECTION: Carousel
         --------------------------------------------------------------------------------->
-        <div class="main-wrap" style="padding-top:30px; padding-bottom: 30px;">
+        <div class="main-wrap" style="padding-top:30px; padding-bottom: 30px;" data-sectiontype="carousel-free" data-count="${currentElementCount}">
         <div class="container">{top-carousel-content:content global="false"}</div>
             <div class="container" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
                 <div class="swiper mySwiper carousel-slider">
@@ -1758,7 +1758,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         <!-------------------------------------------------------------------------------------
         DEFAULT WEEBLY NAVIGATION STARTS HERE
         --------------------------------------------------------------------------------------->
-        <div class="birdseye-header">
+        <div class="birdseye-header" data-sectiontype="default-weebly-header">
           <div class="nav-wrap">
             <div class="container">
               <div class="logo">{logo}</div>
@@ -1813,7 +1813,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         PURESLIDER STARTS HERE
         --------------------------------------------------------------------------------------->
         <!--PureSlider-10-->
-        <div class="swiper-container pureslider-start" style="pointer-events: auto !important;">
+        <div class="swiper-container pureslider-start" style="pointer-events: auto !important;" data-count="${currentElementCount}" data-sectiontype="pureslider">
           <div class="swiper-wrapper" style="pointer-events: auto !important;">
         `;
 
