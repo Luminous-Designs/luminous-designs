@@ -160,7 +160,9 @@ function elementDuplication(duplicateMe) {
   // Check for counts, if so add count 
   if (duplicateMe.selectedCustomization !== undefined) {
     clonedFigure.innerHTML += `<div class='count-button'>${duplicateMe.selectedCustomization} Items</div>`;
+    clonedFigure.selectedCustomization = duplicateMe.selectedCustomization;
   }
+  
   arrayByAddition.push(clonedFigure);
 }
 /* ----------------------------------------------------------------------------------------------------------- 
