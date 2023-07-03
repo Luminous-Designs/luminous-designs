@@ -42,6 +42,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
     let prebuiltheader5 = 0;
     let fiftyfiftyimageleft = 0;
     let fiftyfiftyimageright = 0;
+    let prebuiltheader1 = 0;
     
     
     // A350-ASSEMBLY SECTION ASSEMBLY STICHING CODE
@@ -57,6 +58,8 @@ export function assemblyGen(rawElements, selectedBlocks) {
       
       
       
+    
+      
       // This is the start of the service-boxes-3-1
           if (selectedBlocks[element] === "service-boxes-3-1") {
             serviceboxes31++;
@@ -68,7 +71,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
           <div class="container-section">
             <div class="stacked-content">
               <div class="dual-grid single-column">
-                <div class="top-holder replace-this-content"><div class="inter-div-content-area">{${serviceboxes31}_content248:content global="false"}</div></div>
+                <div class="top-holder replace-this-content"><div class="inter-div-content-area">{${serviceboxes31}_content255:content global="false"}</div></div>
               </div>
               <div class="w-layout-grid grid-6 service-icons sb3x1">
                 <div class="card first">
@@ -76,11 +79,11 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="card-bottom-info">
                     <div class="card-description animate-this-left">
                       <h3 class="heading-9">{${serviceboxes31}_text70:text global="false"}</h3>
-                      <div class="body-display small replace-this-text">{${serviceboxes31}_div197:text global="false"}</div>
+                      <div class="body-display small replace-this-text">{${serviceboxes31}_div198:text global="false"}</div>
                     </div>
                     <div class="card-hover-link animate-this-left">
                       <div href="#" class="underline-hover-link dark">
-                        <div class="subtitle-2 replace-this-text">{${serviceboxes31}_div198:text global="false"}</div>
+                        <div class="subtitle-2 replace-this-text">{${serviceboxes31}_div199:text global="false"}</div>
                         <div class="hover-line-2">
                           <div class="hover-line-fill-2"></div>
                         </div>
@@ -95,11 +98,11 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="card-bottom-info">
                     <div class="card-description animate-this-left">
                       <h3 class="heading-8">{${serviceboxes31}_text71:text global="false"}</h3>
-                      <div class="body-display small replace-this-text">{${serviceboxes31}_div199:text global="false"}</div>
+                      <div class="body-display small replace-this-text">{${serviceboxes31}_div200:text global="false"}</div>
                     </div>
                     <div class="card-hover-link animate-this-left">
                       <div href="#" class="underline-hover-link dark">
-                        <div class="subtitle-2 replace-this-text">{${serviceboxes31}_div200:text global="false"}</div>
+                        <div class="subtitle-2 replace-this-text">{${serviceboxes31}_div201:text global="false"}</div>
                         <div class="hover-line-2">
                           <div class="hover-line-fill-2"></div>
                         </div>
@@ -113,11 +116,11 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="card-bottom-info">
                     <div class="card-description animate-this-right">
                       <h3 class="heading-7">{${serviceboxes31}_text72:text global="false"}</h3>
-                      <div class="body-display small replace-this-text">{${serviceboxes31}_div201:text global="false"}</div>
+                      <div class="body-display small replace-this-text">{${serviceboxes31}_div202:text global="false"}</div>
                     </div>
                     <div class="card-hover-link animate-this-right">
                       <div href="#" class="underline-hover-link dark">
-                        <div class="subtitle-2 replace-this-text">{${serviceboxes31}_div202:text global="false"}</div>
+                        <div class="subtitle-2 replace-this-text">{${serviceboxes31}_div203:text global="false"}</div>
                         <div class="hover-line-2">
                           <div class="hover-line-fill-2"></div>
                         </div>
@@ -147,7 +150,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
           <div class="container-section">
             <div class="stacked-content">
               <div class="dual-grid single-column">
-                <div class="top-holder replace-this-content"><div class="inter-div-content-area">{${serviceboxes2}_content249:content global="false"}</div></div>
+                <div class="top-holder replace-this-content"><div class="inter-div-content-area">{${serviceboxes2}_content256:content global="false"}</div></div>
               </div>
               <div class="w-layout-grid grid-6 service-icons sb2x1">
                 <div class="card first">
@@ -155,11 +158,11 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="card-bottom-info">
                     <div class="card-description animate-this-left">
                       <h3 class="heading-9">{${serviceboxes2}_text73:text global="false"}</h3>
-                      <div class="body-display small replace-this-text">{${serviceboxes2}_div203:text global="false"}</div>
+                      <div class="body-display small replace-this-text">{${serviceboxes2}_div204:text global="false"}</div>
                     </div>
                     <div class="card-hover-link animate-this-left">
                       <div href="#" class="underline-hover-link dark">
-                        <div class="subtitle-2 replace-this-text">{${serviceboxes2}_div204:text global="false"}</div>
+                        <div class="subtitle-2 replace-this-text">{${serviceboxes2}_div205:text global="false"}</div>
                         <div class="hover-line-2">
                           <div class="hover-line-fill-2"></div>
                         </div>
@@ -174,11 +177,11 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="card-bottom-info">
                     <div class="card-description animate-this-left">
                       <h3 class="heading-8">{${serviceboxes2}_text74:text global="false"}</h3>
-                      <div class="body-display small replace-this-text">{${serviceboxes2}_div205:text global="false"}</div>
+                      <div class="body-display small replace-this-text">{${serviceboxes2}_div206:text global="false"}</div>
                     </div>
                     <div class="card-hover-link animate-this-left">
                       <div href="#" class="underline-hover-link dark">
-                        <div class="subtitle-2 replace-this-text">{${serviceboxes2}_div206:text global="false"}</div>
+                        <div class="subtitle-2 replace-this-text">{${serviceboxes2}_div207:text global="false"}</div>
                         <div class="hover-line-2">
                           <div class="hover-line-fill-2"></div>
                         </div>
@@ -208,7 +211,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
           <div class="container-section">
             <div class="padding-inner">
               <div class="drag-drop-section">
-                <div class="replace-this-content second animate-this-left"><div class="inter-div-content-area">{${workboxes6}_content250:content global="false"}</div></div>
+                <div class="replace-this-content second animate-this-left"><div class="inter-div-content-area">{${workboxes6}_content257:content global="false"}</div></div>
               </div>
               <div class="w-layout-grid works-grid wg6">
                 <div theme-option="a4" class="work-link animate-this-left wg6">
@@ -220,12 +223,12 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="work-content">
                     <p class="work-title">{${workboxes6}_text75:text global="false"}</p>
                     <div class="main-button">
-                      <div class="replace-this-button"><div class="button-wrap">{${workboxes6}_button221:button global="false"}</div></div>
+                      <div class="replace-this-button"><div class="button-wrap">{${workboxes6}_button228:button global="false"}</div></div>
                       <div class="scroll-down-line"></div>
                     </div>
                   </div>
                   <div class="content-parent">
-                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes6}_content251:content global="false"}</div></div>
+                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes6}_content258:content global="false"}</div></div>
                   </div>
                   <div class="work-background"></div>
                 </div>
@@ -238,13 +241,13 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="work-content">
                     <p class="work-title">{${workboxes6}_text76:text global="false"}</p>
                     <div class="main-button">
-                      <div class="replace-this-button"><div class="button-wrap">{${workboxes6}_button222:button global="false"}</div></div>
+                      <div class="replace-this-button"><div class="button-wrap">{${workboxes6}_button229:button global="false"}</div></div>
                       <div class="scroll-down-line"></div>
                     </div>
                   </div>
                   <div class="work-background"></div>
                   <div class="content-parent">
-                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes6}_content252:content global="false"}</div></div>
+                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes6}_content259:content global="false"}</div></div>
                   </div>
                 </div>
                 <div theme-option="a4" class="work-link animate-this-left wg6">
@@ -256,13 +259,13 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="work-content">
                     <p class="work-title">{${workboxes6}_text77:text global="false"}</p>
                     <div class="main-button">
-                      <div class="replace-this-button"><div class="button-wrap">{${workboxes6}_button223:button global="false"}</div></div>
+                      <div class="replace-this-button"><div class="button-wrap">{${workboxes6}_button230:button global="false"}</div></div>
                       <div class="scroll-down-line"></div>
                     </div>
                   </div>
                   <div class="work-background"></div>
                   <div class="content-parent">
-                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes6}_content253:content global="false"}</div></div>
+                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes6}_content260:content global="false"}</div></div>
                   </div>
                 </div>
                 <div theme-option="a4" class="work-link animate-this-left wg6">
@@ -274,13 +277,13 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="work-content">
                     <p class="work-title">{${workboxes6}_text78:text global="false"}</p>
                     <div class="main-button">
-                      <div class="replace-this-button"><div class="button-wrap">{${workboxes6}_button224:button global="false"}</div></div>
+                      <div class="replace-this-button"><div class="button-wrap">{${workboxes6}_button231:button global="false"}</div></div>
                       <div class="scroll-down-line"></div>
                     </div>
                   </div>
                   <div class="work-background"></div>
                   <div class="content-parent">
-                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes6}_content254:content global="false"}</div></div>
+                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes6}_content261:content global="false"}</div></div>
                   </div>
                 </div>
                 <div theme-option="a4" class="work-link animate-this-left wg6">
@@ -292,13 +295,13 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="work-content">
                     <p class="work-title">{${workboxes6}_text79:text global="false"}</p>
                     <div class="main-button">
-                      <div class="replace-this-button"><div class="button-wrap">{${workboxes6}_button225:button global="false"}</div></div>
+                      <div class="replace-this-button"><div class="button-wrap">{${workboxes6}_button232:button global="false"}</div></div>
                       <div class="scroll-down-line"></div>
                     </div>
                   </div>
                   <div class="work-background"></div>
                   <div class="content-parent">
-                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes6}_content255:content global="false"}</div></div>
+                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes6}_content262:content global="false"}</div></div>
                   </div>
                 </div>
                 <div theme-option="a4" class="work-link animate-this-left wg6">
@@ -310,13 +313,13 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="work-content">
                     <p class="work-title">{${workboxes6}_text80:text global="false"}</p>
                     <div class="main-button">
-                      <div class="replace-this-button"><div class="button-wrap">{${workboxes6}_button226:button global="false"}</div></div>
+                      <div class="replace-this-button"><div class="button-wrap">{${workboxes6}_button233:button global="false"}</div></div>
                       <div class="scroll-down-line"></div>
                     </div>
                   </div>
                   <div class="work-background"></div>
                   <div class="content-parent">
-                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes6}_content256:content global="false"}</div></div>
+                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes6}_content263:content global="false"}</div></div>
                   </div>
                 </div>
               </div>
@@ -325,7 +328,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <p class="ctas-title">{${workboxes6}_text81:text global="false"}</p>
                 </div>
                 <div class="button-hold">
-                  <div class="replace-this-button"><div class="button-wrap">{${workboxes6}_button227:button global="false"}</div></div>
+                  <div class="replace-this-button"><div class="button-wrap">{${workboxes6}_button234:button global="false"}</div></div>
                 </div>
               </div>
             </div>
@@ -349,7 +352,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
           <div class="container-section">
             <div class="padding-inner">
               <div class="drag-drop-section">
-                <div class="replace-this-content second animate-this-left"><div class="inter-div-content-area">{${workboxes5}_content257:content global="false"}</div></div>
+                <div class="replace-this-content second animate-this-left"><div class="inter-div-content-area">{${workboxes5}_content264:content global="false"}</div></div>
               </div>
               <div class="w-layout-grid works-grid wg6 col-6">
                 <div theme-option="a4" id="w-node-b51a773f-5a19-1502-0828-9f040e608cdc-0a6d3d82" class="work-link animate-this-left wg6">
@@ -361,12 +364,12 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="work-content">
                     <p class="work-title">{${workboxes5}_text82:text global="false"}</p>
                     <div class="main-button">
-                      <div class="replace-this-button"><div class="button-wrap">{${workboxes5}_button228:button global="false"}</div></div>
+                      <div class="replace-this-button"><div class="button-wrap">{${workboxes5}_button235:button global="false"}</div></div>
                       <div class="scroll-down-line"></div>
                     </div>
                   </div>
                   <div class="content-parent">
-                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes5}_content258:content global="false"}</div></div>
+                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes5}_content265:content global="false"}</div></div>
                   </div>
                   <div class="work-background"></div>
                 </div>
@@ -379,13 +382,13 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="work-content">
                     <p class="work-title">{${workboxes5}_text83:text global="false"}</p>
                     <div class="main-button">
-                      <div class="replace-this-button"><div class="button-wrap">{${workboxes5}_button229:button global="false"}</div></div>
+                      <div class="replace-this-button"><div class="button-wrap">{${workboxes5}_button236:button global="false"}</div></div>
                       <div class="scroll-down-line"></div>
                     </div>
                   </div>
                   <div class="work-background"></div>
                   <div class="content-parent">
-                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes5}_content259:content global="false"}</div></div>
+                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes5}_content266:content global="false"}</div></div>
                   </div>
                 </div>
                 <div theme-option="a4" id="w-node-b51a773f-5a19-1502-0828-9f040e608cf8-0a6d3d82" class="work-link animate-this-left wg6">
@@ -397,13 +400,13 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="work-content">
                     <p class="work-title">{${workboxes5}_text84:text global="false"}</p>
                     <div class="main-button">
-                      <div class="replace-this-button"><div class="button-wrap">{${workboxes5}_button230:button global="false"}</div></div>
+                      <div class="replace-this-button"><div class="button-wrap">{${workboxes5}_button237:button global="false"}</div></div>
                       <div class="scroll-down-line"></div>
                     </div>
                   </div>
                   <div class="work-background"></div>
                   <div class="content-parent">
-                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes5}_content260:content global="false"}</div></div>
+                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes5}_content267:content global="false"}</div></div>
                   </div>
                 </div>
                 <div theme-option="a4" id="w-node-b51a773f-5a19-1502-0828-9f040e608d06-0a6d3d82" class="work-link animate-this-left wg6">
@@ -415,13 +418,13 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="work-content">
                     <p class="work-title">{${workboxes5}_text85:text global="false"}</p>
                     <div class="main-button">
-                      <div class="replace-this-button"><div class="button-wrap">{${workboxes5}_button231:button global="false"}</div></div>
+                      <div class="replace-this-button"><div class="button-wrap">{${workboxes5}_button238:button global="false"}</div></div>
                       <div class="scroll-down-line"></div>
                     </div>
                   </div>
                   <div class="work-background"></div>
                   <div class="content-parent">
-                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes5}_content261:content global="false"}</div></div>
+                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes5}_content268:content global="false"}</div></div>
                   </div>
                 </div>
                 <div theme-option="a4" id="w-node-b51a773f-5a19-1502-0828-9f040e608d14-0a6d3d82" class="work-link animate-this-left wg6">
@@ -433,13 +436,13 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="work-content">
                     <p class="work-title">{${workboxes5}_text86:text global="false"}</p>
                     <div class="main-button">
-                      <div class="replace-this-button"><div class="button-wrap">{${workboxes5}_button232:button global="false"}</div></div>
+                      <div class="replace-this-button"><div class="button-wrap">{${workboxes5}_button239:button global="false"}</div></div>
                       <div class="scroll-down-line"></div>
                     </div>
                   </div>
                   <div class="work-background"></div>
                   <div class="content-parent">
-                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes5}_content262:content global="false"}</div></div>
+                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes5}_content269:content global="false"}</div></div>
                   </div>
                 </div>
               </div>
@@ -448,7 +451,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <p class="ctas-title">{${workboxes5}_text87:text global="false"}</p>
                 </div>
                 <div class="button-hold">
-                  <div class="replace-this-button"><div class="button-wrap">{${workboxes5}_button233:button global="false"}</div></div>
+                  <div class="replace-this-button"><div class="button-wrap">{${workboxes5}_button240:button global="false"}</div></div>
                 </div>
               </div>
             </div>
@@ -472,7 +475,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
           <div class="container-section">
             <div class="padding-inner">
               <div class="drag-drop-section">
-                <div class="replace-this-content second animate-this-left"><div class="inter-div-content-area">{${workboxes4}_content263:content global="false"}</div></div>
+                <div class="replace-this-content second animate-this-left"><div class="inter-div-content-area">{${workboxes4}_content270:content global="false"}</div></div>
               </div>
               <div class="w-layout-grid works-grid">
                 <div theme-option="a4" class="work-link animate-this-left">
@@ -484,12 +487,12 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="work-content">
                     <p class="work-title">{${workboxes4}_text88:text global="false"}</p>
                     <div class="main-button">
-                      <div class="replace-this-button"><div class="button-wrap">{${workboxes4}_button234:button global="false"}</div></div>
+                      <div class="replace-this-button"><div class="button-wrap">{${workboxes4}_button241:button global="false"}</div></div>
                       <div class="scroll-down-line"></div>
                     </div>
                   </div>
                   <div class="content-parent">
-                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes4}_content264:content global="false"}</div></div>
+                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes4}_content271:content global="false"}</div></div>
                   </div>
                   <div class="work-background"></div>
                 </div>
@@ -502,13 +505,13 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="work-content">
                     <p class="work-title">{${workboxes4}_text89:text global="false"}</p>
                     <div class="main-button">
-                      <div class="replace-this-button"><div class="button-wrap">{${workboxes4}_button235:button global="false"}</div></div>
+                      <div class="replace-this-button"><div class="button-wrap">{${workboxes4}_button242:button global="false"}</div></div>
                       <div class="scroll-down-line"></div>
                     </div>
                   </div>
                   <div class="work-background"></div>
                   <div class="content-parent">
-                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes4}_content265:content global="false"}</div></div>
+                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes4}_content272:content global="false"}</div></div>
                   </div>
                 </div>
                 <div theme-option="a4" class="work-link animate-this-left">
@@ -520,13 +523,13 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="work-content">
                     <p class="work-title">{${workboxes4}_text90:text global="false"}</p>
                     <div class="main-button">
-                      <div class="replace-this-button"><div class="button-wrap">{${workboxes4}_button236:button global="false"}</div></div>
+                      <div class="replace-this-button"><div class="button-wrap">{${workboxes4}_button243:button global="false"}</div></div>
                       <div class="scroll-down-line"></div>
                     </div>
                   </div>
                   <div class="work-background"></div>
                   <div class="content-parent">
-                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes4}_content266:content global="false"}</div></div>
+                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes4}_content273:content global="false"}</div></div>
                   </div>
                 </div>
                 <div theme-option="a4" class="work-link animate-this-left">
@@ -538,13 +541,13 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="work-content">
                     <p class="work-title">{${workboxes4}_text91:text global="false"}</p>
                     <div class="main-button">
-                      <div class="replace-this-button"><div class="button-wrap">{${workboxes4}_button237:button global="false"}</div></div>
+                      <div class="replace-this-button"><div class="button-wrap">{${workboxes4}_button244:button global="false"}</div></div>
                       <div class="scroll-down-line"></div>
                     </div>
                   </div>
                   <div class="work-background"></div>
                   <div class="content-parent">
-                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes4}_content267:content global="false"}</div></div>
+                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes4}_content274:content global="false"}</div></div>
                   </div>
                 </div>
               </div>
@@ -553,7 +556,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <p class="ctas-title">{${workboxes4}_text92:text global="false"}</p>
                 </div>
                 <div class="button-hold">
-                  <div class="replace-this-button"><div class="button-wrap">{${workboxes4}_button238:button global="false"}</div></div>
+                  <div class="replace-this-button"><div class="button-wrap">{${workboxes4}_button245:button global="false"}</div></div>
                 </div>
               </div>
             </div>
@@ -577,7 +580,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
           <div class="container-section">
             <div class="padding-inner">
               <div class="drag-drop-section">
-                <div class="replace-this-content second animate-this-left"><div class="inter-div-content-area">{${workboxes3}_content268:content global="false"}</div></div>
+                <div class="replace-this-content second animate-this-left"><div class="inter-div-content-area">{${workboxes3}_content275:content global="false"}</div></div>
               </div>
               <div class="w-layout-grid works-grid">
                 <div theme-option="a4" class="work-link animate-this-left">
@@ -589,12 +592,12 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="work-content">
                     <p class="work-title">{${workboxes3}_text93:text global="false"}</p>
                     <div class="main-button">
-                      <div class="replace-this-button"><div class="button-wrap">{${workboxes3}_button239:button global="false"}</div></div>
+                      <div class="replace-this-button"><div class="button-wrap">{${workboxes3}_button246:button global="false"}</div></div>
                       <div class="scroll-down-line"></div>
                     </div>
                   </div>
                   <div class="content-parent">
-                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes3}_content269:content global="false"}</div></div>
+                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes3}_content276:content global="false"}</div></div>
                   </div>
                   <div class="work-background"></div>
                 </div>
@@ -607,13 +610,13 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="work-content">
                     <p class="work-title">{${workboxes3}_text94:text global="false"}</p>
                     <div class="main-button">
-                      <div class="replace-this-button"><div class="button-wrap">{${workboxes3}_button240:button global="false"}</div></div>
+                      <div class="replace-this-button"><div class="button-wrap">{${workboxes3}_button247:button global="false"}</div></div>
                       <div class="scroll-down-line"></div>
                     </div>
                   </div>
                   <div class="work-background"></div>
                   <div class="content-parent">
-                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes3}_content270:content global="false"}</div></div>
+                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes3}_content277:content global="false"}</div></div>
                   </div>
                 </div>
                 <div theme-option="a4" id="w-node-_7bec0e84-63ca-cd9c-a310-5f56c9cac8cc-0a6d3d82" class="work-link animate-this-left">
@@ -625,23 +628,23 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="work-content">
                     <p class="work-title">{${workboxes3}_text95:text global="false"}</p>
                     <div class="main-button">
-                      <div class="replace-this-button"><div class="button-wrap">{${workboxes3}_button241:button global="false"}</div></div>
+                      <div class="replace-this-button"><div class="button-wrap">{${workboxes3}_button248:button global="false"}</div></div>
                       <div class="scroll-down-line"></div>
                     </div>
                   </div>
                   <div class="work-background"></div>
                   <div class="content-parent">
-                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes3}_content271:content global="false"}</div></div>
+                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes3}_content278:content global="false"}</div></div>
                   </div>
                 </div>
-                <div id="w-node-_365764f1-4d58-6974-8b49-a514f562291b-0a6d3d82" class="replace-this-content"><div class="inter-div-content-area">{${workboxes3}_content272:content global="false"}</div></div>
+                <div id="w-node-_365764f1-4d58-6974-8b49-a514f562291b-0a6d3d82" class="replace-this-content"><div class="inter-div-content-area">{${workboxes3}_content279:content global="false"}</div></div>
               </div>
               <div class="cta-block-2 animate-this-left">
                 <div>
                   <p class="ctas-title">{${workboxes3}_text96:text global="false"}</p>
                 </div>
                 <div class="button-hold">
-                  <div class="replace-this-button"><div class="button-wrap">{${workboxes3}_button242:button global="false"}</div></div>
+                  <div class="replace-this-button"><div class="button-wrap">{${workboxes3}_button249:button global="false"}</div></div>
                 </div>
               </div>
             </div>
@@ -665,7 +668,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
           <div class="container-section">
             <div class="padding-inner">
               <div class="drag-drop-section">
-                <div class="replace-this-content second animate-this-left"><div class="inter-div-content-area">{${workboxes2}_content273:content global="false"}</div></div>
+                <div class="replace-this-content second animate-this-left"><div class="inter-div-content-area">{${workboxes2}_content280:content global="false"}</div></div>
               </div>
               <div class="w-layout-grid works-grid">
                 <div theme-option="a4" class="work-link animate-this-left">
@@ -677,12 +680,12 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="work-content">
                     <p class="work-title">{${workboxes2}_text97:text global="false"}</p>
                     <div class="main-button">
-                      <div class="replace-this-button"><div class="button-wrap">{${workboxes2}_button243:button global="false"}</div></div>
+                      <div class="replace-this-button"><div class="button-wrap">{${workboxes2}_button250:button global="false"}</div></div>
                       <div class="scroll-down-line"></div>
                     </div>
                   </div>
                   <div class="content-parent">
-                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes2}_content274:content global="false"}</div></div>
+                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes2}_content281:content global="false"}</div></div>
                   </div>
                   <div class="work-background"></div>
                 </div>
@@ -695,13 +698,13 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="work-content">
                     <p class="work-title">{${workboxes2}_text98:text global="false"}</p>
                     <div class="main-button">
-                      <div class="replace-this-button"><div class="button-wrap">{${workboxes2}_button244:button global="false"}</div></div>
+                      <div class="replace-this-button"><div class="button-wrap">{${workboxes2}_button251:button global="false"}</div></div>
                       <div class="scroll-down-line"></div>
                     </div>
                   </div>
                   <div class="work-background"></div>
                   <div class="content-parent">
-                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes2}_content275:content global="false"}</div></div>
+                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes2}_content282:content global="false"}</div></div>
                   </div>
                 </div>
               </div>
@@ -710,7 +713,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <p class="ctas-title">{${workboxes2}_text99:text global="false"}</p>
                 </div>
                 <div class="button-hold">
-                  <div class="replace-this-button"><div class="button-wrap">{${workboxes2}_button245:button global="false"}</div></div>
+                  <div class="replace-this-button"><div class="button-wrap">{${workboxes2}_button252:button global="false"}</div></div>
                 </div>
               </div>
             </div>
@@ -734,7 +737,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
           <div class="container-section">
             <div class="padding-inner">
               <div class="drag-drop-section">
-                <div class="replace-this-content second animate-this-left"><div class="inter-div-content-area">{${workboxes1}_content276:content global="false"}</div></div>
+                <div class="replace-this-content second animate-this-left"><div class="inter-div-content-area">{${workboxes1}_content283:content global="false"}</div></div>
               </div>
               <div class="w-layout-grid works-grid">
                 <div theme-option="a4" id="w-node-ce074b1c-bc8e-39ab-e177-f2bd91ea36cb-0a6d3d82" class="work-link animate-this-left">
@@ -746,12 +749,12 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="work-content">
                     <p class="work-title">{${workboxes1}_text100:text global="false"}</p>
                     <div class="main-button">
-                      <div class="replace-this-button"><div class="button-wrap">{${workboxes1}_button246:button global="false"}</div></div>
+                      <div class="replace-this-button"><div class="button-wrap">{${workboxes1}_button253:button global="false"}</div></div>
                       <div class="scroll-down-line"></div>
                     </div>
                   </div>
                   <div class="content-parent">
-                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes1}_content277:content global="false"}</div></div>
+                    <div class="content-wrapper replace-this-content"><div class="inter-div-content-area">{${workboxes1}_content284:content global="false"}</div></div>
                   </div>
                   <div class="work-background"></div>
                 </div>
@@ -761,7 +764,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <p class="ctas-title">{${workboxes1}_text101:text global="false"}</p>
                 </div>
                 <div class="button-hold">
-                  <div class="replace-this-button"><div class="button-wrap">{${workboxes1}_button247:button global="false"}</div></div>
+                  <div class="replace-this-button"><div class="button-wrap">{${workboxes1}_button254:button global="false"}</div></div>
                 </div>
               </div>
             </div>
@@ -784,7 +787,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <section id="image-boxes-8" theme-option="a7" data-sectiontype="image-boxes-8" class="default-theme-padding white capture wf-section">
           <div class="theme-padding">
             <div class="top-drag-drop animate-this-left">
-              <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes8}_content278:content global="false"}</div></div>
+              <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes8}_content285:content global="false"}</div></div>
             </div>
             <div class="w-layout-grid image-box-grid _12-col">
               <div id="w-node-_390490f4-9b53-7d0f-b1eb-c9bd0fc2c99c-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes8}_image26:image global="false"}</div>
@@ -871,7 +874,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <section id="image-boxes-7" theme-option="a7" data-sectiontype="image-boxes-7" class="default-theme-padding white capture wf-section">
           <div class="theme-padding">
             <div class="top-drag-drop animate-this-left">
-              <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes7}_content279:content global="false"}</div></div>
+              <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes7}_content286:content global="false"}</div></div>
             </div>
             <div class="w-layout-grid image-box-grid _12-col">
               <div id="w-node-_094367e8-8011-101c-2a55-df769886e9fb-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes7}_image34:image global="false"}</div>
@@ -950,7 +953,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <section id="image-boxes-6" theme-option="a7" data-sectiontype="image-boxes-6" class="default-theme-padding white capture wf-section">
           <div class="theme-padding">
             <div class="top-drag-drop animate-this-left">
-              <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes6}_content280:content global="false"}</div></div>
+              <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes6}_content287:content global="false"}</div></div>
             </div>
             <div class="w-layout-grid image-box-grid _12-col">
               <div id="w-node-_2ae38857-1dcf-c0cd-cb04-d8ffd7ff5469-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes6}_image41:image global="false"}</div>
@@ -1021,7 +1024,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <section id="image-boxes-5" theme-option="a7" data-sectiontype="image-boxes-5" class="default-theme-padding white capture wf-section">
           <div class="theme-padding">
             <div class="top-drag-drop animate-this-left">
-              <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes5}_content281:content global="false"}</div></div>
+              <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes5}_content288:content global="false"}</div></div>
             </div>
             <div class="w-layout-grid image-box-grid _12-col">
               <div id="w-node-d32495f6-26af-9432-0dde-4d7ebbf2ba32-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes5}_image47:image global="false"}</div>
@@ -1084,7 +1087,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <section id="image-boxes-4" theme-option="a7" data-sectiontype="image-boxes-4" class="default-theme-padding white capture wf-section">
           <div class="theme-padding">
             <div class="top-drag-drop animate-this-left">
-              <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes4}_content282:content global="false"}</div></div>
+              <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes4}_content289:content global="false"}</div></div>
             </div>
             <div class="w-layout-grid image-box-grid _12-col">
               <div id="w-node-_0c5725d5-2eca-23b3-462c-8a2d26f91ab6-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes4}_image52:image global="false"}</div>
@@ -1139,7 +1142,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <section id="image-boxes-3" theme-option="a7" data-sectiontype="image-boxes-3" class="default-theme-padding white capture wf-section">
           <div class="theme-padding">
             <div class="top-drag-drop animate-this-left">
-              <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes3}_content283:content global="false"}</div></div>
+              <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes3}_content290:content global="false"}</div></div>
             </div>
             <div class="w-layout-grid image-box-grid _12-col">
               <div id="w-node-_314339d0-fd73-f543-35bc-39c32d057637-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes3}_image56:image global="false"}</div>
@@ -1186,7 +1189,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <section id="image-boxes-2" theme-option="a7" data-sectiontype="image-boxes-2" class="default-theme-padding white capture wf-section">
           <div class="theme-padding">
             <div class="top-drag-drop animate-this-left">
-              <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes2}_content284:content global="false"}</div></div>
+              <div class="content-holder-images replace-this-content"><div class="inter-div-content-area">{${imageboxes2}_content291:content global="false"}</div></div>
             </div>
             <div class="w-layout-grid image-box-grid _12-col">
               <div id="w-node-_8dc3b37b-bbce-a5d6-7ea8-2b83486cd91b-0a6d3d82" class="image-box-item med-height"><div class="image-box-image">{${imageboxes2}_image59:image global="false"}</div>
@@ -1225,7 +1228,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <section id="icons-3-2" theme-option="a5" data-sectiontype="icons-3-2" class="section-zipper-known capture wf-section">
           <div class="div-case-mixture">
             <div class="div-married-think">
-              <div class="top-area-content replace-this-content"><div class="inter-div-content-area">{${icons32}_content285:content global="false"}</div></div>
+              <div class="top-area-content replace-this-content"><div class="inter-div-content-area">{${icons32}_content292:content global="false"}</div></div>
             </div>
             <div class="div-official-thousand">
               <div class="div-characteristic-chapter animate-this-left"><div class="img-finger-strike">{${icons32}_image61:image global="false"}</div>
@@ -1277,7 +1280,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                 <div class="div-deeply animate-this-right">
                   <div class="div-pretty allow-pointer-events">
                     <div class="div-block-6">
-                      <div class="content-transparent replace-this-content"><div class="inter-div-content-area">{${fiftyfiftyblurredbox}_content286:content global="false"}</div></div>
+                      <div class="content-transparent replace-this-content"><div class="inter-div-content-area">{${fiftyfiftyblurredbox}_content293:content global="false"}</div></div>
                     </div>
                   </div>
                 </div>
@@ -1305,7 +1308,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
               <h4 class="h5-scene-carbon replace-this-text">{${prebuiltfooter}_text184:text global="false"}</h4>
               <div class="div-national-gasoline">
                 <div class="div-block-9">
-                  <div class="div-block-10 footer-drag-drop replace-this-content"><div class="inter-div-content-area">{${prebuiltfooter}_content287:content global="false"}</div></div>
+                  <div class="div-block-10 footer-drag-drop replace-this-content"><div class="inter-div-content-area">{${prebuiltfooter}_content294:content global="false"}</div></div>
                 </div>
               </div>
             </div>
@@ -1344,17 +1347,13 @@ export function assemblyGen(rawElements, selectedBlocks) {
               </div>
               <div class="w-layout-grid grid ls-3">
                 <div id="w-node-_03178dd8-6a53-0ebd-7d86-e17493d1afd2-0a6d3d82" class="column">
-                  <div class="replace-this-text">{${prebuiltheader2}_div207:text global="false"}</div>
+                  <div class="replace-this-text">{${prebuiltheader2}_div208:text global="false"}</div>
                 </div>
                 <div id="w-node-_03178dd8-6a53-0ebd-7d86-e17493d1afd7-0a6d3d82" class="column flex">
-                  <div class="text-max-width-50 replace-this-text">{${prebuiltheader2}_div208:text global="false"}</div>
                   <div class="text-max-width-50 replace-this-text">{${prebuiltheader2}_div209:text global="false"}</div>
+                  <div class="text-max-width-50 replace-this-text">{${prebuiltheader2}_div210:text global="false"}</div>
                 </div>
                 <div id="w-node-_03178dd8-6a53-0ebd-7d86-e17493d1afdc-0a6d3d82" class="column-list ls-3">
-                  <div class="link-style ls-3">
-                    <div class="replace-this-text">{${prebuiltheader2}_div210:text global="false"}</div>
-                    <div class="underline dark"></div>
-                  </div>
                   <div class="link-style ls-3">
                     <div class="replace-this-text">{${prebuiltheader2}_div211:text global="false"}</div>
                     <div class="underline dark"></div>
@@ -1363,8 +1362,12 @@ export function assemblyGen(rawElements, selectedBlocks) {
                     <div class="replace-this-text">{${prebuiltheader2}_div212:text global="false"}</div>
                     <div class="underline dark"></div>
                   </div>
+                  <div class="link-style ls-3">
+                    <div class="replace-this-text">{${prebuiltheader2}_div213:text global="false"}</div>
+                    <div class="underline dark"></div>
+                  </div>
                 </div>
-                <div class="replace-this-text">{${prebuiltheader2}_div213:text global="false"}</div>
+                <div class="replace-this-text">{${prebuiltheader2}_div214:text global="false"}</div>
               </div>
               <div id="w-node-_03178dd8-6a53-0ebd-7d86-e17493d1afeb-0a6d3d82" class="image-container ls-3">
                 <div class="background-image-wrapper">
@@ -1396,18 +1399,18 @@ export function assemblyGen(rawElements, selectedBlocks) {
               <div class="w-layout-grid grid ls-2">
                 <h1 id="w-node-_1cd466a6-ae72-7838-115a-a4b2dff0eef7-0a6d3d82" class="heading-11">{${prebuiltheader3}_text190:text global="false"}</h1>
                 <div id="w-node-_1cd466a6-ae72-7838-115a-a4b2dff0eefb-0a6d3d82" class="column ls-2">
-                  <div class="text-color-grey replace-this-text">{${prebuiltheader3}_div214:text global="false"}</div>
+                  <div class="text-color-grey replace-this-text">{${prebuiltheader3}_div215:text global="false"}</div>
                   <div class="link-style ls-2">
-                    <div class="replace-this-text">{${prebuiltheader3}_div215:text global="false"}</div>
+                    <div class="replace-this-text">{${prebuiltheader3}_div216:text global="false"}</div>
                     <div class="hover-line">
                       <div class="hover-line-fill"></div>
                     </div>
                   </div>
                 </div>
                 <div id="w-node-_1cd466a6-ae72-7838-115a-a4b2dff0ef03-0a6d3d82" class="column ls-2">
-                  <div class="text-color-grey replace-this-text">{${prebuiltheader3}_div216:text global="false"}</div>
+                  <div class="text-color-grey replace-this-text">{${prebuiltheader3}_div217:text global="false"}</div>
                   <div class="link-style ls-2">
-                    <div class="replace-this-text">{${prebuiltheader3}_div217:text global="false"}</div>
+                    <div class="replace-this-text">{${prebuiltheader3}_div218:text global="false"}</div>
                     <div class="hover-line">
                       <div class="hover-line-fill"></div>
                     </div>
@@ -1443,7 +1446,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                 </div>
                 <div>
                   <div class="line ls-4"></div>
-                  <div class="info-text ls-4 paragraph-image replace-this-text">{${prebuiltheader4}_div218:text global="false"}</div>
+                  <div class="info-text ls-4 paragraph-image replace-this-text">{${prebuiltheader4}_div219:text global="false"}</div>
                   <div class="link-style ls-4">
                     <h4 class="heading-small margin-bottom margin-xsmall">{${prebuiltheader4}_text192:text global="false"}</h4>
                     <div class="w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="butt" stroke-linejoin="bevel">
@@ -1492,7 +1495,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="arrow-icon ls-9 w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="bevel">
                       <path d="M5 12h13M12 5l7 7-7 7"></path>
                     </svg></div>
-                  <div class="replace-this-text">{${prebuiltheader5}_div219:text global="false"}</div>
+                  <div class="replace-this-text">{${prebuiltheader5}_div220:text global="false"}</div>
                 </div>
               </div>
               <div class="column-wrapper ls-9">
@@ -1501,7 +1504,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                   <div class="arrow-icon ls-9 w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="bevel">
                       <path d="M5 12h13M12 5l7 7-7 7"></path>
                     </svg></div>
-                  <div class="replace-this-text">{${prebuiltheader5}_div220:text global="false"}</div>
+                  <div class="replace-this-text">{${prebuiltheader5}_div221:text global="false"}</div>
                 </div>
               </div>
             </div>
@@ -1527,7 +1530,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
               <div class="grid-image-holder"><div class="image-2">{${fiftyfiftyimageleft}_image68:image global="false"}</div></div>
             </div>
             <div theme-option="a2" id="w-node-a65e8fe2-862b-a090-0304-092ba75412de-0a6d3d82" class="grid-child-right animate-this-right">
-              <div class="individual-block replace-this-content"><div class="inter-div-content-area">{${fiftyfiftyimageleft}_content288:content global="false"}</div></div>
+              <div class="individual-block replace-this-content"><div class="inter-div-content-area">{${fiftyfiftyimageleft}_content295:content global="false"}</div></div>
             </div>
           </div>
         </section>
@@ -1548,7 +1551,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <section id="fifty-fifty-image-right" data-sectiontype="fifty-fifty-image-right" class="theme-section wf-section">
           <div class="w-layout-grid grid-7">
             <div theme-option="a6" id="w-node-d8158278-4ee5-00d4-d8d9-9000a626d417-0a6d3d82" class="grid-child-right gray animate-this-left">
-              <div class="individual-block replace-this-content"><div class="inter-div-content-area">{${fiftyfiftyimageright}_content289:content global="false"}</div></div>
+              <div class="individual-block replace-this-content"><div class="inter-div-content-area">{${fiftyfiftyimageright}_content296:content global="false"}</div></div>
             </div>
             <div id="w-node-d8158278-4ee5-00d4-d8d9-9000a626d419-0a6d3d82" class="grid-child-left">
               <div class="grid-image-holder"><div class="image-2">{${fiftyfiftyimageright}_image69:image global="false"}</div></div>
@@ -1560,6 +1563,74 @@ export function assemblyGen(rawElements, selectedBlocks) {
             --------------------------------------------------------------------------------------->
             `;
           }
+      // End of fifty-fifty-image-right
+      
+      // This is the start of the prebuilt-header-1
+          if (selectedBlocks[element] === "prebuilt-header-1") {
+            prebuiltheader1++;
+            assemblyHTML += `
+            <!-------------------------------------------------------------------------------------
+            prebuilt-header-1 STARTS HERE
+            --------------------------------------------------------------------------------------->
+            <section id="prebuilt-header-1" data-sectiontype="prebuilt-header-1" class="main-section ls-8 wf-section">
+          <div class="padding-global">
+            <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar ls-8 w-nav"></div>
+          </div>
+          <div class="hero ls-8">
+            <div class="padding-global header">
+              <div class="w-layout-grid grid ls-8">
+                <div id="w-node-_82588ffc-981d-bff1-3184-3a7cd26ae9d5-0a6d3d82" class="column">
+                  <div class="info-text text-color-white replace-this-text">{${prebuiltheader1}_div222:text global="false"}</div>
+                </div>
+                <div id="w-node-_82588ffc-981d-bff1-3184-3a7cd26ae9d8-0a6d3d82" class="column">
+                  <div class="overflow-hidden">
+                    <h1 class="heading-xxlarge replace-this-text">{${prebuiltheader1}_text197:text global="false"}</h1>
+                  </div>
+                  <div class="overflow-hidden"></div>
+                </div>
+                <div id="w-node-_82588ffc-981d-bff1-3184-3a7cd26ae9dd-0a6d3d82" class="column-wrapper ls-8">
+                  <div class="info-text ls-8 replace-this-text">{${prebuiltheader1}_div223:text global="false"}</div>
+                </div>
+              </div>
+            </div>
+            <div class="padding-global header">
+              <div class="w-layout-grid grid ls-8">
+                <div class="link-style ls-8">
+                  <div class="hover-line top">
+                    <div class="hover-line-fill background-color-white"></div>
+                  </div>
+                  <div class="replace-this-text">{${prebuiltheader1}_div224:text global="false"}</div>
+                </div>
+                <div class="link-style ls-8">
+                  <div class="hover-line top">
+                    <div class="hover-line-fill background-color-white"></div>
+                  </div>
+                  <div class="replace-this-text">{${prebuiltheader1}_div225:text global="false"}</div>
+                </div>
+                <div class="link-style ls-8">
+                  <div class="hover-line top">
+                    <div class="hover-line-fill background-color-white"></div>
+                  </div>
+                  <div class="replace-this-text">{${prebuiltheader1}_div226:text global="false"}</div>
+                </div>
+                <div class="link-style ls-8">
+                  <div class="hover-line top">
+                    <div class="hover-line-fill background-color-white"></div>
+                  </div>
+                  <div class="replace-this-text">{${prebuiltheader1}_div227:text global="false"}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="background-image ls-8 wsite-background"></div>
+        </section>
+            <!-------------------------------------------------------------------------------------
+            prebuilt-header-1 ENDS HERE
+            --------------------------------------------------------------------------------------->
+            `;
+          }
+      // End of prebuilt-header-1
+      
       // End of fifty-fifty-image-right
       
       
