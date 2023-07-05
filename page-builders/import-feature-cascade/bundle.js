@@ -379,15 +379,32 @@ PageBuilder Import System: Ends Here
       <script src="/files/theme/core/pureslider.js"></script>
       <script type="text/javascript" src="/files/theme/core/scrollipage.js"></script>
       <link href="/files/theme/core/aos.css" rel="stylesheet">
-      <meta name="custom-pagebuilder" content="${pageBuilderMetaString}">
     </head>
 
     <body class="header-page">
+
+      <!-- Theme Control Panel -->
+      <div class="in-editor-theme-control">
+        <button id="scanButton" style="z-index: 1000; min-width:200px; color:white; height:100%; position:relative; z-index:1000; font-weight: 600; background-color:#2384dc">Open This Page Layout in PageBuilder</button>
+      </div>
+      
       <div class="wrapper">
-        <div class="overflow-limiter"> <!-- Overflow Limiter -->
-          <!-- END OF HEADER CODE -->
-          <!-- DROP CONTENT BELOW -->                 
-        
+        <div class="birdseye-header">
+          <div class="nav-wrap">
+            <div class="container">
+              <div class="logo">{logo}</div>
+              <div class="nav desktop-nav">{menu}</div>
+              <a class="hamburger" aria-label="Menu" href="#"><span></span></a>
+            </div>
+          </div>
+        </div>
+      <div class="overflow-limiter"> <!-- Overflow Limiter -->
+        <!--------------------------------------------------------------------------------------------------------------------------- 
+      End of Beginning Code Portion  
+      ---------------------------------------------------------------------------------------------------------------------------->
+      <!--------------------------------------------------------------------------------------------------------------------------- 
+      Start of Body Website Components  
+      ---------------------------------------------------------------------------------------------------------------------------->                
     `;
 
     // HTML Building Process Stage 2 (ScrolliPage)
@@ -434,28 +451,32 @@ PageBuilder Import System: Ends Here
 
     // HTML Buildilng Process Stage 3
     endingCode = `
-      <div class="footer-wrap">
-			  <div class="footer">{footer}</div>
-		  </div><!-- end footer-wrap -->
-	  </div><!-- /.wrapper -->
-	</div><!-- end overflow limiter -->
-  <!-- START OF END CODE -->
-  <div id="navMobile" class="nav mobile-nav">
-    <a class="hamburger" aria-label="Menu" href="#"><span></span></a>
-    {menu}
-  </div>
-
-  <script type="text/javascript" src="/files/theme/plugins.js"></script>
-  <script type="text/javascript" src="/files/theme/custom.js"></script>
-  <script type="text/javascript" src="/files/theme/core/pureslider.js"></script>
-  <script type="text/javascript" src="/files/theme/core/parallax-1.js"></script>
-  <script type="text/javascript" src="/files/theme/core/parallax-2.js"></script>
-  <script type="text/javascript" src="/files/theme/core/aos.js"></script>
-  <script type="text/javascript" src="/files/theme/core/main-init.js"></script>
-</body>
-</html>
-                        
-                        
+    <!--------------------------------------------------------------------------------------------------------------------------- 
+    End of Body Website Components  
+    ---------------------------------------------------------------------------------------------------------------------------->
+    <!--------------------------------------------------------------------------------------------------------------------------- 
+    Start of Footer Website Components  
+    ---------------------------------------------------------------------------------------------------------------------------->
+        <div class="footer-wrap">
+          <div class="footer">{footer}</div>
+        </div><!-- /.footer-wrap -->
+      </div><!-- /.wrapper -->
+    </div><!-- /.overflow limiter -->
+    <div id="navMobile" class="nav mobile-nav">
+      <a class="hamburger" aria-label="Menu" href="#"><span></span></a>
+      {menu}
+    </div>
+    
+    <script type="text/javascript" src="/files/theme/core/pagebuilder-import.js"></script>
+    <script type="text/javascript" src="/files/theme/plugins.js"></script>
+    <script type="text/javascript" src="/files/theme/custom.js"></script>
+    <script type="text/javascript" src="/files/theme/core/pureslider.js"></script>
+    <script type="text/javascript" src="/files/theme/core/parallax-1.js"></script>
+    <script type="text/javascript" src="/files/theme/core/parallax-2.js"></script>
+    <script type="text/javascript" src="/files/theme/core/aos.js"></script>
+    <script type="text/javascript" src="/files/theme/core/main-init.js"></script>
+  </body>
+  </html>    
     `;
     endingCode += codeCredits;
     
