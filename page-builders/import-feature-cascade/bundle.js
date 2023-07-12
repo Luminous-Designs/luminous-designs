@@ -369,7 +369,7 @@ PageBuilder Import System: Ends Here
     -->
     `;
 
-    // HTML Building Process Stage 1
+    // Stage 1: Initial Code
     beginningCode +=  `
     <!DOCTYPE html>
     <html>
@@ -387,9 +387,23 @@ PageBuilder Import System: Ends Here
       <div class="in-editor-theme-control">
         <button id="scanButton" style="z-index: 1000; min-width:200px; color:white; height:100%; position:relative; z-index:1000; font-weight: 600; background-color:#2384dc">Open This Page Layout in PageBuilder</button>
       </div>
-      
       <div class="wrapper">
-        <div class="birdseye-header">
+
+      `;
+
+    // Stage 2: Header Injection (Differential) - headers that require alternate header
+    let alternateHeaderItems = ["prebuilt-header-2", "prebuilt-header-3"];
+    let alternateHeader = false;
+    for (let i = 0; i < alternateHeaderItems.length; i++) {
+      if (selectedBlocks.includes(alternateHeaderItems[i])) {
+          alternateHeader = true;
+          break; // No need to continue the loop as we found a match
+      }
+    }
+
+    if (alternateHeader) {
+      beginningCode += `
+        <div class="birdseye-header alternate-color">
           <div class="nav-wrap">
             <div class="container">
               <div class="logo">{logo}</div>
@@ -398,19 +412,33 @@ PageBuilder Import System: Ends Here
             </div>
           </div>
         </div>
+      `;
+    } else {
+      beginningCode += `
+      <div class="birdseye-header">
+        <div class="nav-wrap">
+          <div class="container">
+            <div class="logo">{logo}</div>
+            <div class="nav desktop-nav">{menu}</div>
+            <a class="hamburger" aria-label="Menu" href="#"><span></span></a>
+          </div>
+        </div>
+      </div>
+      `;
+    }
+
+      beginningCode += `
       <div class="overflow-limiter"> <!-- Overflow Limiter -->
-        <!--------------------------------------------------------------------------------------------------------------------------- 
+      <!--------------------------------------------------------------------------------------------------------------------------- 
       End of Beginning Code Portion  
       ---------------------------------------------------------------------------------------------------------------------------->
       <!--------------------------------------------------------------------------------------------------------------------------- 
       Start of Body Website Components  
-      ---------------------------------------------------------------------------------------------------------------------------->                
-    `;
+      ---------------------------------------------------------------------------------------------------------------------------->              
+       `;
 
-    // HTML Building Process Stage 2 (ScrolliPage)
+    // Stage 3: ScrolliPage Append
     if (scrollipageExistence > 0) {
-        // Beginning Code WITH ScrolliPage
-
         // START of ScrolliPage
         beginningCode += `
         <!-------------------------------------------------------------------------------------
@@ -419,7 +447,6 @@ PageBuilder Import System: Ends Here
         <nav id="cd-vertical-nav" style="z-index:10;">
             <ul>
         `;
-
         // MIDDLE of ScrolliPage
         for (let numOfAnchors = 1; numOfAnchors <= scrollipageExistence; numOfAnchors++) {
             beginningCode += `
@@ -431,7 +458,6 @@ PageBuilder Import System: Ends Here
             </li>
              `;
         }
-
         // END of ScrolliPage
         beginningCode += `
             </ul>
@@ -447,9 +473,7 @@ PageBuilder Import System: Ends Here
         `;
     } 
 
-
-
-    // HTML Buildilng Process Stage 3
+    // Stage 4: End Code Implementation
     endingCode = `
     <!--------------------------------------------------------------------------------------------------------------------------- 
     End of Body Website Components  
@@ -477,9 +501,7 @@ PageBuilder Import System: Ends Here
     <script type="text/javascript" src="/files/theme/core/main-init.js"></script>
   </body>
   </html>    
-    `;
-    endingCode += codeCredits;
-    
+    `;    
     // Add beginning code to finalHTML
     finalHTML += beginningCode;
 

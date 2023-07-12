@@ -51,7 +51,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
 
       /* 
       ============================================================================================================================================
-      Assembly Area 1 STARTS: Prebuilt Sections (Imported from Webflow)
+      Assembly Area 1 STARTS: Prebuilt Sections (Imported from Webflow) Paste JS contents below
       ============================================================================================================================================
       */
       
@@ -61,7 +61,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
     
       
       // This is the start of the service-boxes-3-1
-          if (selectedBlocks[element] === "service-boxes-3-1") {
+        if (selectedBlocks[element] === "service-boxes-3-1") {
             serviceboxes31++;
             assemblyHTML += `
             <!-------------------------------------------------------------------------------------
