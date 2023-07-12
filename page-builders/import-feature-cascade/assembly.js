@@ -1745,7 +1745,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         --------------------------------------------------------------------------------->
         <div class="main-wrap" style="padding-top:30px; padding-bottom: 30px;" data-sectiontype="carousel-fixed" data-count="${currentElementCount}">
         <div class="container">{top-carousel-content:content global="false"}</div>
-          <div class="container" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+          <div class="container">
           <div class="swiper mySwiper carousel-slider">
             <div class="swiper-wrapper">
         `;
@@ -1793,7 +1793,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         --------------------------------------------------------------------------------->
         <div class="main-wrap" style="padding-top:30px; padding-bottom: 30px;" data-sectiontype="carousel-free" data-count="${currentElementCount}">
         <div class="container">{top-carousel-content:content global="false"}</div>
-            <div class="container" data-aos="fade-up" data-aos-delay="000" data-aos-anchor-placement="center-bottom">
+            <div class="container">
                 <div class="swiper mySwiper carousel-slider">
                     <div class="swiper-wrapper">
         `;
@@ -1830,21 +1830,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
         
         assemblyHTML += `
         <!-------------------------------------------------------------------------------------
-        DEFAULT WEEBLY NAVIGATION STARTS HERE
-        --------------------------------------------------------------------------------------->
-        <div class="birdseye-header" data-sectiontype="default-weebly-header">
-          <div class="nav-wrap">
-            <div class="container">
-              <div class="logo">{logo}</div>
-              <div class="nav desktop-nav">{menu}</div>
-              <a class="hamburger" aria-label="Menu" href="#"><span></span></a>
-            </div>
-          </div>
-        </div>
-        <!-------------------------------------------------------------------------------------
-        DEFAULT WEEBLY NAVIGATION ENDS HERE
-        --------------------------------------------------------------------------------------->
-        <!-------------------------------------------------------------------------------------
         DEFAULT WEEBLY HEADER STARTS HERE
         --------------------------------------------------------------------------------------->
         <div class="banner-wrap">
@@ -1868,21 +1853,6 @@ export function assemblyGen(rawElements, selectedBlocks) {
 
         // BEGINNING of PureSlider HTML
         assemblyHTML += `
-        <!-------------------------------------------------------------------------------------
-        DEFAULT WEEBLY NAVIGATION STARTS HERE
-        --------------------------------------------------------------------------------------->
-        <div class="birdseye-header">
-          <div class="nav-wrap">
-            <div class="container">
-              <div class="logo">{logo}</div>
-              <div class="nav desktop-nav">{menu}</div>
-              <a class="hamburger" aria-label="Menu" href="#"><span></span></a>
-            </div>
-          </div>
-        </div>
-        <!-------------------------------------------------------------------------------------
-        DEFAULT WEEBLY NAVIGATION ENDS HERE
-        --------------------------------------------------------------------------------------->
         <!-------------------------------------------------------------------------------------
         PURESLIDER STARTS HERE
         --------------------------------------------------------------------------------------->
