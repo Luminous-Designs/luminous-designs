@@ -376,8 +376,6 @@ PageBuilder Import System: Ends Here
     <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <script src="/files/theme/core/pureslider.js"></script>
-      <script type="text/javascript" src="/files/theme/core/scrollipage.js"></script>
       <link href="/files/theme/core/aos.css" rel="stylesheet">
     </head>
 
@@ -494,10 +492,6 @@ PageBuilder Import System: Ends Here
     <script type="text/javascript" src="/files/theme/core/pagebuilder-import.js"></script>
     <script type="text/javascript" src="/files/theme/plugins.js"></script>
     <script type="text/javascript" src="/files/theme/custom.js"></script>
-    <script type="text/javascript" src="/files/theme/core/pureslider.js"></script>
-    <script type="text/javascript" src="/files/theme/core/parallax-1.js"></script>
-    <script type="text/javascript" src="/files/theme/core/parallax-2.js"></script>
-    <script type="text/javascript" src="/files/theme/core/aos.js"></script>
     <script type="text/javascript" src="/files/theme/core/main-init.js"></script>
   </body>
   </html>    
