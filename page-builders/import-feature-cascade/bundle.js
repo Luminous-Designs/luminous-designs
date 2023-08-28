@@ -492,6 +492,7 @@ PageBuilder Import System: Ends Here
     <script type="text/javascript" src="/files/theme/pagebuilder-import.js"></script>
     <script type="text/javascript" src="/files/theme/plugins.js"></script>
     <script type="text/javascript" src="/files/theme/custom.js"></script>
+    <script type="text/javascript" src="/files/theme/corejs.js"></script>
     <!--Parallax.js, PureSlider.js, Aos.js-->
     <script type="text/javascript" src="/files/theme/main-init.js"></script>
   </body>
