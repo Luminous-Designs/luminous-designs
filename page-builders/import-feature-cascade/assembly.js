@@ -1305,21 +1305,21 @@ export function assemblyGen(rawElements, selectedBlocks) {
             <section id="prebuilt-footer" theme-option="a8" data-sectiontype="prebuilt-footer" class="div-together-central">
           <div class="div-jungle-soap">
             <div class="div-surprise-nest">
-              <h4 class="h5-scene-carbon replace-this-text">{${prebuiltfooter}_text184:text global="false"}</h4>
+              <h4 class="h5-scene-carbon replace-this-text">{${prebuiltfooter}_text184:text}</h4>
               <div class="div-national-gasoline">
                 <div class="div-block-9">
-                  <div class="div-block-10 footer-drag-drop replace-this-content"><div class="inter-div-content-area">{${prebuiltfooter}_content294:content global="false"}</div></div>
+                  <div class="div-block-10 footer-drag-drop replace-this-content"><div class="inter-div-content-area">{${prebuiltfooter}_content294:content}</div></div>
                 </div>
               </div>
             </div>
             <div class="div-seven-cover"></div>
             <div class="div-exist-born">
               <div class="div-block-8">
-                <p class="a-waste-victory">{${prebuiltfooter}_text185:text global="false"}</p>
-                <p class="a-waste-victory">{${prebuiltfooter}_text186:text global="false"}</p>
-                <p class="a-waste-victory">{${prebuiltfooter}_text187:text global="false"}</p>
+                <p class="a-waste-victory">{${prebuiltfooter}_text185:text}</p>
+                <p class="a-waste-victory">{${prebuiltfooter}_text186:text}</p>
+                <p class="a-waste-victory">{${prebuiltfooter}_text187:text}</p>
               </div>
-              <p class="p-bicycle-desert">{${prebuiltfooter}_text188:text global="false"}</p>
+              <p class="p-bicycle-desert">{${prebuiltfooter}_text188:text}</p>
             </div>
           </div>
         </section>
@@ -1832,7 +1832,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
         <!-------------------------------------------------------------------------------------
         DEFAULT WEEBLY HEADER STARTS HERE
         --------------------------------------------------------------------------------------->
-        <div class="banner-wrap">
+        <div class="banner-wrap" data-sectiontype="default-weebly-header">
           {{#header}}
               <div class="container">
                 <div class="banner">{content}</div>
