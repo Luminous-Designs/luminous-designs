@@ -374,7 +374,7 @@ export function assemblyGen(rawElements, selectedBlocks) {
                 <h3 class="lynx-heading-features-large" data-aos="fade-up" data-aos-delay="500" data-aos-anchor-placement="top">{${featureBoxesCurved}_content-9-h3-2:text global="false"}</h3>
                 <p class="lynx-paragraph" data-aos="fade-up" data-aos-delay="600" data-aos-anchor-placement="top">{${featureBoxesCurved}_content-9-p-2:text global="false"}</p>
               </div>
-              <div class="lynx-link-block-features w-inline-block" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top"><div class="lynx-image-features">{content-9-image-2:image global="false"}</div>
+              <div class="lynx-link-block-features w-inline-block" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top"><div class="lynx-image-features">{${featureBoxesCurved}_content-9b-image-2:image global="false"}</div>
                 <div class="lynx-arrow-features"></div>
               </div>
             </div>
