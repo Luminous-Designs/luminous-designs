@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+
+  <!--Builder Imports-->
+  <link rel="stylesheet" type="text/css" href="./output.css" />
+  <link rel="stylesheet" type="text/css" href="./custom-styles.css" />
+
+
+
+  <style type="text/css">
+
+    .font-black.mb-8.ml-2.pb-2 {
+      font-weight:600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 30px;
+      margin-bottom:0px;
+      
+    
+    }
+    
+    /* Label Buttons */
+    .text-black.font-semibold.px-2.py-1.transition-normal {
+      font-size: 10px;
+      background-color: #e2e8f0;
+      border-radius: 20px;
+    }
+
+    /* Label Buttons Section */
+    .border-l-2.mx-2.mb-3.js-filter.pl-3.border-black {
+      padding-left:0px;
+      margin-left:0px;
+      border-left:none;
+
+    }
+
+
+    .subtitle-prompt {
+      margin-left:10px;
+      margin-bottom:20px;
+      text-transform: uppercase;
+      font-weight:600;
+      letter-spacing: 3px;
+      font-size:12px;
+    }
+    .js-droppable>.js-snippet {
+      width: 100%;
+      padding: 0;
+    }
+
+    .js-droppable>.js-snippet:hover>.js-delete-btn {
+      display: block;
+    }
+
+    .js-droppable>.js-snippet>img:hover {
+      transform: none;
+      border-color: #dae1e7;
+    }
+
+   
+
+    .js-snippet img:hover {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+   
+
+  </style>
+  <title>Cascade Page Builder</title>
+</head>
+
+<body class="overflow-hidden font-sans">
+
+
+  <!--MODALS-->
+  <!-- The Modal -->
+  <div id="warningModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span id="warningClose" class="close">&times;</span>
+        <h2 id="Warning-Header"></h2>
+      </div>
+      <div class="modal-body">
+        <p id="Warning-Text"></p>
+        <div id="Warning-HTML"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="publishModal" class="modal">
+    <!-- Publish Modal -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span id="Publish-Close" class="close">&times;</span>
+        <h2 id="Publish-Header"></h2>
+        <p>The code for your layout has been generated. The next step is to copy and paste this code into your Weebly
+          website. Please see the instructions below.</p>
+      </div>
+      <div class="modal-body">
+        <div class="code-table">
+          <div class="column-one">
+            <div class="code-block-header">
+              <pre class='code code-html'><label>HTML</label><code><p id="Publish-Text"></p></code></pre>
+            </div>
+          </div>
+          <div class="column-two">
+            <div class="instructions">
+              <h2><span class="steps">STEP 1: </span> Copy all the code on the left</h2>
+              <p>Double click inside the code on the left to select it all, and press <span
+                  class="command-shortcut">CTRL + C</span> (Or <span class="command-shortcut">Command + C</span> on Mac)
+                to copy the code to your clipboard. </p>
+            </div>
+            <div class="instructions">
+              <h2><span class="steps">STEP 2: </span> Go to the Weebly HTML/CSS Editor</h2>
+              <p>Open up your Weebly website builder. 
+                Click on <span class="command-shortcut">Theme.</span> 
+                Click on the <span class="command-shortcut">Edit HTML/CSS</span> button in the lower lefthand corner. 
+                You should be taken to the code editor. </p>
+            </div>
+            <div class="instructions">
+                <h2><span class="steps">STEP 3: </span> Create a new header type</h2>
+                <p>In the left hand column, you'll see a section called <span class="command-shortcut">Header Type</span>. 
+                  Click on the small <span class="command-shortcut">+</span> ("plus") sign next to it. 
+                  In the dropdown, click on <span class="command-shortcut">New Header Type</span>.  
+                  Name it whatever you want, this is what your layout will be called.</p>
+            </div>
+            <div class="instructions">
+                <h2><span class="steps">STEP 4: </span> Paste your code</h2>
+                <p>After you name your new header type, make sure its selected.
+                  In the code editor on the right, there will be a few lines of auto generated code. <span class="command-shortcut">Delete all of it. </span> 
+                  Then, once the code editor for your header type is empty, <span class="command-shortcut">Paste </span> the code you previously copied in there. 
+                  Press <span class="command-shortcut">CTRL + V</span> if you're on Windows, or <span class="command-shortcut">COMMAND + V</span> if you're on Mac to
+                  paste all the code. Finally, <span class="command-shortcut">SAVE</span> your changes by clicking on the blue save button in the upper right of the editor.
+                </p>
+            </div>
+
+          </div>
+          </tr>
+
+        </div>
+
+
+        <div id="Warning-HTML"></div>
+      </div>
+    </div>
+  </div>
+
+  <!--HTML Export Pop-Up Modal-->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span id="publishClose" class="close">&times;</span>
+      <p>Some text in the Modal..</p>
+    </div>
+
+  </div>
+
+  <!--PureSlider Prompt-->
+  <div id="puresliderModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="pureslider-prompt-container">
+        <h2>You added a PureSlider Header. How Many Slides Would You Like in the Slideshow?</h2>
+        <div class="box">
+          <select id="pureslider-slides">
+            <option value="3">3 Slides</option>
+            <option value="4">4 Slides</option>
+            <option value="5">5 Slides</option>
+            <option value="6">6 Slides</option>
+            <option value="7">7 Slides</option>
+            <option value="8">8 Slides</option>
+            <option value="9">9 Slides</option>
+            <option value="10">10 Slides</option>
+          </select>
+        </div>
+        <div class="next-btn">
+          <div class="sub-main">
+            <button class="button-two" id="puresliderClose"><span>Continue</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Carousel Prompt-->
+  <div id="carouselModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="pureslider-prompt-container">
+        <h2>You added a Carousel block. How Many Slides Would You Like in the Carousel? Don't worry, you can always add or remove Carousel slides without losing your existing Carousel content.</h2>
+        <div class="box">
+          <select id="carousel-slides">
+            <option value="3">3 Carousel Slides</option>
+            <option value="4">4 Carousel Slides</option>
+            <option value="5">5 Carousel Slides</option>
+            <option value="6">6 Carousel Slides</option>
+            <option value="7">7 Carousel Slides</option>
+            <option value="8">8 Carousel Slides</option>
+            <option value="9">9 Carousel Slides</option>
+            <option value="10">10 Carousel Slides</option>
+            <option value="11">11 Carousel Slides</option>
+            <option value="12">12 Carousel Slides</option>
+            <option value="13">13 Carousel Slides</option>
+            <option value="14">14 Carousel Slides</option>
+            <option value="15">15 Carousel Slides</option>
+            <option value="16">16 Carousel Slides</option>
+            <option value="17">17 Carousel Slides</option>
+            <option value="18">18 Carousel Slides</option>
+            <option value="19">19 Carousel Slides</option>
+            <option value="20">20 Carousel Slides</option>
+
+          </select>
+        </div>
+        <div class="next-btn">
+          <div class="sub-main">
+            <button class="button-two" id="carouselClose"><span>Continue</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Import Page Popup Modal -->
+
+  <div class="modal-123">
+    <div class="modal-content-123">
+      <span class="close-123">&times;</span>
+      <h2>Import Layout</h2>
+      <p>Please enter your layout code below:</p>
+      <input type="text" id="userInput" placeholder="Enter layout code here">
+      <button id="importLayoutButton-123">Import Layout</button>
+    </div>
+  </div>
+ 
+
+  <div id="theme-modal" class="theme-modal">
+    <div class="theme-modal-content">
+      <span class="theme-close-button">&times;</span>
+      <input type="text" id="theme-textInput" placeholder="Enter comma-separated IDs">
+      <button id="theme-submitInput">Submit</button>
+    </div>
+  </div>
+
+  
+
+  <section class="fixed left-0 top-0 bottom-0 overflow-y-auto bg-white p-8 w-2/3">
+    <div class="pagebuilder-menu" style="display:none;">
+      <button id="importButton" style="color: white; background-color: black; padding:5px; display: none;">Import Existing Page Layout</button>
+    </div>
+    <h1 class="font-black mb-8 ml-2 pb-2">
+      Cascade Page Builder 
+    </h1>
+    <p class="subtitle-prompt">AUTOMATICALLY GENERATES SEO-OPTIMIZED CLEAN CODE</p>
+    <button id="theme-openModalButton">Import Existing PageBuilder Layout</button>
+
+
+
+    
+    <div class="border-l-2 mx-2 mb-3 js-filter pl-3 border-black">
+      <!-- General -->
+      <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal"
+        data-filter="js-snippet">
+        All Sections
+      </button>
+      <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal" data-filter="st-header">
+        Header Sections
+      </button>
+      <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal" data-filter="st-body">
+        Body Sections
+      </button>
+      <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal" data-filter="st-pureslider">
+        PureSlider
+      </button>
+      <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal" data-filter="st-carousel">
+        Carousel
+      </button>
+      <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal" data-filter="st-parallax">
+        Parallax
+      </button>
+      <button class="text-black font-semibold hover:text-green-500 px-2 py-1 transition-normal" data-filter="st-blank">
+        Blank Drag 'n Drop Sections
+      </button>
+      
+      <!-- Marketing -->
+
+    </div>
+   
+    <div class="flex flex-wrap flex-col items-start justify-start js-snippets">
+      
+
+      
+      <!-- prebuilt-header-1 -->
+
+      <figure class="js-snippet w-1/2 p-2 st-header" id="prebuilt-header-1">
+        <img src="./images/prebuilt-header-1.png" alt=""
+          class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Prebuilt Header 1</div>
+          <div class="label-text">
+            
+            <span class="bold-text"></span>
+          </div>
+        </div>
+      </figure>
+
+      <!-- prebuilt-header-2 -->
+      <figure class="js-snippet w-1/2 p-2 st-header" id="prebuilt-header-2">
+        <img src="./images/prebuilt-header-2.png" alt=""
+          class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Prebuilt Header 2</div>
+          <div class="label-text">
+            
+            <span class="bold-text"></span>
+          </div>
+        </div>
+      </figure>
+
+      <!-- prebuilt-header-3 -->
+      <figure class="js-snippet w-1/2 p-2 st-header" id="prebuilt-header-3">
+        <img src="./images/prebuilt-header-3.png" alt=""
+          class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Prebuilt Header 3</div>
+          <div class="label-text">
+            
+            <span class="bold-text"></span>
+          </div>
+        </div>
+      </figure>
+
+      <!-- prebuilt-header-4 -->
+      <figure class="js-snippet w-1/2 p-2 st-header" id="prebuilt-header-4">
+        <img src="./images/prebuilt-header-4.png" alt=""
+          class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Prebuilt Header 4</div>
+          <div class="label-text">
+            
+            <span class="bold-text"></span>
+          </div>
+        </div>
+      </figure>
+
+      <!-- prebuilt-header-5 -->
+      <figure class="js-snippet w-1/2 p-2 st-header" id="prebuilt-header-5">
+        <img src="./images/prebuilt-header-5.png" alt=""
+          class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Prebuilt Header 5</div>
+          <div class="label-text">
+            
+            <span class="bold-text"></span>
+          </div>
+        </div>
+      </figure>
+
+      
+
+      <!-- 50-50-image-left -->
+      <figure class="js-snippet w-1/2 p-2 st-body" id="fifty-fifty-image-left">
+        <img src="./images/fifty-fifty-image-left.png" alt=""
+          class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">50/50 Image on Left Content on Right</div>
+          <div class="label-text">
+            
+            <span class="bold-text"></span>
+          </div>
+        </div>
+      </figure>
+
+     
+
+     
+
+      <!-- fifty-fifty-image-right -->
+      <figure class="js-snippet w-1/2 p-2 st-body" id="fifty-fifty-image-right">
+        <img src="./images/fifty-fifty-image-right.png" alt=""
+          class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">50/50 Image on Right Content on Left</div>
+          <div class="label-text">
+            
+            <span class="bold-text"></span>
+          </div>
+        </div>
+      </figure>
+
+     
+
+      <!-- fifty-fifty-blurred-box -->
+      <figure class="js-snippet w-1/2 p-2 st-body" id="fifty-fifty-blurred-box">
+        <img src="./images/fifty-fifty-blurred-box.png" alt=""
+          class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">50/50 Blurred Box</div>
+          <div class="label-text">
+            
+            <span class="bold-text"></span>
+          </div>
+        </div>
+      </figure>
+
+      <!-- VARIED QUANTIFIED BLOCKS-->
+      <!-- image-boxes-2 -->
+<figure class="js-snippet w-1/2 p-2 st-body" id="image-boxes-2">
+  <img src="./images/image-boxes-2.jpeg" alt="" class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+  <div class="figure-label">
+    <div class="label-header">image-boxes-2</div>
+    <div class="label-text">
+      <span class="bold-text"></span>
+    </div>
+  </div>
+</figure>
+<!-- image-boxes-3 -->
+<figure class="js-snippet w-1/2 p-2 st-body" id="image-boxes-3">
+  <img src="./images/image-boxes-3.jpeg" alt="" class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+  <div class="figure-label">
+    <div class="label-header">image-boxes-3</div>
+    <div class="label-text">
+      <span class="bold-text"></span>
+    </div>
+  </div>
+</figure>
+<!-- image-boxes-4 -->
+<figure class="js-snippet w-1/2 p-2 st-body" id="image-boxes-4">
+  <img src="./images/image-boxes-4.jpeg" alt="" class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+  <div class="figure-label">
+    <div class="label-header">image-boxes-4</div>
+    <div class="label-text">
+      <span class="bold-text"></span>
+    </div>
+  </div>
+</figure>
+<!-- image-boxes-5 -->
+<figure class="js-snippet w-1/2 p-2 st-body" id="image-boxes-5">
+  <img src="./images/image-boxes-5.jpeg" alt="" class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+  <div class="figure-label">
+    <div class="label-header">image-boxes-5</div>
+    <div class="label-text">
+      <span class="bold-text"></span>
+    </div>
+  </div>
+</figure>
+<!-- image-boxes-6 -->
+<figure class="js-snippet w-1/2 p-2 st-body" id="image-boxes-6">
+  <img src="./images/image-boxes-6.jpeg" alt="" class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+  <div class="figure-label">
+    <div class="label-header">image-boxes-6</div>
+    <div class="label-text">
+      <span class="bold-text"></span>
+    </div>
+  </div>
+</figure>
+<!-- image-boxes-7 -->
+<figure class="js-snippet w-1/2 p-2 st-body" id="image-boxes-7">
+  <img src="./images/image-boxes-7.jpeg" alt="" class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+  <div class="figure-label">
+    <div class="label-header">image-boxes-7</div>
+    <div class="label-text">
+      <span class="bold-text"></span>
+    </div>
+  </div>
+</figure>
+<!-- image-boxes-8 -->
+<figure class="js-snippet w-1/2 p-2 st-body" id="image-boxes-8">
+  <img src="./images/image-boxes-8.jpeg" alt="" class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+  <div class="figure-label">
+    <div class="label-header">image-boxes-8</div>
+    <div class="label-text">
+      <span class="bold-text"></span>
+    </div>
+  </div>
+</figure>
+<!-- service-boxes-2 -->
+<figure class="js-snippet w-1/2 p-2 st-body" id="service-boxes-2">
+  <img src="./images/service-boxes-2.jpeg" alt="" class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+  <div class="figure-label">
+    <div class="label-header">service-boxes-2</div>
+    <div class="label-text">
+      <span class="bold-text"></span>
+    </div>
+  </div>
+</figure>
+<!-- service-boxes-3-1 -->
+<figure class="js-snippet w-1/2 p-2 st-body" id="service-boxes-3-1">
+  <img src="./images/service-boxes-3-1.jpeg" alt="" class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+  <div class="figure-label">
+    <div class="label-header">service-boxes-3-1</div>
+    <div class="label-text">
+      <span class="bold-text"></span>
+    </div>
+  </div>
+</figure>
+<!-- work-boxes-1 -->
+<figure class="js-snippet w-1/2 p-2 st-body" id="work-boxes-1">
+  <img src="./images/work-boxes-1.jpeg" alt="" class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+  <div class="figure-label">
+    <div class="label-header">work-boxes-1</div>
+    <div class="label-text">
+      <span class="bold-text"></span>
+    </div>
+  </div>
+</figure>
+<!-- work-boxes-2 -->
+<figure class="js-snippet w-1/2 p-2 st-body" id="work-boxes-2">
+  <img src="./images/work-boxes-2.jpeg" alt="" class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+  <div class="figure-label">
+    <div class="label-header">work-boxes-2</div>
+    <div class="label-text">
+      <span class="bold-text"></span>
+    </div>
+  </div>
+</figure>
+<!-- work-boxes-3 -->
+<figure class="js-snippet w-1/2 p-2 st-body" id="work-boxes-3">
+  <img src="./images/work-boxes-3.jpeg" alt="" class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+  <div class="figure-label">
+    <div class="label-header">work-boxes-3</div>
+    <div class="label-text">
+      <span class="bold-text"></span>
+    </div>
+  </div>
+</figure>
+<!-- work-boxes-4 -->
+<figure class="js-snippet w-1/2 p-2 st-body" id="work-boxes-4">
+  <img src="./images/work-boxes-4.jpeg" alt="" class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+  <div class="figure-label">
+    <div class="label-header">work-boxes-4</div>
+    <div class="label-text">
+      <span class="bold-text"></span>
+    </div>
+  </div>
+</figure>
+<!-- work-boxes-5 -->
+<figure class="js-snippet w-1/2 p-2 st-body" id="work-boxes-5">
+  <img src="./images/work-boxes-5.jpeg" alt="" class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+  <div class="figure-label">
+    <div class="label-header">work-boxes-5</div>
+    <div class="label-text">
+      <span class="bold-text"></span>
+    </div>
+  </div>
+</figure>
+<!-- work-boxes-6 -->
+<figure class="js-snippet w-1/2 p-2 st-body" id="work-boxes-6">
+  <img src="./images/work-boxes-6.jpeg" alt="" class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+  <div class="figure-label">
+    <div class="label-header">work-boxes-6</div>
+    <div class="label-text">
+      <span class="bold-text"></span>
+    </div>
+  </div>
+</figure>
+
+
+
+      <!-- prebuilt-footer -->
+      <figure class="js-snippet w-1/2 p-2 st-body" id="prebuilt-footer">
+        <img src="./images/prebuilt-footer.png" alt=""
+          class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Prebuilt Footer</div>
+          <div class="label-text">
+            
+            <span class="bold-text"></span>
+          </div>
+        </div>
+      </figure>
+
+
+      
+      <!--PureSlider-->
+      <figure class="js-snippet w-1/2 p-2 st-pureslider" id="pureslider">
+        <img src="./images/pureslider-cascade.png" alt=""
+          class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">PureSlider (fixed height)</div>
+          <div class="label-text">
+            A gorgeous slider with the ability to have background images and elements superimposed on top of the background image.
+          </div>
+        </div>
+      </figure>
+
+      <!--Carousel Free-->
+      <figure class="js-snippet w-1/2 p-2 st-carousel" id="carousel-free">
+        <img src="./images/carousel-fixed.png" alt=""
+          class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Carousel Free (Empty Carousel Items)</div>
+          <div class="label-text">
+            Drag 'n drop carousel where you can drag and drop any Weebly element into each carousel item.
+          </div>
+        </div>
+      </figure>
+
+      <!--Carousel Fixed-->
+      <figure class="js-snippet w-1/2 p-2 st-carousel" id="carousel-fixed">
+        <img src="./images/carousel-free.png" alt=""
+          class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Carousel Fixed Content</div>
+          <div class="label-text">
+            Carousel with pre-placed image, text, and paragraph elements for each carousel item. If you would like a drag 'n drop carousel please use the Carousel Free element.
+          </div>
+        </div>
+      </figure>
+      <!--Default Weebly Header-->
+      <figure class="js-snippet w-1/2 p-2 st-blank st-header" id="default-weebly-header">
+        <img src="./images/default-cascade-header.png" alt=""
+          class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Default Weebly Header</div>
+          <div class="label-text">
+            Default Weebly Header. Supports image, video, and color backgrounds. 
+          </div>
+        </div>
+      </figure>
+      <!--Weebly Sections-->
+      <figure class="js-snippet w-1/2 p-2 st-body st-blank" id="default-section">
+        <img src="./images/weebly-sections.jpeg" alt=""
+          class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Weebly Sections Drag 'n Drop Area</div>
+          <div class="label-text">
+            A Drag 'N Drop area where you can add both Weebly elements and Weebly Sections. Weebly only permits one of these sections per page. 
+          </div>
+        </div>
+      </figure>
+      <!--ScrolliPage Anchor-->
+      <figure class="js-snippet w-1/2 p-2 st-body st-blank" id="scrollipage-anchor">
+        <img src="./images/anchor.jpeg" alt=""
+          class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">ScrolliPage Anchor</div>
+          <div class="label-text">
+            Put this block in the area where you want to have a ScrolliPage Vertical Navigation link scroll to.
+          </div>
+        </div>
+      </figure>
+      <!--Weebly Main Wrap-->
+      <figure class="js-snippet w-1/2 p-2 st-body st-blank" id="weebly-main-wrap">
+        <img src="./images/weebly-main-wrap.jpeg" alt=""
+          class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">Weebly Drag 'n Drop Area (Elements Only)</div>
+          <div class="label-text">
+            A Weebly Drag 'N Drop area where you can drag and drop Weebly elements (not Section blocks, for that you'll need the Weebly Sections Drag 'n Drop Area)
+          </div>
+        </div>
+      </figure>
+      <!-- Parallax -->
+      <figure class="js-snippet w-1/2 p-2 st-body st-parallax" id="parallax">
+        <img src="./images/parallax.png" alt=""
+          class="border border-gray-300 cursor-move hover:shadow transition-normal hover:translate-y-1 hover:border-black" />
+        <div class="figure-label">
+          <div class="label-header">TrueDepth 3D Parallax Section</div>
+          <div class="label-text">
+            A dynamic parallax section with background images. You can add content into this section via drag 'n drop in the Weebly editor.
+          </div>
+        </div>
+      </figure>
+          
+    </div>
+  </section>
+  <section class="bg-gray-300 p-8 pb-0 w-1/3 flex flex-col fixed top-0 bottom-0 right-0">
+    <!--<div class="control-panel">
+        <div class="enable-scrollipage-section">
+          <div class="text-wrapper">
+            <p>Enable ScrolliPage (Vertical Nav)</p>
+          </div>
+          <div class="toggle">
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+
+      </div>-->
+    <header class="mb-4">
+      <button
+        class="shadow text-center py-3 px-4 bg-black w-full hover:text-green-500 text-white js-download transition-normal">
+        Publish
+      </button>
+    </header>
+    <div class="flex flex-col flex-1 border js-droppable border-gray-300 overflow-y-auto" style="padding-bottom:100px">
+    </div>
+    <div class="text-center text-black py-4">
+      The footer will be automatically generated and added to your page.
+
+    </div>
+    <div class="bg-white hidden fixed js-delete-btn px-4 py-2 shadow">
+      Delete <i class="far fa-trash-alt pointer-events-none"></i>
+    </div>
+  </section>
+  <script src="./tidy.js"></script>
+  <script type="module" src="./bundle.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+  <script src="./codeblock.js"></script>
+
+
+</body>
+
+</html>

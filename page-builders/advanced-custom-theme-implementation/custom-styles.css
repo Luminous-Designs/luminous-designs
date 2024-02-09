@@ -1,0 +1,717 @@
+  /* Control Panel */
+ /* The Modal (background) */
+.theme-modal {
+  display: none;
+  position: fixed;
+  z-index: 2001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content */
+.theme-modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  width: 30%;
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2);
+  animation-name: theme-animatetop;
+  animation-duration: 0.4s;
+}
+
+/* Text input */
+#theme-textInput {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 2px solid #3f51b5;
+  font-size: 18px;
+}
+
+/* Submit Button */
+#theme-submitInput {
+  display: block;
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Close Button */
+.theme-close-button {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.theme-close-button:hover,
+.theme-close-button:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Add Animation */
+@keyframes theme-animatetop {
+  from {top:-300px; opacity:0}
+  to {top:50%; opacity:1}
+}
+
+#theme-openModalButton {
+  background-color:#e2e8f0;
+  color: black;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 15px;
+  margin-bottom:10px;
+}
+  
+  .control-panel {
+    width: 100%;
+    height: auto;
+    padding-bottom: 10px;
+  }
+
+  .pagebuilder-menu {
+    width: 100%; 
+    min-height: 40px; 
+    margin-bottom: 20px;
+  }
+
+  /* Page Import Modal  */
+  .modal-123 {
+    display: none; /* hide the modal by default */
+    position: fixed; /* position the modal in the center of the screen */
+    z-index: 10000; /* ensure the modal is on top of other elements */
+    left: 0;
+    top: 0;
+    width: 100%; /* full width */
+    height: 100%; /* full height */
+    overflow: auto; /* enable scroll if needed */
+    background-color: rgb(0,0,0); /* black background */
+    background-color: rgba(0,0,0,0.4); /* black background with transparency */
+  }
+  
+  .modal-content-123 {
+    background-color: #fefefe; /* white background */
+    margin: 15% auto; /* center the modal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* set the width of the modal */
+  }
+  
+  .close-123 {
+    color: #aaa; /* text color */
+    float: right; /* float the close button to the right */
+    font-size: 28px; /* font size */
+    font-weight: bold; /* bold text */
+  }
+  
+  .close-123:hover,
+  .close-123:focus {
+    color: black; /* change text color on hover */
+    text-decoration: none; /* remove underline */
+    cursor: pointer; /* change cursor to pointer */
+  }
+  
+  .enable-scrollipage-section {
+    width: 100%;
+    min-height: 30px;
+    background-color: #f2f2f2;
+    padding: 15px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .text-wrapper {
+    font-size: 15px;
+    line-height: 15px;
+  }
+
+  /* Toggle Switch */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked+.slider {
+    background-color: #2196F3;
+  }
+
+  input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+  input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .section-description {
+    background-color: #e2e8f0;
+    width: 100%;
+    height: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+  }
+
+  .section-description p {
+    font-size: 12px;
+  }
+
+  .count-button {
+    min-width: 30px;
+    min-height: 20px;
+    background-color: white;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 2px 2px 5px #888888;
+    font-size: 11px;
+    font-weight: 600;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+    padding-bottom: 2px;
+    
+    text-transform: uppercase;
+
+  }
+
+  /*PureSlider Prompt Window*/
+  .pureslider-prompt-container {
+    padding: 60px;
+  }
+
+  .pureslider-prompt-container h2 {
+    font-size: 24px;
+    padding-bottom: 20px;
+  }
+
+  /*Pureslider Select*/
+  #pureslider-slides {
+    display: block;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #444;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(245, 186, 186, 0.04);
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+      linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+  }
+
+  #carousel-slides {
+    display: block;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #444;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+      linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+  }
+
+  #pureslider-slides:hover {
+    border-color: #888;
+
+  }
+
+ /* The background overlay */
+.modal-equinox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+  visibility: hidden; /* Hide the modal by default */
+  z-index: 1; /* Sit on top of other elements */
+  transition: visibility 0.3s ease-in-out;
+  backdrop-filter: blur(10px);
+}
+
+/* The modal content */
+.modal-content-equinox {
+  background-color: #fefefe;
+  margin: 10% auto; /* Center the modal vertically and horizontally */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Width of the modal */
+}
+
+.modal-content-equinox select {
+  min-width: 100px;
+  background-color: #f2f2f2;
+  border: 1px solid black;
+  margin-right: 30px;
+  
+}
+
+.modal-content-equinox h2 {
+  font-size: 20px;
+  font-weight: 500;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.modal-content-equinox button {
+  outline: 1px solid rgba(0,0,0,1);
+  transition: all 0.3s;
+  padding: 5px;
+}
+.modal-content-equinox button:hover {
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  outline: none;
+}
+
+
+/* Show the modal when it's class is "show-modal" */
+.show-modal-equinox {
+  visibility: visible;
+}
+
+/* Add animation to the modal when it's class is "show-modal" */
+.show-modal-equinox {
+  visibility: visible;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* The keyframe for the animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+
+  /* Next Button */
+
+  .next-btn {
+    padding-top: 100px;
+  }
+
+  .button-two {
+    text-align: center;
+    cursor: pointer;
+    font-size: 24px;
+
+  }
+
+  /*Button Two*/
+  .button-two {
+    border-radius: 0px;
+    color: white;
+    background-color: black;
+    border: none;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+  }
+
+
+  .button-two span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .button-two span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+
+  .button-two:hover span {
+    padding-right: 25px;
+  }
+
+  .button-two:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  /*Modal Settings*/
+  /* The Modal (background) */
+  .modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Black w/ opacity */
+  }
+
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    /*border: 1px solid #888;*/
+    width: 80%;
+    /*box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);*/
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {
+      top: -300px;
+      opacity: 0
+    }
+
+    to {
+      top: 0;
+      opacity: 1
+    }
+  }
+
+  @keyframes animatetop {
+    from {
+      top: -300px;
+      opacity: 0
+    }
+
+    to {
+      top: 0;
+      opacity: 1
+    }
+  }
+
+  /* The Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .modal-header {
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 30px;
+    background-color: #38686A;
+    color: white;
+  }
+
+  .modal-header h2 {
+    font-size: 48px;
+    padding-bottom: 10px;
+  }
+
+  .modal-header p {
+    font-size: 16px;
+    line-height: 20px;
+    opacity: 0.8;
+  }
+
+  .modal-body {
+    padding-top: 60px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 60px;
+  }
+
+  .modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+  }
+
+  .figure-label {
+    background-color: #f2f2f2;
+    
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    border: 1px dashed rgba(0,0,0,0.3);
+
+  }
+
+  .label-header {
+    font-size: 14px;
+    padding-bottom: 0px;
+    font-weight: 600;
+    
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .label-text {
+    font-size: 12px;
+    
+    
+  }
+
+  .bold-text {
+    font-weight: 400;
+  }
+
+
+  /*Code Block*/
+  /* CSS Simple Pre Code */
+
+  .code-block-header {
+    width: 100%;
+    height: 500px;
+
+  }
+
+  .code-table {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+  }
+
+  .code-table .column-one {
+    width: 50% !important;
+
+
+  }
+
+  .code-table .column-two {
+    width: 50% !important;
+
+
+
+  }
+
+  .instructions {
+    margin-bottom:20px;
+  }
+
+  .code-table .column-two h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+
+  }
+
+  .code-table .column-two p {
+    font-size: 14px;
+  }
+
+  .steps {
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-right: 5px;
+  }
+
+  .command-shortcut {
+    color: rgba(56,104,106);
+    font-weight: 800;
+    text-transform:uppercase;
+
+  }
+
+  pre {
+    background: #333;
+    white-space: pre;
+    word-wrap: break-word;
+    overflow: auto;
+  }
+
+  pre.code {
+    margin: 0px 25px;
+    border-radius: 0px;
+    border: 1px solid #292929;
+    position: relative;
+  }
+
+  pre.code label {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    color: #ddd;
+    position: absolute;
+    left: 1px;
+    top: 15px;
+    text-align: center;
+    width: 60px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+  }
+
+  pre.code code {
+    font-family: "Inconsolata", "Monaco", "Consolas", "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+    display: block;
+    margin: 0 0 0 60px;
+    padding: 15px 16px 14px;
+    border-left: 1px solid #555;
+    overflow-x: auto;
+    font-size: 9px;
+    line-height: 10px;
+    color: #ddd;
+    height: 500px;
+  }
+
+  pre::after {
+    content: "Double Click to Select All";
+    padding: 0;
+    width: auto;
+    height: auto;
+    position: absolute;
+    right: 18px;
+    top: 14px;
+    font-size: 12px;
+    color: #ddd;
+    line-height: 20px;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  pre:hover::after {
+    opacity: 0;
+    visibility: visible;
+  }
+
+  pre.code-css code {
+    color: #91a7ff;
+  }
+
+  pre.code-html code {
+    color: #aed581;
+  }
+
+  pre.code-javascript code {
+    color: #ffa726;
+  }
+
+  pre.code-jquery code {
+    color: #4dd0e1;
+  }
