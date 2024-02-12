@@ -465,7 +465,7 @@ function assembleElements(arrayOfObjects) {
         PREBUILT FOOTER - STARTS HERE
                         --------------------------------------------------------------------------------------->
 						</div>
-                        <div class="lynx-footer-dark pop-up-footer" style="padding-top:20px; padding-bottom: 20px;">
+                        <div class="lynx-footer-dark pop-up-footer container" style="padding-top:20px; padding-bottom: 20px;">
                           {thebottomfooter:content}
                           <div class="lynx-block-footer-down">
                             {lynxfooter2a:content}
